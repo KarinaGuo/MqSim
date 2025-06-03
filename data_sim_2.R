@@ -1,61 +1,50 @@
 set.seed(12345)
+setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
+
+## Load in libraries
+library(tidyverse)
+
+## Load in parameters
+source("configurations")
+source("Functions/mortality_functions.R")
+
+## Initiate random population
+init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR<0]=0
+init_age <- rep(1, population_size)
+indiv_ID <- seq(from=1, to=population_size)
+
+pop_df <- list(
+  indiv_ID = indiv_ID,
+  time = rep(0, length(indiv_ID)),
+  MR = init_MR,
+  mortality = rep(0, length(indiv_ID)),
+  age = init_age
+)
 
 
-
-Simulations
-• Look into matrix model
-• We want this simulation to match our selection pressure observed
-• Ideas:
-  ○ Encoding data as a lifestage table per year with mortality risks (run this by itself at neutral selection over a period of time to determine whether it separates out into an appropriate age distribution)
-○ Live individual table
-○ Dead at time point table
-○ Generate MR by the S-function (hill function of rnorm - has asymptotes of limits)
-  ○ Change recruitment to 1000 but at 1% chance
-• Future:
-  ○ Add a self-thinning density dependency especially on subadult and seedlings
-§ Accelerated mortality with higher density
-○ Incorporate disturbance events -> higher recruitment chance + high mortality for older individuals
-○ Incorporate different site disease pressures
-Explore the impact of different selective pressures
-
-
-
-
-indiv_pop=NULL; MR_pop=NULL; curr_pop=NULL; new_recruit_pop=NULL; indiv_count=0
+## Initialise objects
+indiv_pop=NULL; MR_pop=NULL; curr_pop=NULL; new_recruit_pop=NULL; indiv_count=0; death_df=NULL
 
 for (time_point in 1:time_max){
   timepoint_count=timepoint_count+1
   
-  
   if(time_point==1){
     curr_pop <- pop_df
-  } else {
-    curr_pop <- curr_pop[(curr_pop$mortality == 0 & curr_pop$time == time_point-1), ]
-    curr_pop <- curr_pop %>% filter(!is.na(time))
-    curr_pop$indiv_ID <- as.numeric(curr_pop$indiv_ID); curr_pop$MR <- as.numeric(curr_pop$MR); curr_pop$age <- as.numeric(curr_pop$age)
-  }
+  } 
   
-  if(nrow(curr_pop)==0) {
+  str(curr_pop)
+  
+  if((length(curr_pop$indiv_ID)==0)) {
     stop("All dead at time ", time_point, "\n")
   } else{
     
     indiv_count=length(unique(curr_pop$indiv_ID)) + indiv_count
-    indiv_alive_count=nrow(curr_pop)
-    
-    MR_currmean = mean(curr_pop$MR)
-    MR_norm=(curr_pop$MR - min(curr_pop$MR)) / (max(curr_pop$MR) - min(curr_pop$MR))
-    
-    mortality_perc <- death_constant + (MR_death_impact * (MR_norm)) + (age_impact * (1/curr_pop$age))
-    mortality_perc <- pmin(pmax(mortality_perc, 0), 1)
-    
-    indiv_death <- rbinom(n = length(mortality_perc), size = 1, prob = mortality_perc)
-    
-    pop_df_simres_tp <- as.data.frame(cbind(indiv_ID=curr_pop$indiv_ID, MR=as.numeric(curr_pop$MR), time=time_point, mortality=indiv_death, age=curr_pop$age+1))
+    indiv_alive_count=nrow(curr_pop$indiv_ID)
     
     ## Recruitment
     
-    recruitment_indivs <- curr_pop %>% filter(age > recruitment_age)
-    recruitment_chance <- nrow(recruitment_indivs)
+    recruitment_indivs <- curr_pop$indiv_ID[curr_pop$age > recruitment_age]
+    recruitment_chance <- ifelse(is.null(nrow(recruitment_indivs)), 0, (nrow(recruitment_indivs)))
     indiv_recruitment <- rbinom(n = recruitment_chance, size = 1, prob = recruitment_constant)
     
     if (sum(indiv_recruitment)>0){
@@ -66,18 +55,24 @@ for (time_point in 1:time_max){
       
       new_recruit_pop <- data.frame(indiv_ID=seq(from=indiv_count+1, to=indiv_count+ceiling(length(new_recruit))), MR=new_recruit_MR, time=time_point, mortality=0, age=1)
       
-      curr_pop <- rbind(curr_pop, pop_df_simres_tp, by='indiv_ID')
-      
-      curr_pop <- rbind(curr_pop, new_recruit_pop)
-      
-    }
-      
-    curr_pop <- rbind(curr_pop, pop_df_simres_tp, by='indiv_ID')
-    indiv_pop <- as.data.frame(rbind(indiv_pop, cbind(time=time_point, indiv_alive=indiv_alive_count)) )
-    MR_pop <- as.data.frame(rbind(MR_pop, cbind(time=time_point, MR_currmean=MR_currmean)) )
+      # curr_pop <- rbind(curr_pop, pop_df_simres_tp, by='indiv_ID')
+      curr_pop <- rbind(do.call(append, curr_pop, new_recruit_pop))
       
     }
-}
+      
+    indiv_death <- mortality_death_rate(pop=curr_pop, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift)
+    
+    death_df_curr <- data.frame(Dead_ID=curr_pop$indiv_ID[as.logical(indiv_death)], age=curr_pop$age[as.logical(indiv_death)], MR=curr_pop$MR[as.logical(indiv_death)], time=curr_pop$time[as.logical(indiv_death)])
+    death_df <- rbind(death_df, death_df_curr)
+    
+    curr_pop <- list(indiv_ID=curr_pop$indiv_ID[!as.logical(indiv_death)], age=curr_pop$age[!as.logical(indiv_death)]+1, MR=curr_pop$MR[!as.logical(indiv_death)], time=curr_pop$time[!as.logical(indiv_death)]+1)
+    
+    # curr_pop <- rbind(curr_pop, pop_df_simres_tp, by='indiv_ID')
+    # indiv_pop <- as.data.frame(rbind(indiv_pop, cbind(time=time_point, indiv_alive=indiv_alive_count)) )
+    # MR_pop <- as.data.frame(rbind(MR_pop, cbind(time=time_point, MR_currmean=MR_currmean)) )
+    #   
+    }
+  }
 
 plot(MR_pop)
 plot(indiv_pop)

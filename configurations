@@ -4,10 +4,13 @@ population_size = 150
 MR_mean = 1
 MR_sd = 2
 
-  ## Death parammeters
-death_constant = 0.05
-MR_death_impact = 0.2
-age_impact=0.25
+  ## Death parameters
+MR_imp = F # toggle on/off for MR inflicted increase
+MR_death_impact = 0.2 # scaled MR inflicted increase
+age_impact = 0.25 # scaled age inflicted increase 
+mortality_age_shift=10 # at what age does increases in age increase chance of death
+comp_imp = F # toggle on/off for competition inflicted increase
+comp_impact = 0.5 # impact of competition increase
 
   ## Recruitment parameters
 recruitment_constant = 0.01
@@ -15,15 +18,7 @@ recruitment_age = 8
 recruitment_size_mean=25
 recruitment_size_sd=recruitment_size_mean/2
 
-  ## Initiate random population
-init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR<0]=0
-init_age <- rep(1, population_size)
-indiv_ID <- seq(from=1, to=population_size)
-
-pop_df <- data.frame(indiv_ID=indiv_ID, time=0, MR=init_MR, mortality=0, age=init_age)
-
-
-## Equation for mortality - weighted probability for death =
+## Equation for mortality - weighted probability for death = 0.5
 timepoint_count=0
 time_point=1
 time_max=100 # each timepoint is a season in this scenario
