@@ -1,24 +1,26 @@
 ## Input parameters
   ## Population parameters
-population_size = 150
+population_size = 1000
+population_carrying_capacity = 5000
 MR_mean = 1
 MR_sd = 2
 
   ## Death parameters
-MR_imp = F # toggle on/off for MR inflicted increase
-MR_death_impact = 0.2 # scaled MR inflicted increase
-age_impact = 0.25 # scaled age inflicted increase 
-mortality_age_shift=10 # at what age does increases in age increase chance of death
-comp_imp = F # toggle on/off for competition inflicted increase
+age_impact = 0.1 # scaled age inflicted increase 
+mortality_age_shift=100 # at what age does increases in age increase chance of death
+
+MR_imp = T # toggle on/off for MR inflicted increase
+MR_death_impact = 0.01 # scaled MR inflicted increase
+
+comp_imp = T # toggle on/off for competition inflicted increase
 comp_impact = 0.5 # impact of competition increase
 
   ## Recruitment parameters
-recruitment_constant = 0.01
-recruitment_age = 8
-recruitment_size_mean=25
-recruitment_size_sd=recruitment_size_mean/2
+recruitment_constant = 0.001
+recruitment_age = 7
+recruitment_size_mean=1000
+recruitment_size_sd=recruitment_size_mean/4
 
-## Equation for mortality - weighted probability for death = 0.5
-timepoint_count=0
-time_point=1
-time_max=100 # each timepoint is a season in this scenario
+  ## Simulation parameters
+time_max=100 # how long to run sim for
+
