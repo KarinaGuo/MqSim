@@ -1,30 +1,31 @@
 ## Input parameters
   ## Population parameters
 population_size = 1000
-population_carrying_capacity = 5000 # If population creeps above this value, comp is used to punish the population size by increasing the minimum probability of death based on how much higher population size is than the carrying capacity
+population_carrying_capacity = 3000 # If population creeps above this value, comp is used to punish the population size by increasing the minimum probability of death based on how much higher population size is than the carrying capacity
 population_minimum_size = 500 # If population falls below this value, there is a 10x increased chance of recruitment
 MR_mean = 0.5 # out of 1
 MR_sd = 1
 
   ## Parameters
 age_impact = 0.1 # scaled age inflicted increase 
-mortality_age_shift = 75 # at what age does increases in age increase chance of death
+mortality_age_shift = 100 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.1 # scaled MR inflicted death increase
+MR_death_impact = 0.1 # linear scaled MR inflicted death increase
+MR_age_impact = 10 # scaled impact of age (value / age) on MR inflicted death increase
 MR_recruit_imp = T # toggle on/off of MR affect on recruitment
 MR_recruit_impact = 0.1 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance
 
 
 comp_imp = T # toggle on/off for competition due to carrying capacity 
-comp_impact = 0.5 # impact of competition due to carrying capacity
+comp_impact = 1 # impact of competition due to carrying capacity
 
   ## Recruitment parameters
 recruitment_const = 0.001 # base constant for chance of recruitment
-recruitment_age = 7 # age to begin recruiting
+recruitment_age = 10 # age to begin recruiting
 recruitment_mean = 1000 # mean for PDF of normal distribution for number of recruited individuals
 recruitment_sd = recruitment_size_mean/2 # standard deviation of number of recruited individuals
 
   ## Simulation parameters
-time_max = 1000 # how long to run sim for
+time_max = 500 # how long to run sim for
 output_timept = 100 # How often to report visual statistics

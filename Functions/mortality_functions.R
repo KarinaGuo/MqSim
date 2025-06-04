@@ -12,22 +12,25 @@
 
 # MR_togg - Turn on and off the Myrtle rust affect
 # MR_death_impact_val - impact of Myrtle rust susceptibility on death (multiplier)
+# MR_age_impact_val - scaled impact of age on MR inflicted death increase
+
 
 ######################################################################################
 young_mortality <- function(age_x, age_impact_val){
   # Mortality chance for individuals <age_impact_val
-  death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*3)) * 1.5 * (1 / (1 + exp((age_x - 10)/10)))  # Decreasing death with age
+  death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * 1.5 * (1 / (1 + exp((age_x - 20)/15)))  # Decreasing death with age
 }
 
 mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
   # Mortality chance for individuals >=age_impact_val
-  death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*3)) * abs(exp((((age_x - mortality_age_shiftch) / age_x)-150)/60))  # Rising death with age
-  #death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*3)) * abs(exp((((age_x - mortality_age_shiftch) / mortality_age_shiftch)-30)/30))  # Rising death with age
+  # death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * (exp(((age_x - mortality_age_shiftch)-5/age_x - mortality_age_shiftch)))  # Rising death with age
+  death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * abs(exp((((age_x - mortality_age_shiftch) / age_x)-50)/10)) * exp(0.05 * age_x) # Rising death with age
+  # death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * abs(exp((((age_x - mortality_age_shiftch) / age_x)-150)/60))  # Rising death with age
   
 }
 
 ######################################################################################
-mortality_death_rate  <- function(pop, population_capacity, population_min_size, comp_togg, comp_impact_val, MR_togg, MR_death_impact_val, age_impact_val, mortality_age_shiftch){
+mortality_death_rate  <- function(pop, population_capacity, population_min_size, comp_togg, comp_impact_val, MR_togg, MR_death_impact_val, MR_age_impact_val, age_impact_val, mortality_age_shiftch){
   
   require(scales)
   # Age death
@@ -44,17 +47,19 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   
   age_mortality_chance[age_mortality_chance > 1] <- 1 # remove anomaly high and low vals
   age_mortality_chance[age_mortality_chance < 0] <- 0 # remove anomaly high and low vals
+  
+  # MR chance by death
+  MR <- pop$MR
+  MR_chance <- MR_age_impact_val/ages * MR * MR_death_impact_val
+
+  
   # If both toggle is off 
   if (!MR_togg & !comp_togg)  { # If MR toggle is on but not competition
-
     final_mortality_chance_norm <- rescale(age_mortality_chance, to=c(0,1))
   }
   
   # If MR toggle is on but not competition
   if (MR_togg & !comp_togg)  { # If MR toggle is on but not competition
-    MR <- pop$MR
-    MR_chance <- MR_death_impact_val * (MR)
-    
     final_mortality_chance_norm <- rescale(MR_chance+age_mortality_chance, c(0,1))
   }
   
@@ -74,10 +79,7 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   }
   
   # If both MR and compeititon toggle is on
-  if (comp_togg & MR_imp) {
-    MR <- pop$MR
-    MR_chance <- MR_death_impact_val * (MR)
-    
+  if (comp_togg & MR_togg) {
     pop_size = length(pop$indiv_ID)
     
     if(pop_size > population_capacity){
