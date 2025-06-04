@@ -28,6 +28,16 @@ indiv_pop=NULL; MR_pop=NULL; curr_pop=NULL; new_recruit_pop=NULL; indiv_count=0;
 
 for (time_point in 1:time_max){
   
+  disturbance_event <- rbinom(n=1,size=1, prob=disturbance_chance) # Chance of disturbance
+  
+  if (as.logical(disturbance_event)){
+    cat("Disturbance at!!", time_point,"🔥🔥🔥 \n")
+    age_impact <- age_impact * disturbance_impact_val
+    MR_death_impact <- MR_death_impact * disturbance_impact_val
+    recruitment_const <- recruitment_const * disturbance_impact_val
+  }
+  
+  
   if(time_point==1){
     curr_pop <- pop_df
   } else {
@@ -62,6 +72,14 @@ for (time_point in 1:time_max){
     live_size_df <- rbind(live_size_df, live_size) 
     
     curr_pop_end <- list(indiv_ID=curr_pop$indiv_ID[!as.logical(indiv_death)], age=curr_pop$age[!as.logical(indiv_death)]+1, MR=curr_pop$MR[!as.logical(indiv_death)], time=curr_pop$time[!as.logical(indiv_death)]+1)
+    
+    # Return to base
+    if (as.logical(disturbance_event)){
+      cat("Returned to base values: ", time_point,"\n")
+      age_impact <- age_impact / disturbance_impact_val
+      MR_death_impact <- MR_death_impact / disturbance_impact_val
+      recruitment_const <- recruitment_const / disturbance_impact_val
+    }
     
     # Verbose 🗣️
     if(time_point%%output_timept == 0){ 

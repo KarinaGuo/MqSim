@@ -23,8 +23,8 @@ young_mortality <- function(age_x, age_impact_val){
 
 mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
   # Mortality chance for individuals >=age_impact_val
-  # death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * (exp(((age_x - mortality_age_shiftch)-5/age_x - mortality_age_shiftch)))  # Rising death with age
-  death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * abs(exp((((age_x - mortality_age_shiftch) / age_x)-50)/10)) * exp(0.05 * age_x) # Rising death with age
+   death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * (exp(((age_x - mortality_age_shiftch)-5/age_x - mortality_age_shiftch)))  # Rising death with age
+  #death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * abs(exp((((age_x - mortality_age_shiftch) / age_x)-50)/10)) * exp(0.05 * age_x) # Rising death with age
   # death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * abs(exp((((age_x - mortality_age_shiftch) / age_x)-150)/60))  # Rising death with age
   
 }

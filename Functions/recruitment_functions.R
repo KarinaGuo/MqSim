@@ -40,11 +40,13 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
     
     new_recruit_MR=NULL
     for (i in 1:length(recruitment_indiv_MR)) {
-      new_recruit_MR_new <- rnorm(n=new_recruit[i], mean=recruitment_indiv_MR[i], sd = MR_sd) # For each new recruit, use parent phenotype to generate MR
+      #new_recruit_MR_new <- rnorm(n=new_recruit[i], mean=recruitment_indiv_MR[i], sd = MR_sd+exp(recruitment_indiv_MR[i])) # For each new recruit, use parent phenotype to generate MR, sd is exponentially dependent on MR
+      
+      new_recruit_MR_new <- rbeta(n=new_recruit[i], shape1=recruitment_indiv_MR[i]+0.1, shape2 = MR_sd+exp(recruitment_indiv_MR[i])) # For each new recruit, use parent phenotype to generate MR, sd is exponentially dependent on MR
       new_recruit_MR <- append(new_recruit_MR, new_recruit_MR_new)
     }
     
-    new_recruit_MR[new_recruit_MR<0]=0
+    new_recruit_MR[new_recruit_MR<0]=0; new_recruit_MR[new_recruit_MR>5]=5
     
     new_recruit_pop <- list(indiv_ID=seq(from=indiv_count+1, to=indiv_count+sum(new_recruit)), 
                             time=rep(time_point, sum(new_recruit)), 
