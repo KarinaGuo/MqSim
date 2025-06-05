@@ -5,28 +5,29 @@ population_carrying_capacity = 3000 # If population creeps above this value, com
 population_minimum_size = 500 # If population falls below this value, there is a 10x increased chance of recruitment
 MR_mean = 0.5 # out of 1
 MR_sd = 1
-disturbance_chance=0.001 # chance of a disturbance, increases death and recruitment rate by disturbance_impact
+disturbance_chance=0 # chance of a disturbance, increases death and recruitment rate by disturbance_impact
 disturbance_impact_val=5 # impacts base age & MR death factor and recruitment constant
 
   ## Parameters
-age_impact = 0.1 # scaled age inflicted increase 
+age_impact = 0.2 # scaled age inflicted increase 
 mortality_age_shift = 100 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.5 # linear scaled MR inflicted death increase
+MR_death_impact = 0.5 # linear scaled MR inflicted death increase - scales with comp + age impact value
 MR_age_impact = 10 # scaled impact of age (value / age) on MR inflicted death increase
 MR_recruit_imp = T # toggle on/off of MR affect on recruitment
-MR_recruit_impact = 0.1 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance
+MR_recruit_impact = 0.05 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance
 
 comp_imp = T # toggle on/off for competition due to carrying capacity 
 comp_impact = 1 # impact of competition due to carrying capacity
 
   ## Recruitment parameters
 recruitment_const = 0.001 # base constant for chance of recruitment
-recruitment_age = 10 # age to begin recruiting
+recruitment_age = 7 # age to begin recruiting
 recruitment_mean = 1000 # mean for PDF of normal distribution for number of recruited individuals
-recruitment_sd = recruitment_size_mean/2 # standard deviation of number of recruited individuals
+recruitment_sd = recruitment_mean/2 # standard deviation of number of recruited individuals
 
   ## Simulation parameters
-time_max = 500 # how long to run sim for
+time_max = 20 # how long to run sim for
 output_timept = 100 # How often to report visual statistics
+timepoint_pop_grab = seq(2:15) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)

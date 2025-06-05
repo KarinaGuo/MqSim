@@ -9,6 +9,7 @@
 # MR_togg - Turn on and off the Myrtle rust affect
 # MR_recruit_impact_val - impact of Myrtle rust susceptibility on recruitment (multiplier)
 
+# Note: MR is recruited based on parent pheno using beta distribution. To visualise parent MR pheno of 1-4: for (i in 0:4){hist(rbeta(n=4000, shape1=i+1, shape2 = 3)) }
 
 ##############################################
 recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_size_mean, recruitment_size_sd, recruitment_constant, MR_togg, MR_recruit_impact_val){
@@ -20,7 +21,7 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
   
   # How many individuals are fecund and recruit?
   
-  fecund_indivs <- pop$age > recruitment_age
+  fecund_indivs <- pop$age >= recruitment_age
   recruitment_indivs <- lapply(pop, function(x) x[fecund_indivs])
   recruitment_indivs_MR <- recruitment_indivs$MR
   
@@ -39,10 +40,11 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
     new_recruit <- as.integer(rnorm(n=sum(indiv_recruitment), mean = recruitment_size_mean, sd = recruitment_size_sd)); new_recruit[new_recruit<1]=1
     
     new_recruit_MR=NULL
-    for (i in 1:length(recruitment_indiv_MR)) {
-      #new_recruit_MR_new <- rnorm(n=new_recruit[i], mean=recruitment_indiv_MR[i], sd = MR_sd+exp(recruitment_indiv_MR[i])) # For each new recruit, use parent phenotype to generate MR, sd is exponentially dependent on MR
+    for (i in 1:length(recruitment_indiv_MR)) { # For each new recruit, use parent phenotype to generate MR, dependent on MR
       
-      new_recruit_MR_new <- rbeta(n=new_recruit[i], shape1=recruitment_indiv_MR[i]+0.1, shape2 = MR_sd+exp(recruitment_indiv_MR[i])) # For each new recruit, use parent phenotype to generate MR, sd is exponentially dependent on MR
+      MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=recruitment_indiv_MR[i]+1, shape2=3) # distribution of recruited individual's MR between 0 to 1
+      new_recruit_MR_new <- MR_rec_PDF+(recruitment_indiv_MR[i]-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
+      
       new_recruit_MR <- append(new_recruit_MR, new_recruit_MR_new)
     }
     

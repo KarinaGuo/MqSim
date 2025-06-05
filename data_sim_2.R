@@ -1,4 +1,5 @@
 set.seed(12345)
+rm(list = ls())
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 
 ## Load in libraries
@@ -24,7 +25,16 @@ pop_df <- list(
 
 
 ## Initialise objects
-indiv_pop=NULL; MR_pop=NULL; curr_pop=NULL; new_recruit_pop=NULL; indiv_count=0; death_df=NULL; age_df=NULL; MR_df=NULL; live_size_df=NULL
+indiv_pop=NULL 
+MR_pop=NULL 
+curr_pop=NULL 
+new_recruit_pop=NULL 
+indiv_count=0 
+death_df=NULL 
+age_df=NULL
+MR_df=NULL 
+live_size_df=NULL
+pop_timepoints=NULL
 
 for (time_point in 1:time_max){
   
@@ -73,6 +83,12 @@ for (time_point in 1:time_max){
     
     curr_pop_end <- list(indiv_ID=curr_pop$indiv_ID[!as.logical(indiv_death)], age=curr_pop$age[!as.logical(indiv_death)]+1, MR=curr_pop$MR[!as.logical(indiv_death)], time=curr_pop$time[!as.logical(indiv_death)]+1)
     
+    # Save populations at user designated timepoints
+    if (!is.null(timepoint_pop_grab) && (time_point %in% timepoint_pop_grab)){
+      i <- which(time_point == timepoint_pop_grab)
+      pop_timepoints[[i]] <- curr_pop_end
+    }
+    
     # Return to base
     if (as.logical(disturbance_event)){
       cat("Returned to base values: ", time_point,"\n")
@@ -106,7 +122,11 @@ plot_liveage  <- ggplot() +
   geom_errorbar(data=age_df, aes(x=time, ymax = age_mean_summ + age_sd_summ, ymin = age_mean_summ - age_sd_summ)) + labs(title="Live age")
 
 plot_deadMR   <- ggplot(mean_MR_time_death, aes(x=time, y=mean_MR)) + geom_point() + labs(title="Death MR")
-plot_liveMR   <- ggplot()  + geom_errorbar(data=MR_df, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ)) + labs(title="Live MR")
+plot_liveMR   <- ggplot() +
+  geom_point(data=MR_df, aes(x=time, y = MR_mean_summ)) +
+  geom_errorbar(data=MR_df, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ)) + 
+  stat_smooth(data=MR_df, aes(x=time, y = MR_mean_summ), linewidth = 0.75, linetype="dashed", colour="grey40", span=10) +
+  labs(title="Live MR")
 
 library(patchwork)
 plot_livesize / plot_liveage
