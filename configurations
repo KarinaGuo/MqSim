@@ -14,7 +14,7 @@ mortality_age_shift = 100 # at what age does increases in age increase chance of
 
 MR_imp = T # toggle on/off for MR inflicted death increase
 MR_death_impact = 0.5 # linear scaled MR inflicted death increase - scales with comp + age impact value
-MR_age_impact = 10 # scaled impact of age (value / age) on MR inflicted death increase
+MR_age_impact = 50 # scaled impact of age (value / age) on MR inflicted death increase
 MR_recruit_imp = T # toggle on/off of MR affect on recruitment
 MR_recruit_impact = 0.05 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance
 
