@@ -18,15 +18,13 @@
 ######################################################################################
 young_mortality <- function(age_x, age_impact_val){
   # Mortality chance for individuals <age_impact_val
-  death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * 1.5 * (1 / (1 + exp((age_x - 20)/15)))  # Decreasing death with age
+  death_perc <- (1 / exp((age_x-1)/5)) * age_impact_val # Decreasing death with age
 }
 
 mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
   # Mortality chance for individuals >=age_impact_val
-   death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * (exp(((age_x - mortality_age_shiftch)-5/age_x - mortality_age_shiftch)))  # Rising death with age
-  #death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * abs(exp((((age_x - mortality_age_shiftch) / age_x)-50)/10)) * exp(0.05 * age_x) # Rising death with age
-  # death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * abs(exp((((age_x - mortality_age_shiftch) / age_x)-150)/60))  # Rising death with age
-  
+  death_perc <- exp((age_x - mortality_age_shiftch*2)/20) * age_impact_val # Rising death with age
+  #death_perc <- abs(rnorm(n = length(age_x), mean = age_impact_val, sd = age_impact_val*2)) * (exp(((age_x - mortality_age_shiftch)-5/age_x - mortality_age_shiftch)))  # Rising death with age
 }
 
 ######################################################################################
@@ -50,7 +48,7 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   
   # MR chance by death
   MR <- pop$MR
-  MR_chance <- MR_age_impact_val/ages * MR * MR_death_impact_val
+  MR_chance <- (ages+MR_age_impact_val)/(ages) * MR * MR_death_impact_val; MR_chance <- rescale(MR_chance, to = c(0,1))
 
   
   # If both toggle is off 

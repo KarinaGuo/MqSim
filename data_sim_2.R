@@ -9,6 +9,7 @@ library(tidyverse)
 source("configurations")
 source("Functions/mortality_functions.R")
 source("Functions/recruitment_functions.R")
+source("Functions/disturbance_functions.R")
 
 ## Initiate random population
 init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR<0]=0
@@ -35,17 +36,13 @@ age_df=NULL
 MR_df=NULL 
 live_size_df=NULL
 pop_timepoints=NULL
+dist_event=FALSE
 
 for (time_point in 1:time_max){
   
-  disturbance_event <- rbinom(n=1,size=1, prob=disturbance_chance) # Chance of disturbance
-  
-  if (as.logical(disturbance_event)){
-    cat("Disturbance at!!", time_point,"🔥🔥🔥 \n")
-    age_impact <- age_impact * disturbance_impact_val
-    MR_death_impact <- MR_death_impact * disturbance_impact_val
-    recruitment_const <- recruitment_const * disturbance_impact_val
-  }
+  disturbance_event <- disturbance_event_chance (dist_togg = dist_imp, disturbance_age_struct = disturbance_age_struct_type, dist_impact_val = dist_impact, dist_age_impact_val = dist_age_impact)
+  # Apply disturbance results
+  disturbance_event_res <- disturbance_event[1]; age_impact = disturbance_event[2]; MR_death_impact = disturbance_event[3]; recruitment_const = disturbance_event[4]
   
   
   if(time_point==1){
@@ -81,6 +78,8 @@ for (time_point in 1:time_max){
     live_size <- data.frame(time=time_point, sum_size=length(curr_pop$indiv_ID[!as.logical(indiv_death)]))
     live_size_df <- rbind(live_size_df, live_size) 
     
+    
+      
     curr_pop_end <- list(indiv_ID=curr_pop$indiv_ID[!as.logical(indiv_death)], age=curr_pop$age[!as.logical(indiv_death)]+1, MR=curr_pop$MR[!as.logical(indiv_death)], time=curr_pop$time[!as.logical(indiv_death)]+1)
     
     # Save populations at user designated timepoints
@@ -90,11 +89,10 @@ for (time_point in 1:time_max){
     }
     
     # Return to base
-    if (as.logical(disturbance_event)){
-      cat("Returned to base values: ", time_point,"\n")
-      age_impact <- age_impact / disturbance_impact_val
-      MR_death_impact <- MR_death_impact / disturbance_impact_val
-      recruitment_const <- recruitment_const / disturbance_impact_val
+    if (as.logical(disturbance_event[1])){
+      age_impact = disturbance_event[5]
+      MR_death_impact = disturbance_event[6]
+      recruitment_const = disturbance_event[7]
     }
     
     # Verbose 🗣️
