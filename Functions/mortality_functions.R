@@ -46,19 +46,28 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   age_mortality_chance[age_mortality_chance > 1] <- 1 # remove anomaly high and low vals
   age_mortality_chance[age_mortality_chance < 0] <- 0 # remove anomaly high and low vals
   
-  # MR chance by death
-  MR <- pop$MR
-  MR_chance <- (ages+MR_age_impact_val)/(ages) * MR * MR_death_impact_val; MR_chance <- rescale(MR_chance, to = c(0,1))
+    ## Plot age
+    # ggplot() +
+    #   geom_point(aes(x=ages, y=age_mortality_chance))
 
+  # MR chance by death
+  MR <- rescale(pop$MR, c(0,1))
+  MR_chance <- (1 / (1 + (ages / MR_age_impact_val))) * MR * MR_death_impact_val
   
+  MR_chance[MR_chance > 1] <- 1 # remove anomaly high and low vals
+
+    ## Plot MR
+    # ggplot() + geom_point(aes(x=MR, y=MR_chance,colour=ages))
+    
   # If both toggle is off 
   if (!MR_togg & !comp_togg)  { # If MR toggle is on but not competition
-    final_mortality_chance_norm <- rescale(age_mortality_chance, to=c(0,1))
+    final_mortality_chance_norm <- age_mortality_chance
   }
   
   # If MR toggle is on but not competition
   if (MR_togg & !comp_togg)  { # If MR toggle is on but not competition
-    final_mortality_chance_norm <- rescale(MR_chance+age_mortality_chance, c(0,1))
+    final_mortality_chance_norm <- MR_chance+age_mortality_chance-MR_chance*age_mortality_chance
+    #ggplot() + geom_point(aes(x=MR_chance, y=age_mortality_chance, colour=final_mortality_chance_norm))
   }
   
   # If compeititon toggle is on but not MR
@@ -67,10 +76,10 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
     
     if(pop_size > population_capacity){
       comp_chance = (pop_size - population_capacity)/pop_size  * 1+comp_impact_val  # Scale competition impact by how much over carrying capacity of population size
-      final_mortality_chance_norm <- rescale(age_mortality_chance, c(((pop_size - population_capacity)/pop_size),1))
+      final_mortality_chance_norm <- rescale(age_mortality_chance, c(comp_chance,1))
     } else {
       comp_chance=0
-      final_mortality_chance_norm <- rescale(age_mortality_chance, c(0,1)) 
+      final_mortality_chance_norm <- age_mortality_chance 
     }
     
     
@@ -81,11 +90,11 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
     pop_size = length(pop$indiv_ID)
     
     if(pop_size > population_capacity){
-      comp_chance = (pop_size - population_capacity)/pop_size *  1+comp_impact_val  # Scale competition impact by how much over carrying capacity of population size
-      final_mortality_chance_norm <- rescale((age_mortality_chance + MR_chance), c(((pop_size - population_capacity)/pop_size),1)) # overrides
+      comp_chance=(pop_size - population_capacity)/pop_size * comp_impact_val
+      final_mortality_chance_norm <- rescale(MR_chance+age_mortality_chance-MR_chance*age_mortality_chance, c(comp_chance,1)) # # Scale competition impact by how much over carrying capacity of population size 
     } else {
       comp_chance=0
-      final_mortality_chance_norm <- rescale(age_mortality_chance + MR_chance, c(0,1)) # overrides
+      final_mortality_chance_norm <- (MR_chance+age_mortality_chance-MR_chance*age_mortality_chance) 
     }
     
   }
