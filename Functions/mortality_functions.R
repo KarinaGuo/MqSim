@@ -47,8 +47,7 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   age_mortality_chance[age_mortality_chance < 0] <- 0 # remove anomaly high and low vals
   
     ## Plot age
-    # ggplot() +
-    #   geom_point(aes(x=ages, y=age_mortality_chance))
+    # ggplot() + geom_point(aes(x=ages, y=age_mortality_chance))
 
   # MR chance by death
   MR <- rescale(pop$MR, c(0,1))
@@ -66,7 +65,7 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   
   # If MR toggle is on but not competition
   if (MR_togg & !comp_togg)  { # If MR toggle is on but not competition
-    final_mortality_chance_norm <- MR_chance+age_mortality_chance-MR_chance*age_mortality_chance
+    final_mortality_chance_norm <- MR_chance+age_mortality_chance-MR_chance*age_mortality_chance # conditional probability
     #ggplot() + geom_point(aes(x=MR_chance, y=age_mortality_chance, colour=final_mortality_chance_norm))
   }
   

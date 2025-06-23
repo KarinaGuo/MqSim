@@ -1,12 +1,12 @@
-## Input parameters for high MR pressure sites
+## Input parameters for low MR pressure sites
 
 
   ## Population parameters
 population_size = 1000
 population_carrying_capacity = population_size*5 # If population creeps above this value, comp is used to punish the population size by increasing the minimum probability of death based on how much higher population size is than the carrying capacity
 population_minimum_size = 500 # If population falls below this value, there is a 10x increased chance of recruitment
-MR_mean = 0.653 # From actual genotype data 
-MR_sd = 0.366
+MR_mean = 0.787 # From actual genotype data 
+MR_sd = 0.385
 disturbance_chance=0 # chance of a disturbance, increases death and recruitment rate by disturbance_impact
 disturbance_impact_val=5 # impacts base age & MR death factor and recruitment constant
 
@@ -21,11 +21,11 @@ disturbance_impact_val=5 # impacts base age & MR death factor and recruitment co
   ## Parameters
 
   ## Mortality parameters
-age_impact = 0.5 # scaled age inflicted increase (ensure it adds up to less than 1)
+age_impact = 0.8 # scaled age inflicted increase (ensure it adds up to less than 1)
 mortality_age_shift = 100 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.5 # linear scaled MR inflicted death increase - scales with comp + age impact value (ensure it adds up to less than 1)
+MR_death_impact = 0.2 # linear scaled MR inflicted death increase - scales with comp + age impact value (ensure it adds up to less than 1)
 MR_age_impact = 20 # scaled impact of age (value / age) on MR inflicted death increase
 MR_recruit_imp = F # toggle on/off of MR affect on recruitment
 MR_recruit_impact = 0.05 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance

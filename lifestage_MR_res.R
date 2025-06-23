@@ -21,9 +21,9 @@ final_df <- final_df %>%
 final_df$Lifestage <- factor(final_df$Lifestage, levels = c("Seedling", "Subadult", "Adult")) # Reorder Sev factor levels
 
 LS_MR <- ggplot() + 
-  geom_boxplot(data = final_df %>% dplyr::filter(time > 5), aes(x=Lifestage, y=(log1p(MR)))) +  # Time selected at plateau of 10
+  geom_boxplot(data = final_df %>% dplyr::filter(time > 5 & time < 10), aes(x=Lifestage, y=(log1p(MR)))) +  # Time selected at plateau of 10
   theme_bw() 
 LS_MR
-LS_MR + facet_wrap(~time)
+#LS_MR + facet_wrap(~time)
 
 
