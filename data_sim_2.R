@@ -6,7 +6,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 library(tidyverse)
 
 ## Load in parameters
-source("configurations_LowMRPress.txt")
+source("configurations")
 source("Functions/mortality_functions.R")
 source("Functions/recruitment_functions_2.R")
 source("Functions/disturbance_functions.R")
