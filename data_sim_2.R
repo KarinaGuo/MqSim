@@ -114,10 +114,17 @@ for (time_point in 1:time_max){
 
 mean_MR_time_death <- death_df %>% group_by(time) %>% summarise(mean_MR=mean(MR), sd_MR=sd(MR))
 
-plot_livesize <- ggplot() + geom_point(data=live_size_df, aes(x=time, y=sum_size)) + labs(title="Live population size")
+plot_livesize <- ggplot() + 
+  geom_point(data=live_size_df, aes(x=time, y=sum_size)) + 
+  stat_smooth(data=live_size_df, aes(x=time, y = sum_size), linewidth = 0.75, linetype="dashed", colour="grey40", span=10) +
+  geom_abline(slope=0, intercept=population_minimum_size, linewidth = 0.75, linetype="dashed", colour="chocolate") +
+  labs(title="Live population size") +
+  xlim(c(250,1000)) #+ ylim(100,1000)
 plot_liveage  <- ggplot() + 
   geom_point(data=age_df, aes(x=time, y=age_mean_summ)) +
-  geom_errorbar(data=age_df, aes(x=time, ymax = age_mean_summ + age_sd_summ, ymin = age_mean_summ - age_sd_summ)) + labs(title="Live age")
+  geom_errorbar(data=age_df, aes(x=time, ymax = age_mean_summ + age_sd_summ, ymin = age_mean_summ - age_sd_summ)) + 
+  labs(title="Live age") +
+  xlim(c(250,1000))
 
 plot_deadMR   <- ggplot(mean_MR_time_death, aes(x=time, y=mean_MR)) + geom_point() + labs(title="Death MR")
 plot_liveMR   <- ggplot() +

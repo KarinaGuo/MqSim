@@ -109,8 +109,8 @@ for (time_point in 1:time_max){
     maladaptation_chance_pop1 <- rbinom(n=1, size=1, indiv_count_pop1/(indiv_count_pop1 + indiv_count_pop2))
     maladaptation_chance_pop2 <- rbinom(n=1, size=1, indiv_count_pop2/(indiv_count_pop1 + indiv_count_pop2))
     
-    curr_pop_pop1 <- recruit_rate(pop=curr_pop_pop1, indiv_count=indiv_count_pop1, median_indiv_pop=median_MR_pop1, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec, maladaptation_chance=maladaptation_chance_pop1)
-    curr_pop_pop2 <- recruit_rate(pop=curr_pop_pop2, indiv_count=indiv_count_pop2, median_indiv_pop=median_MR_pop2, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec, maladaptation_chance=maladaptation_chance_pop2)
+    curr_pop_pop1 <- recruit_rate(pop=curr_pop_pop1, indiv_count=indiv_count_pop1, median_indiv_pop=median_MR_pop2, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec, maladaptation_chance=maladaptation_chance_pop1)
+    curr_pop_pop2 <- recruit_rate(pop=curr_pop_pop2, indiv_count=indiv_count_pop2, median_indiv_pop=median_MR_pop1, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec, maladaptation_chance=maladaptation_chance_pop2)
     
     death_df_curr_pop1 <- data.frame(Dead_ID=curr_pop_pop1$indiv_ID[as.logical(indiv_death_pop1)], age=curr_pop_pop1$age[as.logical(indiv_death_pop1)], MR=curr_pop_pop1$MR[as.logical(indiv_death_pop1)], time=curr_pop_pop1$time[as.logical(indiv_death_pop1)])
     death_df_pop1 <- rbind(death_df_pop1, death_df_curr_pop1)
@@ -187,6 +187,7 @@ plot_liveMR_pop1   <- ggplot() +
   geom_errorbar(data=MR_df_pop1, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ)) + 
   stat_smooth(data=MR_df_pop1, aes(x=time, y = MR_mean_summ), linewidth = 0.75, linetype="dashed", colour="grey40", span=10) +
   labs(title="Live MR - Population 1") +
+  ylim(c(-0.1,1.5)) +
   theme(legend.position = "none")
 
 plot_deadMR_pop2   <- ggplot(mean_MR_time_death_pop2, aes(x=time, y=mean_MR)) + geom_point() + labs(title="Death MR - Population 2")
@@ -194,11 +195,39 @@ plot_liveMR_pop2   <- ggplot() +
   geom_point(data=MR_df_pop2, aes(x=time, y = MR_mean_summ, colour=as.character(maladaptation_time))) +
   geom_errorbar(data=MR_df_pop2, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ)) + 
   stat_smooth(data=MR_df_pop2, aes(x=time, y = MR_mean_summ), linewidth = 0.75, linetype="dashed", colour="grey40", span=10) +
+  ylim(c(-0.1,1.5)) +
   labs(title="Live MR - Population 2")
 
 library(patchwork)
 (plot_livesize_pop1 / plot_liveage_pop1) | (plot_livesize_pop2 / plot_liveage_pop2)  + plot_layout(guides = "collect")
 (plot_deadMR_pop1 / plot_liveMR_pop1) | (plot_deadMR_pop2 / plot_liveMR_pop2) + plot_layout(guides = 'collect')
 
+write.csv(MR_df_pop2, file="300625_MaladaptationRunPop2.csv")
+write.csv(MR_df_pop1, file="300625_MaladaptationRunPop1.csv")
 
+# Plot both runs on top
+MaladaptationRunPop1 <- read.csv("300625_MaladaptationRunPop1.csv"); MaladaptationRunPop1$Run <- "MaladaptationRunPop1"
+MaladaptationRunPop2 <- read.csv("300625_MaladaptationRunPop2.csv"); MaladaptationRunPop2$Run <- "MaladaptationRunPop2"
+SoloRunPop1 <- read.csv("300625_DataSim2_SoloPop1.csv"); SoloRunPop1$Run <- "SoloRunPop1"; SoloRunPop1$maladaptation_time <- 0
+SoloRunPop2 <- read.csv("300625_DataSim2_SoloPop2.csv"); SoloRunPop2$Run <- "SoloRunPop2"; SoloRunPop2$maladaptation_time <- 0
 
+Pop1_res <- data.frame(rbind(MaladaptationRunPop1, SoloRunPop1))
+Pop2_res <- data.frame(rbind(MaladaptationRunPop2, SoloRunPop2))
+
+Pop1_plot <- ggplot() + 
+  geom_point(data=Pop1_res, aes(x=time,  y=MR_mean_summ, colour=Run, shape=as.character(maladaptation_time))) +
+  geom_errorbar(data=Pop1_res, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ, colour=Run), alpha=0.5) + 
+  stat_smooth(data=Pop1_res, aes(x=time, y = MR_mean_summ, colour=Run), linewidth = 0.75, linetype="dashed", span=10) +
+  ylim(c(-0.1,1.5)) +
+  labs(title="Live MR - Population 1") +
+  theme_bw()
+
+Pop2_plot <- ggplot() + 
+  geom_point(data=Pop2_res, aes(x=time,  y=MR_mean_summ, colour=Run, shape=as.character(maladaptation_time))) +
+  geom_errorbar(data=Pop2_res, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ, colour=Run), alpha=0.5) + 
+  stat_smooth(data=Pop2_res, aes(x=time, y = MR_mean_summ, colour=Run), linewidth = 0.75, linetype="dashed", span=10) +
+  ylim(c(-0.1,1.5)) +
+  labs(title="Live MR - Population 2") +
+  theme_bw()  
+
+Pop1_plot | Pop2_plot

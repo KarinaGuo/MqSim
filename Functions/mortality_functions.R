@@ -17,8 +17,9 @@
 
 ######################################################################################
 young_mortality <- function(age_x, age_impact_val){
+  #death_young_base <- ifelse(age_impact_val == 1, 0.6, 1 - 0.4 * age_impact_val)
   # Mortality chance for individuals <age_impact_val
-  death_perc <- (1 / exp((age_x-1)/5)) * age_impact_val # Decreasing death with age
+  death_perc <- (0.6 / exp((age_x-1)/5)) * age_impact_val # Decreasing death with age
 }
 
 mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
@@ -47,7 +48,7 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   age_mortality_chance[age_mortality_chance < 0] <- 0 # remove anomaly high and low vals
   
     ## Plot age
-    # ggplot() + geom_point(aes(x=ages, y=age_mortality_chance))
+  #ggplot() + geom_point(aes(x=ages, y=age_mortality_chance))
 
   # MR chance by death
   MR <- rescale(pop$MR, c(0,1))
