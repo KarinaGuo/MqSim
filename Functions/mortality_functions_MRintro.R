@@ -1,4 +1,4 @@
-## Function - Mortality death rate
+## Function - Mortality death rate with late intro
 
 ## Inputs
 # pop - Population
@@ -17,9 +17,9 @@
 
 ######################################################################################
 young_mortality <- function(age_x, age_impact_val){
-  #death_young_base <- ifelse(age_impact_val == 1, 0.6, 1 - 0.4 * age_impact_val)
+  
   # Mortality chance for individuals <age_impact_val
-  death_perc <- ((1-0.4) / exp((age_x-1)/6)) * age_impact_val # Decreasing death with age
+  death_perc <- ((1-0.4*age_impact_val) / exp((age_x-1)/6)) * age_impact_val # Decreasing death with age
 }
 
 mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
@@ -29,16 +29,24 @@ mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
 }
 
 ######################################################################################
-mortality_death_rate  <- function(pop, population_capacity, population_min_size, comp_togg, comp_impact_val, MR_togg, MR_death_impact_val, MR_age_impact_val, age_impact_val, mortality_age_shiftch){
+mortality_death_rate_MRlate  <- function(pop, population_capacity, population_min_size, comp_togg, comp_impact_val, MR_death_impact_val, MR_age_impact_val, mortality_age_shiftch, MR_intro, MR_intro_timepoint){
+  if (time_point > MR_intro_timepoint){ # if the current time is past the input intro time then true
+    MR_intro = TRUE
+    age_impact_val = 2 - MR_death_impact_val
+  } else {
+    MR_intro = FALSE
+    age_impact_val = 1
+  }
   
+  if (time_point %% output_timept == 0){ 
+    cat("Time at:", time_point,"\n",
+        "age_impact_val:", age_impact_val, "\n")
+  }
+
   require(scales)
   # Age death
   ages <- pop$age
   age_mortality_chance <- numeric(length(ages))
-  
-  # # Increasing age imp val if both MR and age are used
-  # if (MR_togg){age_impact_val <- age_impact_val*2}
-  # 
   for (i in seq_along(ages)) {
     x <- ages[i]
     if (x <= mortality_age_shiftch) {
@@ -51,31 +59,31 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   age_mortality_chance[age_mortality_chance > 1] <- 1 # remove anomaly high and low vals
   age_mortality_chance[age_mortality_chance < 0] <- 0 # remove anomaly high and low vals
   
-    ## Plot age
+  ## Plot age
   #ggplot() + geom_point(aes(x=ages, y=age_mortality_chance))
-
+  
   # MR chance by death
   MR <- rescale(pop$MR, c(0,1))
   MR_chance <- (1 / (1 + (ages / MR_age_impact_val))) * MR * MR_death_impact_val
   
   MR_chance[MR_chance > 1] <- 1 # remove anomaly high and low vals
-
-    ## Plot MR
-    # ggplot() + geom_point(aes(x=MR, y=MR_chance,colour=ages))
-    
+  
+  ## Plot MR
+  # ggplot() + geom_point(aes(x=MR, y=MR_chance,colour=ages))
+  
   # If both toggle is off 
-  if (!MR_togg & !comp_togg)  { # If MR toggle is on but not competition
+  if (!MR_intro & !comp_togg)  { # If MR toggle is on but not competition
     final_mortality_chance_norm <- age_mortality_chance
   }
   
   # If MR toggle is on but not competition
-  if (MR_togg & !comp_togg)  { # If MR toggle is on but not competition
+  if (MR_intro & !comp_togg)  { # If MR toggle is on but not competition
     final_mortality_chance_norm <- MR_chance+age_mortality_chance-MR_chance*age_mortality_chance # conditional probability
     #ggplot() + geom_point(aes(x=MR_chance, y=age_mortality_chance, colour=final_mortality_chance_norm))
   }
   
   # If compeititon toggle is on but not MR
-  if (comp_togg & !MR_togg) {
+  if (comp_togg & !MR_intro) {
     pop_size = length(pop$indiv_ID)
     
     if(pop_size > population_capacity){
@@ -85,12 +93,10 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
       comp_chance=0
       final_mortality_chance_norm <- age_mortality_chance 
     }
-    
-    
   }
   
   # If both MR and compeititon toggle is on
-  if (comp_togg & MR_togg) {
+  if (comp_togg & MR_intro) {
     pop_size = length(pop$indiv_ID)
     
     if(pop_size > population_capacity){
@@ -106,5 +112,5 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   # Mortality
   mortality_base <- rbinom(n = length(final_mortality_chance_norm), size = 1, prob = final_mortality_chance_norm)
   return(mortality_base)
-}
+  }
 
