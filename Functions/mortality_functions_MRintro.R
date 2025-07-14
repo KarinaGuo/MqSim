@@ -17,9 +17,9 @@
 
 ######################################################################################
 young_mortality <- function(age_x, age_impact_val){
-  
+  #death_young_base <- ifelse(age_impact_val == 1, 0.6, 1 - 0.4 * age_impact_val)
   # Mortality chance for individuals <age_impact_val
-  death_perc <- ((1-0.4*age_impact_val) / exp((age_x-1)/6)) * age_impact_val # Decreasing death with age
+  death_perc <- ((1-0.4) / exp((age_x-1)/6)) * age_impact_val # Decreasing death with age
 }
 
 mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
@@ -29,19 +29,7 @@ mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
 }
 
 ######################################################################################
-mortality_death_rate_MRlate  <- function(pop, population_capacity, population_min_size, comp_togg, comp_impact_val, MR_death_impact_val, MR_age_impact_val, mortality_age_shiftch, MR_intro, MR_intro_timepoint){
-  if (time_point > MR_intro_timepoint){ # if the current time is past the input intro time then true
-    MR_intro = TRUE
-    age_impact_val = 2 - MR_death_impact_val
-  } else {
-    MR_intro = FALSE
-    age_impact_val = 1
-  }
-  
-  if (time_point %% output_timept == 0){ 
-    cat("Time at:", time_point,"\n",
-        "age_impact_val:", age_impact_val, "\n")
-  }
+mortality_death_rate_MRlate  <- function(pop, population_capacity, population_min_size, comp_togg, comp_impact_val, MR_death_impact_val, MR_age_impact_val, mortality_age_shiftch, age_impact_val, MR_intro, MR_intro_timepoint){
 
   require(scales)
   # Age death
@@ -71,30 +59,13 @@ mortality_death_rate_MRlate  <- function(pop, population_capacity, population_mi
   ## Plot MR
   # ggplot() + geom_point(aes(x=MR, y=MR_chance,colour=ages))
   
-  # If both toggle is off 
-  if (!MR_intro & !comp_togg)  { # If MR toggle is on but not competition
-    final_mortality_chance_norm <- age_mortality_chance
-  }
-  
   # If MR toggle is on but not competition
   if (MR_intro & !comp_togg)  { # If MR toggle is on but not competition
     final_mortality_chance_norm <- MR_chance+age_mortality_chance-MR_chance*age_mortality_chance # conditional probability
     #ggplot() + geom_point(aes(x=MR_chance, y=age_mortality_chance, colour=final_mortality_chance_norm))
   }
   
-  # If compeititon toggle is on but not MR
-  if (comp_togg & !MR_intro) {
-    pop_size = length(pop$indiv_ID)
-    
-    if(pop_size > population_capacity){
-      comp_chance = (pop_size - population_capacity)/pop_size  * 1+comp_impact_val  # Scale competition impact by how much over carrying capacity of population size
-      final_mortality_chance_norm <- rescale(age_mortality_chance, c(comp_chance,1))
-    } else {
-      comp_chance=0
-      final_mortality_chance_norm <- age_mortality_chance 
-    }
-  }
-  
+
   # If both MR and compeititon toggle is on
   if (comp_togg & MR_intro) {
     pop_size = length(pop$indiv_ID)

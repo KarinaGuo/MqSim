@@ -21,15 +21,15 @@ disturbance_impact_val=5 # impacts base age & MR death factor and recruitment co
   ## Parameters
 
   ## Mortality parameters
-age_impact = 1 # scaled age inflicted increase (ensure it adds up to less than 2 if MR used, 1 if not; e.g., if MR=1, age=2 the final mortality score will be punished due to calculation)
+age_impact = 1 # scaled age inflicted increase - from 0 to 1
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 1 # linear scaled MR inflicted death increase - scales with comp + age impact value (ensure it adds up to less than 2)
+MR_death_impact = 0.1 # linear scaled MR inflicted death increase - from 0 to 1
 MR_age_impact = 20 # scaled impact of age (value / age) on MR inflicted death increase
 MR_recruit_imp = F # toggle on/off of MR affect on recruitment
 MR_recruit_impact = 0.05 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance
-MR_lateintro = F
+MR_lateintro = T
 MR_timepoint = 1000 # time point when MR is introduced
 
 comp_imp = T # toggle on/off for competition due to carrying capacity 
@@ -51,7 +51,7 @@ dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
  
 
   ## Simulation parameters
-time_max = 1000 # how long to run sim for
+time_max = 5000 # how long to run sim for
 output_timept = time_max/5 # How often to report visual statistics
 timepoint_pop_grab = c(ceiling(time_max*.1), ceiling(time_max*.9))
 #timepoint_pop_grab = c(seq(from=2, to=15), seq(from=40, to=45)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)
