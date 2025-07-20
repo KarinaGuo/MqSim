@@ -56,9 +56,15 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
 
   # MR chance by death
   MR <- rescale(pop$MR, c(0,1))
-  MR_chance <- (1 / (1 + (ages / MR_age_impact_val))) * MR * MR_death_impact_val
   
-  MR_chance[MR_chance > 1] <- 1 # remove anomaly high and low vals
+  if(!(MR_age_impact_val==0)){
+    MR_chance <- (1 / (1 + (ages / MR_age_impact_val))) * MR * MR_death_impact_val
+  } else {
+    MR_chance <- MR * MR_death_impact_val
+  }
+  
+  
+  MR_chance[MR_chance > 1] <- 1; MR_chance[MR_chance < 0] <- 0 # remove anomaly high and low vals
 
     ## Plot MR
     # ggplot() + geom_point(aes(x=MR, y=MR_chance,colour=ages))
@@ -70,12 +76,12 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   
   # If MR toggle is on but not competition
   if (MR_togg & !comp_togg)  { # If MR toggle is on but not competition
-    final_mortality_chance_norm <- MR_chance+age_mortality_chance-MR_chance*age_mortality_chance # conditional probability
+    final_mortality_chance_norm <- MR_chance + age_mortality_chance - (MR_chance*age_mortality_chance) # conditional probability
     #ggplot() + geom_point(aes(x=MR_chance, y=age_mortality_chance, colour=final_mortality_chance_norm))
   }
   
   # If compeititon toggle is on but not MR
-  if (comp_togg & !MR_togg) {
+  if (!MR_togg & comp_togg) {
     pop_size = length(pop$indiv_ID)
     
     if(pop_size > population_capacity){
@@ -85,8 +91,6 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
       comp_chance=0
       final_mortality_chance_norm <- age_mortality_chance 
     }
-    
-    
   }
   
   # If both MR and compeititon toggle is on
@@ -94,11 +98,11 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
     pop_size = length(pop$indiv_ID)
     
     if(pop_size > population_capacity){
-      comp_chance=(pop_size - population_capacity)/pop_size * comp_impact_val
-      final_mortality_chance_norm <- rescale(MR_chance+age_mortality_chance-MR_chance*age_mortality_chance, c(comp_chance,1)) # # Scale competition impact by how much over carrying capacity of population size 
+      comp_chance = (pop_size - population_capacity)/pop_size  * 1+comp_impact_val  # Scale competition impact by how much over carrying capacity of population size
+      final_mortality_chance_norm <- rescale((MR_chance + age_mortality_chance - (MR_chance*age_mortality_chance)), c(comp_chance,1))
     } else {
       comp_chance=0
-      final_mortality_chance_norm <- (MR_chance+age_mortality_chance-MR_chance*age_mortality_chance) 
+      final_mortality_chance_norm <- (MR_chance + age_mortality_chance - (MR_chance*age_mortality_chance)) 
     }
     
   }
