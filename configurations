@@ -20,10 +20,10 @@ disturbance_impact_val=5 # impacts base age & MR death factor and recruitment co
   ## Parameters
 
   ## Mortality parameters
-age_impact = 0.9 # scaled age inflicted increase - from 0 to 1, should add to 1 with MR impact val
+age_impact = 1 # scaled age inflicted increase - from 0 to 1, should add to 1 with MR impact val
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
-MR_imp = T # toggle on/off for MR inflicted death increase
+MR_imp = F # toggle on/off for MR inflicted death increase
 MR_death_impact = 0.1 # linear scaled MR inflicted death increase - from 0 to 1, should add to 1 with age impact val
 MR_age_impact = 20 # scaled impact of age (ages / MR_age_impact_val) on MR inflicted death increase
 
