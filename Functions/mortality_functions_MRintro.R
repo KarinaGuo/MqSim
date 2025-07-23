@@ -78,8 +78,8 @@ mortality_death_rate_MRlate  <- function(pop, population_capacity, population_mi
     pop_size = length(pop$indiv_ID)
     
     if(pop_size > population_capacity){
-      comp_chance = (pop_size - population_capacity)/pop_size  * 1+comp_impact_val  # Scale competition impact by how much over carrying capacity of population size
-      final_mortality_chance_norm <- rescale((MR_chance + age_mortality_chance - (MR_chance*age_mortality_chance)), c(comp_chance,1))
+      comp_chance = (pop_size - population_capacity)/pop_size  * (1+comp_impact_val)  # Scale competition impact by how much over carrying capacity of population size
+      final_mortality_chance_norm <- rescale((MR_chance + age_mortality_chance - (MR_chance*age_mortality_chance)), from=c(0,1), to=c(comp_chance,1))
     } else {
       comp_chance=0
       final_mortality_chance_norm <- (MR_chance + age_mortality_chance - (MR_chance*age_mortality_chance)) 
