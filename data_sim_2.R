@@ -25,6 +25,8 @@ pop_df <- list(
   age = init_age
 )
 
+cat(recruitment_const)
+
 
 ## Initialise objects
 indiv_pop=NULL 
@@ -130,13 +132,11 @@ plot_livesize <- ggplot() +
   geom_hline(yintercept=population_carrying_capacity, linewidth = 0.75, linetype="dashed", colour="chocolate") +
   geom_hline(yintercept=population_minimum_size, linewidth = 0.75, linetype="dashed", colour="chocolate") +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate") +
-  labs(title="Live population size") +
-  xlim(c(250,5000)) #+ ylim(100,500)
+  labs(title="Live population size") 
 plot_liveage  <- ggplot() + 
   geom_point(data=age_df, aes(x=time, y=age_mean_summ)) +
   geom_errorbar(data=age_df, aes(x=time, ymax = age_mean_summ + age_sd_summ, ymin = age_mean_summ - age_sd_summ)) + 
-  labs(title="Live age") +
-  xlim(c(250,5000))
+  labs(title="Live age") 
 
 plot_deadMR   <- ggplot(mean_MR_time_death, aes(x=time, y=mean_MR)) + geom_point() + labs(title="Death MR")
 plot_liveMR   <- ggplot() +

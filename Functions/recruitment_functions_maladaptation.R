@@ -12,7 +12,7 @@
 # Note: MR is recruited based on parent pheno using beta distribution. To visualise parent MR pheno of 1-4: for (i in 0:4){hist(rbeta(n=4000, shape1=i+1, shape2 = 3)) }
 
 ##############################################
-recruit_rate <- function(pop, indiv_count, median_indiv_pop, population_min_size, recruitment_age, recruitment_size_mean, recruitment_size_sd, recruitment_constant, MR_togg, MR_recruit_impact_val, age_imp_rec_togg, maladaptation_chance){
+recruit_rate <- function(pop, indiv_count, MR_maladapt_pop, population_min_size, recruitment_age, recruitment_size_mean, recruitment_size_sd, recruitment_constant, MR_togg, MR_recruit_impact_val, age_imp_rec_togg, maladaptation_chance){
   
   # Current pop_size
   if (length(pop$indiv_ID) < population_min_size){
@@ -59,9 +59,10 @@ recruit_rate <- function(pop, indiv_count, median_indiv_pop, population_min_size
     for (i in 1:length(recruitment_indiv_MR)) { # For each new recruit, use parent phenotype to generate MR, dependent on MR
       
       if (maladaptation_chance){ # if maladaptation, split the MR score with the other pop
-        new_recruitment_indiv_MR =mean(c(recruitment_indiv_MR[i], median_indiv_pop))
+        maladapt_indiv_MR <- sample(MR_maladapt_pop, size=1)
+        new_recruitment_indiv_MR =mean(c(recruitment_indiv_MR[i], maladapt_indiv_MR))
         MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(new_recruitment_indiv_MR+1), shape2=2-(new_recruitment_indiv_MR)) # distribution of recruited individual's MR between 0 to 1
-        new_recruit_MR_new <- MR_rec_PDF+(mean(c(recruitment_indiv_MR[i], median_indiv_pop))-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
+        new_recruit_MR_new <- MR_rec_PDF+(mean(c(recruitment_indiv_MR[i], maladapt_indiv_MR))-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
         
         new_recruit_MR <- append(new_recruit_MR, new_recruit_MR_new)
       } else {

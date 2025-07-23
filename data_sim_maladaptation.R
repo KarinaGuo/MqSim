@@ -12,6 +12,7 @@ library(tidyverse)
 
 ## Load in parameters
 source("configurations_maladaptation")
+source("Functions/mortality_functions_MRintro.R")
 source("Functions/mortality_functions.R")
 source("Functions/recruitment_functions_maladaptation.R")
 source("Functions/disturbance_functions.R")
@@ -98,19 +99,40 @@ for (time_point in 1:time_max){
     indiv_count_pop2=length(unique(curr_pop_pop2$indiv_ID)) + indiv_count_pop2
     indiv_alive_count_pop2=nrow(curr_pop_pop2$indiv_ID)
     
-    ## Recruitment
+    ## Mortality
     
-    indiv_death_pop1 <- mortality_death_rate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_pop1, MR_age_impact_val=MR_age_impact_pop1, age_impact_val=age_impact_pop1, mortality_age_shiftch=mortality_age_shift)
-    indiv_death_pop2 <- mortality_death_rate(pop=curr_pop_pop2, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_pop2, MR_age_impact_val=MR_age_impact_pop2, age_impact_val=age_impact_pop2, mortality_age_shiftch=mortality_age_shift)
+    if (time_point>=MR_timepoint & MR_lateintro){
+      indiv_death_pop1 <- mortality_death_rate_MRlate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=curr_pop_pop1, MR_age_impact_val=MR_age_impact, age_impact_val=MR_age_impact_pop1, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint)
+      if(time_point==MR_timepoint){cat("Using mortality_death_rate_MRlate \n")}
+    } else if (time_point<MR_timepoint & MR_lateintro){
+      MR_death_impact_beforeintro=0
+      indiv_death_pop1 <- mortality_death_rate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_beforeintro, MR_age_impact_val=MR_age_impact_pop1, age_impact_val=age_impact_pop1, mortality_age_shiftch=mortality_age_shift)
+      if(time_point==1){cat("Using mortality_death_rate & MR before imp \n")}
+    } else if (!MR_lateintro) {
+      indiv_death_pop1 <- mortality_death_rate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=curr_pop_pop1, MR_age_impact_val=MR_age_impact_pop1, age_impact_val=age_impact_pop1, mortality_age_shiftch=mortality_age_shift)
+      if(time_point==1){cat("Using mortality_death_rate \n")}
+    }
     
-    median_MR_pop1 <- median(curr_pop_pop1$MR)
-    median_MR_pop2 <- median(curr_pop_pop2$MR)
+    if (time_point>=MR_timepoint & MR_lateintro){
+      indiv_death_pop2 <- mortality_death_rate_MRlate(pop=curr_pop_pop2, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=MR_death_impact_pop2, MR_age_impact_val=MR_age_impact_pop2, age_impact_val=age_impact_pop2, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint)
+      if(time_point==MR_timepoint){cat("Using mortality_death_rate_MRlate \n")}
+    } else if (time_point<MR_timepoint & MR_lateintro){
+      MR_death_impact_beforeintro=0
+      indiv_death_pop2 <- mortality_death_rate(pop=curr_pop_pop2, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_beforeintro, MR_age_impact_val=MR_age_impact_pop2, age_impact_val=age_impact_pop2, mortality_age_shiftch=mortality_age_shift)
+      if(time_point==1){cat("Using mortality_death_rate & MR before imp \n")}
+    } else if (!MR_lateintro) {
+      indiv_death_pop2 <- mortality_death_rate(pop=curr_pop_pop2, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_pop2, MR_age_impact_val=MR_age_impact_pop2, age_impact_val=age_impact_pop2, mortality_age_shiftch=mortality_age_shift)
+      if(time_point==1){cat("Using mortality_death_rate \n")}
+    }
+    
+    #median_MR_pop1 <- median(curr_pop_pop1$MR)
+    #median_MR_pop2 <- median(curr_pop_pop2$MR)
     
     maladaptation_chance_pop1 <- rbinom(n=1, size=1, indiv_count_pop1/(indiv_count_pop1 + indiv_count_pop2))
     maladaptation_chance_pop2 <- rbinom(n=1, size=1, indiv_count_pop2/(indiv_count_pop1 + indiv_count_pop2))
     
-    curr_pop_pop1 <- recruit_rate(pop=curr_pop_pop1, indiv_count=indiv_count_pop1, median_indiv_pop=median_MR_pop2, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec, maladaptation_chance=maladaptation_chance_pop1)
-    curr_pop_pop2 <- recruit_rate(pop=curr_pop_pop2, indiv_count=indiv_count_pop2, median_indiv_pop=median_MR_pop1, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec, maladaptation_chance=maladaptation_chance_pop2)
+    curr_pop_pop1 <- recruit_rate(pop=curr_pop_pop1, indiv_count=indiv_count_pop1, MR_maladapt_pop=curr_pop_pop2$MR, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec, maladaptation_chance=maladaptation_chance_pop1)
+    curr_pop_pop2 <- recruit_rate(pop=curr_pop_pop2, indiv_count=indiv_count_pop2, MR_maladapt_pop=curr_pop_pop1$MR, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec, maladaptation_chance=maladaptation_chance_pop2)
     
     death_df_curr_pop1 <- data.frame(Dead_ID=curr_pop_pop1$indiv_ID[as.logical(indiv_death_pop1)], age=curr_pop_pop1$age[as.logical(indiv_death_pop1)], MR=curr_pop_pop1$MR[as.logical(indiv_death_pop1)], time=curr_pop_pop1$time[as.logical(indiv_death_pop1)])
     death_df_pop1 <- rbind(death_df_pop1, death_df_curr_pop1)

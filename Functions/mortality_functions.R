@@ -36,9 +36,6 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   ages <- pop$age
   age_mortality_chance <- numeric(length(ages))
   
-  # # Increasing age imp val if both MR and age are used
-  # if (MR_togg){age_impact_val <- age_impact_val*2}
-  # 
   for (i in seq_along(ages)) {
     x <- ages[i]
     if (x <= mortality_age_shiftch) {
