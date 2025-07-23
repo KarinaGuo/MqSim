@@ -150,4 +150,4 @@ library(patchwork)
 plot_livesize / plot_liveage
 plot_deadMR / plot_liveMR
 
-
+#write.csv(MR_df, file="DataSim2_SoloPop2.csv")

@@ -102,14 +102,14 @@ for (time_point in 1:time_max){
     ## Mortality
     
     if (time_point>=MR_timepoint & MR_lateintro){
-      indiv_death_pop1 <- mortality_death_rate_MRlate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=curr_pop_pop1, MR_age_impact_val=MR_age_impact, age_impact_val=MR_age_impact_pop1, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint)
+      indiv_death_pop1 <- mortality_death_rate_MRlate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=MR_death_impact_pop1, MR_age_impact_val=MR_age_impact_pop1, age_impact_val=age_impact_pop1, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint)
       if(time_point==MR_timepoint){cat("Using mortality_death_rate_MRlate \n")}
     } else if (time_point<MR_timepoint & MR_lateintro){
       MR_death_impact_beforeintro=0
       indiv_death_pop1 <- mortality_death_rate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_beforeintro, MR_age_impact_val=MR_age_impact_pop1, age_impact_val=age_impact_pop1, mortality_age_shiftch=mortality_age_shift)
       if(time_point==1){cat("Using mortality_death_rate & MR before imp \n")}
     } else if (!MR_lateintro) {
-      indiv_death_pop1 <- mortality_death_rate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=curr_pop_pop1, MR_age_impact_val=MR_age_impact_pop1, age_impact_val=age_impact_pop1, mortality_age_shiftch=mortality_age_shift)
+      indiv_death_pop1 <- mortality_death_rate(pop=curr_pop_pop1, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_pop1, MR_age_impact_val=MR_age_impact_pop1, age_impact_val=age_impact_pop1, mortality_age_shiftch=mortality_age_shift)
       if(time_point==1){cat("Using mortality_death_rate \n")}
     }
     
@@ -125,8 +125,6 @@ for (time_point in 1:time_max){
       if(time_point==1){cat("Using mortality_death_rate \n")}
     }
     
-    #median_MR_pop1 <- median(curr_pop_pop1$MR)
-    #median_MR_pop2 <- median(curr_pop_pop2$MR)
     
     maladaptation_chance_pop1 <- rbinom(n=1, size=1, indiv_count_pop1/(indiv_count_pop1 + indiv_count_pop2))
     maladaptation_chance_pop2 <- rbinom(n=1, size=1, indiv_count_pop2/(indiv_count_pop1 + indiv_count_pop2))
@@ -224,14 +222,14 @@ library(patchwork)
 (plot_livesize_pop1 / plot_liveage_pop1) | (plot_livesize_pop2 / plot_liveage_pop2)  + plot_layout(guides = "collect")
 (plot_deadMR_pop1 / plot_liveMR_pop1) | (plot_deadMR_pop2 / plot_liveMR_pop2) + plot_layout(guides = 'collect')
 
-write.csv(MR_df_pop2, file="300625_MaladaptationRunPop2.csv")
-write.csv(MR_df_pop1, file="300625_MaladaptationRunPop1.csv")
+#write.csv(MR_df_pop2, file="MaladaptationRunPop2.csv")
+#write.csv(MR_df_pop1, file="MaladaptationRunPop1.csv")
 
 # Plot both runs on top
-MaladaptationRunPop1 <- read.csv("300625_MaladaptationRunPop1.csv"); MaladaptationRunPop1$Run <- "MaladaptationRunPop1"
-MaladaptationRunPop2 <- read.csv("300625_MaladaptationRunPop2.csv"); MaladaptationRunPop2$Run <- "MaladaptationRunPop2"
-SoloRunPop1 <- read.csv("300625_DataSim2_SoloPop1.csv"); SoloRunPop1$Run <- "SoloRunPop1"; SoloRunPop1$maladaptation_time <- 0
-SoloRunPop2 <- read.csv("300625_DataSim2_SoloPop2.csv"); SoloRunPop2$Run <- "SoloRunPop2"; SoloRunPop2$maladaptation_time <- 0
+MaladaptationRunPop1 <- read.csv("MaladaptationRunPop1.csv"); MaladaptationRunPop1$Run <- "MaladaptationRunPop1"
+MaladaptationRunPop2 <- read.csv("MaladaptationRunPop2.csv"); MaladaptationRunPop2$Run <- "MaladaptationRunPop2"
+SoloRunPop1 <- read.csv("DataSim2_SoloPop1.csv"); SoloRunPop1$Run <- "SoloRunPop1"; SoloRunPop1$maladaptation_time <- 0
+SoloRunPop2 <- read.csv("DataSim2_SoloPop2.csv"); SoloRunPop2$Run <- "SoloRunPop2"; SoloRunPop2$maladaptation_time <- 0
 
 Pop1_res <- data.frame(rbind(MaladaptationRunPop1, SoloRunPop1))
 Pop2_res <- data.frame(rbind(MaladaptationRunPop2, SoloRunPop2))

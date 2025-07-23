@@ -68,7 +68,7 @@ mortality_death_rate_MRlate  <- function(pop, population_capacity, population_mi
   
   # If MR toggle is on but not competition
   if (MR_intro & !comp_togg)  { # If MR toggle is on but not competition
-    final_mortality_chance_norm <- MR_chance+age_mortality_chance-MR_chance*age_mortality_chance # conditional probability
+    final_mortality_chance_norm <- (MR_chance + age_mortality_chance - (MR_chance*age_mortality_chance))  # conditional probability
     #ggplot() + geom_point(aes(x=MR_chance, y=age_mortality_chance, colour=final_mortality_chance_norm))
   }
   
