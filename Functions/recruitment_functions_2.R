@@ -24,7 +24,7 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
   fecund_indivs <- pop$age >= recruitment_age
   recruitment_indivs <- lapply(pop, function(x) x[fecund_indivs])
   age_trans <- 1 - 2/recruitment_indivs$age
-  recruitment_indivs_MR <- recruitment_indivs$MR
+  recruitment_indivs_MR <- rescale(recruitment_indivs$MR, to = c(0,1))
   
   if (MR_togg){
     indiv_recruitment <- rbinom(n = length(recruitment_indivs$indiv_ID), size = 1, prob = recruitment_constant * 1/(1+MR_recruit_impact_val*recruitment_indivs_MR))
