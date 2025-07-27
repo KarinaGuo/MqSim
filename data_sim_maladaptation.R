@@ -222,8 +222,8 @@ library(patchwork)
 (plot_livesize_pop1 / plot_liveage_pop1) | (plot_livesize_pop2 / plot_liveage_pop2)  + plot_layout(guides = "collect")
 (plot_deadMR_pop1 / plot_liveMR_pop1) | (plot_deadMR_pop2 / plot_liveMR_pop2) + plot_layout(guides = 'collect')
 
-#write.csv(MR_df_pop2, file="MaladaptationRunPop2.csv")
-#write.csv(MR_df_pop1, file="MaladaptationRunPop1.csv")
+# write.csv(MR_df_pop2, file="MaladaptationRunPop2.csv")
+# write.csv(MR_df_pop1, file="MaladaptationRunPop1.csv")
 
 # Plot both runs on top
 MaladaptationRunPop1 <- read.csv("MaladaptationRunPop1.csv"); MaladaptationRunPop1$Run <- "MaladaptationRunPop1"
@@ -236,7 +236,7 @@ Pop2_res <- data.frame(rbind(MaladaptationRunPop2, SoloRunPop2))
 
 Pop1_plot <- ggplot() + 
   geom_point(data=Pop1_res, aes(x=time,  y=MR_mean_summ, colour=Run, shape=as.character(maladaptation_time))) +
-  geom_errorbar(data=Pop1_res, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ, colour=Run), alpha=0.5) + 
+  #geom_errorbar(data=Pop1_res, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ, colour=Run), alpha=0.1) + 
   stat_smooth(data=Pop1_res, aes(x=time, y = MR_mean_summ, colour=Run), linewidth = 0.75, linetype="dashed", span=10) +
   ylim(c(-0.1,1.5)) +
   labs(title="Live MR - Population 1") +
@@ -244,7 +244,7 @@ Pop1_plot <- ggplot() +
 
 Pop2_plot <- ggplot() + 
   geom_point(data=Pop2_res, aes(x=time,  y=MR_mean_summ, colour=Run, shape=as.character(maladaptation_time))) +
-  geom_errorbar(data=Pop2_res, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ, colour=Run), alpha=0.5) + 
+  #geom_errorbar(data=Pop2_res, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ, colour=Run), alpha=0.1) + 
   stat_smooth(data=Pop2_res, aes(x=time, y = MR_mean_summ, colour=Run), linewidth = 0.75, linetype="dashed", span=10) +
   ylim(c(-0.1,1.5)) +
   labs(title="Live MR - Population 2") +

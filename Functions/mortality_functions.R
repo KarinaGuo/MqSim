@@ -34,6 +34,7 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   require(scales)
   # Age death
   ages <- pop$age
+  MR <- pop$MR
   age_mortality_chance <- numeric(length(ages))
   
   for (i in seq_along(ages)) {
@@ -52,11 +53,10 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   #ggplot() + geom_point(aes(x=ages, y=age_mortality_chance))
 
   # MR chance by death
-  MR <- rescale(pop$MR, c(0,1))
+  #MR <- rescale(pop$MR, c(0,1))
   
   if(!(MR_age_impact_val==0)){
     MR_chance <- (1 / (1 + (ages / MR_age_impact_val))) * MR * MR_death_impact_val
-    
   } else {
     MR_chance <- MR * MR_death_impact_val
   }

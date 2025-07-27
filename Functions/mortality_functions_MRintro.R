@@ -34,6 +34,7 @@ mortality_death_rate_MRlate  <- function(pop, population_capacity, population_mi
   require(scales)
   # Age death
   ages <- pop$age
+  MR <- pop$MR
   age_mortality_chance <- numeric(length(ages))
   
   for (i in seq_along(ages)) {
@@ -52,14 +53,13 @@ mortality_death_rate_MRlate  <- function(pop, population_capacity, population_mi
   #ggplot() + geom_point(aes(x=ages, y=age_mortality_chance))
   
   # MR chance by death
-  MR <- rescale(pop$MR, c(0,1))
+  #MR <- rescale(pop$MR, c(0,1))
   
   if(!(MR_age_impact_val==0)){
     MR_chance <- (1 / (1 + (ages / MR_age_impact_val))) * MR * MR_death_impact_val
   } else {
     MR_chance <- MR * MR_death_impact_val
   }
-  
   
   MR_chance[MR_chance > 1] <- 1; MR_chance[MR_chance < 0] <- 0 # remove anomaly high and low vals
   
@@ -78,7 +78,7 @@ mortality_death_rate_MRlate  <- function(pop, population_capacity, population_mi
     pop_size = length(pop$indiv_ID)
     
     if(pop_size > population_capacity){
-      comp_chance = (pop_size - population_capacity)/pop_size  * (1+comp_impact_val)  # Scale competition impact by how much over carrying capacity of population size
+      comp_chance = (pop_size - population_capacity)/population_capacity  * (1+comp_impact_val)  # Scale competition impact by how much over carrying capacity of population size
       final_mortality_chance_norm <- rescale((MR_chance + age_mortality_chance - (MR_chance*age_mortality_chance)), from=c(0,1), to=c(comp_chance,1))
     } else {
       comp_chance=0

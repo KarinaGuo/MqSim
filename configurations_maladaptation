@@ -21,13 +21,13 @@ disturbance_impact_val=5 # impacts base age & MR death factor and recruitment co
   ## Mortality parameters
 
 # Pop 1 - High MR Press
-age_impact_pop1 = 0.5 # scaled age inflicted increase (ensure it adds up to less than 1)
-MR_death_impact_pop1 = 0.5 # linear scaled MR inflicted death increase - scales with comp + age impact value (ensure it adds up to less than 1)
+age_impact_pop1 = 1.0 # scaled age inflicted increase (ensure it adds up to less than 1)
+MR_death_impact_pop1 = 0.3 # linear scaled MR inflicted death increase - scales with comp + age impact value (ensure it adds up to less than 1)
 MR_age_impact_pop1 = 20 # scaled impact of age (value / age) on MR inflicted death increase
 
 # Pop 2 - Low MR press
-age_impact_pop2 = 0.8 # scaled age inflicted increase (ensure it adds up to less than 1)
-MR_death_impact_pop2 = 0.2 # linear scaled MR inflicted death increase - scales with comp + age impact value (ensure it adds up to less than 1)
+age_impact_pop2 = 1.0 # scaled age inflicted increase (ensure it adds up to less than 1)
+MR_death_impact_pop2 = 0.1 # linear scaled MR inflicted death increase - scales with comp + age impact value (ensure it adds up to less than 1)
 MR_age_impact_pop2 = 20 # scaled impact of age (value / age) on MR inflicted death increase
 
 
@@ -43,7 +43,7 @@ comp_imp = T # toggle on/off for competition due to carrying capacity
 comp_impact = 0.5 # impact of competition due to carrying capacity
 
   ## Recruitment parameters
-recruitment_const = 0.0022 # base constant for chance of recruitment
+recruitment_const = 0.003 # base constant for chance of recruitment
 recruitment_age = 7 # age to begin recruiting
 recruitment_mean = 100 # mean for PDF of normal distribution for number of recruited individuals
 recruitment_sd = recruitment_mean/2 # standard deviation of number of recruited individuals
@@ -57,5 +57,5 @@ dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
  
   ## Simulation parameters
 time_max = 5000 # how long to run sim for
-output_timept = 10 # How often to report visual statistics
+output_timept = time_max/5 # How often to report visual statistics
 timepoint_pop_grab = c(seq(from=2, to=15), seq(from=40, to=45)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)

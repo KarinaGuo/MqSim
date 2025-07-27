@@ -20,7 +20,6 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
   }
   
   # How many individuals are fecund and recruit?
-  
   fecund_indivs <- pop$age >= recruitment_age
   recruitment_indivs <- lapply(pop, function(x) x[fecund_indivs])
   age_trans <- 1 - 2/recruitment_indivs$age
@@ -60,16 +59,16 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
     for (i in 1:length(recruitment_indiv_MR)) { # For each new recruit, use parent phenotype to generate MR, dependent on MR
       
       #MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=recruitment_indiv_MR[i]+1, shape2=2-recruitment_indiv_MR[i]) # distribution of recruited individual's MR between 0 to 1
-      MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=recruitment_indiv_MR[i]+1, shape2=2-recruitment_indiv_MR[i]) # distribution of recruited individual's MR between 0 to 1
+      MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1)^4, shape2=(2-recruitment_indiv_MR[i])^4) # distribution of recruited individual's MR between 0 to 1
       
-      new_recruit_MR_new <- MR_rec_PDF
-      #new_recruit_MR_new <- MR_rec_PDF+(recruitment_indiv_MR[i]-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
+      #new_recruit_MR_new <- MR_rec_PDF
+      new_recruit_MR_new <- MR_rec_PDF+(recruitment_indiv_MR[i]-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
       #new_recruit_MR_new <- rescale(MR_rec_PDF, from = c(0,1), to=c(0,2)) # recalibrate to make the mean the MR of parent pheno
       
       new_recruit_MR <- append(new_recruit_MR, new_recruit_MR_new)
     }
     
-    #new_recruit_MR[new_recruit_MR<0]=0; new_recruit_MR[new_recruit_MR>=2]=1.9
+    new_recruit_MR[new_recruit_MR<0]=0; new_recruit_MR[new_recruit_MR>=2]=1.9
     
     new_recruit_pop <- list(indiv_ID=seq(from=indiv_count+1, to=indiv_count+sum(new_recruit)), 
                             time=rep(time_point, sum(new_recruit)), 

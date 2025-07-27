@@ -43,9 +43,13 @@ dist_event=FALSE
 
 for (time_point in 1:time_max){
   
-  disturbance_event <- disturbance_event_chance (dist_togg = dist_imp, disturbance_age_struct = disturbance_age_struct_type, dist_impact_val = dist_impact, dist_age_impact_val = dist_age_impact)
   # Apply disturbance results
-  disturbance_event_res <- disturbance_event[1]; age_impact = disturbance_event[2]; MR_death_impact = disturbance_event[3]; recruitment_const = disturbance_event[4]
+  if (dist_imp){
+    disturbance_event <- disturbance_event_chance (dist_togg = dist_imp, disturbance_age_struct = disturbance_age_struct_type, dist_impact_val = dist_impact, dist_age_impact_val = dist_age_impact)
+    disturbance_event_res <- disturbance_event[1]; age_impact = disturbance_event[2]; MR_death_impact = disturbance_event[3]; recruitment_const = disturbance_event[4]
+  } else {
+    disturbance_event_res=0
+  }
   
   
   if(time_point==1){
@@ -101,7 +105,7 @@ for (time_point in 1:time_max){
     }
     
     # Return to base
-    if (as.logical(disturbance_event[1])){
+    if (as.logical(disturbance_event_res)){
       age_impact = disturbance_event[5]
       MR_death_impact = disturbance_event[6]
       recruitment_const = disturbance_event[7]
@@ -147,7 +151,7 @@ plot_liveMR   <- ggplot() +
   labs(title="Live MR")
 
 library(patchwork)
-plot_livesize / plot_liveage
 plot_deadMR / plot_liveMR
+plot_livesize / plot_liveage
 
 #write.csv(MR_df, file="DataSim2_SoloPop2.csv")
