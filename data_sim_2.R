@@ -13,7 +13,7 @@ source("Functions/recruitment_functions_2.R")
 source("Functions/disturbance_functions.R")
 
 ## Initiate random population
-init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR<0]=0
+init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR<0]=0; init_MR[init_MR>1]=1
 init_age <- as.integer(runif(n=population_size, min=1, max=100))
 indiv_ID <- seq(from=1, to=population_size)
 
@@ -154,4 +154,4 @@ library(patchwork)
 plot_deadMR / plot_liveMR
 plot_livesize / plot_liveage
 
-#write.csv(MR_df, file="DataSim2_SoloPop2.csv")
+write.csv(MR_df, file="DataSim2_SoloPop1.csv")
