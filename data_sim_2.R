@@ -79,7 +79,7 @@ for (time_point in 1:time_max){
       if(time_point==1){cat("Using mortality_death_rate \n")}
     }
     
-    curr_pop <- recruit_rate(pop=curr_pop, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, age_imp_rec_togg=age_imp_rec)
+    curr_pop <- recruit_rate(pop=curr_pop, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, MR_rec_adjusted=MR_rec_adj, age_imp_rec_togg=age_imp_rec)
     
     death_df_curr <- data.frame(Dead_ID=curr_pop$indiv_ID[as.logical(indiv_death)], age=curr_pop$age[as.logical(indiv_death)], MR=curr_pop$MR[as.logical(indiv_death)], time=curr_pop$time[as.logical(indiv_death)])
     death_df <- rbind(death_df, death_df_curr)
@@ -154,4 +154,4 @@ library(patchwork)
 plot_deadMR / plot_liveMR
 plot_livesize / plot_liveage
 
-write.csv(MR_df, file="DataSim2_SoloPop1.csv")
+#write.csv(MR_df, file="DataSim2_SoloPop1.csv")
