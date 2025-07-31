@@ -60,7 +60,7 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
     for (i in 1:length(recruitment_indiv_MR)) { # For each new recruit, use parent phenotype to generate MR, dependent on MR
       
       #MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1)^2, shape2=(2-recruitment_indiv_MR[i])^2) # distribution of recruited individual's MR between 0 to 1
-      MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1), shape2=(2-recruitment_indiv_MR[i])) # distribution of recruited individual's MR between 0 to 1
+      MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1)^2, shape2=(2-recruitment_indiv_MR[i])^2) # distribution of recruited individual's MR between 0 to 1
       
       #new_recruit_MR_new <- MR_rec_PDF
       new_recruit_MR_new <- MR_rec_PDF+(recruitment_indiv_MR[i]+MR_rec_adjusted-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno

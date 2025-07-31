@@ -67,14 +67,14 @@ for (time_point in 1:time_max){
     
     ## Recruitment
     
-    if (time_point>=MR_timepoint & MR_lateintro){
+    if (time_point>=MR_timepoint & MR_lateintro & MR_recruit_imp){
       indiv_death <- mortality_death_rate_MRlate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint)
       if(time_point==MR_timepoint){cat("Using mortality_death_rate_MRlate \n")}
-    } else if (time_point<MR_timepoint & MR_lateintro){
+    } else if (time_point<MR_timepoint & MR_lateintro & MR_recruit_imp){
       MR_death_impact_beforeintro=0
       indiv_death <- mortality_death_rate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_beforeintro, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift)
       if(time_point==1){cat("Using mortality_death_rate & MR before imp \n")}
-    } else if (!MR_lateintro) {
+    } else if (!MR_lateintro | !MR_recruit_imp) {
       indiv_death <- mortality_death_rate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift)
       if(time_point==1){cat("Using mortality_death_rate \n")}
     }
