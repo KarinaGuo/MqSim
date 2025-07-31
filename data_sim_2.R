@@ -67,14 +67,14 @@ for (time_point in 1:time_max){
     
     ## Recruitment
     
-    if (time_point>=MR_timepoint & MR_lateintro & MR_recruit_imp){
+    if (time_point>=MR_timepoint & MR_lateintro & MR_imp){
       indiv_death <- mortality_death_rate_MRlate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint)
       if(time_point==MR_timepoint){cat("Using mortality_death_rate_MRlate \n")}
-    } else if (time_point<MR_timepoint & MR_lateintro & MR_recruit_imp){
+    } else if (time_point<MR_timepoint & MR_lateintro & MR_imp){
       MR_death_impact_beforeintro=0
       indiv_death <- mortality_death_rate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_beforeintro, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift)
       if(time_point==1){cat("Using mortality_death_rate & MR before imp \n")}
-    } else if (!MR_lateintro | !MR_recruit_imp) {
+    } else if (!MR_lateintro | !MR_imp) {
       indiv_death <- mortality_death_rate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift)
       if(time_point==1){cat("Using mortality_death_rate \n")}
     }
@@ -132,7 +132,7 @@ mean_MR_time_death <- death_df %>% group_by(time) %>% summarise(mean_MR=mean(MR)
 
 plot_livesize <- ggplot() + 
   geom_point(data=live_size_df, aes(x=time, y=sum_size)) + 
-  stat_smooth(data=live_size_df, aes(x=time, y = sum_size), linewidth = 0.75, linetype="dashed", colour="grey40", span=10) +
+  stat_smooth(data=live_size_df, aes(x=time, y = sum_size), linewidth = 0.85, linetype="dashed", colour="grey40", span=10) +
   geom_hline(yintercept=population_carrying_capacity, linewidth = 0.75, linetype="dashed", colour="chocolate") +
   geom_hline(yintercept=population_minimum_size, linewidth = 0.75, linetype="dashed", colour="chocolate") +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate") +
@@ -154,4 +154,4 @@ library(patchwork)
 plot_deadMR / plot_liveMR
 plot_livesize / plot_liveage
 
-#write.csv(MR_df, file="DataSim2_SoloPop1.csv")
+#write.csv(MR_df, file="DataSim2_SoloPop2.csv")

@@ -24,13 +24,13 @@ age_impact = 1.0 # scaled age inflicted increase - from 0 to 1, should add to 1 
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.5 # linear scaled MR inflicted death increase - from 0 to 1, should add to 1 with age impact val
+MR_death_impact = 0.8 # linear scaled MR inflicted death increase - from 0 to 1, should add to 1 with age impact val
 MR_age_impact = 20 # scaled impact of age (ages / MR_age_impact_val) on MR inflicted death increase
 
 MR_recruit_imp = F# toggle on/off of MR affect on recruitment
 MR_recruit_impact = 0.5 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance
 MR_lateintro = T
-MR_timepoint = 1000 # time point when MR is introduced
+MR_timepoint = 2000 # time point when MR is introduced
 
 comp_imp = T # toggle on/off for competition due to carrying capacity 
 comp_impact = 0.9 # impact of competition due to carrying capacity (1.x multiplier of a scaled competition influence)
@@ -41,7 +41,7 @@ recruitment_age = 7 # age to begin recruiting
 recruitment_mean = 100 # mean for PDF of normal distribution for number of recruited individuals
 recruitment_sd = recruitment_mean/2 # standard deviation of number of recruited individuals
 age_imp_rec = TRUE # Takes the complimentary of the age fraction to reduce recruitment mean according to size (larger = closer to 1)
-MR_rec_adj = -0.08
+MR_rec_adj = -0.08 # Shift mean of MR status of recruited individuals
 
   # Disturbance parameters (ranges from super small to big impacts)
 dist_imp = T # Turn on and off disturbance presence

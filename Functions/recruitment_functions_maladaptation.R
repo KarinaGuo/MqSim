@@ -12,7 +12,7 @@
 # Note: MR is recruited based on parent pheno using beta distribution. To visualise parent MR pheno of 1-4: for (i in 0:4){hist(rbeta(n=4000, shape1=i+1, shape2 = 3)) }
 
 ##############################################
-recruit_rate <- function(pop, indiv_count, MR_maladapt_pop, population_min_size, recruitment_age, recruitment_size_mean, recruitment_size_sd, recruitment_constant, MR_togg, MR_recruit_impact_val, age_imp_rec_togg, maladaptation_chance){
+recruit_rate <- function(pop, indiv_count, MR_maladapt_pop, population_min_size, recruitment_age, recruitment_size_mean, recruitment_size_sd, recruitment_constant, MR_togg, MR_recruit_impact_val, MR_rec_adjusted, age_imp_rec_togg, maladaptation_chance){
   
   # Current pop_size
   if (length(pop$indiv_ID) < population_min_size){
