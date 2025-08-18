@@ -154,4 +154,5 @@ library(patchwork)
 plot_deadMR / plot_liveMR
 plot_livesize / plot_liveage
 
-#write.csv(MR_df, file="DataSim2_SoloPop2.csv")
+#write.csv(live_size_df, file="Intercept/BASE_SIZE_0.2_Intro1000")
+#write.csv(MR_df, file="DataSim2_SoloPop1.csv")

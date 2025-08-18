@@ -46,7 +46,7 @@ LS_MR <- ggplot() +
   geom_boxplot(data = final_df %>% dplyr::filter(time > 1010 & time < 1020), aes(x=Lifestage, y=MR)) +  
   #geom_point(data = final_df %>% dplyr::filter(time > 2010 & time < 2020), aes(x=age, y=MR), size = 0.05) + 
   theme_bw() +
-  labs(title="Impact 0.2; time +10-20")
+  labs(title=paste0("Impact ",MR_death_impact,"; time +10-20"))
 LS_MR
 
 
@@ -55,7 +55,7 @@ LS_MR_2 <- ggplot() +
   geom_boxplot(data = final_df %>% dplyr::filter(time > 1030 & time < 1050), aes(x=Lifestage, y=MR)) +  
   #geom_point(data = final_df %>% dplyr::filter(time > 2010 & time < 2020), aes(x=age, y=MR), size = 0.05) + 
   theme_bw() +
-  labs(title="Impact 0.2; time +30-50")
+  labs(title=paste0("Impact ",MR_death_impact,"; time +30-50"))
 LS_MR_2
 
 

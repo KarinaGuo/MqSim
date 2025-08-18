@@ -14,7 +14,8 @@ random_group <- parent_meta %>%
   group_by(FID) %>%
   summarise(n=n()) 
 random_group_big <- random_group %>%
-  filter(n>5) 
+  filter(n>5) %>% 
+  sample_n(20)
 par_sub <- parent_meta %>%
   semi_join(random_group_big, by = "FID")
 
@@ -28,6 +29,5 @@ ggplot(data = par_sub, aes(x = COI, fill = FID)) +
              color = "grey70", linetype = "dashed", linewidth = 0.75) +
   theme_ridges() +
   theme(legend.position = "none") +
-  facet_wrap(~FID, scales = "free")
-
-
+  xlim(c(0,80)) +
+  facet_wrap(~FID, scales = "free_y")
