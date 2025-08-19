@@ -29,11 +29,17 @@ mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
 }
 
 ######################################################################################
-mortality_death_rate  <- function(pop, population_capacity, population_min_size, comp_togg, comp_impact_val, MR_togg, MR_death_impact_val, MR_age_impact_val, age_impact_val, mortality_age_shiftch){
+mortality_death_rate  <- function(pop, population_capacity, population_min_size, comp_togg, comp_impact_val, MR_togg, MR_death_impact_val, MR_age_impact_val, age_impact_val, mortality_age_shiftch, intercept_pop_indiv_ID, int_togg){
   
   require(scales)
   # Age death
   ages <- pop$age
+  
+  if(int_togg){
+    match_idx <- pop$indiv_ID %in% intercept_pop_indiv_ID
+    ages[match_idx] <- ifelse(ages[match_idx] < mortality_age_shiftch/2, ages[match_idx]*4, ages[match_idx])
+  }
+  
   MR <- pop$MR
   age_mortality_chance <- numeric(length(ages))
   

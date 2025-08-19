@@ -22,7 +22,7 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
   # How many individuals are fecund and recruit?
   fecund_indivs <- pop$age >= recruitment_age
   recruitment_indivs <- lapply(pop, function(x) x[fecund_indivs])
-  age_trans <- 1 - 2/recruitment_indivs$age
+  
   #recruitment_indivs_MR <- rescale(recruitment_indivs$MR, to = c(0,1))
   recruitment_indivs_MR <- recruitment_indivs$MR
   
@@ -39,7 +39,7 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
     recruitment_indiv_MR <- recruitment_indivs_MR[as.logical(indiv_recruitment)]
     
     if (age_imp_rec_togg){
-      
+      age_trans <- 1 - 2/recruitment_indivs$age
       recruitment_size_mean_age <- age_trans * recruitment_size_mean
       
       new_recruit = NULL

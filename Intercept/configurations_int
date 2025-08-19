@@ -34,10 +34,10 @@ age_imp_rec = TRUE # Takes the complimentary of the age fraction to reduce recru
 MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
 
   ## Intervention parameters
-intercept_timepoint = 1025
-intercept_indiv = 300
-intercept_MR_mean = 0.5 # 
-intercept_MR_sd = 0.1
+intercept_timepoint = 1100 #  1100*10 for no interception
+intercept_indiv = 1000 
+intercept_MR_mean = 0.0 
+intercept_MR_sd = 0.0
 
 #intercept_timepoint = 1025
 #intercept_indiv = 300
