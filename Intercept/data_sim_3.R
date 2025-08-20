@@ -41,14 +41,14 @@ indiv_pop=NULL
 MR_pop=NULL 
 curr_pop=NULL 
 new_recruit_pop=NULL 
-indiv_count=0 
+indiv_count_end=0
 death_df=NULL 
 age_df=NULL
 MR_df=NULL 
 live_size_df=NULL
 pop_timepoints=NULL
 dist_event=FALSE
-
+time_point=1
 for (time_point in 1:time_max){
   
   # Apply disturbance results
@@ -70,7 +70,7 @@ for (time_point in 1:time_max){
     stop("All dead at time ", time_point, "\n")
   } else{
     
-    indiv_count=length(unique(curr_pop$indiv_ID)) + indiv_count
+    indiv_count_start=length(curr_pop$indiv_ID) + indiv_count_end
     
     indiv_alive_count=length(curr_pop$indiv_ID)
         
@@ -96,6 +96,10 @@ for (time_point in 1:time_max){
     
     ## Recruitment
     curr_pop <- recruit_rate(pop=curr_pop, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, MR_rec_adjusted=MR_rec_adj, age_imp_rec_togg=age_imp_rec)
+    recruited_indivs = length(curr_pop$indiv_ID) - indiv_alive_count
+    indiv_count_end = length(curr_pop$indiv_ID) + indiv_count_end
+    
+    indiv_death = c(indiv_death, rep(0, recruited_indivs)) 
     
     death_df_curr <- data.frame(Dead_ID=curr_pop$indiv_ID[as.logical(indiv_death)], age=curr_pop$age[as.logical(indiv_death)], MR=curr_pop$MR[as.logical(indiv_death)], time=curr_pop$time[as.logical(indiv_death)])
     death_df <- rbind(death_df, death_df_curr)
@@ -111,7 +115,7 @@ for (time_point in 1:time_max){
       int_MR <- rnorm(n=intercept_indiv, mean = intercept_MR_mean, sd = intercept_MR_sd); int_MR[int_MR<0]=0; int_MR[int_MR>1]=1
       
       intercept_pop <- list(
-        indiv_ID=seq(from=indiv_count+1, to=indiv_count+intercept_indiv),
+        indiv_ID=seq(from=indiv_count_end+1, to=indiv_count_end+intercept_indiv),
         time = rep(time_point, intercept_indiv),
         MR=as.numeric(int_MR),
         #mortality = rep(0, intercept_indiv),
@@ -126,7 +130,7 @@ for (time_point in 1:time_max){
       
       curr_pop <- curr_pop_int
       
-      indiv_count = indiv_count+intercept_indiv
+      indiv_count_end=length(curr_pop$indiv_ID) + indiv_count_end
       indiv_death = c(indiv_death, rep(0, intercept_indiv)) 
       
       cat(  "## Intervention ##\n",
@@ -137,7 +141,6 @@ for (time_point in 1:time_max){
       # Plots
       print(ggplot() + geom_point(data=data.frame(curr_pop), aes(x=age, y=MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
     }
-    
     
     curr_pop_end <- list(indiv_ID=curr_pop$indiv_ID[!as.logical(indiv_death)], age=curr_pop$age[!as.logical(indiv_death)]+1, MR=curr_pop$MR[!as.logical(indiv_death)], time=curr_pop$time[!as.logical(indiv_death)]+1)
     
