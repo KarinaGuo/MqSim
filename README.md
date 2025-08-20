@@ -16,13 +16,13 @@ Files:
 ├── configurations - input for data_sim_2.R  \
  \
 ├── Intervention \
-   └── configurations_int - input for data_sim_3.R \
-   └── *.csv - output from simulations used for plotting in intervention_plots.R \
+│   └── configurations_int - input for data_sim_3.R \
+│   └── *.csv - output from simulations used for plotting in intervention_plots.R \
 ├── Functions \
-   └── disturbance_functions.R \
-   └── mortality_functions.R - initial mortality function when using base MR status \
-   └── mortality_functions_MRintro.R - mortality function invoked when timepoint > MR introduction timepoint \
-   └── recruitment_functions_2.R \
-   └── recruitment_functions_maladaptation.R \
+│   └── disturbance_functions.R \
+│   └── mortality_functions.R - initial mortality function when using base MR status \
+│   └── mortality_functions_MRintro.R - mortality function invoked when timepoint > MR introduction timepoint \
+│   └── recruitment_functions_2.R \
+│   └── recruitment_functions_maladaptation.R \
 ├── Maladaptation \
-   └── configurations_maladaptation - input for data_sim_maladaptaiton.R \
+│   └── configurations_maladaptation - input for data_sim_maladaptaiton.R \
