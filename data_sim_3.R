@@ -77,8 +77,10 @@ for (time_point in 1:time_max){
         
     
     ## Mortality
-    if (time_point > intercept_timepoint & intercept_reducMort){intercept_pop_indiv_ID=intercept_pop$indiv_ID; int_togg=TRUE} else {int_togg=FALSE; intercept_pop_indiv_ID=NULL}
-    if (time_point == intercept_timepoint+1){cat ("intercept_pop_indiv_ID = ", length(intercept_pop_indiv_ID), " ; int_togg = ",int_togg,"\n" )}
+      # Intercept inputs
+    if (intercept_togg & time_point > intercept_timepoint & intercept_reducMort){intercept_pop_indiv_ID=intercept_pop$indiv_ID; int_togg=TRUE} else {int_togg=FALSE; intercept_pop_indiv_ID=NULL}
+    
+    if (time_point == intercept_timepoint+1 & intercept_togg){cat ("intercept_pop_indiv_ID = ", length(intercept_pop_indiv_ID), " ; int_togg = ",int_togg,"\n" )}
     
     if (time_point>=MR_timepoint & MR_lateintro & MR_imp){
       indiv_death <- mortality_death_rate_MRlate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint, int_togg=int_togg, intercept_pop_indiv_ID=intercept_pop_indiv_ID)
@@ -96,7 +98,16 @@ for (time_point in 1:time_max){
     }
     
     ## Recruitment
-    curr_pop <- recruit_rate(pop=curr_pop, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_recruit_imp, MR_recruit_impact_val=MR_recruit_impact, MR_rec_adjusted=MR_rec_adj, age_imp_rec_togg=age_imp_rec)
+      # If MR has not activated then regardless MR impact on rec is 0 😺
+    if (time_point>=MR_timepoint & MR_lateintro & MR_imp){
+      MR_recruit_impact_tp = MR_recruit_impact
+    } else if (time_point<MR_timepoint & MR_lateintro & MR_imp) {
+      MR_recruit_impact_tp = 0
+    } else if (!MR_lateintro | !MR_imp) {
+      MR_recruit_impact_tp = 0
+    }
+      
+    curr_pop <- recruit_rate(pop=curr_pop, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift)
     recruited_indivs = length(curr_pop$indiv_ID) - indiv_alive_count
     indiv_count_end = length(curr_pop$indiv_ID) + indiv_count_end
     
@@ -107,7 +118,7 @@ for (time_point in 1:time_max){
     
     ## !!Intervention!! ✊
     
-    if (time_point == intercept_timepoint){
+    if (time_point == intercept_timepoint & intercept_togg){
       
       cat("Time at:", time_point,"\n",
           "Individuals alive:", length(curr_pop$indiv_ID), "\n",
@@ -157,7 +168,6 @@ for (time_point in 1:time_max){
     live_size <- data.frame(time=time_point, sum_size=length(curr_pop$indiv_ID[!as.logical(indiv_death)]))
     live_size_df <- rbind(live_size_df, live_size) 
     
-    
      # Save populations at user designated timepoints
     if (!is.null(timepoint_pop_grab) && (time_point %in% timepoint_pop_grab)){
       i <- which(time_point == timepoint_pop_grab)
@@ -196,9 +206,9 @@ plot_livesize <- ggplot() +
   geom_hline(yintercept=population_carrying_capacity, linewidth = 0.75, linetype="dashed", colour="chocolate") +
   geom_hline(yintercept=population_minimum_size, linewidth = 0.75, linetype="dashed", colour="chocolate") +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate") +
-  geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen") +
   ggforce::facet_zoom(xlim=c(1100,1200)) +
   labs(title="Live population size") 
+if(intercept_togg){plot_livesize <- plot_livesize + geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen")}
   
 plot_liveage  <- ggplot() + 
   geom_point(data=age_df, aes(x=time, y=age_mean_summ)) +
@@ -211,9 +221,9 @@ plot_liveMR   <- ggplot() +
   geom_errorbar(data=MR_df, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ)) + 
   stat_smooth(data=MR_df, aes(x=time, y = MR_mean_summ), linewidth = 0.75, linetype="dashed", colour="grey40", span=10) +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate") +
-  geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen") +
   ggforce::facet_zoom(xlim=c(1100,1200)) +
   labs(title="Live MR")
+if(intercept_togg){plot_liveMR <- plot_liveMR + geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen")}
 
 library(patchwork)
 plot_deadMR / plot_liveMR + plot_layout(heights = c(1,3))

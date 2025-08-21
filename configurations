@@ -9,16 +9,6 @@ MR_mean = 0.787 # From actual genotype data
 MR_sd = 0.385
 disturbance_impact_val=5 # impacts base age & MR death factor and recruitment constant
 
-### Genotype pred
-#> prediction_rmnoNA %>% group_by(Disease_pressure) %>% summarise(mean_pred = mean(Prediction), sd_pred = sd(Prediction))
-# A tibble: 2 × 3
-#  Disease_pressure mean_pred sd_pred
-#  <chr>                <dbl>   <dbl>
-#1 High_MR_sitepres     0.653   0.366
-#2 Low_MR_sitepres      0.787   0.385
-
-  ## Parameters
-
   ## Mortality parameters
 age_impact = 1.0 # scaled age inflicted increase - from 0 to 1, should add to 1 with MR impact val
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
@@ -49,10 +39,8 @@ disturbance_age_struct_type = "complex" # Impact value flat or varied by age [co
 #dist_probability = 0.1 # Probability of disturbance occurring (exponential function transformation)
 dist_impact = 5 # Level of impact (multiplier)
 dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
- 
 
   ## Simulation parameters
 time_max = 2000 # how long to run sim for
 output_timept = time_max/5 # How often to report visual statistics
-#timepoint_pop_grab = c(750:1250)
 timepoint_pop_grab = c(seq(from=1010, to=1020), seq(from=1030, to=1050)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)

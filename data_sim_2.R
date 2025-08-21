@@ -25,9 +25,6 @@ pop_df <- list(
   age = init_age
 )
 
-cat(recruitment_const)
-
-
 ## Initialise objects
 indiv_pop=NULL 
 MR_pop=NULL 
