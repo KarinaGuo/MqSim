@@ -1,13 +1,13 @@
 ## Plotting intervention difference
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 library(tidyverse); library(patchwork)
-source("Intercept/configurations_int")
+source("Intervention/configurations_int")
 theme_set(theme_bw())
 
-MR_base <- read.csv("Intercept/MR_base_0.2_Intro1000_S4000.csv") %>% mutate(Run="Base")
-size_base <- read.csv("Intercept/SIZE_base_0.2_Intro1000_S4000.csv") %>% mutate(Run="Base")
-MR_int <- read.csv("Intercept/MR_int_MR_0.2_Intro1000_S4000.csv") %>% mutate(Run="Resistance Intervention")
-size_int <- read.csv("Intercept/SIZE_int_MR_0.2_Intro1000_S4000.csv") %>% mutate(Run="Resistance Intervention")
+MR_base <- read.csv("Intervention/MR_base_0.2_Intro1000.csv") %>% mutate(Run="Base")
+size_base <- read.csv("Intervention/SIZE_base_0.2_Intro1000.csv") %>% mutate(Run="Base")
+MR_int <- read.csv("Intervention/MR_int_MR_0.2_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
+size_int <- read.csv("Intervention/SIZE_int_MR_0.2_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
 
 MR_df <- rbind(MR_base, MR_int)
 live_size_df <- rbind(size_base, size_int)

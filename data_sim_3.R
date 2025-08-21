@@ -4,12 +4,12 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 
 ## Save files after
   #Int
-#write.csv(live_size_df, file="Intercept/SIZE_int_MR_0.2_Intro1000_S4000.csv")
-#write.csv(MR_df, file="Intercept/MR_int_MR_0.2_Intro1000_S4000.csv")
+#write.csv(live_size_df, file="Intervention/SIZE_int_MR_0.2_Intro1000.csv")
+#write.csv(MR_df, file="Intervention/MR_int_MR_0.2_Intro1000.csv")
 
   #Base
-#write.csv(live_size_df, file="Intercept/SIZE_base_0.2_Intro1000_S4000.csv")
-#write.csv(MR_df, file="Intercept/MR_base_0.2_Intro1000_S4000.csv")
+#write.csv(live_size_df, file="Intervention/SIZE_base_0.2_Intro1000.csv")
+#write.csv(MR_df, file="Intervention/MR_base_0.2_Intro1000.csv")
 
 
 ## Load in libraries
