@@ -3,11 +3,11 @@ rm(list = ls())
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 
 ## Save files after
-  #Int
+#Int
 #write.csv(live_size_df, file="Intervention/SIZE_int_MR_0.2_Intro1000.csv")
 #write.csv(MR_df, file="Intervention/MR_int_MR_0.2_Intro1000.csv")
 
-  #Base
+#Base
 #write.csv(live_size_df, file="Intervention/SIZE_base_0.2_Intro1000.csv")
 #write.csv(MR_df, file="Intervention/MR_base_0.2_Intro1000.csv")
 
@@ -19,7 +19,7 @@ library(tidyverse)
 source("Intervention/configurations_int")
 source("Functions/mortality_functions_MRintro.R")
 source("Functions/mortality_functions.R")
-source("Functions/recruitment_functions_2.R")
+source("Functions/recruitment_functions_3.R")
 source("Functions/disturbance_functions.R")
 
 ## Initiate random population
@@ -50,14 +50,6 @@ pop_timepoints=NULL
 dist_event=FALSE
 time_point=1
 
-# Workflow: 
-## 1) Population goes through disturbance
-## 2A) Population recruits + intervention score (no mortality)
-## 2B) Population mortality calculated
-## 3) New population generated: Population initial -> Recruitment + intervention
-
-
-
 for (time_point in 1:time_max){
   
   # Apply disturbance results
@@ -70,25 +62,43 @@ for (time_point in 1:time_max){
   
   
   if(time_point==1){
-    curr_pop_start <- pop_df
+    curr_pop <- pop_df
   } else {
-    curr_pop_start <- lapply(curr_pop_end, function(x) x[curr_pop_end$time==time_point])
+    curr_pop <- lapply(curr_pop_end, function(x) x[curr_pop_end$time==time_point])
   }
   
-  if((length(curr_pop_start$indiv_ID)==0)) {
+  if((length(curr_pop$indiv_ID)==0)) {
     stop("All dead at time ", time_point, "\n")
   } else{
     
-    indiv_count_start=length(curr_pop_start$indiv_ID) + indiv_count_end
-    indiv_alive_count=length(curr_pop_start$indiv_ID)
-        
+    indiv_count_start=length(curr_pop$indiv_ID) + indiv_count_end
+    
+    indiv_alive_count=length(curr_pop$indiv_ID)
+    
+    
+    ## Mortality
     # Intercept inputs
     if (intercept_togg & time_point > intercept_timepoint & intercept_reducMort){intercept_pop_indiv_ID=intercept_pop$indiv_ID; int_togg=TRUE} else {int_togg=FALSE; intercept_pop_indiv_ID=NULL}
     
     if (time_point == intercept_timepoint+1 & intercept_togg){cat ("intercept_pop_indiv_ID = ", length(intercept_pop_indiv_ID), " ; int_togg = ",int_togg,"\n" )}
-  
+    
+    if (time_point>=MR_timepoint & MR_lateintro & MR_imp){
+      indiv_death <- mortality_death_rate_MRlate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint, int_togg=int_togg, intercept_pop_indiv_ID=intercept_pop_indiv_ID)
+      if(time_point==MR_timepoint){cat("Using mortality_death_rate_MRlate \n")}
+      
+    } else if (time_point<MR_timepoint & MR_lateintro & MR_imp){
+      MR_death_impact_beforeintro = 0
+      indiv_death <- mortality_death_rate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_beforeintro, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, int_togg=int_togg, intercept_pop_indiv_ID=intercept_pop_indiv_ID)
+      if(time_point==1){cat("Using mortality_death_rate & MR before imp \n")}
+      
+    } else if (!MR_lateintro | !MR_imp) {
+      indiv_death <- mortality_death_rate(pop=curr_pop, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, int_togg=int_togg, intercept_pop_indiv_ID=intercept_pop_indiv_ID)
+      if(time_point==1){cat("Using mortality_death_rate \n")}
+      
+    }
+    
     ## Recruitment
-      # If MR has not activated then regardless MR impact on rec is 0 😺
+    # If MR has not activated then regardless MR impact on rec is 0 😺
     if (time_point>=MR_timepoint & MR_lateintro & MR_imp){
       MR_recruit_impact_tp = MR_recruit_impact
     } else if (time_point<MR_timepoint & MR_lateintro & MR_imp) {
@@ -96,12 +106,16 @@ for (time_point in 1:time_max){
     } else if (!MR_lateintro | !MR_imp) {
       MR_recruit_impact_tp = 0
     }
-      
-    curr_pop_recruited <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift)
-
-    recruited_indivs = length(curr_pop_start$indiv_ID) - indiv_alive_count
-    indiv_count_end = length(curr_pop_recruited$indiv_ID) + indiv_count_end
-
+    
+    curr_pop <- recruit_rate(pop=curr_pop, recruitment_age=recruitment_age, population_min_size=population_minimum_size, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift)
+    recruited_indivs = length(curr_pop$indiv_ID) - indiv_alive_count
+    indiv_count_end = length(curr_pop$indiv_ID) + indiv_count_end
+    
+    indiv_death = c(indiv_death, rep(0, recruited_indivs)) 
+    
+    death_df_curr <- data.frame(Dead_ID=curr_pop$indiv_ID[as.logical(indiv_death)], age=curr_pop$age[as.logical(indiv_death)], MR=curr_pop$MR[as.logical(indiv_death)], time=curr_pop$time[as.logical(indiv_death)])
+    death_df <- rbind(death_df, death_df_curr)
+    
     ## !!Intervention!! ✊
     
     if (time_point == intercept_timepoint & intercept_togg){
@@ -119,65 +133,42 @@ for (time_point in 1:time_max){
         #mortality = rep(0, intercept_indiv),
         age = rep(2, intercept_indiv))
       
-      curr_pop_og <- curr_pop_recruited
+      curr_pop_og <- curr_pop
       curr_pop_int <- list(
-        indiv_ID=c(curr_pop_recruited$indiv_ID, intercept_pop$indiv_ID), 
-        age=c(curr_pop_recruited$age, intercept_pop$age), 
-        MR=c(curr_pop_recruited$MR, intercept_pop$MR), 
-        time=c(curr_pop_recruited$time, intercept_pop$time))
+        indiv_ID=c(curr_pop$indiv_ID, intercept_pop$indiv_ID), 
+        age=c(curr_pop$age, intercept_pop$age), 
+        MR=c(curr_pop$MR, intercept_pop$MR), 
+        time=c(curr_pop$time, intercept_pop$time))
       
-      curr_pop_recruited <- curr_pop_int
+      curr_pop <- curr_pop_int
       
-      indiv_count_end=length(curr_pop_recruited$indiv_ID) + indiv_count_end
+      indiv_count_end=length(curr_pop$indiv_ID) + indiv_count_end
+      indiv_death = c(indiv_death, rep(0, intercept_indiv)) 
       
       cat(  "## Intervention ##\n",
-            "Individuals alive:", length(curr_pop_recruited$indiv_ID), "\n",
-            "Mean MR of live individuals after:", mean(curr_pop_recruited$MR), "\n",
+            "Individuals alive:", length(curr_pop$indiv_ID), "\n",
+            "Mean MR of live individuals after:", mean(curr_pop$MR), "\n",
             "#################\n")
       
       # Plots
-      print(ggplot() + geom_point(data=data.frame(curr_pop_recruited), aes(x=age, y=MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
-    } else {intercept_indiv=0}
-    
-    if (time_point>=MR_timepoint & MR_lateintro & MR_imp){
-      indiv_death <- mortality_death_rate_MRlate(pop=curr_pop_start, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, MR_intro=MR_lateintro, MR_intro_timepoint=MR_timepoint, int_togg=int_togg, intercept_pop_indiv_ID=intercept_pop_indiv_ID)
-      if(time_point==MR_timepoint){cat("Using mortality_death_rate_MRlate \n")}
-      
-    } else if (time_point<MR_timepoint & MR_lateintro & MR_imp){
-      MR_death_impact_beforeintro = 0
-      indiv_death <- mortality_death_rate(pop=curr_pop_start, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact_beforeintro, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, int_togg=int_togg, intercept_pop_indiv_ID=intercept_pop_indiv_ID)
-      if(time_point==1){cat("Using mortality_death_rate & MR before imp \n")}
-      
-    } else if (!MR_lateintro | !MR_imp) {
-      indiv_death <- mortality_death_rate(pop=curr_pop_start, population_capacity=population_carrying_capacity, comp_togg=comp_imp, comp_impact_val=comp_impact, MR_togg=MR_imp, MR_death_impact_val=MR_death_impact, MR_age_impact_val=MR_age_impact, age_impact_val=age_impact, mortality_age_shiftch=mortality_age_shift, int_togg=int_togg, intercept_pop_indiv_ID=intercept_pop_indiv_ID)
-      if(time_point==1){cat("Using mortality_death_rate \n")}
-      
+      print(ggplot() + geom_point(data=data.frame(curr_pop), aes(x=age, y=MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
     }
     
-    death_df_curr <- data.frame(Dead_ID=curr_pop_start$indiv_ID[as.logical(indiv_death)], age=curr_pop_start$age[as.logical(indiv_death)], MR=curr_pop_start$MR[as.logical(indiv_death)], time=curr_pop_start$time[as.logical(indiv_death)])
-    death_df <- rbind(death_df, death_df_curr)
-    
-    death_df_curr <- data.frame(Dead_ID=curr_pop_start$indiv_ID[as.logical(indiv_death)], age=curr_pop_start$age[as.logical(indiv_death)], MR=curr_pop_start$MR[as.logical(indiv_death)], time=curr_pop_start$time[as.logical(indiv_death)])
-    death_df <- rbind(death_df, death_df_curr)
-
-    indiv_death = c(indiv_death, rep(0, recruited_indivs + intercept_indiv)) 
-    indiv_death = c(indiv_death, rep(0, intercept_indiv)) 
-    
-    curr_pop_end <- list(indiv_ID=curr_pop_recruited$indiv_ID[!as.logical(indiv_death)], age=curr_pop_recruited$age[!as.logical(indiv_death)]+1, MR=curr_pop_recruited$MR[!as.logical(indiv_death)], time=curr_pop_recruited$time[!as.logical(indiv_death)]+1)
+    curr_pop_end <- list(indiv_ID=curr_pop$indiv_ID[!as.logical(indiv_death)], age=curr_pop$age[!as.logical(indiv_death)]+1, MR=curr_pop$MR[!as.logical(indiv_death)], time=curr_pop$time[!as.logical(indiv_death)]+1)
     
     # Generate summary data if not dead
-    if (length(curr_pop_recruited$indiv_ID)>sum(indiv_death)){ 
-      MR_summ <- data.frame(time=time_point, MR_mean_summ=mean(curr_pop_end$MR, na.rm=TRUE), MR_sd_summ=sd(curr_pop_end$MR))
+    if (length(curr_pop$indiv_ID)>sum(indiv_death)){ 
+      MR_summ <- data.frame(time=time_point, MR_mean_summ=mean(curr_pop$MR[!as.logical(indiv_death)], na.rm=TRUE), MR_sd_summ=sd(curr_pop$MR[!as.logical(indiv_death)]))
       MR_df <- rbind(MR_df, MR_summ)
       
-      age_summ <- data.frame(time=time_point, age_mean_summ=mean(curr_pop_end$age), age_sd_summ=sd(curr_pop_end$age),pop_size=length(curr_pop_end$indiv_ID))
+      age_summ <- data.frame(time=time_point, age_mean_summ=mean(curr_pop$age[!as.logical(indiv_death)]), age_sd_summ=sd(curr_pop$age[!as.logical(indiv_death)]),pop_size=length(curr_pop$indiv_ID))
       age_df <- rbind(age_df, age_summ) 
     }
     
-    live_size <- data.frame(time=time_point, sum_size=length(curr_pop_end$indiv_ID))
+    live_size <- data.frame(time=time_point, sum_size=length(curr_pop$indiv_ID[!as.logical(indiv_death)]))
     live_size_df <- rbind(live_size_df, live_size) 
     
-     # Save populations at user designated timepoints
+    # Save populations at user designated timepoints
     if (!is.null(timepoint_pop_grab) && (time_point %in% timepoint_pop_grab)){
       i <- which(time_point == timepoint_pop_grab)
       pop_timepoints[[i]] <- curr_pop_end
@@ -195,7 +186,7 @@ for (time_point in 1:time_max){
       
       cat("Time at:", time_point,"\n",
           "Individuals alive:", length(curr_pop_end$indiv_ID), "\n",
-          "Mean MR of live individuals:", mean(curr_pop_end$MR), "\n",
+          "Mean MR of live individuals:", mean(curr_pop$MR[!as.logical(indiv_death)]), "\n",
           "#################\n")
       
       # Plots
@@ -218,7 +209,7 @@ plot_livesize <- ggplot() +
   ggforce::facet_zoom(xlim=c(1100,1200)) +
   labs(title="Live population size") 
 if(intercept_togg){plot_livesize <- plot_livesize + geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen")}
-  
+
 plot_liveage  <- ggplot() + 
   geom_point(data=age_df, aes(x=time, y=age_mean_summ)) +
   geom_errorbar(data=age_df, aes(x=time, ymax = age_mean_summ + age_sd_summ, ymin = age_mean_summ - age_sd_summ)) + 
@@ -237,4 +228,3 @@ if(intercept_togg){plot_liveMR <- plot_liveMR + geom_vline(xintercept=intercept_
 library(patchwork)
 plot_deadMR / plot_liveMR + plot_layout(heights = c(1,3))
 plot_livesize / plot_liveage + plot_layout(heights = c(3,1))
-
