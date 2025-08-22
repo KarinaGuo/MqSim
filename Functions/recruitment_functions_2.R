@@ -48,11 +48,11 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
     total_impact <- 1
   }
   
-  tmp <- data.frame(recruitment_indivs_ages=recruitment_indivs_ages, recruitment_indivs_MR=recruitment_indivs_MR, MR_impact=MR_impact, age_impact=age_impact, total_impact=total_impact)
-  ggplot(data=tmp, aes(x=recruitment_indivs_MR, y=total_impact, colour=recruitment_indivs_ages)) + geom_point() +theme_bw()
-  ggplot(data=tmp, aes(x=recruitment_indivs_ages, y=total_impact, colour=recruitment_indivs_ages)) + geom_point() +theme_bw()
-  ggplot(data=tmp, aes(x=recruitment_indivs_MR, y=MR_impact, colour=recruitment_indivs_ages)) + geom_point() +theme_bw()
-  ggplot(data=tmp, aes(x=recruitment_indivs_ages, y=age_impact, colour=recruitment_indivs_ages)) + geom_point() +theme_bw()
+  #tmp <- data.frame(recruitment_indivs_ages=recruitment_indivs_ages, recruitment_indivs_MR=recruitment_indivs_MR, MR_impact=MR_impact, age_impact=age_impact, total_impact=total_impact)
+  #ggplot(data=tmp, aes(x=recruitment_indivs_MR, y=total_impact, colour=recruitment_indivs_ages)) + geom_point() +theme_bw()
+  #ggplot(data=tmp, aes(x=recruitment_indivs_ages, y=total_impact, colour=recruitment_indivs_ages)) + geom_point() +theme_bw()
+  #ggplot(data=tmp, aes(x=recruitment_indivs_MR, y=MR_impact, colour=recruitment_indivs_ages)) + geom_point() +theme_bw()
+  #ggplot(data=tmp, aes(x=recruitment_indivs_ages, y=age_impact, colour=recruitment_indivs_ages)) + geom_point() +theme_bw()
   
   # Recruitment draw
   indiv_recruitment <- rbinom(n = length(recruitment_indivs$indiv_ID), size = 1, prob = recruitment_constant * total_impact)
@@ -66,7 +66,7 @@ recruit_rate <- function(pop, population_min_size, recruitment_age, recruitment_
     new_recruit_MR=NULL
     for (i in 1:length(recruitment_indiv_MR)) { # For each new recruit, use parent phenotype to generate MR, dependent on MR
       
-      MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1)^4, shape2=(2-recruitment_indiv_MR[i])^4) # distribution of recruited individual's MR between 0 to 1
+      MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1)^2, shape2=(2-recruitment_indiv_MR[i])^2) # distribution of recruited individual's MR between 0 to 1
       new_recruit_MR_new <- MR_rec_PDF+(recruitment_indiv_MR[i]+MR_rec_adjusted-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
       #new_recruit_MR_new <- rescale(MR_rec_PDF, from = c(0,1), to=c(0,2)) # recalibrate to make the mean the MR of parent pheno
       

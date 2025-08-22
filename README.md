@@ -8,6 +8,7 @@ Files:
 ├── lifestage_MR_res.R - reads in populations grabbed from simulation runs to plot distribution of phenotypes at timepoints \
 ├── data_sim_3.R - stable version of the simulation with intervention \
 ├── intervention_plots.R - plots results after different intervention runs, uses output saved from data_sim_3.R \
+├── data_sim_4.R - converting data_sim_3 to a fixed population size uses recruitment_functions_3.R \
 ├── empirical_recruitment.R - plotting distribution of recruited indivs MR from WGS \
 ├── pop_init_Cattai.R - creating an initial population using Cattai planted individuals \
  \
@@ -23,6 +24,7 @@ Files:
 │   └── mortality_functions.R - initial mortality function when using base MR status \
 │   └── mortality_functions_MRintro.R - mortality function invoked when timepoint > MR introduction timepoint \
 │   └── recruitment_functions_2.R \
+│   └── recruitment_functions_3.R  - fixed population size recruitment \
 │   └── recruitment_functions_maladaptation.R \
 ├── Maladaptation \
 │   └── configurations_maladaptation - input for data_sim_maladaptaiton.R \

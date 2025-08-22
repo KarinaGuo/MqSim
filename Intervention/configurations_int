@@ -7,14 +7,13 @@ population_carrying_capacity = population_size*5 # If population creeps above th
 population_minimum_size = population_size/10 # If population falls below this value, there is a 10x increased chance of recruitment
 MR_mean = 0.787 # From actual genotype data 
 MR_sd = 0.385
-disturbance_impact_val=5 # impacts base age & MR death factor and recruitment constant
 
   ## Mortality parameters
 age_impact = 1.0 # scaled age inflicted increase - from 0 to 1
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.2 # linear scaled MR inflicted death increase - from 0 to 1
+MR_death_impact = 0.15 # linear scaled MR inflicted death increase - from 0 to 1
 MR_age_impact = 10 # scaled impact of age (ages / MR_age_impact_val) on MR inflicted death increase
 
 MR_lateintro = T
@@ -24,15 +23,17 @@ comp_imp = T # toggle on/off for competition due to carrying capacity
 comp_impact = 0.9 # impact of competition due to carrying capacity (1.x multiplier of a scaled competition influence)
 
   ## Recruitment parameters
-recruitment_const = 0.005 # base constant for chance of recruitment
+recruitment_const = 0.003 # base constant for chance of recruitment
 recruitment_age = 7 # age to begin recruiting
 recruitment_mean = 100 # mean for PDF of normal distribution for number of recruited individuals
 recruitment_sd = recruitment_mean/2 # standard deviation of number of recruited individuals
 age_rec_toggle = TRUE # Takes the complimentary of the age fraction to reduce recruitment mean according to size (larger = closer to 1)
-age_recruit_impact_value = 0.5 # Range from 0.01-1. Takes the exponential of this value, the higher this value, the steeper the penalisation 
+age_recruit_impact_value = 0.5 # Range from 0.01-1. Takes the exponential of this value, the higher this value, the steeper the penalisation
+  #age_scaled <- recruitment_indivs_ages / rec_age_shiftch; age_scaled[age_scaled>1]=1
+  #age_impact <- age_scaled ^ age_recruit_impact_val
 rec_age_shift = 100 # age shift, lower than this age recruitment for the individual is penalised
-MR_rec_toggle = T # toggle on/off of MR affect on recruitment
-MR_recruit_impact = 0.5 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance
+MR_rec_toggle = TRUE # toggle on/off of MR affect on recruitment
+MR_recruit_impact = 0.75 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance; MR_impact <- 1 - recruitment_indivs_MR ^ MR_recruit_impact_val
 
 
 MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
@@ -41,13 +42,12 @@ MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
 intercept_togg = F
 intercept_timepoint = 1025
 intercept_indiv = 300
-intercept_MR_mean = 0.15 # (bottom third)
+intercept_MR_mean = 0.15 
 intercept_MR_sd = 0.1
 intercept_reducMort = T
 
-
   ## Disturbance parameters (ranges from super small to big impacts)
-dist_imp = T # Turn on and off disturbance presence
+dist_imp = F # Turn on and off disturbance presence
 disturbance_age_struct_type = "complex" # Impact value flat or varied by age [complex/flat]
 dist_impact = 5 # Level of impact (multiplier)
 dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
