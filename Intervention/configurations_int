@@ -27,6 +27,7 @@ recruitment_const = 0.003 # base constant for chance of recruitment
 recruitment_age = 7 # age to begin recruiting
 recruitment_mean = 100 # mean for PDF of normal distribution for number of recruited individuals
 recruitment_sd = recruitment_mean/2 # standard deviation of number of recruited individuals
+density_recruit_toggle = TRUE # Reduces density recruitment by the proportion of individuals in pop vs maximum carrying capacity
 age_rec_toggle = TRUE # Takes the complimentary of the age fraction to reduce recruitment mean according to size (larger = closer to 1)
 age_recruit_impact_value = 0.5 # Range from 0.01-1. Takes the exponential of this value, the higher this value, the steeper the penalisation
   #age_scaled <- recruitment_indivs_ages / rec_age_shiftch; age_scaled[age_scaled>1]=1
