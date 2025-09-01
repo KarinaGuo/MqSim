@@ -19,7 +19,7 @@ library(tidyverse)
 source("Intervention/configurations_int")
 source("Functions/mortality_functions_MRintro.R")
 source("Functions/mortality_functions.R")
-source("Functions/recruitment_functions_3.R")
+source("Functions/recruitment_functions_2.R")
 source("Functions/disturbance_functions.R")
 
 ## Initiate random population
