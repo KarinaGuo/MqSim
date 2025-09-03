@@ -4,12 +4,12 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 
 ## Save files after
   #Int
-#write.csv(live_size_df, file="Intervention/SIZE_int_MR_0.2_Intro1000.csv")
-#write.csv(MR_df, file="Intervention/MR_int_MR_0.2_Intro1000.csv")
+#write.csv(live_size_df, file="Intervention/SIZE_int_MR_0.5_Intro1000.csv")
+#write.csv(MR_df, file="Intervention/MR_int_MR_0.5_Intro1000.csv")
 
   #Base
-#write.csv(live_size_df, file="Intervention/SIZE_base_0.2_Intro1000.csv")
-#write.csv(MR_df, file="Intervention/MR_base_0.2_Intro1000.csv")
+#write.csv(live_size_df, file="Intervention/SIZE_base_0.5_Intro1000.csv")
+#write.csv(MR_df, file="Intervention/MR_base_0.5_Intro1000.csv")
 
 
 ## Load in libraries
@@ -49,6 +49,7 @@ live_size_df=NULL
 pop_timepoints=NULL
 dist_event=FALSE
 time_point=1
+intercept_indiv_original = intercept_indiv
 
 # Workflow: 
 ## 1) Population goes through disturbance
@@ -106,15 +107,18 @@ for (time_point in 1:time_max){
     ### !!Intervention on initial start pop!! ✊
     
     if (time_point == intercept_timepoint & intercept_togg){
+      intercept_indiv = intercept_indiv_original
+      if (intercept_indiv <= 0) {stop("too few intercept indivs")}
       
       cat("Time at:", time_point,"\n",
-          "Individuals alive:", length(curr_pop$indiv_ID), "\n",
-          "Mean MR of live individuals:", mean(curr_pop$MR), "\n")
+          "Individuals alive:", length(curr_pop_recruited$indiv_ID), "\n",
+          "Mean MR of live individuals:", mean(curr_pop_recruited$MR), "\n")
       
       int_MR <- rnorm(n=intercept_indiv, mean = intercept_MR_mean, sd = intercept_MR_sd); int_MR[int_MR<0]=0; int_MR[int_MR>1]=1
       
       intercept_pop <- list(
-        indiv_ID=seq(from=indiv_count_end+1, to=indiv_count_end+intercept_indiv),
+        indiv_ID = seq(from = indiv_count_end + 1,
+                        to   = indiv_count_end + intercept_indiv),
         time = rep(time_point, intercept_indiv),
         MR=as.numeric(int_MR),
         #mortality = rep(0, intercept_indiv),
@@ -137,7 +141,8 @@ for (time_point in 1:time_max){
             "#################\n")
       
       # Plots
-      print(ggplot() + geom_point(data=data.frame(curr_pop_recruited), aes(x=age, y=MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
+      cat(str(curr_pop_recruited))
+      print(ggplot() + geom_point(aes(x=curr_pop_recruited$age, y=curr_pop_recruited$MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
     } else {intercept_indiv=0}
     
     #### Population mortality on initial population
@@ -164,8 +169,6 @@ for (time_point in 1:time_max){
     death_df <- rbind(death_df, death_df_curr)
 
     indiv_death = c(indiv_death, rep(0, recruited_indivs + intercept_indiv)) 
-    indiv_death = c(indiv_death, rep(0, intercept_indiv)) 
-    
     
     #### Final time point pop
     curr_pop_end <- list(indiv_ID=curr_pop_recruited$indiv_ID[!as.logical(indiv_death)], age=curr_pop_recruited$age[!as.logical(indiv_death)]+1, MR=curr_pop_recruited$MR[!as.logical(indiv_death)], time=curr_pop_recruited$time[!as.logical(indiv_death)]+1)
