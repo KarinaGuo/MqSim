@@ -23,24 +23,23 @@ comp_imp = T # toggle on/off for competition due to carrying capacity
 comp_impact = 0.9 # impact of competition due to carrying capacity (1.x multiplier of a scaled competition influence)
 
   ## Recruitment parameters
-recruitment_const = 0.005 # base constant for chance of recruitment
+recruitment_const = 0.003 # base constant for chance of recruitment
 recruitment_age = 7 # age to begin recruiting
 recruitment_mean = 100 # mean for PDF of normal distribution for number of recruited individuals
 recruitment_sd = recruitment_mean/2 # standard deviation of number of recruited individuals
-density_recruit_toggle = F # Reduces density recruitment by the proportion of individuals in pop vs maximum carrying capacity
-age_rec_toggle = TRUE # Takes the complimentary of the age fraction to reduce recruitment mean according to size (larger = closer to 1)
-age_recruit_impact_value = 0.5 # Range from 0.01-1. Takes the exponential of this value, the higher this value, the steeper the penalisation
+age_rec_toggle = T # Takes the complimentary of the age fraction to reduce recruitment mean according to size (larger = closer to 1)
+age_recruit_impact_value = 0.25 # Range from 0.01-1. Takes the exponential of this value, the higher this value, the steeper the penalisation
   #age_scaled <- recruitment_indivs_ages / rec_age_shiftch; age_scaled[age_scaled>1]=1
   #age_impact <- age_scaled ^ age_recruit_impact_val
 rec_age_shift = 100 # age shift, lower than this age recruitment for the individual is penalised
-MR_rec_toggle = TRUE # toggle on/off of MR affect on recruitment
+MR_rec_toggle = T # toggle on/off of MR affect on recruitment
 MR_recruit_impact = 0.75 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance; MR_impact <- 1 - recruitment_indivs_MR ^ MR_recruit_impact_val
-
+density_recruit_toggle = F # Reduces density recruitment by the proportion of individuals in pop vs maximum carrying capacity
 
 MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
 
   ## Intervention parameters
-intercept_togg = T
+intercept_togg = F
 intercept_timepoint = 1025
 intercept_indiv = 300
 intercept_MR_mean = 0.15 
@@ -56,5 +55,5 @@ dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
   ## Simulation parameters
 time_max = 2000 # how long to run sim for
 output_timept = time_max/5 # How often to report visual statistics
-timepoint_pop_grab = c(500:550, MR_timepoint+10:MR_timepoint+50, MR_timepoint+950:MR_timepoint+1000)
-#timepoint_pop_grab = c(seq(from=1010, to=1020), seq(from=1030, to=1050)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)
+#timepoint_pop_grab = c(750:1250)
+timepoint_pop_grab = c(seq(from=1010, to=1020), seq(from=1030, to=1050)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)

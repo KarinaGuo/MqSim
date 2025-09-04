@@ -19,20 +19,20 @@
 
 Hill_eqn <- function(age, steepness, mortality_age_shiftch, flip) {
   K <- mortality_age_shiftch / (((steepness - 1) / (steepness + 1))^(1 / steepness))
-  y <- if(flip){0.75*K^steepness / (K^steepness + age^steepness)} else {age^steepness / (K^steepness + age^steepness)}
+  y <- if(flip){0.7*K^steepness / (K^steepness + age^steepness)} else {age^steepness / (K^steepness + age^steepness)}
   return(y)
 }
 
 young_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
   # Mortality chance for individuals <age_impact_val
-  death_perc <- Hill_eqn(age=age_x, mortality_age_shiftch=mortality_age_shiftch/4, steepness = 10, flip=TRUE) * age_impact_val # Decreasing death with age
+  death_perc <- Hill_eqn(age=age_x, mortality_age_shiftch=2, steepness = 2, flip=TRUE) * age_impact_val # Decreasing death with age
   return(death_perc)
 }
 
 
 mature_mortality <- function(age_x, age_impact_val, mortality_age_shiftch){
   # Mortality chance for individuals >=age_impact_val
-  death_perc <- Hill_eqn(age=age_x, mortality_age_shiftch=mortality_age_shiftch*1.5, steepness = 10, flip=FALSE) * age_impact_val# Rising death with age
+  death_perc <- Hill_eqn(age=age_x, mortality_age_shiftch=mortality_age_shiftch, steepness = 15, flip=FALSE) * age_impact_val# Rising death with age
   return(death_perc)
 }
 
@@ -54,7 +54,7 @@ mortality_death_rate_MRlate  <- function(pop, population_capacity, population_mi
   for (i in seq_along(ages)) {
     x <- ages[i]
     if (x <= mortality_age_shiftch) {
-      age_mortality_chance[i] <- young_mortality(x, age_impact_val)
+      age_mortality_chance[i] <- young_mortality(x, age_impact_val, mortality_age_shiftch)
     } else {
       age_mortality_chance[i] <- mature_mortality(x, age_impact_val, mortality_age_shiftch)
     }

@@ -4,7 +4,7 @@
 
 Hill_eqn <- function(age, steepness, mortality_age_shiftch, flip) {
   K <- mortality_age_shiftch / (((steepness - 1) / (steepness + 1))^(1 / steepness))
-  y <- if(flip){0.7*K^steepness / (K^steepness + age^steepness)} else {age^steepness / (K^steepness + age^steepness)}
+  y <- if(flip){0.75*K^steepness / (K^steepness + age^steepness)} else {age^steepness / (K^steepness + age^steepness)}
   return(y)
 }
 
@@ -41,7 +41,7 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   for (i in seq_along(ages)) {
     x <- ages[i]
     if (x <= mortality_age_shiftch/2) {
-      age_mortality_chance[i] <- young_mortality(x, age_impact_val,mortality_age_shiftch)
+      age_mortality_chance[i] <- young_mortality(x, age_impact_val, mortality_age_shiftch)
     } else {
       age_mortality_chance[i] <- mature_mortality(x, age_impact_val, mortality_age_shiftch)
     }

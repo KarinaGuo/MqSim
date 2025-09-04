@@ -1,9 +1,9 @@
 set.seed(123)
 
-output_logfile = "ParamTesting/run_log.txt"
+output_logfile = paste0("ParamTesting/run_log_", Sys.Date(),".tst")
 sink(output_logfile)
 
-n_t=100 # How many times to run iteration
+n_t=1000 # How many times to run iteration
 
 param_sets <- data.frame(
   MR_mean = runif(n_t, min = 0, max = 1),
@@ -11,7 +11,7 @@ param_sets <- data.frame(
   age_impact = runif(n_t, min = 0.1, max = 1),
   MR_death_impact = runif(n_t, min = 0, max = 1),
   MR_age_impact = runif(n_t, min = 5, max = 20),
-  recruitment_const = runif(n_t, min = 0.002, max = 0.007),
+  recruitment_const = runif(n_t, min = 0.001, max = 0.007),
   dist_imp = sample(c(TRUE, FALSE), n_t, replace = TRUE)
 )
 
@@ -22,7 +22,6 @@ param_sets <- param_sets %>% mutate(i=row_number())
 library(tidyverse)
 
 ## Load in parameters
-source("Intervention/configurations_int")
 source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_3.R")
@@ -39,7 +38,7 @@ for (param_iter in 1:nrow(param_sets)){
   
   # Load in params
   source("Intervention/configurations_int")
-  list2env(as.list((param_sets)[1,]), envir = .GlobalEnv)
+  list2env(as.list((param_sets)[param_iter,]), envir = .GlobalEnv)
 
   # Run sim
   tryCatch({ 
@@ -63,8 +62,9 @@ for (param_iter in 1:nrow(param_sets)){
   
 }
 
-run_status
-run_res
-run_res_LS
+write.csv(param_sets, file=paste0("ParamTesting/param_sets_", Sys.Date(),".csv"), row.names=F)
+write.csv(run_status, file=paste0("ParamTesting/run_status_", Sys.Date(),".csv"), row.names=F)
+write.csv(run_res, file=paste0("ParamTesting/run_res_", Sys.Date(),".csv"), row.names=F)
+write.csv(run_res_LS, file=paste0("ParamTesting/run_res_LS_", Sys.Date(),".csv"), row.names=F)
 
 sink()
