@@ -16,7 +16,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 library(tidyverse)
 
 ## Load in parameters
-source("Intervention/configurations_int")
+source("configurations_fromMultRun")
 source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_3.R")

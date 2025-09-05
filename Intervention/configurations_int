@@ -53,7 +53,8 @@ dist_impact = 5 # Level of impact (multiplier)
 dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
 
   ## Simulation parameters
-time_max = 2000 # how long to run sim for
+timepoint_pop_grab = c(seq(from=MR_timepoint-61, to=MR_timepoint-10), seq(from=MR_timepoint+1, to=MR_timepoint+50), seq(from=MR_timepoint+750, to=MR_timepoint+800)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)
+time_max = max(timepoint_pop_grab) # how long to run sim for
 output_timept = time_max/5 # How often to report visual statistics
-#timepoint_pop_grab = c(750:1250)
-timepoint_pop_grab = c(seq(from=1010, to=1020), seq(from=1030, to=1050)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)
+
+#timepoint_pop_grab = c(seq(from=1010, to=1020), seq(from=1030, to=1050)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)

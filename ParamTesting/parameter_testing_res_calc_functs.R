@@ -46,6 +46,18 @@ calculate_lifestage <- function(timepoint_df){
   return(MRpop_LS)
 }
 
+pop_growth_trend <- function(pop_before_df){
+  pop_size_status <- pop_before_df %>% 
+    group_by(time) %>% 
+    summarise (n=n())
+  
+  pop_growth_lm <- lm(data=pop_size_status, formula = n ~ time)
+  pop_growth_trend <- pop_growth_lm$coefficients[2]
+  pop_growth_R2 <- summary(pop_growth_lm)$r.squared
+  
+  return(cbind(pop_growth_trend, pop_growth_R2))
+}
+
 calculate_timepoint_vals <- function(pop_timepoints){
    
   # Timepoint before
@@ -57,7 +69,10 @@ calculate_timepoint_vals <- function(pop_timepoints){
   pop_struct <- exponential_curve(pop_before_df)
   pop_size <- nrow(pop_before_df)
   MR_res <- Myrtlerust_calc((pop_before_df))
-  before_res <- data.frame(cbind(timeperiod="Before", pop_struct=pop_struct, pop_size=pop_size, MR_res))
+  
+  pop_growth <- pop_growth_trend(pop_before_df)
+  
+  before_res <- data.frame(cbind(timeperiod="Before", pop_struct=pop_struct, pop_size=pop_size, MR_res, pop_growth))
   
   # Timepoint soon MR intro
   
@@ -69,7 +84,10 @@ calculate_timepoint_vals <- function(pop_timepoints){
   pop_struct <- exponential_curve(pop_soon_df)
   pop_size <- nrow(pop_soon_df)
   MR_res <- Myrtlerust_calc((pop_soon_df))
-  soon_res <- data.frame(cbind(timeperiod="Soon", pop_struct=pop_struct, pop_size=pop_size, MR_res))
+  
+  pop_growth <- pop_growth_trend(pop_soon_df)
+  
+  soon_res <- data.frame(cbind(timeperiod="Soon", pop_struct=pop_struct, pop_size=pop_size, MR_res, pop_growth))
   
   # Timepoint after MR intro
   timepoints_after <- which(timepoint_pop_grab > MR_timepoint*1.5)
@@ -80,7 +98,10 @@ calculate_timepoint_vals <- function(pop_timepoints){
   pop_struct <- exponential_curve(pop_after_df)
   pop_size <- nrow(pop_after_df)
   MR_res <- Myrtlerust_calc(pop_after_df)
-  after_res <- data.frame(cbind(timeperiod="After", pop_struct=pop_struct, pop_size=pop_size, MR_res))
+  
+  pop_growth <- pop_growth_trend(pop_after_df)
+  
+  after_res <- data.frame(cbind(timeperiod="After", pop_struct=pop_struct, pop_size=pop_size, MR_res, pop_growth))
   
   ## Merge res
   iter_res <- rbind(before_res, soon_res, after_res)

@@ -15,7 +15,7 @@
 recruit_rate <- function(pop, population_min_size, population_max_size, recruitment_age, recruitment_size_mean, density_recruit_togg, recruitment_size_sd, recruitment_constant, age_togg, age_recruit_impact_val, MR_togg, MR_recruit_impact_val, MR_rec_adjusted, rec_age_shiftch){
   
   # Current pop_size
-  if (length(pop$indiv_ID) < population_min_size & density_recruit_togg){
+  if (length(pop$indiv_ID) < population_min_size){
     recruitment_constant <- recruitment_constant*10
   } else if (length(pop$indiv_ID) >= population_min_size & length(pop$indiv_ID) < population_max_size & density_recruit_togg) {
     recruitment_adjust = 1-length(pop$indiv_ID)/population_max_size
