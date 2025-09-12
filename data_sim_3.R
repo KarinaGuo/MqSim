@@ -4,13 +4,16 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 
 ## Save files after
   #Int
-#write.csv(live_size_df, file="Intervention/SIZE_int_MR_0.5_Intro1000.csv")
-#write.csv(MR_df, file="Intervention/MR_int_MR_0.5_Intro1000.csv")
+#write.csv(live_size_df, file="Intervention/SIZE_int_MR_0.4_bad_Intro1000.csv")
+#write.csv(MR_df, file="Intervention/MR_int_MR_0.4_bad_Intro1000.csv")
 
   #Base
-#write.csv(live_size_df, file="Intervention/SIZE_base_0.5_Intro1000.csv")
-#write.csv(MR_df, file="Intervention/MR_base_0.5_Intro1000.csv")
+#write.csv(live_size_df, file="Intervention/SIZE_base_0.4_bad_Intro1000.csv")
+#write.csv(MR_df, file="Intervention/MR_base_0.4_bad_Intro1000.csv")
 
+  #MR runs
+#write.csv(live_size_df, file="MR_tests/SIZE_base_0.2_Intro1000.csv")
+#write.csv(MR_df, file="MR_tests/MR_base_0.2_Intro1000.csv")
 
 ## Load in libraries
 library(tidyverse)

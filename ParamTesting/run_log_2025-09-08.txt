@@ -1,0 +1,1975 @@
+2025-09-08 14:45:26.785847 
+1 ran till end (survived) 🐵 
+2025-09-08 14:45:43.04228 
+2 ran till end (survived) 🐵 
+2025-09-08 14:45:58.650732 
+3 ran till end (survived) 🐵 
+2025-09-08 14:46:14.018863 
+4 ran till end (survived) 🐵 
+2025-09-08 14:46:30.501792 
+5 ran till end (survived) 🐵 
+2025-09-08 14:46:46.700713 
+6 ran till end (survived) 🐵 
+2025-09-08 14:47:03.241627 
+7 ran till end (survived) 🐵 
+2025-09-08 14:47:19.486971 
+8 ran till end (survived) 🐵 
+2025-09-08 14:47:38.019451 
+9 ran till end (survived) 🐵 
+2025-09-08 14:47:55.514679 
+10 ran till end (survived) 🐵 
+2025-09-08 14:48:10.179755 
+11 ran till end (survived) 🐵 
+2025-09-08 14:48:26.05022 
+12 ran till end (survived) 🐵 
+2025-09-08 14:48:41.829616 
+13 ran till end (survived) 🐵 
+2025-09-08 14:48:57.679708 
+14 ran till end (survived) 🐵 
+2025-09-08 14:49:08.880362 
+15 ran till end (survived) 🐵 
+2025-09-08 14:49:24.869793 
+16 ran till end (survived) 🐵 
+2025-09-08 14:49:39.480804 
+17 ran till end (survived) 🐵 
+2025-09-08 14:49:55.42167 
+18 ran till end (survived) 🐵 
+2025-09-08 14:50:11.101576 
+19 ran till end (survived) 🐵 
+2025-09-08 14:50:27.161312 
+20 ran till end (survived) 🐵 
+2025-09-08 14:50:36.539523 
+21 ran till end (survived) 🐵 
+2025-09-08 14:50:52.246155 
+22 ran till end (survived) 🐵 
+2025-09-08 14:51:05.226183 
+23 ran till end (survived) 🐵 
+24 died 👵 
+2025-09-08 14:51:37.16963 
+25 ran till end (survived) 🐵 
+2025-09-08 14:51:53.13744 
+26 ran till end (survived) 🐵 
+2025-09-08 14:52:08.124223 
+27 ran till end (survived) 🐵 
+2025-09-08 14:52:23.229227 
+28 ran till end (survived) 🐵 
+2025-09-08 14:52:38.416002 
+29 ran till end (survived) 🐵 
+2025-09-08 14:52:53.397339 
+30 ran till end (survived) 🐵 
+2025-09-08 14:53:08.665881 
+31 ran till end (survived) 🐵 
+2025-09-08 14:53:25.858599 
+32 ran till end (survived) 🐵 
+2025-09-08 14:53:40.842076 
+33 ran till end (survived) 🐵 
+2025-09-08 14:53:57.126251 
+34 ran till end (survived) 🐵 
+2025-09-08 14:54:13.161471 
+35 ran till end (survived) 🐵 
+2025-09-08 14:54:27.80073 
+36 ran till end (survived) 🐵 
+2025-09-08 14:54:42.889072 
+37 ran till end (survived) 🐵 
+2025-09-08 14:54:57.194589 
+38 ran till end (survived) 🐵 
+2025-09-08 14:55:10.711942 
+39 ran till end (survived) 🐵 
+2025-09-08 14:55:25.420947 
+40 ran till end (survived) 🐵 
+2025-09-08 14:55:40.73034 
+41 ran till end (survived) 🐵 
+2025-09-08 14:55:56.510976 
+42 ran till end (survived) 🐵 
+2025-09-08 14:56:12.089072 
+43 ran till end (survived) 🐵 
+2025-09-08 14:56:24.771664 
+44 ran till end (survived) 🐵 
+2025-09-08 14:56:37.617842 
+45 ran till end (survived) 🐵 
+2025-09-08 14:56:51.715693 
+46 ran till end (survived) 🐵 
+2025-09-08 14:57:07.301353 
+47 ran till end (survived) 🐵 
+2025-09-08 14:57:23.067993 
+48 ran till end (survived) 🐵 
+2025-09-08 14:57:39.807612 
+49 ran till end (survived) 🐵 
+2025-09-08 14:57:55.775721 
+50 ran till end (survived) 🐵 
+2025-09-08 14:58:10.645013 
+51 ran till end (survived) 🐵 
+2025-09-08 14:58:27.3899 
+52 ran till end (survived) 🐵 
+2025-09-08 14:58:41.088923 
+53 ran till end (survived) 🐵 
+2025-09-08 14:58:58.720694 
+54 ran till end (survived) 🐵 
+2025-09-08 14:59:11.34161 
+55 ran till end (survived) 🐵 
+2025-09-08 14:59:28.098921 
+56 ran till end (survived) 🐵 
+2025-09-08 14:59:43.34691 
+57 ran till end (survived) 🐵 
+2025-09-08 14:59:58.29807 
+58 ran till end (survived) 🐵 
+2025-09-08 15:00:13.530338 
+59 ran till end (survived) 🐵 
+2025-09-08 15:00:28.496306 
+60 ran till end (survived) 🐵 
+2025-09-08 15:00:44.29656 
+61 ran till end (survived) 🐵 
+2025-09-08 15:00:58.709868 
+62 ran till end (survived) 🐵 
+2025-09-08 15:01:13.651811 
+63 ran till end (survived) 🐵 
+2025-09-08 15:01:28.533223 
+64 ran till end (survived) 🐵 
+2025-09-08 15:01:44.394137 
+65 ran till end (survived) 🐵 
+2025-09-08 15:02:00.790154 
+66 ran till end (survived) 🐵 
+2025-09-08 15:02:16.945722 
+67 ran till end (survived) 🐵 
+2025-09-08 15:02:32.487112 
+68 ran till end (survived) 🐵 
+2025-09-08 15:02:47.641031 
+69 ran till end (survived) 🐵 
+2025-09-08 15:03:02.320136 
+70 ran till end (survived) 🐵 
+2025-09-08 15:03:18.836561 
+71 ran till end (survived) 🐵 
+2025-09-08 15:03:32.53023 
+72 ran till end (survived) 🐵 
+2025-09-08 15:03:47.437216 
+73 ran till end (survived) 🐵 
+2025-09-08 15:04:02.926586 
+74 ran till end (survived) 🐵 
+2025-09-08 15:04:17.655041 
+75 ran till end (survived) 🐵 
+2025-09-08 15:04:32.050918 
+76 ran till end (survived) 🐵 
+2025-09-08 15:04:47.522499 
+77 ran till end (survived) 🐵 
+2025-09-08 15:05:02.944219 
+78 ran till end (survived) 🐵 
+2025-09-08 15:05:15.990648 
+79 ran till end (survived) 🐵 
+2025-09-08 15:05:32.020926 
+80 ran till end (survived) 🐵 
+2025-09-08 15:05:47.780884 
+81 ran till end (survived) 🐵 
+2025-09-08 15:06:03.414245 
+82 ran till end (survived) 🐵 
+2025-09-08 15:06:18.622652 
+83 ran till end (survived) 🐵 
+2025-09-08 15:06:35.263679 
+84 ran till end (survived) 🐵 
+2025-09-08 15:06:51.314745 
+85 ran till end (survived) 🐵 
+2025-09-08 15:07:07.026312 
+86 ran till end (survived) 🐵 
+2025-09-08 15:07:22.420944 
+87 ran till end (survived) 🐵 
+2025-09-08 15:07:36.483666 
+88 ran till end (survived) 🐵 
+2025-09-08 15:07:51.631923 
+89 ran till end (survived) 🐵 
+2025-09-08 15:08:08.145164 
+90 ran till end (survived) 🐵 
+2025-09-08 15:08:24.922191 
+91 ran till end (survived) 🐵 
+2025-09-08 15:08:41.323307 
+92 ran till end (survived) 🐵 
+2025-09-08 15:08:57.727215 
+93 ran till end (survived) 🐵 
+2025-09-08 15:09:14.178528 
+94 ran till end (survived) 🐵 
+2025-09-08 15:09:30.103254 
+95 ran till end (survived) 🐵 
+2025-09-08 15:09:45.77174 
+96 ran till end (survived) 🐵 
+2025-09-08 15:10:01.135642 
+97 ran till end (survived) 🐵 
+2025-09-08 15:10:17.28612 
+98 ran till end (survived) 🐵 
+2025-09-08 15:10:33.256585 
+99 ran till end (survived) 🐵 
+2025-09-08 15:10:49.611824 
+100 ran till end (survived) 🐵 
+2025-09-08 15:11:05.760375 
+101 ran till end (survived) 🐵 
+2025-09-08 15:11:21.980169 
+102 ran till end (survived) 🐵 
+2025-09-08 15:11:38.29336 
+103 ran till end (survived) 🐵 
+2025-09-08 15:11:52.394027 
+104 ran till end (survived) 🐵 
+2025-09-08 15:12:07.665224 
+105 ran till end (survived) 🐵 
+2025-09-08 15:12:22.402509 
+106 ran till end (survived) 🐵 
+2025-09-08 15:12:38.779411 
+107 ran till end (survived) 🐵 
+2025-09-08 15:12:55.302183 
+108 ran till end (survived) 🐵 
+109 died 👵 
+2025-09-08 15:13:14.999255 
+110 ran till end (survived) 🐵 
+2025-09-08 15:13:30.230858 
+111 ran till end (survived) 🐵 
+2025-09-08 15:13:46.378361 
+112 ran till end (survived) 🐵 
+2025-09-08 15:14:02.35113 
+113 ran till end (survived) 🐵 
+2025-09-08 15:14:18.11428 
+114 ran till end (survived) 🐵 
+2025-09-08 15:14:33.527336 
+115 ran till end (survived) 🐵 
+2025-09-08 15:14:50.316252 
+116 ran till end (survived) 🐵 
+2025-09-08 15:15:04.944254 
+117 ran till end (survived) 🐵 
+2025-09-08 15:15:21.342604 
+118 ran till end (survived) 🐵 
+2025-09-08 15:15:36.418684 
+119 ran till end (survived) 🐵 
+2025-09-08 15:15:50.225341 
+120 ran till end (survived) 🐵 
+2025-09-08 15:16:04.139805 
+121 ran till end (survived) 🐵 
+2025-09-08 15:16:19.690096 
+122 ran till end (survived) 🐵 
+2025-09-08 15:16:35.785165 
+123 ran till end (survived) 🐵 
+2025-09-08 15:16:52.095003 
+124 ran till end (survived) 🐵 
+2025-09-08 15:17:08.469044 
+125 ran till end (survived) 🐵 
+2025-09-08 15:17:25.342352 
+126 ran till end (survived) 🐵 
+2025-09-08 15:17:39.892668 
+127 ran till end (survived) 🐵 
+2025-09-08 15:17:56.311239 
+128 ran till end (survived) 🐵 
+2025-09-08 15:18:12.010373 
+129 ran till end (survived) 🐵 
+130 died 👵 
+2025-09-08 15:18:30.116706 
+131 ran till end (survived) 🐵 
+2025-09-08 15:18:46.738199 
+132 ran till end (survived) 🐵 
+133 died 👵 
+2025-09-08 15:19:19.880919 
+134 ran till end (survived) 🐵 
+2025-09-08 15:19:35.223673 
+135 ran till end (survived) 🐵 
+2025-09-08 15:19:51.61138 
+136 ran till end (survived) 🐵 
+2025-09-08 15:20:07.719862 
+137 ran till end (survived) 🐵 
+2025-09-08 15:20:22.555402 
+138 ran till end (survived) 🐵 
+2025-09-08 15:20:38.396844 
+139 ran till end (survived) 🐵 
+2025-09-08 15:20:54.35221 
+140 ran till end (survived) 🐵 
+2025-09-08 15:21:09.782393 
+141 ran till end (survived) 🐵 
+2025-09-08 15:21:26.504741 
+142 ran till end (survived) 🐵 
+2025-09-08 15:21:42.323443 
+143 ran till end (survived) 🐵 
+2025-09-08 15:21:58.811493 
+144 ran till end (survived) 🐵 
+2025-09-08 15:22:15.220866 
+145 ran till end (survived) 🐵 
+2025-09-08 15:22:32.456143 
+146 ran till end (survived) 🐵 
+2025-09-08 15:22:48.471626 
+147 ran till end (survived) 🐵 
+2025-09-08 15:23:04.920659 
+148 ran till end (survived) 🐵 
+2025-09-08 15:23:21.221151 
+149 ran till end (survived) 🐵 
+2025-09-08 15:23:37.335199 
+150 ran till end (survived) 🐵 
+2025-09-08 15:23:53.685513 
+151 ran till end (survived) 🐵 
+2025-09-08 15:24:08.397997 
+152 ran till end (survived) 🐵 
+2025-09-08 15:24:23.816027 
+153 ran till end (survived) 🐵 
+2025-09-08 15:24:41.114706 
+154 ran till end (survived) 🐵 
+2025-09-08 15:24:57.41589 
+155 ran till end (survived) 🐵 
+2025-09-08 15:25:13.769443 
+156 ran till end (survived) 🐵 
+2025-09-08 15:25:30.412889 
+157 ran till end (survived) 🐵 
+2025-09-08 15:25:45.63287 
+158 ran till end (survived) 🐵 
+2025-09-08 15:26:01.804979 
+159 ran till end (survived) 🐵 
+2025-09-08 15:26:17.441257 
+160 ran till end (survived) 🐵 
+161 died 👵 
+2025-09-08 15:26:35.229931 
+162 ran till end (survived) 🐵 
+2025-09-08 15:26:50.588856 
+163 ran till end (survived) 🐵 
+2025-09-08 15:27:06.473213 
+164 ran till end (survived) 🐵 
+2025-09-08 15:27:22.259986 
+165 ran till end (survived) 🐵 
+2025-09-08 15:27:30.797769 
+166 ran till end (survived) 🐵 
+2025-09-08 15:27:47.337452 
+167 ran till end (survived) 🐵 
+2025-09-08 15:27:50.494036 
+168 ran till end (survived) 🐵 
+2025-09-08 15:28:06.339482 
+169 ran till end (survived) 🐵 
+2025-09-08 15:28:22.994353 
+170 ran till end (survived) 🐵 
+2025-09-08 15:28:39.364213 
+171 ran till end (survived) 🐵 
+2025-09-08 15:28:55.657758 
+172 ran till end (survived) 🐵 
+2025-09-08 15:29:11.785328 
+173 ran till end (survived) 🐵 
+2025-09-08 15:29:28.204989 
+174 ran till end (survived) 🐵 
+2025-09-08 15:29:43.869054 
+175 ran till end (survived) 🐵 
+2025-09-08 15:30:00.39709 
+176 ran till end (survived) 🐵 
+2025-09-08 15:30:16.107825 
+177 ran till end (survived) 🐵 
+2025-09-08 15:30:29.991252 
+178 ran till end (survived) 🐵 
+2025-09-08 15:30:46.065567 
+179 ran till end (survived) 🐵 
+2025-09-08 15:31:01.07234 
+180 ran till end (survived) 🐵 
+2025-09-08 15:31:14.763864 
+181 ran till end (survived) 🐵 
+2025-09-08 15:31:29.498655 
+182 ran till end (survived) 🐵 
+2025-09-08 15:31:45.567354 
+183 ran till end (survived) 🐵 
+2025-09-08 15:32:01.902316 
+184 ran till end (survived) 🐵 
+2025-09-08 15:32:17.762647 
+185 ran till end (survived) 🐵 
+2025-09-08 15:32:33.590175 
+186 ran till end (survived) 🐵 
+2025-09-08 15:32:48.297175 
+187 ran till end (survived) 🐵 
+2025-09-08 15:33:04.153028 
+188 ran till end (survived) 🐵 
+2025-09-08 15:33:19.578066 
+189 ran till end (survived) 🐵 
+2025-09-08 15:33:35.376215 
+190 ran till end (survived) 🐵 
+2025-09-08 15:33:50.420435 
+191 ran till end (survived) 🐵 
+2025-09-08 15:34:07.255061 
+192 ran till end (survived) 🐵 
+2025-09-08 15:34:23.443795 
+193 ran till end (survived) 🐵 
+2025-09-08 15:34:38.614381 
+194 ran till end (survived) 🐵 
+2025-09-08 15:34:54.512797 
+195 ran till end (survived) 🐵 
+2025-09-08 15:35:10.407 
+196 ran till end (survived) 🐵 
+2025-09-08 15:35:26.197018 
+197 ran till end (survived) 🐵 
+2025-09-08 15:35:41.763212 
+198 ran till end (survived) 🐵 
+2025-09-08 15:35:57.161937 
+199 ran till end (survived) 🐵 
+2025-09-08 15:36:12.851002 
+200 ran till end (survived) 🐵 
+2025-09-08 15:36:26.872138 
+201 ran till end (survived) 🐵 
+2025-09-08 15:36:41.235532 
+202 ran till end (survived) 🐵 
+2025-09-08 15:36:55.865296 
+203 ran till end (survived) 🐵 
+2025-09-08 15:37:11.832206 
+204 ran till end (survived) 🐵 
+2025-09-08 15:37:27.914812 
+205 ran till end (survived) 🐵 
+2025-09-08 15:37:43.214146 
+206 ran till end (survived) 🐵 
+2025-09-08 15:37:59.186292 
+207 ran till end (survived) 🐵 
+2025-09-08 15:38:14.277961 
+208 ran till end (survived) 🐵 
+2025-09-08 15:38:29.601074 
+209 ran till end (survived) 🐵 
+2025-09-08 15:38:44.90993 
+210 ran till end (survived) 🐵 
+2025-09-08 15:39:00.358787 
+211 ran till end (survived) 🐵 
+2025-09-08 15:39:15.114252 
+212 ran till end (survived) 🐵 
+2025-09-08 15:39:30.572568 
+213 ran till end (survived) 🐵 
+2025-09-08 15:39:46.219894 
+214 ran till end (survived) 🐵 
+2025-09-08 15:40:00.8339 
+215 ran till end (survived) 🐵 
+2025-09-08 15:40:16.558866 
+216 ran till end (survived) 🐵 
+2025-09-08 15:40:32.184828 
+217 ran till end (survived) 🐵 
+2025-09-08 15:40:46.941394 
+218 ran till end (survived) 🐵 
+2025-09-08 15:41:01.751004 
+219 ran till end (survived) 🐵 
+2025-09-08 15:41:17.184198 
+220 ran till end (survived) 🐵 
+2025-09-08 15:41:32.608359 
+221 ran till end (survived) 🐵 
+2025-09-08 15:41:51.607767 
+222 ran till end (survived) 🐵 
+2025-09-08 15:42:07.799653 
+223 ran till end (survived) 🐵 
+2025-09-08 15:42:26.219437 
+224 ran till end (survived) 🐵 
+225 died 👵 
+2025-09-08 15:42:44.254565 
+226 ran till end (survived) 🐵 
+2025-09-08 15:43:00.829955 
+227 ran till end (survived) 🐵 
+2025-09-08 15:43:16.484328 
+228 ran till end (survived) 🐵 
+2025-09-08 15:43:30.32609 
+229 ran till end (survived) 🐵 
+2025-09-08 15:43:46.431534 
+230 ran till end (survived) 🐵 
+2025-09-08 15:44:00.810622 
+231 ran till end (survived) 🐵 
+2025-09-08 15:44:15.31172 
+232 ran till end (survived) 🐵 
+2025-09-08 15:44:30.897577 
+233 ran till end (survived) 🐵 
+2025-09-08 15:44:45.688956 
+234 ran till end (survived) 🐵 
+2025-09-08 15:45:02.574231 
+235 ran till end (survived) 🐵 
+2025-09-08 15:45:18.564782 
+236 ran till end (survived) 🐵 
+2025-09-08 15:45:32.537911 
+237 ran till end (survived) 🐵 
+2025-09-08 15:45:48.19159 
+238 ran till end (survived) 🐵 
+2025-09-08 15:46:04.210457 
+239 ran till end (survived) 🐵 
+2025-09-08 15:46:13.878215 
+240 ran till end (survived) 🐵 
+2025-09-08 15:46:29.375744 
+241 ran till end (survived) 🐵 
+2025-09-08 15:46:44.048492 
+242 ran till end (survived) 🐵 
+2025-09-08 15:46:59.642762 
+243 ran till end (survived) 🐵 
+2025-09-08 15:47:12.358376 
+244 ran till end (survived) 🐵 
+2025-09-08 15:47:24.579735 
+245 ran till end (survived) 🐵 
+2025-09-08 15:47:38.386311 
+246 ran till end (survived) 🐵 
+2025-09-08 15:47:53.671554 
+247 ran till end (survived) 🐵 
+2025-09-08 15:48:07.097231 
+248 ran till end (survived) 🐵 
+2025-09-08 15:48:22.383274 
+249 ran till end (survived) 🐵 
+2025-09-08 15:48:37.845134 
+250 ran till end (survived) 🐵 
+2025-09-08 15:48:49.185165 
+251 ran till end (survived) 🐵 
+2025-09-08 15:49:03.182694 
+252 ran till end (survived) 🐵 
+2025-09-08 15:49:18.332352 
+253 ran till end (survived) 🐵 
+2025-09-08 15:49:33.026009 
+254 ran till end (survived) 🐵 
+2025-09-08 15:49:48.319238 
+255 ran till end (survived) 🐵 
+2025-09-08 15:50:03.833458 
+256 ran till end (survived) 🐵 
+2025-09-08 15:50:18.781678 
+257 ran till end (survived) 🐵 
+2025-09-08 15:50:33.987818 
+258 ran till end (survived) 🐵 
+2025-09-08 15:50:49.695869 
+259 ran till end (survived) 🐵 
+2025-09-08 15:51:02.881628 
+260 ran till end (survived) 🐵 
+2025-09-08 15:51:17.742522 
+261 ran till end (survived) 🐵 
+2025-09-08 15:51:32.122387 
+262 ran till end (survived) 🐵 
+2025-09-08 15:51:47.320138 
+263 ran till end (survived) 🐵 
+2025-09-08 15:52:02.77964 
+264 ran till end (survived) 🐵 
+2025-09-08 15:52:17.469913 
+265 ran till end (survived) 🐵 
+2025-09-08 15:52:33.062956 
+266 ran till end (survived) 🐵 
+2025-09-08 15:52:48.54715 
+267 ran till end (survived) 🐵 
+2025-09-08 15:53:02.475831 
+268 ran till end (survived) 🐵 
+2025-09-08 15:53:18.129463 
+269 ran till end (survived) 🐵 
+2025-09-08 15:53:33.719269 
+270 ran till end (survived) 🐵 
+2025-09-08 15:53:50.501179 
+271 ran till end (survived) 🐵 
+2025-09-08 15:54:06.131098 
+272 ran till end (survived) 🐵 
+2025-09-08 15:54:21.606586 
+273 ran till end (survived) 🐵 
+2025-09-08 15:54:37.389769 
+274 ran till end (survived) 🐵 
+2025-09-08 15:54:51.650557 
+275 ran till end (survived) 🐵 
+2025-09-08 15:55:05.638092 
+276 ran till end (survived) 🐵 
+2025-09-08 15:55:16.788967 
+277 ran till end (survived) 🐵 
+2025-09-08 15:55:32.037255 
+278 ran till end (survived) 🐵 
+2025-09-08 15:55:47.191786 
+279 ran till end (survived) 🐵 
+2025-09-08 15:56:02.927088 
+280 ran till end (survived) 🐵 
+2025-09-08 15:56:18.267815 
+281 ran till end (survived) 🐵 
+2025-09-08 15:56:31.872948 
+282 ran till end (survived) 🐵 
+2025-09-08 15:56:47.352054 
+283 ran till end (survived) 🐵 
+2025-09-08 15:57:02.547172 
+284 ran till end (survived) 🐵 
+2025-09-08 15:57:17.194477 
+285 ran till end (survived) 🐵 
+2025-09-08 15:57:32.776373 
+286 ran till end (survived) 🐵 
+2025-09-08 15:57:49.027675 
+287 ran till end (survived) 🐵 
+2025-09-08 15:58:09.186652 
+288 ran till end (survived) 🐵 
+2025-09-08 15:58:28.141666 
+289 ran till end (survived) 🐵 
+2025-09-08 15:58:47.243301 
+290 ran till end (survived) 🐵 
+2025-09-08 15:59:04.221501 
+291 ran till end (survived) 🐵 
+2025-09-08 15:59:18.906186 
+292 ran till end (survived) 🐵 
+2025-09-08 15:59:35.911547 
+293 ran till end (survived) 🐵 
+294 died 👵 
+2025-09-08 16:00:07.0243 
+295 ran till end (survived) 🐵 
+2025-09-08 16:00:23.4928 
+296 ran till end (survived) 🐵 
+2025-09-08 16:00:39.366827 
+297 ran till end (survived) 🐵 
+2025-09-08 16:00:53.969938 
+298 ran till end (survived) 🐵 
+2025-09-08 16:01:09.976409 
+299 ran till end (survived) 🐵 
+2025-09-08 16:01:23.717362 
+300 ran till end (survived) 🐵 
+2025-09-08 16:01:39.471211 
+301 ran till end (survived) 🐵 
+302 died 👵 
+2025-09-08 16:01:57.722896 
+303 ran till end (survived) 🐵 
+2025-09-08 16:02:13.60488 
+304 ran till end (survived) 🐵 
+2025-09-08 16:02:29.726935 
+305 ran till end (survived) 🐵 
+2025-09-08 16:02:47.137432 
+306 ran till end (survived) 🐵 
+2025-09-08 16:03:02.872696 
+307 ran till end (survived) 🐵 
+2025-09-08 16:03:19.417686 
+308 ran till end (survived) 🐵 
+2025-09-08 16:03:34.628473 
+309 ran till end (survived) 🐵 
+2025-09-08 16:03:51.081156 
+310 ran till end (survived) 🐵 
+2025-09-08 16:04:07.201258 
+311 ran till end (survived) 🐵 
+2025-09-08 16:04:23.637498 
+312 ran till end (survived) 🐵 
+2025-09-08 16:04:39.325298 
+313 ran till end (survived) 🐵 
+2025-09-08 16:04:55.160004 
+314 ran till end (survived) 🐵 
+2025-09-08 16:05:10.594216 
+315 ran till end (survived) 🐵 
+2025-09-08 16:05:25.382744 
+316 ran till end (survived) 🐵 
+2025-09-08 16:05:40.835271 
+317 ran till end (survived) 🐵 
+2025-09-08 16:05:55.937203 
+318 ran till end (survived) 🐵 
+2025-09-08 16:06:11.448095 
+319 ran till end (survived) 🐵 
+2025-09-08 16:06:26.130571 
+320 ran till end (survived) 🐵 
+2025-09-08 16:06:40.285233 
+321 ran till end (survived) 🐵 
+2025-09-08 16:06:55.865777 
+322 ran till end (survived) 🐵 
+2025-09-08 16:07:11.401172 
+323 ran till end (survived) 🐵 
+2025-09-08 16:07:26.57915 
+324 ran till end (survived) 🐵 
+2025-09-08 16:07:42.702917 
+325 ran till end (survived) 🐵 
+2025-09-08 16:07:58.159846 
+326 ran till end (survived) 🐵 
+2025-09-08 16:08:13.640276 
+327 ran till end (survived) 🐵 
+2025-09-08 16:08:29.565705 
+328 ran till end (survived) 🐵 
+2025-09-08 16:08:46.426891 
+329 ran till end (survived) 🐵 
+2025-09-08 16:09:01.829924 
+330 ran till end (survived) 🐵 
+2025-09-08 16:09:18.781394 
+331 ran till end (survived) 🐵 
+2025-09-08 16:09:36.030008 
+332 ran till end (survived) 🐵 
+2025-09-08 16:09:52.915473 
+333 ran till end (survived) 🐵 
+2025-09-08 16:10:08.613508 
+334 ran till end (survived) 🐵 
+2025-09-08 16:10:23.648657 
+335 ran till end (survived) 🐵 
+2025-09-08 16:10:40.114623 
+336 ran till end (survived) 🐵 
+2025-09-08 16:10:55.742528 
+337 ran till end (survived) 🐵 
+2025-09-08 16:11:10.187234 
+338 ran till end (survived) 🐵 
+2025-09-08 16:11:20.706622 
+339 ran till end (survived) 🐵 
+2025-09-08 16:11:34.956652 
+340 ran till end (survived) 🐵 
+2025-09-08 16:11:49.930638 
+341 ran till end (survived) 🐵 
+342 died 👵 
+2025-09-08 16:12:19.100494 
+343 ran till end (survived) 🐵 
+2025-09-08 16:12:33.869894 
+344 ran till end (survived) 🐵 
+2025-09-08 16:12:49.864033 
+345 ran till end (survived) 🐵 
+2025-09-08 16:13:06.503424 
+346 ran till end (survived) 🐵 
+2025-09-08 16:13:22.838043 
+347 ran till end (survived) 🐵 
+2025-09-08 16:13:38.876166 
+348 ran till end (survived) 🐵 
+2025-09-08 16:13:54.46211 
+349 ran till end (survived) 🐵 
+2025-09-08 16:14:11.153817 
+350 ran till end (survived) 🐵 
+2025-09-08 16:14:26.886191 
+351 ran till end (survived) 🐵 
+2025-09-08 16:14:41.69458 
+352 ran till end (survived) 🐵 
+2025-09-08 16:14:58.255119 
+353 ran till end (survived) 🐵 
+2025-09-08 16:15:13.197819 
+354 ran till end (survived) 🐵 
+2025-09-08 16:15:28.46013 
+355 ran till end (survived) 🐵 
+2025-09-08 16:15:45.646623 
+356 ran till end (survived) 🐵 
+2025-09-08 16:16:03.075176 
+357 ran till end (survived) 🐵 
+2025-09-08 16:16:20.145137 
+358 ran till end (survived) 🐵 
+2025-09-08 16:16:37.579652 
+359 ran till end (survived) 🐵 
+2025-09-08 16:16:53.450362 
+360 ran till end (survived) 🐵 
+2025-09-08 16:17:08.801804 
+361 ran till end (survived) 🐵 
+2025-09-08 16:17:23.983304 
+362 ran till end (survived) 🐵 
+2025-09-08 16:17:39.573973 
+363 ran till end (survived) 🐵 
+2025-09-08 16:17:52.972082 
+364 ran till end (survived) 🐵 
+2025-09-08 16:18:08.046419 
+365 ran till end (survived) 🐵 
+2025-09-08 16:18:23.523911 
+366 ran till end (survived) 🐵 
+2025-09-08 16:18:38.779576 
+367 ran till end (survived) 🐵 
+2025-09-08 16:18:53.793169 
+368 ran till end (survived) 🐵 
+2025-09-08 16:19:09.416548 
+369 ran till end (survived) 🐵 
+2025-09-08 16:19:25.008452 
+370 ran till end (survived) 🐵 
+2025-09-08 16:19:40.583124 
+371 ran till end (survived) 🐵 
+2025-09-08 16:19:56.492975 
+372 ran till end (survived) 🐵 
+2025-09-08 16:20:13.619733 
+373 ran till end (survived) 🐵 
+2025-09-08 16:20:29.050661 
+374 ran till end (survived) 🐵 
+2025-09-08 16:20:44.544665 
+375 ran till end (survived) 🐵 
+2025-09-08 16:21:00.106271 
+376 ran till end (survived) 🐵 
+2025-09-08 16:21:14.65694 
+377 ran till end (survived) 🐵 
+2025-09-08 16:21:29.937564 
+378 ran till end (survived) 🐵 
+2025-09-08 16:21:45.848602 
+379 ran till end (survived) 🐵 
+380 died 👵 
+2025-09-08 16:22:02.038662 
+381 ran till end (survived) 🐵 
+2025-09-08 16:22:18.152582 
+382 ran till end (survived) 🐵 
+2025-09-08 16:22:30.85036 
+383 ran till end (survived) 🐵 
+2025-09-08 16:22:46.281476 
+384 ran till end (survived) 🐵 
+2025-09-08 16:23:00.806748 
+385 ran till end (survived) 🐵 
+2025-09-08 16:23:16.481227 
+386 ran till end (survived) 🐵 
+2025-09-08 16:23:31.769009 
+387 ran till end (survived) 🐵 
+2025-09-08 16:23:46.736892 
+388 ran till end (survived) 🐵 
+2025-09-08 16:24:02.525331 
+389 ran till end (survived) 🐵 
+2025-09-08 16:24:17.372981 
+390 ran till end (survived) 🐵 
+2025-09-08 16:24:32.452104 
+391 ran till end (survived) 🐵 
+2025-09-08 16:24:48.576945 
+392 ran till end (survived) 🐵 
+2025-09-08 16:25:04.659907 
+393 ran till end (survived) 🐵 
+2025-09-08 16:25:20.21356 
+394 ran till end (survived) 🐵 
+2025-09-08 16:25:34.255124 
+395 ran till end (survived) 🐵 
+2025-09-08 16:25:47.928708 
+396 ran till end (survived) 🐵 
+2025-09-08 16:26:04.672478 
+397 ran till end (survived) 🐵 
+2025-09-08 16:26:19.933952 
+398 ran till end (survived) 🐵 
+2025-09-08 16:26:35.280684 
+399 ran till end (survived) 🐵 
+2025-09-08 16:26:49.058473 
+400 ran till end (survived) 🐵 
+2025-09-08 16:27:03.443677 
+401 ran till end (survived) 🐵 
+2025-09-08 16:27:18.060553 
+402 ran till end (survived) 🐵 
+2025-09-08 16:27:33.630543 
+403 ran till end (survived) 🐵 
+2025-09-08 16:27:46.356651 
+404 ran till end (survived) 🐵 
+2025-09-08 16:28:01.369593 
+405 ran till end (survived) 🐵 
+2025-09-08 16:28:16.452281 
+406 ran till end (survived) 🐵 
+407 died 👵 
+2025-09-08 16:28:46.628958 
+408 ran till end (survived) 🐵 
+2025-09-08 16:29:00.988193 
+409 ran till end (survived) 🐵 
+2025-09-08 16:29:16.064829 
+410 ran till end (survived) 🐵 
+2025-09-08 16:29:30.459933 
+411 ran till end (survived) 🐵 
+2025-09-08 16:29:45.016748 
+412 ran till end (survived) 🐵 
+2025-09-08 16:30:00.741086 
+413 ran till end (survived) 🐵 
+2025-09-08 16:30:16.638389 
+414 ran till end (survived) 🐵 
+2025-09-08 16:30:30.578475 
+415 ran till end (survived) 🐵 
+2025-09-08 16:30:46.332013 
+416 ran till end (survived) 🐵 
+2025-09-08 16:31:02.585153 
+417 ran till end (survived) 🐵 
+2025-09-08 16:31:17.850075 
+418 ran till end (survived) 🐵 
+2025-09-08 16:31:32.637535 
+419 ran till end (survived) 🐵 
+2025-09-08 16:31:47.923324 
+420 ran till end (survived) 🐵 
+2025-09-08 16:32:02.983994 
+421 ran till end (survived) 🐵 
+2025-09-08 16:32:16.905849 
+422 ran till end (survived) 🐵 
+2025-09-08 16:32:32.363783 
+423 ran till end (survived) 🐵 
+2025-09-08 16:32:47.966421 
+424 ran till end (survived) 🐵 
+2025-09-08 16:33:03.498886 
+425 ran till end (survived) 🐵 
+2025-09-08 16:33:18.792338 
+426 ran till end (survived) 🐵 
+2025-09-08 16:33:35.565223 
+427 ran till end (survived) 🐵 
+2025-09-08 16:33:48.673164 
+428 ran till end (survived) 🐵 
+2025-09-08 16:34:03.917916 
+429 ran till end (survived) 🐵 
+2025-09-08 16:34:18.242079 
+430 ran till end (survived) 🐵 
+2025-09-08 16:34:32.353294 
+431 ran till end (survived) 🐵 
+2025-09-08 16:34:47.556832 
+432 ran till end (survived) 🐵 
+2025-09-08 16:35:03.489335 
+433 ran till end (survived) 🐵 
+2025-09-08 16:35:18.650752 
+434 ran till end (survived) 🐵 
+2025-09-08 16:35:34.616211 
+435 ran till end (survived) 🐵 
+2025-09-08 16:35:50.220871 
+436 ran till end (survived) 🐵 
+2025-09-08 16:36:05.822839 
+437 ran till end (survived) 🐵 
+2025-09-08 16:36:20.573343 
+438 ran till end (survived) 🐵 
+2025-09-08 16:36:36.723951 
+439 ran till end (survived) 🐵 
+2025-09-08 16:36:51.029083 
+440 ran till end (survived) 🐵 
+2025-09-08 16:37:06.257105 
+441 ran till end (survived) 🐵 
+2025-09-08 16:37:22.278899 
+442 ran till end (survived) 🐵 
+2025-09-08 16:37:38.030467 
+443 ran till end (survived) 🐵 
+2025-09-08 16:37:54.151841 
+444 ran till end (survived) 🐵 
+2025-09-08 16:38:10.357684 
+445 ran till end (survived) 🐵 
+446 died 👵 
+2025-09-08 16:38:33.756059 
+447 ran till end (survived) 🐵 
+2025-09-08 16:38:49.784433 
+448 ran till end (survived) 🐵 
+2025-09-08 16:39:07.620206 
+449 ran till end (survived) 🐵 
+2025-09-08 16:39:25.400004 
+450 ran till end (survived) 🐵 
+2025-09-08 16:39:40.268718 
+451 ran till end (survived) 🐵 
+2025-09-08 16:39:56.290048 
+452 ran till end (survived) 🐵 
+2025-09-08 16:40:12.357325 
+453 ran till end (survived) 🐵 
+2025-09-08 16:40:27.253757 
+454 ran till end (survived) 🐵 
+2025-09-08 16:40:41.426698 
+455 ran till end (survived) 🐵 
+456 died 👵 
+2025-09-08 16:40:57.6569 
+457 ran till end (survived) 🐵 
+2025-09-08 16:41:14.916576 
+458 ran till end (survived) 🐵 
+2025-09-08 16:41:33.428132 
+459 ran till end (survived) 🐵 
+2025-09-08 16:41:50.29732 
+460 ran till end (survived) 🐵 
+2025-09-08 16:42:06.706241 
+461 ran till end (survived) 🐵 
+2025-09-08 16:42:21.79824 
+462 ran till end (survived) 🐵 
+2025-09-08 16:42:31.553639 
+463 ran till end (survived) 🐵 
+2025-09-08 16:42:47.645558 
+464 ran till end (survived) 🐵 
+465 died 👵 
+2025-09-08 16:43:19.703718 
+466 ran till end (survived) 🐵 
+2025-09-08 16:43:36.471511 
+467 ran till end (survived) 🐵 
+2025-09-08 16:43:52.854917 
+468 ran till end (survived) 🐵 
+2025-09-08 16:44:08.393733 
+469 ran till end (survived) 🐵 
+2025-09-08 16:44:24.544606 
+470 ran till end (survived) 🐵 
+2025-09-08 16:44:40.427179 
+471 ran till end (survived) 🐵 
+2025-09-08 16:44:56.407539 
+472 ran till end (survived) 🐵 
+2025-09-08 16:45:11.53795 
+473 ran till end (survived) 🐵 
+2025-09-08 16:45:26.274689 
+474 ran till end (survived) 🐵 
+2025-09-08 16:45:41.871369 
+475 ran till end (survived) 🐵 
+2025-09-08 16:45:56.947772 
+476 ran till end (survived) 🐵 
+2025-09-08 16:46:11.660477 
+477 ran till end (survived) 🐵 
+2025-09-08 16:46:27.364557 
+478 ran till end (survived) 🐵 
+2025-09-08 16:46:41.001182 
+479 ran till end (survived) 🐵 
+2025-09-08 16:46:56.643875 
+480 ran till end (survived) 🐵 
+2025-09-08 16:47:12.216867 
+481 ran till end (survived) 🐵 
+2025-09-08 16:47:28.172047 
+482 ran till end (survived) 🐵 
+2025-09-08 16:47:43.58364 
+483 ran till end (survived) 🐵 
+2025-09-08 16:47:58.843284 
+484 ran till end (survived) 🐵 
+2025-09-08 16:48:11.201011 
+485 ran till end (survived) 🐵 
+2025-09-08 16:48:27.273101 
+486 ran till end (survived) 🐵 
+2025-09-08 16:48:42.520879 
+487 ran till end (survived) 🐵 
+2025-09-08 16:48:57.649454 
+488 ran till end (survived) 🐵 
+2025-09-08 16:49:13.097758 
+489 ran till end (survived) 🐵 
+2025-09-08 16:49:27.890511 
+490 ran till end (survived) 🐵 
+2025-09-08 16:49:42.317858 
+491 ran till end (survived) 🐵 
+2025-09-08 16:49:58.049753 
+492 ran till end (survived) 🐵 
+2025-09-08 16:50:13.52193 
+493 ran till end (survived) 🐵 
+2025-09-08 16:50:27.148343 
+494 ran till end (survived) 🐵 
+2025-09-08 16:50:41.927191 
+495 ran till end (survived) 🐵 
+2025-09-08 16:50:56.1696 
+496 ran till end (survived) 🐵 
+2025-09-08 16:51:10.813145 
+497 ran till end (survived) 🐵 
+2025-09-08 16:51:26.239465 
+498 ran till end (survived) 🐵 
+2025-09-08 16:51:41.143404 
+499 ran till end (survived) 🐵 
+2025-09-08 16:51:56.996087 
+500 ran till end (survived) 🐵 
+2025-09-08 16:52:10.682238 
+501 ran till end (survived) 🐵 
+2025-09-08 16:52:25.377292 
+502 ran till end (survived) 🐵 
+2025-09-08 16:52:39.893073 
+503 ran till end (survived) 🐵 
+2025-09-08 16:52:55.562058 
+504 ran till end (survived) 🐵 
+2025-09-08 16:53:10.525889 
+505 ran till end (survived) 🐵 
+2025-09-08 16:53:25.537127 
+506 ran till end (survived) 🐵 
+2025-09-08 16:53:40.492339 
+507 ran till end (survived) 🐵 
+2025-09-08 16:53:55.235854 
+508 ran till end (survived) 🐵 
+2025-09-08 16:54:08.799002 
+509 ran till end (survived) 🐵 
+2025-09-08 16:54:23.368011 
+510 ran till end (survived) 🐵 
+2025-09-08 16:54:38.867971 
+511 ran till end (survived) 🐵 
+2025-09-08 16:54:54.644279 
+512 ran till end (survived) 🐵 
+2025-09-08 16:55:10.549894 
+513 ran till end (survived) 🐵 
+2025-09-08 16:55:25.849827 
+514 ran till end (survived) 🐵 
+2025-09-08 16:55:39.551208 
+515 ran till end (survived) 🐵 
+2025-09-08 16:55:54.657838 
+516 ran till end (survived) 🐵 
+2025-09-08 16:56:09.833468 
+517 ran till end (survived) 🐵 
+2025-09-08 16:56:25.035433 
+518 ran till end (survived) 🐵 
+2025-09-08 16:56:39.638968 
+519 ran till end (survived) 🐵 
+2025-09-08 16:56:55.318854 
+520 ran till end (survived) 🐵 
+2025-09-08 16:57:09.380844 
+521 ran till end (survived) 🐵 
+2025-09-08 16:57:24.748098 
+522 ran till end (survived) 🐵 
+2025-09-08 16:57:39.775189 
+523 ran till end (survived) 🐵 
+2025-09-08 16:57:55.584979 
+524 ran till end (survived) 🐵 
+2025-09-08 16:58:10.717207 
+525 ran till end (survived) 🐵 
+2025-09-08 16:58:24.508459 
+526 ran till end (survived) 🐵 
+2025-09-08 16:58:39.576337 
+527 ran till end (survived) 🐵 
+2025-09-08 16:58:55.591664 
+528 ran till end (survived) 🐵 
+529 died 👵 
+2025-09-08 16:59:23.957233 
+530 ran till end (survived) 🐵 
+2025-09-08 16:59:35.250085 
+531 ran till end (survived) 🐵 
+2025-09-08 16:59:50.130688 
+532 ran till end (survived) 🐵 
+2025-09-08 17:00:04.975977 
+533 ran till end (survived) 🐵 
+2025-09-08 17:00:19.990254 
+534 ran till end (survived) 🐵 
+2025-09-08 17:00:34.041302 
+535 ran till end (survived) 🐵 
+2025-09-08 17:00:49.917814 
+536 ran till end (survived) 🐵 
+2025-09-08 17:01:04.87877 
+537 ran till end (survived) 🐵 
+2025-09-08 17:01:19.610772 
+538 ran till end (survived) 🐵 
+2025-09-08 17:01:33.003798 
+539 ran till end (survived) 🐵 
+540 died 👵 
+2025-09-08 17:01:49.076886 
+541 ran till end (survived) 🐵 
+2025-09-08 17:02:04.633138 
+542 ran till end (survived) 🐵 
+2025-09-08 17:02:19.150194 
+543 ran till end (survived) 🐵 
+2025-09-08 17:02:34.170879 
+544 ran till end (survived) 🐵 
+2025-09-08 17:02:48.872496 
+545 ran till end (survived) 🐵 
+2025-09-08 17:03:02.724981 
+546 ran till end (survived) 🐵 
+2025-09-08 17:03:17.886055 
+547 ran till end (survived) 🐵 
+548 died 👵 
+2025-09-08 17:03:36.119309 
+549 ran till end (survived) 🐵 
+2025-09-08 17:03:51.479527 
+550 ran till end (survived) 🐵 
+2025-09-08 17:04:05.916476 
+551 ran till end (survived) 🐵 
+2025-09-08 17:04:21.56815 
+552 ran till end (survived) 🐵 
+2025-09-08 17:04:36.563265 
+553 ran till end (survived) 🐵 
+2025-09-08 17:04:52.114955 
+554 ran till end (survived) 🐵 
+2025-09-08 17:05:05.826062 
+555 ran till end (survived) 🐵 
+2025-09-08 17:05:20.798396 
+556 ran till end (survived) 🐵 
+2025-09-08 17:05:35.936875 
+557 ran till end (survived) 🐵 
+2025-09-08 17:05:51.335571 
+558 ran till end (survived) 🐵 
+2025-09-08 17:06:06.326569 
+559 ran till end (survived) 🐵 
+2025-09-08 17:06:21.96524 
+560 ran till end (survived) 🐵 
+2025-09-08 17:06:37.295941 
+561 ran till end (survived) 🐵 
+2025-09-08 17:06:50.858652 
+562 ran till end (survived) 🐵 
+2025-09-08 17:07:05.832195 
+563 ran till end (survived) 🐵 
+2025-09-08 17:07:21.000733 
+564 ran till end (survived) 🐵 
+2025-09-08 17:07:36.425559 
+565 ran till end (survived) 🐵 
+2025-09-08 17:07:49.018187 
+566 ran till end (survived) 🐵 
+2025-09-08 17:08:04.933137 
+567 ran till end (survived) 🐵 
+2025-09-08 17:08:20.200138 
+568 ran till end (survived) 🐵 
+2025-09-08 17:08:35.589619 
+569 ran till end (survived) 🐵 
+2025-09-08 17:08:50.380872 
+570 ran till end (survived) 🐵 
+2025-09-08 17:09:05.442961 
+571 ran till end (survived) 🐵 
+2025-09-08 17:09:20.296096 
+572 ran till end (survived) 🐵 
+2025-09-08 17:09:35.277991 
+573 ran till end (survived) 🐵 
+2025-09-08 17:09:50.191525 
+574 ran till end (survived) 🐵 
+575 died 👵 
+2025-09-08 17:10:21.402088 
+576 ran till end (survived) 🐵 
+2025-09-08 17:10:36.942385 
+577 ran till end (survived) 🐵 
+2025-09-08 17:10:52.57087 
+578 ran till end (survived) 🐵 
+2025-09-08 17:11:07.787403 
+579 ran till end (survived) 🐵 
+2025-09-08 17:11:21.96259 
+580 ran till end (survived) 🐵 
+581 died 👵 
+2025-09-08 17:11:51.439183 
+582 ran till end (survived) 🐵 
+2025-09-08 17:12:00.555483 
+583 ran till end (survived) 🐵 
+584 died 👵 
+2025-09-08 17:12:31.57287 
+585 ran till end (survived) 🐵 
+2025-09-08 17:12:46.440483 
+586 ran till end (survived) 🐵 
+2025-09-08 17:13:00.07005 
+587 ran till end (survived) 🐵 
+2025-09-08 17:13:14.705274 
+588 ran till end (survived) 🐵 
+2025-09-08 17:13:29.47373 
+589 ran till end (survived) 🐵 
+2025-09-08 17:13:44.624657 
+590 ran till end (survived) 🐵 
+2025-09-08 17:13:59.47483 
+591 ran till end (survived) 🐵 
+2025-09-08 17:14:13.961108 
+592 ran till end (survived) 🐵 
+2025-09-08 17:14:28.746489 
+593 ran till end (survived) 🐵 
+2025-09-08 17:14:44.393214 
+594 ran till end (survived) 🐵 
+2025-09-08 17:14:59.926434 
+595 ran till end (survived) 🐵 
+2025-09-08 17:15:13.626772 
+596 ran till end (survived) 🐵 
+2025-09-08 17:15:28.58567 
+597 ran till end (survived) 🐵 
+2025-09-08 17:15:43.783878 
+598 ran till end (survived) 🐵 
+2025-09-08 17:15:58.806756 
+599 ran till end (survived) 🐵 
+2025-09-08 17:16:14.836869 
+600 ran till end (survived) 🐵 
+2025-09-08 17:16:31.175172 
+601 ran till end (survived) 🐵 
+2025-09-08 17:16:46.166001 
+602 ran till end (survived) 🐵 
+2025-09-08 17:17:02.98194 
+603 ran till end (survived) 🐵 
+2025-09-08 17:17:18.822711 
+604 ran till end (survived) 🐵 
+2025-09-08 17:17:35.722325 
+605 ran till end (survived) 🐵 
+2025-09-09 08:53:40.202556 
+606 ran till end (survived) 🐵 
+2025-09-09 08:54:15.976192 
+607 ran till end (survived) 🐵 
+2025-09-09 08:54:59.70487 
+608 ran till end (survived) 🐵 
+2025-09-09 08:55:36.676702 
+609 ran till end (survived) 🐵 
+2025-09-09 08:56:12.464761 
+610 ran till end (survived) 🐵 
+2025-09-09 08:56:45.889257 
+611 ran till end (survived) 🐵 
+2025-09-09 08:57:20.46635 
+612 ran till end (survived) 🐵 
+2025-09-09 08:57:54.954073 
+613 ran till end (survived) 🐵 
+2025-09-09 08:58:29.846399 
+614 ran till end (survived) 🐵 
+2025-09-09 08:59:03.321566 
+615 ran till end (survived) 🐵 
+2025-09-09 08:59:36.151716 
+616 ran till end (survived) 🐵 
+2025-09-09 09:00:12.819485 
+617 ran till end (survived) 🐵 
+2025-09-09 09:00:49.696194 
+618 ran till end (survived) 🐵 
+2025-09-09 09:01:23.373895 
+619 ran till end (survived) 🐵 
+2025-09-09 09:01:53.870712 
+620 ran till end (survived) 🐵 
+2025-09-09 09:02:23.967156 
+621 ran till end (survived) 🐵 
+2025-09-09 09:02:58.449573 
+622 ran till end (survived) 🐵 
+2025-09-09 09:03:35.000844 
+623 ran till end (survived) 🐵 
+2025-09-09 09:04:07.070036 
+624 ran till end (survived) 🐵 
+2025-09-09 09:04:39.084233 
+625 ran till end (survived) 🐵 
+2025-09-09 09:05:12.459991 
+626 ran till end (survived) 🐵 
+627 died 👵 
+2025-09-09 09:06:22.446382 
+628 ran till end (survived) 🐵 
+2025-09-09 09:06:56.488914 
+629 ran till end (survived) 🐵 
+2025-09-09 09:07:31.156388 
+630 ran till end (survived) 🐵 
+2025-09-09 09:08:03.408628 
+631 ran till end (survived) 🐵 
+2025-09-09 09:08:36.245141 
+632 ran till end (survived) 🐵 
+2025-09-09 09:09:11.710811 
+633 ran till end (survived) 🐵 
+2025-09-09 09:09:45.221996 
+634 ran till end (survived) 🐵 
+2025-09-09 09:10:19.56381 
+635 ran till end (survived) 🐵 
+636 died 👵 
+2025-09-09 09:11:23.994623 
+637 ran till end (survived) 🐵 
+2025-09-09 09:11:57.05531 
+638 ran till end (survived) 🐵 
+2025-09-09 09:12:29.029922 
+639 ran till end (survived) 🐵 
+2025-09-09 09:13:02.405174 
+640 ran till end (survived) 🐵 
+2025-09-09 09:13:36.704575 
+641 ran till end (survived) 🐵 
+2025-09-09 09:14:08.066359 
+642 ran till end (survived) 🐵 
+2025-09-09 09:42:05.662838 
+643 ran till end (survived) 🐵 
+2025-09-09 09:42:34.008452 
+644 ran till end (survived) 🐵 
+2025-09-09 09:42:55.094426 
+645 ran till end (survived) 🐵 
+2025-09-09 09:43:19.980008 
+646 ran till end (survived) 🐵 
+2025-09-09 09:43:43.765657 
+647 ran till end (survived) 🐵 
+2025-09-09 09:44:06.726244 
+648 ran till end (survived) 🐵 
+2025-09-09 09:44:28.597779 
+649 ran till end (survived) 🐵 
+2025-09-09 09:44:47.701185 
+650 ran till end (survived) 🐵 
+2025-09-09 09:45:06.696727 
+651 ran till end (survived) 🐵 
+2025-09-09 09:45:27.479114 
+652 ran till end (survived) 🐵 
+2025-09-09 09:45:42.687276 
+653 ran till end (survived) 🐵 
+2025-09-09 09:45:58.823824 
+654 ran till end (survived) 🐵 
+2025-09-09 09:46:14.492134 
+655 ran till end (survived) 🐵 
+2025-09-09 09:46:29.645411 
+656 ran till end (survived) 🐵 
+2025-09-09 09:46:45.469559 
+657 ran till end (survived) 🐵 
+2025-09-09 09:47:02.528918 
+658 ran till end (survived) 🐵 
+659 died 👵 
+2025-09-09 09:47:40.662562 
+660 ran till end (survived) 🐵 
+2025-09-09 09:47:56.900402 
+661 ran till end (survived) 🐵 
+2025-09-09 09:48:12.709993 
+662 ran till end (survived) 🐵 
+2025-09-09 09:48:28.060129 
+663 ran till end (survived) 🐵 
+2025-09-09 09:48:44.702324 
+664 ran till end (survived) 🐵 
+2025-09-09 09:49:01.558424 
+665 ran till end (survived) 🐵 
+2025-09-09 09:49:17.849947 
+666 ran till end (survived) 🐵 
+2025-09-09 09:49:33.414625 
+667 ran till end (survived) 🐵 
+2025-09-09 09:49:49.343423 
+668 ran till end (survived) 🐵 
+2025-09-09 09:50:05.041328 
+669 ran till end (survived) 🐵 
+2025-09-09 09:50:21.867725 
+670 ran till end (survived) 🐵 
+2025-09-09 09:50:38.222801 
+671 ran till end (survived) 🐵 
+2025-09-09 09:50:54.624952 
+672 ran till end (survived) 🐵 
+2025-09-09 09:51:10.178495 
+673 ran till end (survived) 🐵 
+2025-09-09 09:51:31.241366 
+674 ran till end (survived) 🐵 
+2025-09-09 09:51:47.944523 
+675 ran till end (survived) 🐵 
+2025-09-09 09:52:05.86188 
+676 ran till end (survived) 🐵 
+2025-09-09 09:52:21.654174 
+677 ran till end (survived) 🐵 
+678 died 👵 
+2025-09-09 09:52:46.903888 
+679 ran till end (survived) 🐵 
+2025-09-09 09:53:02.605976 
+680 ran till end (survived) 🐵 
+2025-09-09 09:53:20.216163 
+681 ran till end (survived) 🐵 
+2025-09-09 09:53:36.632727 
+682 ran till end (survived) 🐵 
+2025-09-09 09:53:49.773323 
+683 ran till end (survived) 🐵 
+2025-09-09 09:54:05.296874 
+684 ran till end (survived) 🐵 
+2025-09-09 09:54:21.482577 
+685 ran till end (survived) 🐵 
+2025-09-09 09:54:37.022331 
+686 ran till end (survived) 🐵 
+2025-09-09 09:54:53.033199 
+687 ran till end (survived) 🐵 
+688 died 👵 
+2025-09-09 09:55:20.565231 
+689 ran till end (survived) 🐵 
+2025-09-09 09:55:32.33154 
+690 ran till end (survived) 🐵 
+2025-09-09 09:55:48.422736 
+691 ran till end (survived) 🐵 
+2025-09-09 09:56:04.080681 
+692 ran till end (survived) 🐵 
+2025-09-09 09:56:19.948781 
+693 ran till end (survived) 🐵 
+2025-09-09 09:56:35.241058 
+694 ran till end (survived) 🐵 
+2025-09-09 09:56:50.660583 
+695 ran till end (survived) 🐵 
+2025-09-09 09:57:05.319062 
+696 ran till end (survived) 🐵 
+2025-09-09 09:57:21.816758 
+697 ran till end (survived) 🐵 
+2025-09-09 09:57:36.564862 
+698 ran till end (survived) 🐵 
+2025-09-09 09:57:51.974734 
+699 ran till end (survived) 🐵 
+2025-09-09 09:58:06.508284 
+700 ran till end (survived) 🐵 
+2025-09-09 09:58:22.069738 
+701 ran till end (survived) 🐵 
+2025-09-09 09:58:37.052694 
+702 ran till end (survived) 🐵 
+2025-09-09 09:58:57.260615 
+703 ran till end (survived) 🐵 
+2025-09-09 09:59:24.751898 
+704 ran till end (survived) 🐵 
+2025-09-09 09:59:51.285043 
+705 ran till end (survived) 🐵 
+2025-09-09 10:00:11.767616 
+706 ran till end (survived) 🐵 
+2025-09-09 10:00:32.965975 
+707 ran till end (survived) 🐵 
+2025-09-09 10:00:51.91868 
+708 ran till end (survived) 🐵 
+2025-09-09 10:01:08.416885 
+709 ran till end (survived) 🐵 
+2025-09-09 10:01:24.206939 
+710 ran till end (survived) 🐵 
+2025-09-09 10:01:37.331351 
+711 ran till end (survived) 🐵 
+2025-09-09 10:01:53.026832 
+712 ran till end (survived) 🐵 
+2025-09-09 10:02:08.765604 
+713 ran till end (survived) 🐵 
+2025-09-09 10:02:24.571685 
+714 ran till end (survived) 🐵 
+2025-09-09 10:02:41.074054 
+715 ran till end (survived) 🐵 
+2025-09-09 10:02:54.762633 
+716 ran till end (survived) 🐵 
+2025-09-09 10:03:11.09681 
+717 ran till end (survived) 🐵 
+2025-09-09 10:03:26.955977 
+718 ran till end (survived) 🐵 
+2025-09-09 10:03:44.343707 
+719 ran till end (survived) 🐵 
+2025-09-09 10:03:59.765474 
+720 ran till end (survived) 🐵 
+2025-09-09 10:04:13.832295 
+721 ran till end (survived) 🐵 
+2025-09-09 10:04:30.443857 
+722 ran till end (survived) 🐵 
+2025-09-09 10:04:46.102013 
+723 ran till end (survived) 🐵 
+2025-09-09 10:04:57.557781 
+724 ran till end (survived) 🐵 
+2025-09-09 10:05:12.507551 
+725 ran till end (survived) 🐵 
+2025-09-09 10:05:26.858907 
+726 ran till end (survived) 🐵 
+2025-09-09 10:05:39.906921 
+727 ran till end (survived) 🐵 
+2025-09-09 10:05:56.661653 
+728 ran till end (survived) 🐵 
+2025-09-09 10:06:13.143962 
+729 ran till end (survived) 🐵 
+2025-09-09 10:06:29.353639 
+730 ran till end (survived) 🐵 
+2025-09-09 10:06:45.250925 
+731 ran till end (survived) 🐵 
+2025-09-09 10:07:00.784248 
+732 ran till end (survived) 🐵 
+2025-09-09 10:07:15.191749 
+733 ran till end (survived) 🐵 
+2025-09-09 10:07:31.435376 
+734 ran till end (survived) 🐵 
+2025-09-09 10:07:46.658803 
+735 ran till end (survived) 🐵 
+2025-09-09 10:08:02.728882 
+736 ran till end (survived) 🐵 
+2025-09-09 10:08:18.295427 
+737 ran till end (survived) 🐵 
+2025-09-09 10:08:34.3336 
+738 ran till end (survived) 🐵 
+2025-09-09 10:08:49.776298 
+739 ran till end (survived) 🐵 
+2025-09-09 10:09:06.443429 
+740 ran till end (survived) 🐵 
+2025-09-09 10:09:22.262852 
+741 ran till end (survived) 🐵 
+2025-09-09 10:09:38.444302 
+742 ran till end (survived) 🐵 
+2025-09-09 10:09:54.467349 
+743 ran till end (survived) 🐵 
+2025-09-09 10:10:10.618416 
+744 ran till end (survived) 🐵 
+2025-09-09 10:10:25.64846 
+745 ran till end (survived) 🐵 
+2025-09-09 10:10:40.380699 
+746 ran till end (survived) 🐵 
+2025-09-09 10:10:56.584126 
+747 ran till end (survived) 🐵 
+2025-09-09 10:11:12.539111 
+748 ran till end (survived) 🐵 
+2025-09-09 10:11:28.465962 
+749 ran till end (survived) 🐵 
+2025-09-09 10:11:44.237399 
+750 ran till end (survived) 🐵 
+2025-09-09 10:11:59.845367 
+751 ran till end (survived) 🐵 
+2025-09-09 10:12:15.947174 
+752 ran till end (survived) 🐵 
+2025-09-09 10:12:32.260094 
+753 ran till end (survived) 🐵 
+2025-09-09 10:12:47.998452 
+754 ran till end (survived) 🐵 
+2025-09-09 10:13:03.655847 
+755 ran till end (survived) 🐵 
+2025-09-09 10:13:18.932955 
+756 ran till end (survived) 🐵 
+2025-09-09 10:13:37.364306 
+757 ran till end (survived) 🐵 
+2025-09-09 10:13:54.349407 
+758 ran till end (survived) 🐵 
+2025-09-09 10:14:11.178432 
+759 ran till end (survived) 🐵 
+2025-09-09 10:14:28.16477 
+760 ran till end (survived) 🐵 
+2025-09-09 10:14:46.754346 
+761 ran till end (survived) 🐵 
+2025-09-09 10:15:11.139811 
+762 ran till end (survived) 🐵 
+2025-09-09 10:15:30.01378 
+763 ran till end (survived) 🐵 
+2025-09-09 10:15:48.949342 
+764 ran till end (survived) 🐵 
+2025-09-09 10:16:10.510499 
+765 ran till end (survived) 🐵 
+2025-09-09 10:16:33.898003 
+766 ran till end (survived) 🐵 
+2025-09-09 10:16:53.930779 
+767 ran till end (survived) 🐵 
+2025-09-09 10:17:16.071823 
+768 ran till end (survived) 🐵 
+2025-09-09 10:17:36.872623 
+769 ran till end (survived) 🐵 
+2025-09-09 10:17:57.62764 
+770 ran till end (survived) 🐵 
+2025-09-09 10:18:19.672427 
+771 ran till end (survived) 🐵 
+2025-09-09 10:18:42.115787 
+772 ran till end (survived) 🐵 
+2025-09-09 10:19:04.541677 
+773 ran till end (survived) 🐵 
+2025-09-09 10:19:26.687815 
+774 ran till end (survived) 🐵 
+2025-09-09 10:19:48.309857 
+775 ran till end (survived) 🐵 
+2025-09-09 10:20:07.522553 
+776 ran till end (survived) 🐵 
+2025-09-09 10:20:28.53427 
+777 ran till end (survived) 🐵 
+2025-09-09 10:20:51.198793 
+778 ran till end (survived) 🐵 
+2025-09-09 10:21:13.396659 
+779 ran till end (survived) 🐵 
+2025-09-09 10:21:35.478714 
+780 ran till end (survived) 🐵 
+2025-09-09 10:21:57.656626 
+781 ran till end (survived) 🐵 
+2025-09-09 10:22:21.073428 
+782 ran till end (survived) 🐵 
+783 died 👵 
+2025-09-09 10:23:04.135445 
+784 ran till end (survived) 🐵 
+2025-09-09 10:23:20.412196 
+785 ran till end (survived) 🐵 
+2025-09-09 10:23:43.213309 
+786 ran till end (survived) 🐵 
+2025-09-09 10:24:03.170282 
+787 ran till end (survived) 🐵 
+2025-09-09 10:24:23.288114 
+788 ran till end (survived) 🐵 
+2025-09-09 10:24:39.132014 
+789 ran till end (survived) 🐵 
+2025-09-09 10:24:52.038592 
+790 ran till end (survived) 🐵 
+2025-09-09 10:25:08.299201 
+791 ran till end (survived) 🐵 
+2025-09-09 10:25:23.838302 
+792 ran till end (survived) 🐵 
+2025-09-09 10:25:38.936906 
+793 ran till end (survived) 🐵 
+2025-09-09 10:25:55.12553 
+794 ran till end (survived) 🐵 
+2025-09-09 10:26:07.793799 
+795 ran till end (survived) 🐵 
+2025-09-09 10:26:24.129766 
+796 ran till end (survived) 🐵 
+2025-09-09 10:26:39.538918 
+797 ran till end (survived) 🐵 
+2025-09-09 10:26:55.322019 
+798 ran till end (survived) 🐵 
+2025-09-09 10:27:11.460674 
+799 ran till end (survived) 🐵 
+2025-09-09 10:27:25.809045 
+800 ran till end (survived) 🐵 
+2025-09-09 10:27:41.97341 
+801 ran till end (survived) 🐵 
+2025-09-09 10:27:57.317004 
+802 ran till end (survived) 🐵 
+2025-09-09 10:28:13.361271 
+803 ran till end (survived) 🐵 
+2025-09-09 10:28:29.550945 
+804 ran till end (survived) 🐵 
+2025-09-09 10:28:44.64228 
+805 ran till end (survived) 🐵 
+2025-09-09 10:29:00.241076 
+806 ran till end (survived) 🐵 
+2025-09-09 10:29:16.511786 
+807 ran till end (survived) 🐵 
+2025-09-09 10:29:30.915422 
+808 ran till end (survived) 🐵 
+2025-09-09 10:29:45.963956 
+809 ran till end (survived) 🐵 
+2025-09-09 10:29:59.502881 
+810 ran till end (survived) 🐵 
+2025-09-09 10:30:14.109691 
+811 ran till end (survived) 🐵 
+2025-09-09 10:30:29.763874 
+812 ran till end (survived) 🐵 
+2025-09-09 10:30:44.95402 
+813 ran till end (survived) 🐵 
+2025-09-09 10:31:00.236278 
+814 ran till end (survived) 🐵 
+2025-09-09 10:31:14.462477 
+815 ran till end (survived) 🐵 
+2025-09-09 10:31:30.175528 
+816 ran till end (survived) 🐵 
+2025-09-09 10:31:46.665023 
+817 ran till end (survived) 🐵 
+2025-09-09 10:32:00.898629 
+818 ran till end (survived) 🐵 
+2025-09-09 10:32:16.241777 
+819 ran till end (survived) 🐵 
+2025-09-09 10:32:31.413414 
+820 ran till end (survived) 🐵 
+2025-09-09 10:32:46.949243 
+821 ran till end (survived) 🐵 
+2025-09-09 10:33:08.997356 
+822 ran till end (survived) 🐵 
+2025-09-09 10:33:29.913686 
+823 ran till end (survived) 🐵 
+2025-09-09 10:33:48.817912 
+824 ran till end (survived) 🐵 
+2025-09-09 10:34:12.179396 
+825 ran till end (survived) 🐵 
+2025-09-09 10:34:32.981194 
+826 ran till end (survived) 🐵 
+2025-09-09 10:34:54.052715 
+827 ran till end (survived) 🐵 
+2025-09-09 10:35:16.554065 
+828 ran till end (survived) 🐵 
+2025-09-09 10:35:38.10602 
+829 ran till end (survived) 🐵 
+2025-09-09 10:36:02.604689 
+830 ran till end (survived) 🐵 
+2025-09-09 10:36:27.297346 
+831 ran till end (survived) 🐵 
+2025-09-09 10:36:51.023076 
+832 ran till end (survived) 🐵 
+2025-09-09 10:37:14.06675 
+833 ran till end (survived) 🐵 
+2025-09-09 10:37:33.84858 
+834 ran till end (survived) 🐵 
+2025-09-09 10:37:55.776396 
+835 ran till end (survived) 🐵 
+2025-09-09 10:38:16.450306 
+836 ran till end (survived) 🐵 
+2025-09-09 10:38:32.350913 
+837 ran till end (survived) 🐵 
+2025-09-09 10:38:48.665003 
+838 ran till end (survived) 🐵 
+2025-09-09 10:39:05.500614 
+839 ran till end (survived) 🐵 
+2025-09-09 10:39:20.743907 
+840 ran till end (survived) 🐵 
+2025-09-09 10:39:36.694034 
+841 ran till end (survived) 🐵 
+2025-09-09 10:39:52.765999 
+842 ran till end (survived) 🐵 
+2025-09-09 10:40:07.343741 
+843 ran till end (survived) 🐵 
+2025-09-09 10:40:22.391614 
+844 ran till end (survived) 🐵 
+2025-09-09 10:40:38.283257 
+845 ran till end (survived) 🐵 
+2025-09-09 10:40:53.881119 
+846 ran till end (survived) 🐵 
+2025-09-09 10:41:10.309229 
+847 ran till end (survived) 🐵 
+2025-09-09 10:41:26.445471 
+848 ran till end (survived) 🐵 
+2025-09-09 10:41:42.544674 
+849 ran till end (survived) 🐵 
+2025-09-09 10:41:58.809745 
+850 ran till end (survived) 🐵 
+2025-09-09 10:42:13.90202 
+851 ran till end (survived) 🐵 
+2025-09-09 10:42:30.885472 
+852 ran till end (survived) 🐵 
+2025-09-09 10:42:47.028891 
+853 ran till end (survived) 🐵 
+2025-09-09 10:43:03.547607 
+854 ran till end (survived) 🐵 
+2025-09-09 10:43:19.075201 
+855 ran till end (survived) 🐵 
+2025-09-09 10:43:35.391161 
+856 ran till end (survived) 🐵 
+2025-09-09 10:43:51.502824 
+857 ran till end (survived) 🐵 
+2025-09-09 10:44:10.485017 
+858 ran till end (survived) 🐵 
+2025-09-09 10:44:34.632987 
+859 ran till end (survived) 🐵 
+2025-09-09 10:44:53.228004 
+860 ran till end (survived) 🐵 
+2025-09-09 10:45:08.627974 
+861 ran till end (survived) 🐵 
+2025-09-09 10:45:25.039068 
+862 ran till end (survived) 🐵 
+2025-09-09 10:45:44.912524 
+863 ran till end (survived) 🐵 
+2025-09-09 10:46:08.155883 
+864 ran till end (survived) 🐵 
+2025-09-09 10:46:29.042964 
+865 ran till end (survived) 🐵 
+2025-09-09 10:46:48.942695 
+866 ran till end (survived) 🐵 
+2025-09-09 10:47:12.647972 
+867 ran till end (survived) 🐵 
+2025-09-09 10:47:30.632632 
+868 ran till end (survived) 🐵 
+2025-09-09 10:47:51.484817 
+869 ran till end (survived) 🐵 
+2025-09-09 10:48:10.995041 
+870 ran till end (survived) 🐵 
+2025-09-09 10:48:30.537796 
+871 ran till end (survived) 🐵 
+2025-09-09 10:48:51.44902 
+872 ran till end (survived) 🐵 
+2025-09-09 10:49:11.439648 
+873 ran till end (survived) 🐵 
+2025-09-09 10:49:28.324447 
+874 ran till end (survived) 🐵 
+2025-09-09 10:49:43.410165 
+875 ran till end (survived) 🐵 
+2025-09-09 10:49:58.774364 
+876 ran till end (survived) 🐵 
+2025-09-09 10:50:15.019418 
+877 ran till end (survived) 🐵 
+2025-09-09 10:50:31.41065 
+878 ran till end (survived) 🐵 
+879 died 👵 
+2025-09-09 10:50:59.859271 
+880 ran till end (survived) 🐵 
+2025-09-09 10:51:15.467009 
+881 ran till end (survived) 🐵 
+2025-09-09 10:51:31.53508 
+882 ran till end (survived) 🐵 
+2025-09-09 10:51:46.808075 
+883 ran till end (survived) 🐵 
+2025-09-09 10:52:02.222881 
+884 ran till end (survived) 🐵 
+2025-09-09 10:52:18.251364 
+885 ran till end (survived) 🐵 
+2025-09-09 10:52:32.202943 
+886 ran till end (survived) 🐵 
+2025-09-09 10:52:47.171955 
+887 ran till end (survived) 🐵 
+2025-09-09 10:53:03.587814 
+888 ran till end (survived) 🐵 
+2025-09-09 10:53:20.344252 
+889 ran till end (survived) 🐵 
+2025-09-09 10:53:34.963233 
+890 ran till end (survived) 🐵 
+2025-09-09 10:53:51.000987 
+891 ran till end (survived) 🐵 
+2025-09-09 10:54:03.239737 
+892 ran till end (survived) 🐵 
+2025-09-09 10:54:19.522415 
+893 ran till end (survived) 🐵 
+2025-09-09 10:54:35.90294 
+894 ran till end (survived) 🐵 
+2025-09-09 10:54:52.175729 
+895 ran till end (survived) 🐵 
+2025-09-09 10:55:07.848514 
+896 ran till end (survived) 🐵 
+2025-09-09 10:55:22.933193 
+897 ran till end (survived) 🐵 
+2025-09-09 10:55:38.317776 
+898 ran till end (survived) 🐵 
+2025-09-09 10:55:53.848842 
+899 ran till end (survived) 🐵 
+2025-09-09 10:56:10.308554 
+900 ran till end (survived) 🐵 
+2025-09-09 10:56:24.597887 
+901 ran till end (survived) 🐵 
+2025-09-09 10:56:39.582111 
+902 ran till end (survived) 🐵 
+2025-09-09 10:56:54.38607 
+903 ran till end (survived) 🐵 
+2025-09-09 10:57:10.257548 
+904 ran till end (survived) 🐵 
+2025-09-09 10:57:25.473267 
+905 ran till end (survived) 🐵 
+2025-09-09 10:57:40.728603 
+906 ran till end (survived) 🐵 
+907 died 👵 
+2025-09-09 10:58:05.511968 
+908 ran till end (survived) 🐵 
+2025-09-09 10:58:21.051312 
+909 ran till end (survived) 🐵 
+2025-09-09 10:58:36.158611 
+910 ran till end (survived) 🐵 
+2025-09-09 10:58:51.53551 
+911 ran till end (survived) 🐵 
+2025-09-09 10:59:11.03107 
+912 ran till end (survived) 🐵 
+2025-09-09 10:59:30.803259 
+913 ran till end (survived) 🐵 
+2025-09-09 10:59:49.561665 
+914 ran till end (survived) 🐵 
+2025-09-09 11:00:04.218478 
+915 ran till end (survived) 🐵 
+2025-09-09 11:00:19.191203 
+916 ran till end (survived) 🐵 
+2025-09-09 11:00:34.067591 
+917 ran till end (survived) 🐵 
+2025-09-09 11:00:49.447267 
+918 ran till end (survived) 🐵 
+2025-09-09 11:01:04.62759 
+919 ran till end (survived) 🐵 
+2025-09-09 11:01:19.259482 
+920 ran till end (survived) 🐵 
+2025-09-09 11:01:35.344442 
+921 ran till end (survived) 🐵 
+2025-09-09 11:01:50.504707 
+922 ran till end (survived) 🐵 
+2025-09-09 11:02:05.200017 
+923 ran till end (survived) 🐵 
+2025-09-09 11:02:21.008371 
+924 ran till end (survived) 🐵 
+2025-09-09 11:02:36.042764 
+925 ran till end (survived) 🐵 
+2025-09-09 11:02:51.865925 
+926 ran till end (survived) 🐵 
+2025-09-09 11:03:06.82966 
+927 ran till end (survived) 🐵 
+2025-09-09 11:03:19.963256 
+928 ran till end (survived) 🐵 
+2025-09-09 11:03:35.401035 
+929 ran till end (survived) 🐵 
+2025-09-09 11:03:50.531554 
+930 ran till end (survived) 🐵 
+2025-09-09 11:04:05.795438 
+931 ran till end (survived) 🐵 
+2025-09-09 11:04:21.730582 
+932 ran till end (survived) 🐵 
+2025-09-09 11:04:36.923341 
+933 ran till end (survived) 🐵 
+2025-09-09 11:04:53.2036 
+934 ran till end (survived) 🐵 
+2025-09-09 11:05:08.254359 
+935 ran till end (survived) 🐵 
+2025-09-09 11:05:23.726697 
+936 ran till end (survived) 🐵 
+2025-09-09 11:05:39.579729 
+937 ran till end (survived) 🐵 
+2025-09-09 11:05:55.597097 
+938 ran till end (survived) 🐵 
+2025-09-09 11:06:11.285526 
+939 ran till end (survived) 🐵 
+2025-09-09 11:06:26.752967 
+940 ran till end (survived) 🐵 
+2025-09-09 11:06:42.524974 
+941 ran till end (survived) 🐵 
+2025-09-09 11:06:57.548944 
+942 ran till end (survived) 🐵 
+2025-09-09 11:07:13.708802 
+943 ran till end (survived) 🐵 
+2025-09-09 11:07:29.708354 
+944 ran till end (survived) 🐵 
+2025-09-09 11:07:45.667583 
+945 ran till end (survived) 🐵 
+2025-09-09 11:07:59.724972 
+946 ran till end (survived) 🐵 
+2025-09-09 11:08:15.74036 
+947 ran till end (survived) 🐵 
+2025-09-09 11:08:34.257905 
+948 ran till end (survived) 🐵 
+2025-09-09 11:08:59.657683 
+949 ran till end (survived) 🐵 
+2025-09-09 11:09:21.994924 
+950 ran till end (survived) 🐵 
+2025-09-09 11:09:47.050062 
+951 ran till end (survived) 🐵 
+2025-09-09 11:10:05.474641 
+952 ran till end (survived) 🐵 
+2025-09-09 11:10:19.042827 
+953 ran till end (survived) 🐵 
+2025-09-09 11:10:38.061226 
+954 ran till end (survived) 🐵 
+2025-09-09 11:10:56.994652 
+955 ran till end (survived) 🐵 
+2025-09-09 11:11:03.951371 
+956 ran till end (survived) 🐵 
+2025-09-09 11:11:20.029735 
+957 ran till end (survived) 🐵 
+2025-09-09 11:11:34.574433 
+958 ran till end (survived) 🐵 
+2025-09-09 11:11:49.991226 
+959 ran till end (survived) 🐵 
+2025-09-09 11:12:06.872706 
+960 ran till end (survived) 🐵 
+2025-09-09 11:12:20.828819 
+961 ran till end (survived) 🐵 
+2025-09-09 11:12:36.575012 
+962 ran till end (survived) 🐵 
+2025-09-09 11:12:51.565321 
+963 ran till end (survived) 🐵 
+2025-09-09 11:13:06.878506 
+964 ran till end (survived) 🐵 
+2025-09-09 11:13:22.090254 
+965 ran till end (survived) 🐵 
+2025-09-09 11:13:38.120686 
+966 ran till end (survived) 🐵 
+2025-09-09 11:13:52.56083 
+967 ran till end (survived) 🐵 
+2025-09-09 11:14:08.859147 
+968 ran till end (survived) 🐵 
+2025-09-09 11:14:24.556571 
+969 ran till end (survived) 🐵 
+2025-09-09 11:14:40.40557 
+970 ran till end (survived) 🐵 
+2025-09-09 11:14:55.21001 
+971 ran till end (survived) 🐵 
+2025-09-09 11:15:10.833417 
+972 ran till end (survived) 🐵 
+2025-09-09 11:15:26.546736 
+973 ran till end (survived) 🐵 
+2025-09-09 11:15:42.693629 
+974 ran till end (survived) 🐵 
+2025-09-09 11:15:57.931238 
+975 ran till end (survived) 🐵 
+2025-09-09 11:16:13.895001 
+976 ran till end (survived) 🐵 
+2025-09-09 11:16:29.205518 
+977 ran till end (survived) 🐵 
+2025-09-09 11:16:45.01498 
+978 ran till end (survived) 🐵 
+2025-09-09 11:16:59.512723 
+979 ran till end (survived) 🐵 
+2025-09-09 11:17:15.433898 
+980 ran till end (survived) 🐵 
+2025-09-09 11:17:28.146421 
+981 ran till end (survived) 🐵 
+2025-09-09 11:17:44.162477 
+982 ran till end (survived) 🐵 
+2025-09-09 11:18:00.300896 
+983 ran till end (survived) 🐵 
+2025-09-09 11:18:16.17166 
+984 ran till end (survived) 🐵 
+2025-09-09 11:18:31.839634 
+985 ran till end (survived) 🐵 
+986 died 👵 
+2025-09-09 11:18:45.758748 
+987 ran till end (survived) 🐵 
+2025-09-09 11:19:01.887538 
+988 ran till end (survived) 🐵 
+2025-09-09 11:19:18.417431 
+989 ran till end (survived) 🐵 
+2025-09-09 11:19:33.528407 
+990 ran till end (survived) 🐵 
+2025-09-09 11:19:48.450363 
+991 ran till end (survived) 🐵 
+2025-09-09 11:20:04.107335 
+992 ran till end (survived) 🐵 
+2025-09-09 11:20:18.639518 
+993 ran till end (survived) 🐵 
+2025-09-09 11:20:34.152775 
+994 ran till end (survived) 🐵 
+2025-09-09 11:20:49.200678 
+995 ran till end (survived) 🐵 
+2025-09-09 11:21:05.067506 
+996 ran till end (survived) 🐵 
+2025-09-09 11:21:18.330151 
+997 ran till end (survived) 🐵 
+2025-09-09 11:21:34.252448 
+998 ran till end (survived) 🐵 
+2025-09-09 11:21:50.416811 
+999 ran till end (survived) 🐵 
+2025-09-09 11:22:05.727772 
+1000 ran till end (survived) 🐵 
+2025-09-09 11:22:17.011311 
+1001 ran till end (survived) 🐵 
+2025-09-09 11:22:29.555438 
+1002 ran till end (survived) 🐵 

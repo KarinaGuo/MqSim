@@ -6,7 +6,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 output_logfile = paste0("ParamTesting/run_log_", Sys.Date(),".txt")
 sink(output_logfile)
 
-n_t=100 # How many times to run iteration
+n_t=1000 # How many times to run iteration
 
 param_sets <- data.frame(
   MR_mean = runif(n_t, min = 0, max = 1),

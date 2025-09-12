@@ -1,13 +1,13 @@
 ## Plotting intervention difference
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 library(tidyverse); library(patchwork)
-source("Intervention/configurations_int")
+source("Intervention/configurations_fromMultRun")
 theme_set(theme_bw())
 
-MR_base <- read.csv("Intervention/MR_base_0.5_Intro1000.csv") %>% mutate(Run="Base")
-size_base <- read.csv("Intervention/SIZE_base_0.5_Intro1000.csv") %>% mutate(Run="Base")
-MR_int <- read.csv("Intervention/MR_int_MR_0.5_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
-size_int <- read.csv("Intervention/SIZE_int_MR_0.5_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
+MR_base <- read.csv("Intervention/MR_base_0.4_bad_Intro1000.csv") %>% mutate(Run="Base")
+size_base <- read.csv("Intervention/SIZE_base_0.4_bad_Intro1000.csv") %>% mutate(Run="Base")
+MR_int <- read.csv("Intervention/MR_int_MR_0.4_bad_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
+size_int <- read.csv("Intervention/SIZE_int_MR_0.4_bad_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
 
 MR_df <- rbind(MR_base, MR_int)
 live_size_df <- rbind(size_base, size_int)
@@ -74,9 +74,25 @@ live_size_wind_mean %>%
 #https://stats.stackexchange.com/questions/576499/how-to-compare-two-time-series-with-a-gam
 library(mgcv)
 
-fit_gam_1 <- gam(sum_size ~ Run+s(time), data = live_size_df, method = "ML")
+live_size_df$Run <- as.factor(live_size_df$Run)
+live_size_df_trajectory <- live_size_df %>% 
+  filter (time %in% seq(from=1, to=1500))
 
-# fit_gam_2 <- gam(sum_size ~ s(time, by = Run), data = live_size_df, method = "ML")
-# Error in smoothCon(split$smooth.spec[[i]], data, knots, absorb.cons, scale.penalty = scale.penalty,  : 
+m1 <- gam(sum_size ~ s(time), data=live_size_df, method="REML")   # one smooth across all runs
+m2 <- gam(sum_size ~ s(time, Run, bs="fs"), data=live_size_df, method="REML")   # separate smooths
+anova(m1, m2, test="Chisq")
 
-#summary(fit_gam_1)  # test difference in smooths
+library(mgcv)
+library(gratia)
+
+# Fit with by = Run coding (needed for difference smooths)
+fit_gam_by <- gam(sum_size ~ Run + s(time, by = Run, k = 20),
+                  data = live_size_df,
+                  method = "REML")
+
+diff_smooth <- difference_smooths(fit_gam_by, smooth = "s(time)")
+
+draw(diff_smooth) +
+  ggplot2::labs(title = "Difference between Run smooths",
+                y = "Difference (Run B - Run A)")
+

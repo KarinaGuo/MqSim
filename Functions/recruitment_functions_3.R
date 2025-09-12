@@ -50,6 +50,7 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
     total_impact <- 1
   }
   
+  # Total impact on individuals recruitment
   total_impact <- total_impact*recruitment_adjust
   
   #tmp <- data.frame(recruitment_indivs_ages=recruitment_indivs_ages, recruitment_indivs_MR=recruitment_indivs_MR, MR_impact=MR_impact, age_impact=age_impact, total_impact=total_impact)
