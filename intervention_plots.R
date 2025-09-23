@@ -1,13 +1,13 @@
 ## Plotting intervention difference
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 library(tidyverse); library(patchwork)
-source("Intervention/configurations_fromMultRun")
+source("configurations_fromMultRun")
 theme_set(theme_bw())
 
-MR_base <- read.csv("Intervention/MR_base_0.4_bad_Intro1000.csv") %>% mutate(Run="Base")
-size_base <- read.csv("Intervention/SIZE_base_0.4_bad_Intro1000.csv") %>% mutate(Run="Base")
-MR_int <- read.csv("Intervention/MR_int_MR_0.4_bad_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
-size_int <- read.csv("Intervention/SIZE_int_MR_0.4_bad_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
+MR_base <- read.csv("MR_tests/MR_base_0.4_Intro1000.csv") %>% mutate(Run="Base")
+size_base <- read.csv("MR_tests/SIZE_base_0.4_Intro1000.csv") %>% mutate(Run="Base")
+MR_int <- read.csv("Intervention/MR_int_MR_0.4_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
+size_int <- read.csv("Intervention/SIZE_int_MR_0.4_Intro1000.csv") %>% mutate(Run="Resistance Intervention")
 
 MR_df <- rbind(MR_base, MR_int)
 live_size_df <- rbind(size_base, size_int)
@@ -17,26 +17,29 @@ Size_plot <- ggplot() +
   geom_hline(yintercept=population_minimum_size, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
   geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen", alpha=0.5) +
+  
   geom_point(data=live_size_df, aes(x=time, y=sum_size, colour=Run), alpha=0.3, size=0.5) + 
-  #geom_point(data=(live_size_df %>% filter(time %in% seq(from=intercept_timepoint-10, to=intercept_timepoint+10))), aes(x=time, y=sum_size, colour=Run), alpha=1, size=2, shape=17) + 
-  stat_smooth(data=(live_size_df %>% filter(Run=="Base")), aes(x=time, y = sum_size), colour="red", linetype="dashed", linewidth = 0.5, span=0.1, se=F, method="loess") +
-  stat_smooth(data=(live_size_df %>% filter(Run=="Resistance Intervention")), aes(x=time, y = sum_size), colour="blue", linetype="dashed", linewidth = 0.5, span=0.1, se=F, method="loess") +
-  ggforce::facet_zoom(xlim=c(1000,1300)) 
-  #ggforce::facet_zoom(xlim=c(1000,1100)) +
+  stat_smooth(data=(live_size_df %>% filter(Run=="Base")), aes(x=time, y = sum_size), colour="sienna2", linetype="dashed", linewidth = 0.5, span=0.1, method="loess") +
+  stat_smooth(data=(live_size_df %>% filter(Run=="Resistance Intervention")), aes(x=time, y = sum_size), colour="darkgreen", linetype="dashed", linewidth = 0.5, span=0.1, method="loess") +
+  scale_colour_manual(values=c("Base"="darkgoldenrod2", "Resistance Intervention"="darkolivegreen2")) +
+  ggforce::facet_zoom(xlim=c(1000,1300)) +
+  labs(x="Timepoint", y="Live population size") +
+  theme(legend.position = "none")
 
 
 MR_plot <- ggplot() +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
   geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen", alpha=0.5) +
   geom_point(data=MR_df, aes(x=time, y = MR_mean_summ, colour=Run), alpha=0.3, size=0.5) +
-  #geom_point(data=(MR_df %>% filter(time %in% seq(from=intercept_timepoint-1, to=intercept_timepoint+1))), aes(x=time, y = MR_mean_summ, colour=Run), alpha=1, size=2, shape=17) +
-  stat_smooth(data=(MR_df %>% filter(Run=="Base")), aes(x=time, y = MR_mean_summ), colour="red", linetype="dashed", linewidth = 0.5, span=0.1, se=F, method="loess") +
-  stat_smooth(data=(MR_df %>% filter(Run=="Resistance Intervention")), aes(x=time, y = MR_mean_summ), colour="blue", linetype="dashed", linewidth = 0.5, span=0.1, se=F, method="loess") +
+  stat_smooth(data=(MR_df %>% filter(Run=="Base")), aes(x=time, y = MR_mean_summ), colour="sienna2", linetype="dashed", linewidth = 0.5, span=0.1, se=F, method="loess") +
+  stat_smooth(data=(MR_df %>% filter(Run=="Resistance Intervention")), aes(x=time, y = MR_mean_summ), colour="darkgreen", linetype="dashed", linewidth = 0.5, span=0.1, se=F, method="loess") +
+  scale_colour_manual(values=c("Base"="darkgoldenrod2", "Resistance Intervention"="darkolivegreen2")) +
   ggforce::facet_zoom(xlim=c(1000,1300)) +
-  #ggforce::facet_zoom(xlim=c(1000,1100)) +
-  labs(title="Live MR")
+  labs(x="Timepoint", y="Population mean myrtle rust")
 
 Size_plot + MR_plot + plot_layout(guides = "collect")
+#ggsave(Size_plot, file="Plots/Intervention_lowMRInt_Size_plot.jpg", limitsize = F, width=2000, height=3000, units='px')
+#ggsave(MR_plot, file="Plots/Intervention_lowMRInt_MR_plot.jpg", limitsize = F, width=2000, height=3000, units='px')
 
 ### At x windows, calculate average for each run
 MR_df_sort <- MR_df[order(MR_df$time), ]
