@@ -1,5 +1,5 @@
 ## Analysis of parameter runs
-setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
+setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/")
 library(tidyverse)
 
 
@@ -57,7 +57,7 @@ pop_trend_comped <- run_res %>%
 ## Compare mean_MR - whether the seedlings in "After" is lower than in "Soon.
 run_res_LS_comped_LS <- run_res_LS %>%
   filter(Lifestage == "Seedling") %>%    
-  select(param_iteration, timeperiod, mean_MR) %>%
+  dplyr::select(param_iteration, timeperiod, mean_MR) %>%
   pivot_wider(names_from = timeperiod, values_from = mean_MR) %>% 
   group_by(param_iteration) %>% 
   summarise(After_lower = After < Soon)
@@ -67,13 +67,13 @@ run_res_LS_comped_LS <- run_res_LS %>%
 run_res_LS_comped_LS2 <- run_res_LS %>%
   ungroup() %>%
   filter(timeperiod == "Soon") %>%
-  select(param_iteration, timeperiod, Lifestage, mean_MR) %>%
+  dplyr::select(param_iteration, timeperiod, Lifestage, mean_MR) %>%
   pivot_wider(names_from = Lifestage, values_from = mean_MR) %>%
   mutate(
     seedling_grt_subadult = Seedling > Subadult,
     adult_grt_subadult   = Adult > Subadult
   ) %>%
-  select (param_iteration, seedling_grt_subadult, adult_grt_subadult)
+  dplyr::select (param_iteration, seedling_grt_subadult, adult_grt_subadult)
 
 
 
@@ -260,3 +260,5 @@ bin_counts <- param_sets_binned %>%
   group_by(variable, bin) %>%
   summarise(count = n(), .groups = "drop") %>%
   arrange(variable, desc(count))
+
+write.csv(bin_counts, file="ParamTesting/bin_counts.csv")

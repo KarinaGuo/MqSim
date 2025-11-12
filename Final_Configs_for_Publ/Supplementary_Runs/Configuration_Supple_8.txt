@@ -13,7 +13,7 @@ age_impact = 0.9 # scaled age inflicted increase - from 0 to 1
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.2 # linear scaled MR inflicted death increase - from 0 to 1
+MR_death_impact = 0.4 # linear scaled MR inflicted death increase - from 0 to 1
 MR_age_impact = 12 # scaled impact of age (ages / MR_age_impact_val) on MR inflicted death increase
 
 MR_lateintro = T
@@ -23,7 +23,7 @@ comp_imp = T # toggle on/off for competition due to carrying capacity
 comp_impact = 1 # impact of competition due to carrying capacity (1.x multiplier of a scaled competition influence)
 
   ## Recruitment parameters
-recruitment_const = 0.0025 # base constant for chance of recruitment
+recruitment_const = 0.004 # base constant for chance of recruitment
 recruitment_age = 7 # age to begin recruiting
 recruitment_mean = 100 # mean for PDF of normal distribution for number of recruited individuals
 recruitment_sd = recruitment_mean/2 # standard deviation of number of recruited individuals
@@ -43,7 +43,7 @@ MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
 intercept_togg = F
 intercept_timepoint = 1025
 intercept_indiv = 300
-intercept_MR_mean = 0.9 
+intercept_MR_mean = 0.15 
 intercept_MR_sd = 0.1
 intercept_reducMort = T
 

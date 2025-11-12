@@ -1,6 +1,8 @@
+# Density dependent recruitment
+
 set.seed(12345)
 rm(list = ls())
-setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
+setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/")
 
 ## Save files after
 #Int
@@ -16,7 +18,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 library(tidyverse)
 
 ## Load in parameters
-source("Intervention/configurations_int")
+source("Final_Configs_for_Publ/Supplementary_Runs/Configuration_Supple_7.txt")
 source("Functions/mortality_functions_MRintro.R")
 source("Functions/mortality_functions.R")
 source("Functions/recruitment_functions_3.R")

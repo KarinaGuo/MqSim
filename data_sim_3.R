@@ -1,11 +1,15 @@
+# Stochastic recruitment
+
 set.seed(12345)
+
 rm(list = ls())
-setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
+
+setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/")
 
 ## Save files after
   #Int
-#write.csv(live_size_df, file="Intervention/SIZE_int_MR_0.4_bad_Intro1000.csv")
-#write.csv(MR_df, file="Intervention/MR_int_MR_0.4_bad_Intro1000.csv")
+#write.csv(live_size_df, file="SupplementaryRuns/SIZE_int_MR_7.csv")
+#write.csv(MR_df, file="SupplementaryRuns/MR_int_MR_7.csv")
 
   #Base
 #write.csv(live_size_df, file="Intervention/SIZE_base_0.4_bad_Intro1000.csv")
@@ -19,7 +23,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 library(tidyverse)
 
 ## Load in parameters
-source("configurations_fromMultRun")
+source("Final_Configs_for_Publ/Supplementary_Runs/Configuration_Supple_7.txt")
 source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_3.R")

@@ -13,7 +13,7 @@ age_impact = 0.9 # scaled age inflicted increase - from 0 to 1
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.2 # linear scaled MR inflicted death increase - from 0 to 1
+MR_death_impact = 0.9 # linear scaled MR inflicted death increase - from 0 to 1
 MR_age_impact = 12 # scaled impact of age (ages / MR_age_impact_val) on MR inflicted death increase
 
 MR_lateintro = T
