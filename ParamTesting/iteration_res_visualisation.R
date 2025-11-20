@@ -54,7 +54,7 @@ pop_trend_comped <- run_res %>%
 
 #####
 ## We want the soon and after to match empirical data
-## Compare mean_MR - whether the seedlings in "After" is lower than in "Soon.
+## Compare mean_MR - whether the seedlings in "After" is lower than in "Soon".
 run_res_LS_comped_LS <- run_res_LS %>%
   filter(Lifestage == "Seedling") %>%    
   dplyr::select(param_iteration, timeperiod, mean_MR) %>%

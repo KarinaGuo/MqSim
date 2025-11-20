@@ -23,7 +23,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simu
 library(tidyverse)
 
 ## Load in parameters
-source("Final_Configs_for_Publ/Supplementary_Runs/Configuration_Supple_7.txt")
+source("configurations_fromMultRun")
 source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_3.R")
@@ -106,7 +106,7 @@ for (time_point in 1:time_max){
       MR_recruit_impact_tp = 0
     }
       
-    curr_pop_recruited <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift)
+    curr_pop_recruited <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num)
 
     recruited_indivs = length(curr_pop_recruited$indiv_ID) - indiv_alive_count
     indiv_count_end = recruited_indivs + indiv_count_end

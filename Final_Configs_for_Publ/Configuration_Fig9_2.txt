@@ -35,7 +35,7 @@ rec_age_shift = 100 # age shift, lower than this age recruitment for the individ
 MR_rec_toggle = T # toggle on/off of MR affect on recruitment
 MR_recruit_impact = 0.7 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance, closer to 1 = lower impact; MR_impact <- 1 - recruitment_indivs_MR ^ MR_recruit_impact_val
 density_recruit_toggle = F # Reduces density recruitment by the proportion of individuals in pop vs maximum carrying capacity
-
+MR_inherit_par_num=1
 MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
 
 

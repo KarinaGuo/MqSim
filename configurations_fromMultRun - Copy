@@ -13,7 +13,7 @@ age_impact = 0.9 # scaled age inflicted increase - from 0 to 1
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.9 # linear scaled MR inflicted death increase - from 0 to 1
+MR_death_impact = 0.2 # linear scaled MR inflicted death increase - from 0 to 1
 MR_age_impact = 12 # scaled impact of age (ages / MR_age_impact_val) on MR inflicted death increase
 
 MR_lateintro = T
@@ -35,7 +35,7 @@ rec_age_shift = 100 # age shift, lower than this age recruitment for the individ
 MR_rec_toggle = T # toggle on/off of MR affect on recruitment
 MR_recruit_impact = 0.7 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance, closer to 1 = lower impact; MR_impact <- 1 - recruitment_indivs_MR ^ MR_recruit_impact_val
 density_recruit_toggle = F # Reduces density recruitment by the proportion of individuals in pop vs maximum carrying capacity
-MR_inherit_par_num=1
+
 MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
 
 
