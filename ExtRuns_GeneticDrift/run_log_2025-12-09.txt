@@ -1,0 +1,17 @@
+Using mortality_death_rate & MR before imp 
+[1] 10000
+[1] 10000
+[1] 10000
+[1] 10000
+[1] 100
+10[1] 10
+
+Using mortality_death_rate_MRlate 
+Using mortality_death_rate & MR before imp 
+Using mortality_death_rate_MRlate 
+Using mortality_death_rate & MR before imp 
+Using mortality_death_rate_MRlate 
+Using mortality_death_rate & MR before imp 
+Using mortality_death_rate_MRlate 
+Using mortality_death_rate & MR before imp 
+Using mortality_death_rate_MRlate 

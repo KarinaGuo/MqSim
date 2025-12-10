@@ -8,8 +8,8 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simu
 
 ## Save files after
   #Int
-#write.csv(live_size_df, file="SupplementaryRuns/SIZE_int_MR_7.csv")
-#write.csv(MR_df, file="SupplementaryRuns/MR_int_MR_7.csv")
+#write.csv(live_size_df, row.names = FALSE, file=paste0("ShinyAppRuns/SIZE_int_MR_", MR_death_impact, "_restoration_", intercept_togg, "_numb_",intercept_indiv, "_level_", intercept_MR_mean ,".csv"))
+#write.csv(MR_df, row.names = FALSE,file=paste0("ShinyAppRuns/MR_int_MR_", MR_death_impact, "_restoration_", intercept_togg, "_numb_",intercept_indiv, "_level_", intercept_MR_mean ,".csv"))
 
   #Base
 #write.csv(live_size_df, file="Intervention/SIZE_base_0.4_bad_Intro1000.csv")
@@ -23,7 +23,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simu
 library(tidyverse)
 
 ## Load in parameters
-source("configurations_fromMultRun")
+source("MainPlot_MR_tests/Rerun_Mult_iter/MR_ensrun_configurations_Low.txt")
 source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_3.R")
