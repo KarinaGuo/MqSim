@@ -195,8 +195,8 @@ for (pop_size in c(10, 100, 500, 1000, 5000, 10000)){
   
   ## Save files after
   #Int
-  write.csv(live_size_df, row.names = FALSE, file=paste0("ExtRuns_GeneticDrift/SIZE_", "_popsize_", population_size, ".csv"))
-  write.csv(MR_df, row.names = FALSE,file=paste0("ExtRuns_GeneticDrift/MR_", "_popsize_", population_size ,".csv"))
+  write.csv(live_size_df, row.names = FALSE, file=paste0("ExtRuns_GeneticDrift/SIZE_MRoff", "_popsize_", population_size, ".csv"))
+  write.csv(MR_df, row.names = FALSE,file=paste0("ExtRuns_GeneticDrift/MR_MRoff", "_popsize_", population_size ,".csv"))
   }, error = function(e) {
     cat("All dead at time \n")
   })

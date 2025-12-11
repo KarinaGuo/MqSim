@@ -13,7 +13,7 @@ age_impact = 0.9 # scaled age inflicted increase - from 0 to 1
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.2 # linear scaled MR inflicted death increase - from 0 to 1
+#MR_death_impact = 0.2 # linear scaled MR inflicted death increase - from 0 to 1
 MR_age_impact = 12 # scaled impact of age (ages / MR_age_impact_val) on MR inflicted death increase
 MR_lateintro = T
 MR_timepoint = 1000 # time point when MR is introduced
@@ -55,5 +55,5 @@ dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
 
   ## Simulation parameters
 time_max = 2000 # how long to run sim for
-output_timept = time_max/5 # How often to report visual statistics
-timepoint_pop_grab = c(seq(from=1010, to=1020), seq(from=1030, to=1050)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)
+output_timept = time_max+5 # How often to report visual statistics
+timepoint_pop_grab = c(0) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)

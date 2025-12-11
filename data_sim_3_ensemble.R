@@ -1,15 +1,19 @@
 iterations = 2
 
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/")
-set.seed(12345)
 
-for (iteration in iterations){
-  source(file = "data_sim_3.R")
-  
-  #MR runs
-  filesavename = paste0("MainPlot_MR_tests/Rerun_Mult_iter/SIZE_base_", MR_death_impact,"_Intro1000_",iteration,".csv")
-  write.csv(live_size_df, file=filesavename)
-  
+source("MainPlot_MR_tests/Rerun_Mult_iter/MR_ensrun_configurations.txt")
+
+for (MR_death_impact in c(0.2, 0.4, 0.9)){
+  MR_death_impact = MR_death_impact
+  for (iteration in iterations){
+    source(file = "data_sim_3.R")
+    
+    #MR runs
+    filesavename = paste0("MainPlot_MR_tests/Rerun_Mult_iter/SIZE_base_", MR_death_impact,"_Intro1000_",iteration,".csv")
+    write.csv(live_size_df, file=filesavename)
+    
+  }
 }
 
 MR_low_all = NULL
