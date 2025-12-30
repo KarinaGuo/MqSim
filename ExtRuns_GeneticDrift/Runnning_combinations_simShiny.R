@@ -215,8 +215,8 @@ for (pop_size in c(100, 500, 1000, 5000, 10000)){
   population_minimum_size = population_size/10 # If population falls below this value, there is a 10x increased chance of recruitment
   
   tryCatch({
-    live_size_file <- read.csv(file=paste0("ExtRuns_GeneticDrift/SIZE_", "_popsize_", population_size, ".csv")) %>% mutate(pop_size_set=pop_size)
-    MR_file <- read.csv(file=paste0("ExtRuns_GeneticDrift/MR_", "_popsize_", population_size ,".csv")) %>% mutate(pop_size_set=pop_size)
+    live_size_file <- read.csv(file=paste0("ExtRuns_GeneticDrift/SIZE_MRoff", "_popsize_", population_size, ".csv")) %>% mutate(pop_size_set=pop_size)
+    MR_file <- read.csv(file=paste0("ExtRuns_GeneticDrift/MR_MRoff", "_popsize_", population_size ,".csv")) %>% mutate(pop_size_set=pop_size)
     
     live_size_df <- as.data.frame(rbind(live_size_df, live_size_file))
     MR_df <- as.data.frame(rbind(MR_df, MR_file))

@@ -11,7 +11,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
 library(tidyverse)
 
 ## Load in parameters
-source("Maladaptation/configurations_maladaptation")
+source("Final_Configs_for_Publ/Configurations_Fig8.txt")
 source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_maladaptation.R")

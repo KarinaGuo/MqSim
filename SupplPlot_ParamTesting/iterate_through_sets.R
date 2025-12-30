@@ -2,8 +2,8 @@ library(tidyverse)
 
 set.seed(123)
 
-setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Simulation/")
-output_logfile = paste0("ParamTesting/run_log_", Sys.Date(),".txt")
+setwd("/home/karina/Simulation/MqSim/")
+output_logfile = paste0("SupplPlot_ParamTesting/run_log_", Sys.Date(),".txt")
 sink(output_logfile)
 
 n_t=1000 # How many times to run iteration
@@ -35,7 +35,7 @@ source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_3.R")
 source("Functions/disturbance_functions.R")
-source("ParamTesting/parameter_testing_res_calc_functs.R")
+source("SupplPlot_ParamTesting/parameter_testing_res_calc_functs.R")
 ###
 
 run_status <- data.frame()
@@ -47,19 +47,19 @@ for (param_iter in 1:nrow(param_sets)){
   
   # Checkpoints at every 1/5th of the run sets
   if (param_iter %% n_t/5 == 0){
-    write.csv(param_sets, file=paste0("ParamTesting/Checkpoints/ckpnt_param_sets.csv"), row.names=F)
-    write.csv(run_status, file=paste0("ParamTesting/Checkpoints/ckpnt_run_status.csv"), row.names=F)
-    write.csv(run_res, file=paste0("ParamTesting/Checkpoints/ckpnt_run_res.csv"), row.names=F)
-    write.csv(run_res_LS, file=paste0("ParamTesting/Checkpoints/ckpntrun_res_LS.csv"), row.names=F)
+    write.csv(param_sets, file=paste0("SupplPlot_ParamTesting/Checkpoints/ckpnt_param_sets.csv"), row.names=F)
+    write.csv(run_status, file=paste0("SupplPlot_ParamTesting/Checkpoints/ckpnt_run_status.csv"), row.names=F)
+    write.csv(run_res, file=paste0("SupplPlot_ParamTesting/Checkpoints/ckpnt_run_res.csv"), row.names=F)
+    write.csv(run_res_LS, file=paste0("SupplPlot_ParamTesting/Checkpoints/ckpntrun_res_LS.csv"), row.names=F)
   }
   
   # Load in params
-  source("Intervention/configurations_int")
+  source("MainPlot_Intervention/configurations_int")
   list2env(as.list((param_sets)[param_iter,]), envir = .GlobalEnv)
 
   # Run sim
   tryCatch({ 
-    source("ParamTesting/data_sim_3_versParamTest.R", local = TRUE)  
+    source("SupplPlot_ParamTesting/data_sim_3_versParamTest.R", local = TRUE)  
   
     # Save res if population survives
     run_status <- rbind(run_status, data.frame(param_iteration = param_iter, status = "success"))
@@ -79,10 +79,10 @@ for (param_iter in 1:nrow(param_sets)){
   
 }
 
-write.csv(param_sets, file=paste0("ParamTesting/param_sets_", Sys.Date(),".csv"), row.names=F)
-write.csv(run_status, file=paste0("ParamTesting/run_status_", Sys.Date(),".csv"), row.names=F)
-write.csv(run_res, file=paste0("ParamTesting/run_res_", Sys.Date(),".csv"), row.names=F)
-write.csv(run_res_LS, file=paste0("ParamTesting/run_res_LS_", Sys.Date(),".csv"), row.names=F)
+write.csv(param_sets, file=paste0("SupplPlot_ParamTesting/param_sets_", Sys.Date(),".csv"), row.names=F)
+write.csv(run_status, file=paste0("SupplPlot_ParamTesting/run_status_", Sys.Date(),".csv"), row.names=F)
+write.csv(run_res, file=paste0("SupplPlot_ParamTesting/run_res_", Sys.Date(),".csv"), row.names=F)
+write.csv(run_res_LS, file=paste0("SupplPlot_ParamTesting/run_res_LS_", Sys.Date(),".csv"), row.names=F)
 
 
 

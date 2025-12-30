@@ -2,7 +2,7 @@
 
 
   ## Population parameters
-population_size = 1000
+population_size = 5000
 population_carrying_capacity = population_size*5 # If population creeps above this value, comp is used to punish the population size by increasing the minimum probability of death based on how much higher population size is than the carrying capacity
 population_minimum_size = population_size/10 # If population falls below this value, there is a 10x increased chance of recruitment
 MR_mean = 0.787 # From actual genotype data 
@@ -13,7 +13,7 @@ age_impact = 1.0 # scaled age inflicted increase - from 0 to 1
 mortality_age_shift = 150 # at what age does increases in age increase chance of death
 
 MR_imp = T # toggle on/off for MR inflicted death increase
-MR_death_impact = 0.5 # linear scaled MR inflicted death increase - from 0 to 1
+MR_death_impact = 0.4 # linear scaled MR inflicted death increase - from 0 to 1
 MR_age_impact = 10 # scaled impact of age (ages / MR_age_impact_val) on MR inflicted death increase
 
 MR_lateintro = T

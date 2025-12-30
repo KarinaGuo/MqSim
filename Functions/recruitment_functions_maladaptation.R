@@ -1,5 +1,8 @@
 ## Function - Recruitment - Maladaptation
 
+
+# If maladaptation occurs, sample second parent from Pop 2, otherwise, parent 2 is randomly selected from Pop 1
+
 ## Inputs
 # pop - Population
 # recruitment_age - age to maturity
@@ -12,7 +15,8 @@
 # Note: MR is recruited based on parent pheno using beta distribution. To visualise parent MR pheno of 1-4: for (i in 0:4){hist(rbeta(n=4000, shape1=i+1, shape2 = 3)) }
 
 ##############################################
-recruit_rate <- function(pop, population_min_size, population_max_size, recruitment_age, recruitment_size_mean, density_recruit_togg, recruitment_size_sd, recruitment_constant, age_togg, age_recruit_impact_val, MR_togg, MR_recruit_impact_val, MR_rec_adjusted, rec_age_shiftch, MR_maladapt_pop, maladaptation_chance, indiv_count_start){
+recruit_rate <- function(pop, population_min_size, population_max_size, recruitment_age, recruitment_size_mean, density_recruit_togg, recruitment_size_sd, recruitment_constant, age_togg, age_recruit_impact_val, MR_togg, MR_recruit_impact_val, MR_rec_adjusted, rec_age_shiftch, MR_maladapt_pop, maladaptation_chance, indiv_count_start, MR_parents){
+  
   # Current pop_size
   if (length(pop$indiv_ID) < population_min_size){
     recruitment_constant <- recruitment_constant*10
@@ -63,62 +67,57 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
     new_recruit <- as.integer(rnorm(n=sum(indiv_recruitment), mean = recruitment_size_mean, sd = recruitment_size_sd)); new_recruit[new_recruit<1]=1
     
     new_recruit_MR=NULL
-    #new_recruit = NULL
-     
-    for (i in 1:length(recruitment_indiv_MR)){
-      MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1)^2, shape2=(2-recruitment_indiv_MR[i])^2) # distribution of recruited individual's MR between 0 to 1
-      new_recruit_MR_new <- MR_rec_PDF+(recruitment_indiv_MR[i]+MR_rec_adjusted-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
-      #new_recruit_MR_new <- rescale(MR_rec_PDF, from = c(0,1), to=c(0,2)) # recalibrate to make the mean the MR of parent pheno
-      
-      new_recruit_MR <- append(new_recruit_MR, new_recruit_MR_new)  
-      
-      #new_recruit_list <- as.integer(rnorm(n=1, mean = recruitment_size_mean, sd = recruitment_size_sd)); new_recruit_list[new_recruit_list<1] =  1
-      #new_recruit <- append(new_recruit, new_recruit_list)
-        
-      }
     
-    new_recruit_MR=NULL
     for (i in 1:length(recruitment_indiv_MR)) { # For each new recruit, use parent phenotype to generate MR, dependent on MR
       
       if (maladaptation_chance){ # if maladaptation, split the MR score with the other pop
-        maladapt_indiv_MR <- sample(MR_maladapt_pop, size=1)
-        new_recruitment_indiv_MR =mean(c(recruitment_indiv_MR[i], maladapt_indiv_MR))
+        if(MR_parents == 2){
+          parent_1_MR = recruitment_indiv_MR[i]
+          parent_2_MR <- sample(MR_maladapt_pop, size=1)
+          AGV = mean(c(parent_1_MR, parent_2_MR))   
+          
+          MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(AGV+1)^2, shape2=(2-AGV)^2) # distribution of recruited individual's MR between 0 to 1
+          new_recruit_MR_new <- MR_rec_PDF+(AGV+MR_rec_adjusted-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
+          new_recruit_MR <- append(new_recruit_MR, new_recruit_MR_new)
+          
+        }
+      } else {        
+        if(MR_parents == 2){
+          parent_1_MR = recruitment_indiv_MR[i]
+          parent_2_MR <- sample(recruitment_indiv_MR, size=1)
+          AGV = mean(c(parent_1_MR, parent_2_MR)) # Additive genetic variance 
+        } 
         
-        MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1)^2, shape2=(2-recruitment_indiv_MR[i])^2) # distribution of recruited individual's MR between 0 to 1
-        new_recruit_MR_new <- MR_rec_PDF+(new_recruitment_indiv_MR+MR_rec_adjusted-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
-        
+        MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(AGV+1)^2, shape2=(2-AGV)^2) # distribution of recruited individual's MR between 0 to 1
+        new_recruit_MR_new <- MR_rec_PDF+(AGV+MR_rec_adjusted-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
         new_recruit_MR <- append(new_recruit_MR, new_recruit_MR_new)
-      } else {
-        MR_rec_PDF <- rbeta(n=new_recruit[i], shape1=(recruitment_indiv_MR[i]+1)^2, shape2=(2-recruitment_indiv_MR[i])^2) # distribution of recruited individual's MR between 0 to 1
-        new_recruit_MR_new <- MR_rec_PDF+(recruitment_indiv_MR[i]+MR_rec_adjusted-mean(MR_rec_PDF)) # recalibrate to make the mean the MR of parent pheno
         
-        new_recruit_MR <- append(new_recruit_MR, new_recruit_MR_new)
       }
     }
-    
-    new_recruit_MR[new_recruit_MR<0]=0; new_recruit_MR[new_recruit_MR>=1]=1
-    
-    new_recruit_pop <- list(indiv_ID=seq(from=indiv_count_start+1, to=indiv_count_start+sum(new_recruit)), 
-                            time=rep(time_point, sum(new_recruit)), 
-                            MR=new_recruit_MR, 
-                            mortality=rep(0, sum(new_recruit)), 
-                            age=rep(1, sum(new_recruit)))
-    
-    curr_pop <- list(
-      indiv_ID=c(pop$indiv_ID, new_recruit_pop$indiv_ID), 
-      age=c(pop$age, new_recruit_pop$age), 
-      MR=c(pop$MR, new_recruit_pop$MR), 
-      time=c(pop$time, new_recruit_pop$time), 
-      mortality=c(pop$mortality, new_recruit_pop$mortality))
-    
+        
+        new_recruit_MR[new_recruit_MR<0]=0; new_recruit_MR[new_recruit_MR>=1]=1
+        
+        new_recruit_pop <- list(indiv_ID=seq(from=indiv_count_start+1, to=indiv_count_start+sum(new_recruit)), 
+                                time=rep(time_point, sum(new_recruit)), 
+                                MR=new_recruit_MR, 
+                                mortality=rep(0, sum(new_recruit)), 
+                                age=rep(1, sum(new_recruit)))
+        
+        curr_pop <- list(
+          indiv_ID=c(pop$indiv_ID, new_recruit_pop$indiv_ID), 
+          age=c(pop$age, new_recruit_pop$age), 
+          MR=c(pop$MR, new_recruit_pop$MR), 
+          time=c(pop$time, new_recruit_pop$time), 
+          mortality=c(pop$mortality, new_recruit_pop$mortality))
+        
+      } else {
+        curr_pop <- list(
+          indiv_ID=c(pop$indiv_ID, NULL), 
+          age=c(pop$age, NULL), 
+          MR=c(pop$MR, NULL), 
+          time=c(pop$time, NULL), 
+          mortality=c(pop$mortality, NULL))
+      } 
     return(curr_pop)
-    
-  } else {
-    curr_pop <- list(
-      indiv_ID=c(pop$indiv_ID, NULL), 
-      age=c(pop$age, NULL), 
-      MR=c(pop$MR, NULL), 
-      time=c(pop$time, NULL), 
-      mortality=c(pop$mortality, NULL))
   }
-}
+  

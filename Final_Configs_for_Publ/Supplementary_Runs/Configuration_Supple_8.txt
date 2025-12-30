@@ -2,7 +2,7 @@
 
 
   ## Population parameters
-population_size = 1000
+population_size = 5000
 population_carrying_capacity = population_size*5 # If population creeps above this value, comp is used to punish the population size by increasing the minimum probability of death based on how much higher population size is than the carrying capacity
 population_minimum_size = population_size/10 # If population falls below this value, there is a 10x increased chance of recruitment
 MR_mean = 0.787 # From actual genotype data 
@@ -40,9 +40,9 @@ MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
 
 
   ## Intervention parameters
-intercept_togg = F
+intercept_togg = T
 intercept_timepoint = 1025
-intercept_indiv = 300
+intercept_indiv = 2500
 intercept_MR_mean = 0.15 
 intercept_MR_sd = 0.1
 intercept_reducMort = T

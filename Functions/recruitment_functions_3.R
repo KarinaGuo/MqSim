@@ -63,6 +63,7 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
   indiv_recruitment <- rbinom(n = length(recruitment_indivs$indiv_ID), size = 1, prob = recruitment_constant * total_impact)
   
   # For recruited individuals, what are their MR statuses
+  
   if (sum(indiv_recruitment)>0){
     recruitment_indiv_MR <- recruitment_indivs_MR[as.logical(indiv_recruitment)]
     
@@ -74,7 +75,7 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
       if(MR_parents == 2){
         parent_1_MR = recruitment_indiv_MR[i]
         parent_2_MR <- sample(recruitment_indiv_MR, size=1)
-        AGV = mean(parent_1_MR, parent_2_MR) # Additive genetic variance 
+        AGV = mean(c(parent_1_MR, parent_2_MR)) # Additive genetic variance 
       } else {
         parent_1_MR = recruitment_indiv_MR[i]
         AGV = parent_1_MR # Additive genetic variance 
@@ -110,5 +111,6 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
       time=c(pop$time, NULL), 
       mortality=c(pop$mortality, NULL))
   }
+  return(curr_pop)
   
 }

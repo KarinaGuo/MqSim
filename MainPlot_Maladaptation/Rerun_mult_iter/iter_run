@@ -1,0 +1,83 @@
+iterations = 10
+setwd("/home/karina/Simulation/MqSim/")
+
+source("MainPlot_Maladaptation/Rerun_mult_iter/configurations_maladaptation")
+  
+for (iteration in 1:iterations){
+  source(file = "MainPlot_Maladaptation/Rerun_mult_iter/data_sim_3_maladaptation_iter_run.R")
+    
+      #MR runs
+  filesavename = paste0("MainPlot_Maladaptation/Rerun_mult_iter/SIZE_MaladaptationRunPop1_",iteration,".csv")
+  write.csv(live_size_df_pop1, file=filesavename)
+      
+  filesavename_2 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/MR_MaladaptationRunPop1_",iteration,".csv")
+  write.csv(MR_df_pop1, file=filesavename_2)
+  
+  filesavename_3 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/SIZE_MaladaptationRunPop2_",iteration,".csv")
+  write.csv(live_size_df_pop2, file=filesavename_3)
+  
+  filesavename_4 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/MR_MaladaptationRunPop2_",iteration,".csv")
+  write.csv(MR_df_pop2, file=filesavename_4)
+
+}
+
+SIZE_Maladaptation_pop1 = NULL
+MR_Maladaptation_pop1 = NULL
+SIZE_Maladaptation_pop2 = NULL
+MR_Maladaptation_pop2 = NULL
+
+for  (iteration in 1:iterations){
+    
+    ## pop 1
+    filename = paste0("MainPlot_Maladaptation/Rerun_mult_iter/SIZE_MaladaptationRunPop1_",iteration,".csv")
+    file = read.csv(filename) %>% 
+      mutate(Run = "MaladaptationRunPop1") %>%  
+      dplyr::select(time, sum_size)
+    
+    filename_2 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/MR_MaladaptationRunPop1_",iteration,".csv")
+    file_2 = read.csv(filename_2) %>% 
+      mutate(Run = "MaladaptationRunPop1")
+    
+    SIZE_Maladaptation_pop1 <- as.data.frame(rbind(SIZE_Maladaptation_pop1, file))
+    MR_Maladaptation_pop1 <- as.data.frame(rbind(MR_Maladaptation_pop1, file_2))
+    
+    ## pop 2
+    filename_3 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/SIZE_MaladaptationRunPop2_",iteration,".csv")
+    file_3 = read.csv(filename_3) %>% 
+      mutate(Run = "MaladaptationRunPop2") %>%  
+      dplyr::select(time, sum_size)
+    
+    filename_4 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/MR_MaladaptationRunPop2_",iteration,".csv")
+    file_4 = read.csv(filename_4) %>% 
+      mutate(Run = "MaladaptationRunPop2")
+    
+    SIZE_Maladaptation_pop2 <- as.data.frame(rbind(SIZE_Maladaptation_pop2, file_3))
+    MR_Maladaptation_pop2 <- as.data.frame(rbind(MR_Maladaptation_pop2, file_4))
+    
+}
+
+SIZE_pop1_summ <- SIZE_Maladaptation_pop1 %>% 
+  group_by(time) %>% 
+  summarise(mean_sumsize = mean(sum_size))
+  
+SIZE_pop2_summ <- SIZE_Maladaptation_pop2 %>% 
+  group_by(time) %>% 
+  summarise(mean_sumsize = mean(sum_size))
+  
+MR_pop1_summ <- MR_Maladaptation_pop1 %>% 
+  group_by(time) %>% 
+  summarise(mean_MR_mean_summ = mean(MR_mean_summ),
+            mean_MR_sd_summ = mean(MR_sd_summ),
+            mean_maladaptation_time = mean(maladaptation_time))
+            
+MR_pop2_summ <- MR_Maladaptation_pop2 %>% 
+  group_by(time) %>% 
+  summarise(mean_MR_mean_summ = mean(MR_mean_summ),
+            mean_MR_sd_summ = mean(MR_sd_summ),
+            mean_maladaptation_time = mean(maladaptation_time))
+            
+            
+write.csv(SIZE_pop1_summ, file="MainPlot_Maladaptation/Rerun_mult_iter/SIZE_MaladaptationRunPop1_summ.csv")            
+write.csv(SIZE_pop2_summ, file="MainPlot_Maladaptation/Rerun_mult_iter/SIZE_MaladaptationRunPop2_summ.csv")
+write.csv(MR_pop1_summ, file="MainPlot_Maladaptation/Rerun_mult_iter/MR_MaladaptationRunPop1_summ.csv")
+write.csv(MR_pop2_summ, file="MainPlot_Maladaptation/Rerun_mult_iter/MR_MaladaptationRunPop2_summ.csv")

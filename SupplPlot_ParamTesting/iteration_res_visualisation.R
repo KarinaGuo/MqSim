@@ -5,12 +5,12 @@ library(tidyverse)
 
 # Read in
 #data_data <- "2025-09-05"
-data_data <- "2025-09-09"
+data_data <- "2025-12-19"
 
-param_sets <- read.csv(file=paste0("ParamTesting/param_sets_",data_data,".csv")); colnames(param_sets)[ncol(param_sets)] <- "param_iteration"
-run_status <- read.csv(file=paste0("ParamTesting/run_status_",data_data,".csv"))
-run_res <- read.csv(file=paste0("ParamTesting/run_res_",data_data,".csv"))
-run_res_LS <- read.csv(file=paste0("ParamTesting/run_res_LS_",data_data,".csv"))
+param_sets <- read.csv(file=paste0("SupplPlot_ParamTesting/param_sets_",data_data,".csv")); colnames(param_sets)[ncol(param_sets)] <- "param_iteration"
+run_status <- read.csv(file=paste0("SupplPlot_ParamTesting/run_status_",data_data,".csv"))
+run_res <- read.csv(file=paste0("SupplPlot_ParamTesting/run_res_",data_data,".csv"))
+run_res_LS <- read.csv(file=paste0("SupplPlot_ParamTesting/run_res_LS_",data_data,".csv"))
 
 ## Did any runs fail
 unique(run_status$status)
@@ -29,13 +29,13 @@ run_res_param <- left_join(run_res, param_sets)
 pop_struct_comped <- run_res %>% 
   filter(timeperiod %in% c("Before", "After")) %>% 
   group_by(param_iteration) %>% 
-  summarise(valid_pop_struct = all(between(pop_struct, 75000, 150000))) %>% 
+  summarise(valid_pop_struct = all(between(pop_struct, 75000*5, 150000*5))) %>% 
   ungroup()
 
 pop_size_comped <- run_res %>% 
   filter(timeperiod %in% c("Before", "After")) %>% 
   group_by(param_iteration) %>% 
-  summarise(valid_pop_size = all(between(pop_size, 215000, 240000))) %>% 
+  summarise(valid_pop_size = all(between(pop_size, 215000*5, 240000*5))) %>% 
   ungroup()
 
 pop_trend_comped <- run_res %>% 
@@ -44,11 +44,11 @@ pop_trend_comped <- run_res %>%
     valid_pop_trend = 
       all(
         (pop_growth_trend[timeperiod %in% c("Before", "After")] >= 4 & 
-          #  pop_growth_trend[timeperiod %in% c("Before", "After")] <= 8) |
-          # (pop_growth_trend[timeperiod %in% c("Before", "After")] <= -4 & 
-             pop_growth_trend[timeperiod %in% c("Before", "After")] >= -8)
+           #  pop_growth_trend[timeperiod %in% c("Before", "After")] <= 8) |
+           # (pop_growth_trend[timeperiod %in% c("Before", "After")] <= -4 & 
+           pop_growth_trend[timeperiod %in% c("Before", "After")] >= -8)
       ) #&
-      #all(pop_growth_trend[timeperiod == "Soon"] > 0),
+    #all(pop_growth_trend[timeperiod == "Soon"] > 0),
     #.groups = "drop"
   )
 
@@ -74,7 +74,6 @@ run_res_LS_comped_LS2 <- run_res_LS %>%
     adult_grt_subadult   = Adult > Subadult
   ) %>%
   dplyr::select (param_iteration, seedling_grt_subadult, adult_grt_subadult)
-
 
 
 ## Final parameter scores
@@ -106,8 +105,8 @@ ggplot(run_res_param, aes(y=pop_struct, x=age_impact)) +
   geom_point(data = (run_res_param %>% filter(param_iteration==(nrow(param_sets)))), 
              aes(y=pop_struct, x=age_impact), 
              colour="green", size=2, shape=1) +
-  geom_hline(yintercept=150000, colour="brown", linetype="dashed") +
-  geom_hline(yintercept=75000, colour="brown", linetype="dashed") +
+  geom_hline(yintercept=75000*5, colour="brown", linetype="dashed") +
+  geom_hline(yintercept=150000*5, colour="brown", linetype="dashed") +
   facet_wrap (~timeperiod) +
   theme_bw() +
   labs(title="Population structure (age)")
@@ -120,8 +119,8 @@ ggplot(run_res_param, aes(y=pop_size, x=age_impact)) +
   geom_point(data = (run_res_param %>% filter(param_iteration==(nrow(param_sets)))), 
              aes(y=pop_size, x=age_impact), 
              colour="green", size=3, shape=1) +
-  geom_hline(yintercept=240000, colour="brown", linetype="dashed") +
-  geom_hline(yintercept=215000, colour="brown", linetype="dashed") +
+  geom_hline(yintercept=215000*5, colour="brown", linetype="dashed") +
+  geom_hline(yintercept=240000*5, colour="brown", linetype="dashed") +
   facet_wrap (~timeperiod) +
   theme_bw() +
   labs(title="Population structure (size absolute)")
@@ -152,7 +151,7 @@ ggplot(run_res_param, aes(y=pop_growth_R2, x=dist_imp)) +
              aes(y=pop_growth_R2, x=dist_imp), 
              colour="green", size=2, shape=1) +
   facet_wrap (~timeperiod) +
-  geom_hline(yintercept=0.02, colour="brown", linetype="dashed") +
+  geom_hline(yintercept=0.2, colour="brown", linetype="dashed") +
   theme_bw() +
   labs(title="Population structure (size stability)")
 
@@ -196,6 +195,7 @@ plots <- lapply(variables, function(v) bin_cont_meanscore_plot(param_sets_scored
 combined_plot <- patchwork::wrap_plots(plots, ncol =3 )  # 2 columns grid
 combined_plot
 
+ggsave(combined_plot, filename="MainPlot_Plots/SI plots/Param_testing.jpg", width=2500, height=2000, limitsize=F, units="px")
 ##### Comb imp
 
 plotly::ggplotly(ggplot(param_sets_scored, aes(x=MR_death_impact, y=recruitment_const, colour=score)) + 
@@ -261,4 +261,4 @@ bin_counts <- param_sets_binned %>%
   summarise(count = n(), .groups = "drop") %>%
   arrange(variable, desc(count))
 
-write.csv(bin_counts, file="ParamTesting/bin_counts.csv")
+write.csv(bin_counts, file="SupplPlot_ParamTesting/bin_counts.csv")
