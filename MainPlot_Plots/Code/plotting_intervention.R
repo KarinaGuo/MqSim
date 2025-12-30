@@ -126,8 +126,8 @@ size_int_high <- read.csv("MainPlot_Intervention/Rerun_mult_iter/SIZE_int_MR_0.4
   filter (intercept_indiv_original == 2500, intercept_MR_mean == 0.9) %>% 
   select (-c(intercept_indiv_original, intercept_MR_mean))
 
-MR_df <- rbind(MR_base, MR_int_low)
-live_size_df <- rbind(size_base, size_int_low)
+MR_df <- rbind(MR_base, MR_int_high)
+live_size_df <- rbind(size_base, size_int_high)
 
 Size_plot <- ggplot() + 
   geom_hline(yintercept=population_carrying_capacity, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
@@ -218,6 +218,6 @@ inter_diff_plot <- draw(diff_smooth) +
   ggplot2::labs(title = "Difference between Run smooths",
                 y = "Difference (Base Run - Intervention Run)", x="Timepoint")
 
-ggsave(Size_plot, file="MainPlot_Plots/Intervention_lowMRInt_Size_plot.jpg", limitsize = F, width=2000, height=3000, units='px')
-ggsave(MR_plot, file="MainPlot_Plots/Intervention_lowMRInt_MR_plot.jpg", limitsize = F, width=2000, height=3000, units='px')
-ggsave(inter_diff_plot, file="MainPlot_Plots/Intervention_lowMRInt_difference_plot.jpg", limitsize = F, width=2000, height=2000, units='px')
+ggsave(Size_plot, file="MainPlot_Plots/Intervention_highMRInt_Size_plot.jpg", limitsize = F, width=2000, height=3000, units='px')
+ggsave(MR_plot, file="MainPlot_Plots/Intervention_highMRInt_MR_plot.jpg", limitsize = F, width=2000, height=3000, units='px')
+ggsave(inter_diff_plot, file="MainPlot_Plots/Intervention_highMRInt_difference_plot.jpg", limitsize = F, width=2000, height=2000, units='px')

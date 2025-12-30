@@ -49,9 +49,9 @@ MR_Pop1_res <- data.frame(rbind(MR_MaladaptationRunPop1, MR_SoloRunPop1))
 MR_Pop2_res <- data.frame(rbind(MR_MaladaptationRunPop2, MR_SoloRunPop2))
 
 MR_Pop1_plot <- ggplot() + 
-  geom_point(data=MR_Pop1_res, aes(x=time,  y=mean_MR_mean_summ, shape=Run), colour="grey80", alpha = 0.3, size=0.2, show.legend = FALSE) +
-  geom_point(data=(MR_Pop1_res %>% filter(mean_maladaptation_time>=0.5)), aes(x=time,  y=mean_MR_mean_summ,  colour = "Maladaptation event"), shape=17, alpha = 0.3, size=1) +
-  stat_smooth(data=MR_Pop1_res, aes(x=time, y = mean_MR_mean_summ, group=Run, colour=Run), linewidth = 1, linetype="dashed", span=10, show.legend = TRUE) +
+  geom_point(data=MR_Pop1_res, aes(x=time,  y=mean_MR_mean_summ, colour=Run, shape=Run), alpha = 0.3, size=0.2, show.legend = FALSE) +
+  #geom_point(data=(MR_Pop1_res %>% filter(mean_maladaptation_time>=0.5)), aes(x=time,  y=mean_MR_mean_summ,  colour = "Maladaptation event"), shape=17, alpha = 0.3, size=1) +
+  stat_smooth(data=MR_Pop1_res, aes(x=time, y = mean_MR_mean_summ, group=Run, colour=Run), linewidth = 1, linetype="dashed", method="loess", span=0.01) +
   ylim(c(0,1)) +
   labs(title="Population 1 - MR=0.2 (weak)", y="Population mean myrtle rust", x="Timepoint") +
   scale_colour_manual(values=c("MaladaptationRunPop1"="seagreen", "SoloRunPop1"="powderblue", "Maladaptation event" ="darkolivegreen"),
@@ -70,19 +70,19 @@ MR_Pop1_plot
 
 
 MR_Pop2_plot <- ggplot() + 
-  geom_point(data=MR_Pop1_res, aes(x=time,  y=mean_MR_mean_summ, shape=Run), colour="grey80", alpha = 0.3, size=0.2, show.legend = FALSE) +
+  geom_point(data=MR_Pop2_res, aes(x=time,  y=mean_MR_mean_summ, colour=Run, shape=Run), alpha = 0.3, size=0.2, show.legend = FALSE) +
   #geom_point(data=(MR_Pop1_res %>% filter(mean_maladaptation_time>=0.5)), aes(x=time,  y=mean_MR_mean_summ,  colour = "Maladaptation event"), shape=17, alpha = 0.3, size=1) +
-  stat_smooth(data=MR_Pop1_res, aes(x=time, y = mean_MR_mean_summ, group=Run, colour=Run), linewidth = 1, linetype="dashed", span=10, show.legend = TRUE) +
+  stat_smooth(data=MR_Pop2_res, aes(x=time, y = mean_MR_mean_summ, group=Run, colour=Run), linewidth = 1, linetype="dashed", method="loess", span=0.01) +
   ylim(c(0,1)) +
-  labs(title="Population 1 - MR=0.2 (weak)", y="Population mean myrtle rust", x="Timepoint") +
-  scale_colour_manual(values=c("MaladaptationRunPop1"="tomato3", "SoloRunPop1"="lightsalmon", "Maladaptation event" ="red3"),
+  labs(title="Population 2 - MR=0.9 (strong)", y="Population mean myrtle rust", x="Timepoint") +
+  scale_colour_manual(values=c("MaladaptationRunPop2"="tomato3", "SoloRunPop2"="lightsalmon", "Maladaptation event" ="red3"),
                       name = "",
                       labels = c(
                         "Maladaptation run",
                         "Solo run",
                         "Maladaptation event"
                       )) +
- # xlim(c(500,2000)) +
+  xlim(c(500,2000)) +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
   guides(shape = "none") +
   theme_bw()

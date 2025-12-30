@@ -22,7 +22,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simu
 library(tidyverse)
 
 ## Load in parameters
-#source("MainPlot_MR_tests/Rerun_Mult_iter/MR_ensrun_configurations_Low.txt")
+source("Final_Configs_for_Publ/Configuration_Fig6_1.txt")
 source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_3.R")
@@ -55,7 +55,7 @@ live_size_df=NULL
 pop_timepoints=NULL
 dist_event=FALSE
 time_point=1
-#intercept_indiv_original = intercept_indiv
+intercept_indiv_original = intercept_indiv
 
 # Workflow: 
 ## 1) Population goes through disturbance
@@ -204,7 +204,7 @@ for (time_point in 1:time_max){
       recruitment_const = disturbance_event[7]
     }
     
-    # Verbose ðŸ—£ï¸
+    # Verbose
     if(time_point%%output_timept == 0){ 
       
       cat("Time at:", time_point,"\n",
