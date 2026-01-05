@@ -30,26 +30,22 @@ for  (iteration in 1:iterations){
     
     ## pop 1
     filename = paste0("MainPlot_Maladaptation/Rerun_mult_iter/SIZE_MaladaptationRunPop1_",iteration,".csv")
-    file = read.csv(filename) %>% 
-      mutate(Run = "MaladaptationRunPop1") %>%  
+    file = read.csv(filename) %>%   
       dplyr::select(time, sum_size)
     
     filename_2 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/MR_MaladaptationRunPop1_",iteration,".csv")
-    file_2 = read.csv(filename_2) %>% 
-      mutate(Run = "MaladaptationRunPop1")
+    file_2 = read.csv(filename_2) 
     
     SIZE_Maladaptation_pop1 <- as.data.frame(rbind(SIZE_Maladaptation_pop1, file))
     MR_Maladaptation_pop1 <- as.data.frame(rbind(MR_Maladaptation_pop1, file_2))
     
     ## pop 2
     filename_3 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/SIZE_MaladaptationRunPop2_",iteration,".csv")
-    file_3 = read.csv(filename_3) %>% 
-      mutate(Run = "MaladaptationRunPop2") %>%  
+    file_3 = read.csv(filename_3) %>%   
       dplyr::select(time, sum_size)
     
     filename_4 = paste0("MainPlot_Maladaptation/Rerun_mult_iter/MR_MaladaptationRunPop2_",iteration,".csv")
     file_4 = read.csv(filename_4) %>% 
-      mutate(Run = "MaladaptationRunPop2")
     
     SIZE_Maladaptation_pop2 <- as.data.frame(rbind(SIZE_Maladaptation_pop2, file_3))
     MR_Maladaptation_pop2 <- as.data.frame(rbind(MR_Maladaptation_pop2, file_4))

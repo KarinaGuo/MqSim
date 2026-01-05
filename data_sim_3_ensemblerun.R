@@ -4,7 +4,7 @@
 
 #rm(list = ls())
 
-setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/")
+#setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/")
 
 ## Save files after
   #Int
@@ -55,7 +55,7 @@ live_size_df=NULL
 pop_timepoints=NULL
 dist_event=FALSE
 time_point=1
-#intercept_indiv_original = intercept_indiv
+intercept_indiv_original = intercept_indiv
 
 # Workflow: 
 ## 1) Population goes through disturbance

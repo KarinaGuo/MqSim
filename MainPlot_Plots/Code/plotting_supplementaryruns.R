@@ -35,7 +35,6 @@ plot_MR <- function(MR_timepoint, intercept_timepoint, MR_df){
 
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/")
 library(tidyverse); library(patchwork)
-source("configurations_fromMultRun")
 theme_set(theme_bw())
 
 ############################################################
@@ -44,8 +43,8 @@ theme_set(theme_bw())
 source("Final_Configs_for_Publ/Supplementary_Runs/Configuration_Supple_1.txt")
 MR_base <- read.csv("MainPlot_MR_tests/Rerun_Mult_iter/MR_base_0.2_Intro1000_summ.csv") %>% mutate(Run="Base")
 size_base <- read.csv("MainPlot_MR_tests/Rerun_Mult_iter/SIZE_base_0.2_Intro1000_summ.csv") %>% mutate(Run="Base")
-MR_int <- read.csv("SupplPlot_SupplementaryRuns/MR_int_MR_1.csv") %>% mutate(Run="Resistance Intervention")
-size_int <- read.csv("SupplPlot_SupplementaryRuns/SIZE_int_MR_1.csv") %>% mutate(Run="Resistance Intervention")
+MR_int <- read.csv("SupplPlot_SupplementaryRuns/Run_2/MR_int_MR_1.csv") %>% mutate(Run="Resistance Intervention")
+size_int <- read.csv("SupplPlot_SupplementaryRuns/Run_2/SIZE_int_MR_1.csv") %>% mutate(Run="Resistance Intervention")
 
 colnames(size_base)[which(colnames(size_base)=="mean_sumsize")] <- "sum_size"
 colnames(MR_base)[which(colnames(MR_base)=="mean_MR_mean_summ")] <- "MR_mean_summ"

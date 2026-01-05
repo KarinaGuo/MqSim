@@ -4,8 +4,7 @@ library(tidyverse)
 
 
 # Read in
-#data_data <- "2025-09-05"
-data_data <- "2025-12-19"
+data_data <- "2026-01-03"
 
 param_sets <- read.csv(file=paste0("SupplPlot_ParamTesting/param_sets_",data_data,".csv")); colnames(param_sets)[ncol(param_sets)] <- "param_iteration"
 run_status <- read.csv(file=paste0("SupplPlot_ParamTesting/run_status_",data_data,".csv"))

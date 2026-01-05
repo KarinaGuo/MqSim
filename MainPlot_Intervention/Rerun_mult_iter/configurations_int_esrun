@@ -1,5 +1,6 @@
 ## Input parameters for high MR pressure sites
 
+
   ## Population parameters
 population_size = 5000
 population_carrying_capacity = population_size*5 # If population creeps above this value, comp is used to punish the population size by increasing the minimum probability of death based on how much higher population size is than the carrying capacity
@@ -44,9 +45,10 @@ intercept_timepoint = 1025
 intercept_MR_sd = 0.1
 intercept_reducMort = T
 
-  ## Disturbance parameters (ranges from super small to big impacts)
-dist_imp = F # Turn on and off disturbance presence
+  # Disturbance parameters (ranges from super small to big impacts)
+dist_imp = T # Turn on and off disturbance presence
 disturbance_age_struct_type = "complex" # Impact value flat or varied by age [complex/flat]
+#dist_probability = 0.1 # Probability of disturbance occurring (exponential function transformation)
 dist_impact = 1 # Level of impact (multiplier)
 dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
 

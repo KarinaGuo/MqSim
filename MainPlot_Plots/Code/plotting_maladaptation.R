@@ -66,8 +66,24 @@ MR_Pop1_plot <- ggplot() +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
   theme_bw()
 
-MR_Pop1_plot
+MR_Pop1_plot_zoom <- ggplot() + 
+  geom_point(data=MR_Pop1_res, aes(x=time,  y=mean_MR_mean_summ, colour=Run, shape=Run), alpha = 0.3, size=0.4, show.legend = FALSE) +
+  stat_smooth(data=MR_Pop1_res, aes(x=time, y = mean_MR_mean_summ, group=Run, colour=Run), linewidth = 0.5, linetype="dashed", method="loess", span=0.01, se=F) +
+  labs(title="Population 2 - MR=0.9 (strong)", y="Population mean myrtle rust", x="Timepoint") +
+  scale_colour_manual(values=c("MaladaptationRunPop1"="seagreen", "SoloRunPop1"="powderblue", "Maladaptation event" ="darkolivegreen"),
+                      name = "",
+                      labels = c(
+                        "Maladaptation run",
+                        "Solo run",
+                        "Maladaptation event"
+                      )) +
+  xlim(c(1000,2000)) +
+  geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
+  guides(shape = "none") +
+  theme_bw() + 
+  scale_y_continuous(limits = c(0.06, 0.12), expand = expansion(mult = c(0.05, 0)))
 
+MR_Pop1_plot_all <- MR_Pop1_plot / MR_Pop1_plot_zoom  
 
 MR_Pop2_plot <- ggplot() + 
   geom_point(data=MR_Pop2_res, aes(x=time,  y=mean_MR_mean_summ, colour=Run, shape=Run), alpha = 0.3, size=0.2, show.legend = FALSE) +
@@ -87,11 +103,28 @@ MR_Pop2_plot <- ggplot() +
   guides(shape = "none") +
   theme_bw()
 
-MR_Pop2_plot 
+MR_Pop2_plot_zoom <- ggplot() + 
+  geom_point(data=MR_Pop2_res, aes(x=time,  y=mean_MR_mean_summ, colour=Run, shape=Run), alpha = 0.3, size=0.4, show.legend = FALSE) +
+  stat_smooth(data=MR_Pop2_res, aes(x=time, y = mean_MR_mean_summ, group=Run, colour=Run), linewidth = 0.5, linetype="dashed", method="loess", span=0.01, se=F) +
+  labs(title="Population 2 - MR=0.9 (strong)", y="Population mean myrtle rust", x="Timepoint") +
+  scale_colour_manual(values=c("MaladaptationRunPop2"="tomato3", "SoloRunPop2"="lightsalmon", "Maladaptation event" ="red3"),
+                      name = "",
+                      labels = c(
+                        "Maladaptation run",
+                        "Solo run",
+                        "Maladaptation event"
+                      )) +
+  xlim(c(1000,2000)) +
+  geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
+  guides(shape = "none") +
+  theme_bw() + 
+  scale_y_continuous(limits = c(0.025, 0.09), expand = expansion(mult = c(0.05, 0)))
 
-MR_plot <- MR_Pop1_plot | MR_Pop2_plot
+MR_Pop2_plot_all <- MR_Pop2_plot / MR_Pop2_plot_zoom  
+
+MR_plot <- MR_Pop1_plot_all | MR_Pop2_plot_all
 
 ggsave(Size_Pop1_plot, file="MainPlot_Plots/Maladaptation_size_plot_Pop1.jpg", limitsize = F, width=2000, height=2500, units='px')
 ggsave(Size_Pop2_plot, file="MainPlot_Plots/Maladaptation_size_plot_Pop2.jpg", limitsize = F, width=2000, height=2500, units='px')
-ggsave(MR_Pop1_plot, file="MainPlot_Plots/Maladaptation_MR_plot_Pop1.jpg", limitsize = F, width=2000, height=2500, units='px')
-ggsave(MR_Pop2_plot, file="MainPlot_Plots/Maladaptation_MR_plot_Pop2.jpg", limitsize = F, width=2000, height=2500, units='px')
+ggsave(MR_Pop1_plot_all, file="MainPlot_Plots/Maladaptation_MR_plot_Pop1.jpg", limitsize = F, width=2000, height=3000, units='px')
+ggsave(MR_Pop2_plot_all, file="MainPlot_Plots/Maladaptation_MR_plot_Pop2.jpg", limitsize = F, width=2000, height=3000, units='px')

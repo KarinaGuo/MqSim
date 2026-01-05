@@ -1,10 +1,10 @@
 # Stochastic recruitment
 
-set.seed(12345)
+#set.seed(12345)
 
-rm(list = ls())
+#rm(list = ls())
 
-setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/")
+setwd("/home/karina/Simulation/MqSim/")
 
 ## Save files after
   #Int
@@ -22,7 +22,7 @@ setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simu
 library(tidyverse)
 
 ## Load in parameters
-source("Final_Configs_for_Publ/Configuration_Fig6_1.txt")
+#source("MainPlot_MR_tests/Rerun_Mult_iter/MR_ensrun_configurations_Low.txt")
 source("Functions/mortality_functions_MRintro_hill.R")
 source("Functions/mortality_functions_hill.R")
 source("Functions/recruitment_functions_3.R")
@@ -148,7 +148,7 @@ for (time_point in 1:time_max){
       
       # Plots
       cat(str(curr_pop_recruited))
-      print(ggplot() + geom_point(aes(x=curr_pop_recruited$age, y=curr_pop_recruited$MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
+      #print(ggplot() + geom_point(aes(x=curr_pop_recruited$age, y=curr_pop_recruited$MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
     } else {intercept_indiv=0}
     
     #### Population mortality on initial population
@@ -204,7 +204,7 @@ for (time_point in 1:time_max){
       recruitment_const = disturbance_event[7]
     }
     
-    # Verbose
+    # Verbose 
     if(time_point%%output_timept == 0){ 
       
       cat("Time at:", time_point,"\n",
@@ -213,7 +213,7 @@ for (time_point in 1:time_max){
           "#################\n")
       
       # Plots
-      print(ggplot() + geom_point(data=data.frame(curr_pop_end), aes(x=age, y=MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
+      #print(ggplot() + geom_point(data=data.frame(curr_pop_end), aes(x=age, y=MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
       
     }
   }

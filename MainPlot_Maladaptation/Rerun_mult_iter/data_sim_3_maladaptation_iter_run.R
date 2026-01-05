@@ -22,7 +22,7 @@ intercept_indiv=0
 int_togg=F
 intercept_pop_indiv_ID=NULL
 ### Pop 1
-init_MR_pop1 <- rnorm(n=population_size, mean = MR_mean_pop1, sd = MR_sd_pop1); init_MR_pop1[init_MR_pop1<0]=0
+init_MR_pop1 <- rnorm(n=population_size, mean = MR_mean_pop1, sd = MR_sd_pop1); init_MR_pop1[init_MR_pop1<0]=0; init_MR_pop1[init_MR_pop1>1]=1
 init_age_pop1 <- as.integer(runif(n=population_size, min=1, max=100))
 indiv_ID_pop1 <- seq(from=1, to=population_size)
 
@@ -47,7 +47,7 @@ pop_timepoints_pop1=NULL
 dist_event_pop1=FALSE
 
 ### Pop2
-init_MR_pop2 <- rnorm(n=population_size, mean = MR_mean_pop2, sd = MR_sd_pop2); init_MR_pop2[init_MR_pop2<0]=0
+init_MR_pop2 <- rnorm(n=population_size, mean = MR_mean_pop2, sd = MR_sd_pop2); init_MR_pop2[init_MR_pop2<0]=0; init_MR_pop2[init_MR_pop2>1]=1
 init_age_pop2 <- as.integer(runif(n=population_size, min=1, max=100))
 indiv_ID_pop2 <- seq(from=1, to=population_size)
 
@@ -75,6 +75,19 @@ dist_event_pop2=FALSE
 
 for (time_point in 1:time_max){
   
+     ## Disturbance
+    if (dist_imp){
+      disturbance_event_pop1 <- disturbance_event_chance (dist_togg = dist_imp, disturbance_age_struct = disturbance_age_struct_type, dist_impact_val = dist_impact, dist_age_impact_val = dist_age_impact, pop=curr_pop_pop1, age_imp=age_impact_pop1, MR_death_imp=MR_death_impact_pop1)
+      disturbance_event_res_pop1 <- disturbance_event_pop1[1]; age_impact_pop1 = disturbance_event_pop1[2]; MR_death_impact_pop1 = disturbance_event_pop1[3]; recruitment_const_pop1 = disturbance_event_pop1[4]
+      
+      disturbance_event_pop2 <- disturbance_event_chance (dist_togg = dist_imp, disturbance_age_struct = disturbance_age_struct_type, dist_impact_val = dist_impact, dist_age_impact_val = dist_age_impact, pop=curr_pop_pop2, age_imp=age_impact_pop2, MR_death_imp=MR_death_impact_pop2)
+      disturbance_event_res_pop2 <- disturbance_event_pop2[1]; age_impact_pop2 = disturbance_event_pop2[2]; MR_death_impact_pop2 = disturbance_event_pop2[3]; recruitment_const_pop2 = disturbance_event_pop2[4]
+    } else {
+      disturbance_event_res_pop1 =0
+      disturbance_event_res_pop2 =0
+    }
+    
+  #### Initiating population  
   if(time_point==1){
     curr_pop_start_pop1 <- pop_df_pop1
     curr_pop_start_pop2 <- pop_df_pop2
@@ -87,25 +100,12 @@ for (time_point in 1:time_max){
     stop("Population dead at time ", time_point, "\n")
   } else{
     
-    ## Disturbance
-    if (dist_imp){
-      disturbance_event_pop1 <- disturbance_event_chance (dist_togg = dist_imp, disturbance_age_struct = disturbance_age_struct_type, dist_impact_val = dist_impact, dist_age_impact_val = dist_age_impact, pop=curr_pop_pop1, age_imp=age_impact_pop1, MR_death_imp=MR_death_impact_pop1)
-      disturbance_event_res_pop1 <- disturbance_event_pop1[1]; age_impact_pop1 = disturbance_event_pop1[2]; MR_death_impact_pop1 = disturbance_event_pop1[3]; recruitment_const_pop1 = disturbance_event_pop1[4]
-      
-      disturbance_event_pop2 <- disturbance_event_chance (dist_togg = dist_imp, disturbance_age_struct = disturbance_age_struct_type, dist_impact_val = dist_impact, dist_age_impact_val = dist_age_impact, pop=curr_pop_pop2, age_imp=age_impact_pop2, MR_death_imp=MR_death_impact_pop2)
-      disturbance_event_res_pop2 <- disturbance_event_pop2[1]; age_impact_pop2 = disturbance_event_pop2[2]; MR_death_impact_pop2 = disturbance_event_pop2[3]; recruitment_const_pop2 = disturbance_event_pop2[4]
-    } else {
-      disturbance_event_res_pop1 =0
-      disturbance_event_res_pop2 =0
-    }
-    
     #### Count number of individuals  
     indiv_count_start_pop1=length(curr_pop_start_pop1$indiv_ID) + indiv_count_end_pop1
     indiv_alive_count_pop1=length(curr_pop_start_pop1$indiv_ID)
     
     indiv_count_start_pop2=length(curr_pop_start_pop2$indiv_ID) + indiv_count_end_pop2
     indiv_alive_count_pop2=length(curr_pop_start_pop2$indiv_ID)
-    
     
     
     #### Recruitment on intial start pop
@@ -117,13 +117,13 @@ for (time_point in 1:time_max){
     } else if (!MR_lateintro | !MR_imp) {
       MR_recruit_impact_tp = 0
     }
+     
+    maladaptation_chance_pop1 <- rbinom(n=1, size=1, indiv_alive_count_pop2/(indiv_alive_count_pop1 + indiv_alive_count_pop2))
+    maladaptation_chance_pop2 <- rbinom(n=1, size=1, indiv_alive_count_pop1/(indiv_alive_count_pop1 + indiv_alive_count_pop2))
     
-    maladaptation_chance_pop1 <- rbinom(n=1, size=1, indiv_alive_count_pop1/(indiv_alive_count_pop1 + indiv_alive_count_pop2))
-    maladaptation_chance_pop2 <- rbinom(n=1, size=1, indiv_alive_count_pop2/(indiv_alive_count_pop1 + indiv_alive_count_pop2))
-    
-    curr_pop_recruited_pop1 <- recruit_rate(pop=curr_pop_start_pop1, MR_maladapt_pop=curr_pop_start_pop1$MR, indiv_count_start=indiv_count_start_pop1, maladaptation_chance=maladaptation_chance_pop1,  recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift)
+    curr_pop_recruited_pop1 <- recruit_rate(pop=curr_pop_start_pop1, MR_maladapt_pop=curr_pop_start_pop2$MR, indiv_count_start=indiv_count_start_pop1, maladaptation_chance=maladaptation_chance_pop1,  recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num)
 
-    curr_pop_recruited_pop2 <- recruit_rate(pop=curr_pop_start_pop2, MR_maladapt_pop=curr_pop_start_pop2$MR, indiv_count_start=indiv_count_start_pop2, maladaptation_chance=maladaptation_chance_pop2,  recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift)
+    curr_pop_recruited_pop2 <- recruit_rate(pop=curr_pop_start_pop2, MR_maladapt_pop=curr_pop_start_pop1$MR, indiv_count_start=indiv_count_start_pop2, maladaptation_chance=maladaptation_chance_pop2,  recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num)
     
     recruited_indivs_pop1 = length(curr_pop_recruited_pop1 $indiv_ID) - indiv_alive_count_pop1
     indiv_count_end_pop1 = recruited_indivs_pop1 + indiv_count_end_pop1

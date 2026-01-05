@@ -2,7 +2,7 @@
 
 ## Inputs
 # pop - Population
-# population_capacity - Maximum population size until 'comp' is used as punishment 🔨
+# population_capacity - Maximum population size until 'comp' is used as punishment ??
 
 # age_impact_val - impact of age ond eath (multiplier)
 # mortality_age_shiftch - at what age does increases in age increase chance of death
@@ -19,7 +19,7 @@
 
 Hill_eqn <- function(age, steepness, mortality_age_shiftch, flip) {
   K <- mortality_age_shiftch / (((steepness - 1) / (steepness + 1))^(1 / steepness))
-  y <- if(flip){0.7*K^steepness / (K^steepness + age^steepness)} else {age^steepness / (K^steepness + age^steepness)}
+  y <- if(flip){0.75*K^steepness / (K^steepness + age^steepness)} else {age^steepness / (K^steepness + age^steepness)}
   return(y)
 }
 
@@ -45,7 +45,7 @@ mortality_death_rate_MRlate  <- function(pop, population_capacity, population_mi
   
   if(int_togg){
     match_idx <- pop$indiv_ID %in% intercept_pop_indiv_ID
-    ages[match_idx] <- ifelse(ages[match_idx] < mortality_age_shiftch/2, ages[match_idx]*4, ages[match_idx])
+    ages[match_idx] <- ifelse(ages[match_idx] < mortality_age_shiftch/4, ages[match_idx]*4, ages[match_idx])
   }
   
   MR <- pop$MR
