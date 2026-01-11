@@ -43,8 +43,8 @@ theme_set(theme_bw())
 source("Final_Configs_for_Publ/Supplementary_Runs/Configuration_Supple_1.txt")
 MR_base <- read.csv("MainPlot_MR_tests/Rerun_Mult_iter/MR_base_0.2_Intro1000_summ.csv") %>% mutate(Run="Base")
 size_base <- read.csv("MainPlot_MR_tests/Rerun_Mult_iter/SIZE_base_0.2_Intro1000_summ.csv") %>% mutate(Run="Base")
-MR_int <- read.csv("SupplPlot_SupplementaryRuns/Run_2/MR_int_MR_1.csv") %>% mutate(Run="Resistance Intervention")
-size_int <- read.csv("SupplPlot_SupplementaryRuns/Run_2/SIZE_int_MR_1.csv") %>% mutate(Run="Resistance Intervention")
+MR_int <- read.csv("SupplPlot_SupplementaryRuns/MR_int_MR_1.csv") %>% mutate(Run="Resistance Intervention")
+size_int <- read.csv("SupplPlot_SupplementaryRuns/SIZE_int_MR_1.csv") %>% mutate(Run="Resistance Intervention")
 
 colnames(size_base)[which(colnames(size_base)=="mean_sumsize")] <- "sum_size"
 colnames(MR_base)[which(colnames(MR_base)=="mean_MR_mean_summ")] <- "MR_mean_summ"
@@ -192,3 +192,4 @@ MR_plot <- plot_MR (MR_timepoint, intercept_timepoint, MR_df)
 
 ggsave(Size_plot, file="MainPlot_Plots/SI plots/Size_Simulation_SI_8a.jpg", limitsize = F, width=2000, height=3000, units='px')
 ggsave(MR_plot, file="MainPlot_Plots/SI plots/MR_Simulation_SI_8b.jpg", limitsize = F, width=2000, height=3000, units='px')
+

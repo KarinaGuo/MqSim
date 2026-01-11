@@ -80,3 +80,12 @@ MR_plot <- ggplot() +
 
 ggsave(Size_plot, file="MainPlot_Plots/Multiple_MR_Size_ensemble_plot.jpg", limitsize = F, width=2000, height=3000, units='px')
 ggsave(MR_plot, file="MainPlot_Plots/Multiple_MR_MR_ensemble_plot.jpg", limitsize = F, width=2000, height=3000, units='px')
+
+###
+
+live_size_df %>% filter(time=="999") %>% summarise (mean_mean_sumsize = mean(mean_sumsize))
+live_size_df %>% filter(time=="2000") %>% summarise (mean_mean_sumsize = mean(mean_sumsize))
+live_size_df %>% filter(Run == "MR_0.2", time=="1050") %>% summarise (mean_mean_sumsize = mean(mean_sumsize))
+MR_df %>% filter(Run == "MR_0.2", time=="1050") %>% summarise (mean_MR_mean_summ = mean(mean_MR_mean_summ))
+live_size_df %>% filter(Run == "MR_0.9", time=="1050") %>% summarise (mean_mean_sumsize = mean(mean_sumsize))
+MR_df %>% filter(Run == "MR_0.9", time=="1050") %>% summarise (mean_MR_mean_summ = mean(mean_MR_mean_summ))
