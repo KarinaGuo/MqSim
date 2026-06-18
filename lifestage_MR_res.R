@@ -1,4 +1,6 @@
 ### Exported time point analyses
+pop_timepoints_orig <- pop_timepoints
+pop_timepoints <- pop_timepoints[-c(1)]
 
 df_list <- lapply(seq_along(pop_timepoints), function(i) {
   pop <- pop_timepoints[[i]]

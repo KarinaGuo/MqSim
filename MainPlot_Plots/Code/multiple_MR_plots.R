@@ -69,7 +69,6 @@ Size_plot <- ggplot() +
 
 MR_plot <- ggplot() +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate", alpha=0.5) +
-  geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen", alpha=0.5) +
   geom_point(data=MR_df, aes(x=time, y = mean_MR_mean_summ, colour=Run), alpha=0.3, size=0.2) +
   stat_smooth(data=MR_df, aes(x=time, y=mean_MR_mean_summ, colour=Run), linetype="dashed", linewidth = 0.5, span=0.1, se=F, method="loess") + 
   ggforce::facet_zoom(xlim=c(1000,1300)) +

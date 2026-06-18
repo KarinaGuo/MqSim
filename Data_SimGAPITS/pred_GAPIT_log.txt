@@ -1,0 +1,191 @@
+INFO [2026-06-17 13:25:43] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:25:43] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:25:43] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:25:43] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:25:43] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:25:43] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:25:43] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:25:43] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:25:43] Total samps removed: 0
+INFO [2026-06-17 13:25:43] Total loci removed: 0
+INFO [2026-06-17 13:26:00] GAPIT h2 val=0.549845266970128
+INFO [2026-06-17 13:29:55] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:29:55] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:29:55] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:29:55] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:29:56] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:29:56] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:29:56] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:29:56] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:29:56] Total samps removed: 0
+INFO [2026-06-17 13:29:56] Total loci removed: 0
+INFO [2026-06-17 13:30:12] GAPIT h2 val=0.549845266970128
+INFO [2026-06-17 13:35:16] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:35:16] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:35:16] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:35:16] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:35:20] Removing high miss samps 0 out of 5166
+INFO [2026-06-17 13:35:20] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:35:20] Removing high homo samps 0 out of 5166
+INFO [2026-06-17 13:35:20] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:35:20] Total samps removed: 0
+INFO [2026-06-17 13:35:20] Total loci removed: 0
+INFO [2026-06-17 13:35:37] GAPIT h2 val=0.677125490775537
+INFO [2026-06-17 13:35:38] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:35:38] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:35:38] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:35:38] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:35:40] Removing high miss samps 0 out of 4880
+INFO [2026-06-17 13:35:40] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:35:40] Removing high homo samps 0 out of 4880
+INFO [2026-06-17 13:35:40] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:35:40] Total samps removed: 0
+INFO [2026-06-17 13:35:40] Total loci removed: 0
+INFO [2026-06-17 13:35:54] GAPIT h2 val=0.677407506153154
+INFO [2026-06-17 13:37:13] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:37:13] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:37:13] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:37:13] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:37:13] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:37:13] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:37:13] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:37:13] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:37:13] Total samps removed: 0
+INFO [2026-06-17 13:37:13] Total loci removed: 0
+INFO [2026-06-17 13:37:29] GAPIT h2 val=0.549845266970128
+INFO [2026-06-17 13:45:17] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:45:17] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:45:17] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:45:17] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:45:19] Removing high miss samps 0 out of 414
+INFO [2026-06-17 13:45:19] Removing high miss loci 0 out of 3301
+INFO [2026-06-17 13:45:19] Removing high homo samps 0 out of 414
+INFO [2026-06-17 13:45:19] Removing high homo loci 0 out of 3301
+INFO [2026-06-17 13:45:19] Total samps removed: 0
+INFO [2026-06-17 13:45:19] Total loci removed: 751
+INFO [2026-06-17 13:45:38] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:45:38] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:45:38] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:45:38] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:45:39] Removing high miss samps 0 out of 414
+INFO [2026-06-17 13:45:39] Removing high miss loci 0 out of 3301
+INFO [2026-06-17 13:45:39] Removing high homo samps 0 out of 414
+INFO [2026-06-17 13:45:39] Removing high homo loci 0 out of 3301
+INFO [2026-06-17 13:45:39] Total samps removed: 0
+INFO [2026-06-17 13:45:39] Total loci removed: 751
+INFO [2026-06-17 13:46:02] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:46:02] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:46:02] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:46:02] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:46:04] Removing high miss samps 0 out of 414
+INFO [2026-06-17 13:46:04] Removing high miss loci 0 out of 3301
+INFO [2026-06-17 13:46:04] Removing high homo samps 0 out of 414
+INFO [2026-06-17 13:46:04] Removing high homo loci 0 out of 3301
+INFO [2026-06-17 13:46:04] Total samps removed: 0
+INFO [2026-06-17 13:46:04] Total loci removed: 751
+INFO [2026-06-17 13:46:55] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 13:46:55] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS
+INFO [2026-06-17 13:46:55] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_SimGAPITS/prediction_gt.csv 
+INFO [2026-06-17 13:46:55] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 13:46:57] Removing high miss samps 0 out of 414
+INFO [2026-06-17 13:46:57] Removing high miss loci 0 out of 3301
+INFO [2026-06-17 13:46:57] Removing high homo samps 0 out of 414
+INFO [2026-06-17 13:46:57] Removing high homo loci 0 out of 3301
+INFO [2026-06-17 13:46:57] Total samps removed: 0
+INFO [2026-06-17 13:46:57] Total loci removed: 751
+INFO [2026-06-17 13:53:36] Removing high miss samps 0 out of 414
+INFO [2026-06-17 13:53:36] Removing high miss loci 0 out of 3301
+INFO [2026-06-17 13:53:36] Removing high homo samps 0 out of 414
+INFO [2026-06-17 13:53:36] Removing high homo loci 0 out of 3301
+INFO [2026-06-17 13:53:36] Total samps removed: 0
+INFO [2026-06-17 13:53:36] Total loci removed: 751
+INFO [2026-06-17 13:53:42] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:53:42] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:53:42] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:53:42] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:53:42] Total samps removed: 0
+INFO [2026-06-17 13:53:42] Total loci removed: 0
+INFO [2026-06-17 13:55:06] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:55:06] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:55:06] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:55:06] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:55:06] Total samps removed: 0
+INFO [2026-06-17 13:55:06] Total loci removed: 0
+INFO [2026-06-17 13:57:01] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:57:01] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:57:01] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:57:01] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:57:01] Total samps removed: 0
+INFO [2026-06-17 13:57:01] Total loci removed: 0
+INFO [2026-06-17 13:57:13] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:57:13] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:57:13] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:57:13] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:57:13] Total samps removed: 0
+INFO [2026-06-17 13:57:13] Total loci removed: 0
+INFO [2026-06-17 13:58:09] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:58:09] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:58:09] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:58:09] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:58:09] Total samps removed: 0
+INFO [2026-06-17 13:58:09] Total loci removed: 0
+INFO [2026-06-17 13:59:15] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:59:15] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:59:15] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:59:15] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:59:15] Total samps removed: 0
+INFO [2026-06-17 13:59:15] Total loci removed: 0
+INFO [2026-06-17 13:59:18] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 13:59:18] Removing high miss loci 0 out of 255
+INFO [2026-06-17 13:59:18] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 13:59:18] Removing high homo loci 0 out of 255
+INFO [2026-06-17 13:59:18] Total samps removed: 0
+INFO [2026-06-17 13:59:18] Total loci removed: 0
+INFO [2026-06-17 14:01:10] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 14:01:10] Removing high miss loci 0 out of 255
+INFO [2026-06-17 14:01:10] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 14:01:10] Removing high homo loci 0 out of 255
+INFO [2026-06-17 14:01:10] Total samps removed: 0
+INFO [2026-06-17 14:01:10] Total loci removed: 0
+INFO [2026-06-17 14:01:13] Removing high miss samps 0 out of 1000
+INFO [2026-06-17 14:01:13] Removing high miss loci 0 out of 255
+INFO [2026-06-17 14:01:13] Removing high homo samps 0 out of 1000
+INFO [2026-06-17 14:01:13] Removing high homo loci 0 out of 255
+INFO [2026-06-17 14:01:13] Total samps removed: 0
+INFO [2026-06-17 14:01:13] Total loci removed: 0

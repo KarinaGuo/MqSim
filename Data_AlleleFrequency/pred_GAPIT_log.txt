@@ -1,0 +1,178 @@
+INFO [2026-06-17 10:08:47] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 10:08:47] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 10:08:47] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 10:08:47] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 10:08:50] Removing high miss samps 0 out of 3885
+INFO [2026-06-17 10:08:50] Removing high miss loci 0 out of 20
+INFO [2026-06-17 10:08:50] Removing high homo samps 0 out of 3885
+INFO [2026-06-17 10:08:50] Removing high homo loci 0 out of 20
+INFO [2026-06-17 10:08:50] Total samps removed: 0
+INFO [2026-06-17 10:08:50] Total loci removed: 0
+INFO [2026-06-17 10:13:31] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 10:13:31] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 10:13:31] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 10:13:31] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 10:13:31] Removing high miss samps 0 out of 3885
+INFO [2026-06-17 10:13:31] Removing high miss loci 0 out of 20
+INFO [2026-06-17 10:13:31] Removing high homo samps 0 out of 3885
+INFO [2026-06-17 10:13:31] Removing high homo loci 0 out of 20
+INFO [2026-06-17 10:13:31] Total samps removed: 0
+INFO [2026-06-17 10:13:31] Total loci removed: 0
+INFO [2026-06-17 10:15:25] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 10:15:25] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 10:15:25] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 10:15:25] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 10:15:26] Removing high miss samps 0 out of 3885
+INFO [2026-06-17 10:15:26] Removing high miss loci 0 out of 20
+INFO [2026-06-17 10:15:26] Removing high homo samps 0 out of 3885
+INFO [2026-06-17 10:15:26] Removing high homo loci 0 out of 20
+INFO [2026-06-17 10:15:26] Total samps removed: 0
+INFO [2026-06-17 10:15:26] Total loci removed: 0
+INFO [2026-06-17 10:15:47] GAPIT h2 val=0.377571540678224
+INFO [2026-06-17 10:17:51] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 10:17:51] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 10:17:51] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 10:17:51] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 10:17:52] Removing high miss samps 0 out of 3885
+INFO [2026-06-17 10:17:52] Removing high miss loci 0 out of 20
+INFO [2026-06-17 10:17:52] Removing high homo samps 0 out of 3885
+INFO [2026-06-17 10:17:52] Removing high homo loci 0 out of 20
+INFO [2026-06-17 10:17:52] Total samps removed: 0
+INFO [2026-06-17 10:17:52] Total loci removed: 0
+INFO [2026-06-17 10:18:12] GAPIT h2 val=0.377571540678224
+INFO [2026-06-17 10:18:21] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 10:18:21] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 10:18:21] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 10:18:21] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 10:18:22] Removing high miss samps 0 out of 3885
+INFO [2026-06-17 10:18:22] Removing high miss loci 0 out of 20
+INFO [2026-06-17 10:18:22] Removing high homo samps 0 out of 3885
+INFO [2026-06-17 10:18:22] Removing high homo loci 0 out of 20
+INFO [2026-06-17 10:18:22] Total samps removed: 0
+INFO [2026-06-17 10:18:22] Total loci removed: 0
+INFO [2026-06-17 10:18:42] GAPIT h2 val=0.377571540678224
+INFO [2026-06-17 10:19:32] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 10:19:32] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 10:19:32] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 10:19:32] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 10:19:33] Removing high miss samps 0 out of 3885
+INFO [2026-06-17 10:19:33] Removing high miss loci 0 out of 20
+INFO [2026-06-17 10:19:33] Removing high homo samps 0 out of 3885
+INFO [2026-06-17 10:19:33] Removing high homo loci 0 out of 20
+INFO [2026-06-17 10:19:33] Total samps removed: 0
+INFO [2026-06-17 10:19:33] Total loci removed: 0
+INFO [2026-06-17 10:19:54] GAPIT h2 val=0.377571540678224
+INFO [2026-06-17 10:20:18] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 10:20:18] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 10:20:18] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 10:20:18] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 10:20:19] Removing high miss samps 0 out of 3885
+INFO [2026-06-17 10:20:19] Removing high miss loci 0 out of 20
+INFO [2026-06-17 10:20:19] Removing high homo samps 0 out of 3885
+INFO [2026-06-17 10:20:19] Removing high homo loci 0 out of 20
+INFO [2026-06-17 10:20:19] Total samps removed: 0
+INFO [2026-06-17 10:20:19] Total loci removed: 0
+INFO [2026-06-17 10:20:40] GAPIT h2 val=0.377571540678224
+INFO [2026-06-17 10:20:49] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 10:20:49] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 10:20:49] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 10:20:49] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 10:20:50] Removing high miss samps 0 out of 3885
+INFO [2026-06-17 10:20:50] Removing high miss loci 0 out of 20
+INFO [2026-06-17 10:20:50] Removing high homo samps 0 out of 3885
+INFO [2026-06-17 10:20:50] Removing high homo loci 0 out of 20
+INFO [2026-06-17 10:20:50] Total samps removed: 0
+INFO [2026-06-17 10:20:50] Total loci removed: 0
+INFO [2026-06-17 10:21:10] GAPIT h2 val=0.377571540678224
+INFO [2026-06-17 12:13:22] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 12:13:22] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 12:13:22] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 12:13:22] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 12:13:24] Removing high miss samps 0 out of 4846
+INFO [2026-06-17 12:13:24] Removing high miss loci 0 out of 255
+INFO [2026-06-17 12:13:24] Removing high homo samps 0 out of 4846
+INFO [2026-06-17 12:13:24] Removing high homo loci 0 out of 255
+INFO [2026-06-17 12:13:24] Total samps removed: 0
+INFO [2026-06-17 12:13:24] Total loci removed: 0
+INFO [2026-06-17 12:13:49] GAPIT h2 val=0.690862602612614
+INFO [2026-06-17 12:26:39] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 12:26:39] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 12:26:39] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 12:26:39] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 12:26:42] Removing high miss samps 0 out of 4571
+INFO [2026-06-17 12:26:42] Removing high miss loci 0 out of 255
+INFO [2026-06-17 12:26:42] Removing high homo samps 0 out of 4571
+INFO [2026-06-17 12:26:42] Removing high homo loci 0 out of 255
+INFO [2026-06-17 12:26:42] Total samps removed: 0
+INFO [2026-06-17 12:26:42] Total loci removed: 0
+INFO [2026-06-17 12:27:06] GAPIT h2 val=0.696275309428814
+INFO [2026-06-17 14:55:14] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 14:55:14] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 14:55:14] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 14:55:14] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 14:55:17] Removing high miss samps 0 out of 4121
+INFO [2026-06-17 14:55:17] Removing high miss loci 0 out of 255
+INFO [2026-06-17 14:55:17] Removing high homo samps 0 out of 4121
+INFO [2026-06-17 14:55:17] Removing high homo loci 0 out of 255
+INFO [2026-06-17 14:55:17] Total samps removed: 0
+INFO [2026-06-17 14:55:17] Total loci removed: 0
+INFO [2026-06-17 14:55:45] GAPIT h2 val=0.680606975842437
+INFO [2026-06-17 15:04:55] ----------------------- New run ----------------------------- 
+INFO [2026-06-17 15:04:55] Output directory set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency
+INFO [2026-06-17 15:04:55] Prediction ouput file set to: ~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/prediction_gt.csv 
+INFO [2026-06-17 15:04:55] Running with filters of:  
+Individual missingness: 1 
+Individual homozygosity: 1 
+Site missingness: 1 
+Site homozygosity: 1
+INFO [2026-06-17 15:04:58] Removing high miss samps 0 out of 4043
+INFO [2026-06-17 15:04:58] Removing high miss loci 0 out of 255
+INFO [2026-06-17 15:04:58] Removing high homo samps 0 out of 4043
+INFO [2026-06-17 15:04:58] Removing high homo loci 0 out of 255
+INFO [2026-06-17 15:04:58] Total samps removed: 0
+INFO [2026-06-17 15:04:58] Total loci removed: 0
+INFO [2026-06-17 15:05:26] GAPIT h2 val=0.670169284267084
