@@ -67,6 +67,7 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
   
   if (sum(indiv_recruitment)>0){
     recruitment_indiv_MR <- recruitment_indivs_MR[as.logical(indiv_recruitment)]
+    recruitment_indiv_gt <- population_genotypes[as.logical(indiv_recruitment)]
     
     new_recruit <- as.integer(rnorm(n=sum(indiv_recruitment), mean = recruitment_size_mean, sd = recruitment_size_sd)); new_recruit[new_recruit<1]=1
     new_recruit_genotypes <- list()
@@ -77,14 +78,13 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
       num_offspring <- new_recruit[i]
       # New allele genotypes
       
-      parent_1_gt <- population_genotypes[[parent_1_idx]]
+      parent_1_gt <- recruitment_indiv_gt[[parent_1_idx]]
       if(MR_parents == 2 & sum(indiv_recruitment) > 1) {
         parent_2_idx <- sample(1:length(recruitment_indiv_MR), size = 1)
-        parent_2_gt <- population_genotypes[[parent_2_idx]]
+        parent_2_gt <- recruitment_indiv_gt[[parent_2_idx]]
       } else {
         parent_2_gt = parent_1_gt
       }
-        
       
       n_loci <- length(parent_1_gt)
       

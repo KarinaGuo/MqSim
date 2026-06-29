@@ -1,5 +1,7 @@
+library(tidyverse)
 
 #source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/data_sim_5.R")
+load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/30062026_GAPIT.RData")
 
 theme_set(theme_bw())
 
@@ -31,7 +33,7 @@ plot_liveMR   <- ggplot() +
   stat_smooth(data=MR_df, aes(x=time, y = MR_mean_summ), linewidth = 0.75, linetype="dashed", colour="grey40", span=10) +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate") +
   geom_vline(xintercept=915, linewidth = 0.75, linetype="dashed", colour="red") +
-  ggforce::facet_zoom(xlim=c(900,920)) +
+  #ggforce::facet_zoom(xlim=c(900,920)) +
   labs(title="Live MR")
 if(intercept_togg){plot_liveMR <- plot_liveMR + geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen")}
 
@@ -43,8 +45,8 @@ plot_livesize / plot_liveage + plot_layout(heights = c(3,1))
 ################## Sanity check - Calculate AF for empirical year
 library(dartR)
 
-TP_before_AF <- AF_timepoints[[1]]
-TP_before_curr <- pop_timepoints[[1]] 
+TP_before_AF <- AF_timepoints[[2]]
+TP_before_curr <- pop_timepoints[[2]] 
 # check time
 unique(TP_before_curr$time)
 
@@ -53,7 +55,7 @@ unique(TP_before_curr$time)
 SNPs_tested <- effect_size$V1
 SNPs_effsize <- effect_size$V2
 
-SNP_AF_empirical <- read.csv("~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/SNP_AF.csv") 
+SNP_AF_empirical <- read.csv("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Data_AlleleFrequency/SNP_AF.csv") 
 SNP_AF_empirical <- SNP_AF_empirical%>% 
   filter(locus %in% SNPs_tested)
 
