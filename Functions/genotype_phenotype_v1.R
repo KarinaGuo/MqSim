@@ -31,7 +31,7 @@ Phenotype_from_Genotype <- function(phenotype_baseline, snp_effects, dominance_e
   }
   
   # Apply the zero-floor ONCE outside the loop
-  if(set_floor){p[p < 0] <- 0}
+  if(set_floor){p[p < 0] <- 0.001}
   if(set_floor){p[p >= 1] <- 1}
   
   return(p)
@@ -63,7 +63,7 @@ Phenotype_from_genotype_GAPIT <- function(individuals_GT, SNPs_tested){
   simualted_hapmap_trainingconcat <- left_join(training_hapmap, simulated_hapmap)
   
   write.table(simualted_hapmap_trainingconcat, file = "Data_AlleleFrequency/tmp_simulated.hapmap.hmp.txt", row.names = F, sep = "\t")
-  gt_datafile = "Data_AlleleFrequency/tmp_simulated.hapmap.hmp.txt"
+  gt_datafile = paste0(getwd(), "/Data_AlleleFrequency/tmp_simulated.hapmap.hmp.txt")
   
   ### Run GAPIT
   filename = "/prediction_gt_simulated_run.csv"
@@ -71,7 +71,7 @@ Phenotype_from_genotype_GAPIT <- function(individuals_GT, SNPs_tested){
   run_genomic_prediction_simulation(gt_datafile = gt_datafile, input_phenodatafile = input_phenodatafile, trans_COI=TRUE, rm_clim_snp=TRUE, homo_site_filt=1, miss_site_filt=1, homo_samp_filt=1, miss_samp_filt=1, out_dir = out_dir, filename=filename)
   
   pred <- read.csv(paste0(out_dir,"/prediction_gt_simulated_run.csv")); pred <- pred[grepl("X", pred$Taxa), "Prediction"]
-  MR <- scales::rescale(pred, from=c(0,3), to=c(0,1))
+  MR <- scales::rescale(pred, from=c(0,3), to=c(0.001,1))
   
   return(MR)
 }
@@ -114,7 +114,7 @@ Phenotype_from_Genotype_weighted <- function(phenotype_baseline, snp_effects, sn
   
   # Apply the zero-floor/one-ceiling ONCE outside the loop
   if(set_floor){
-    p[p < 0] <- 0
+    p[p < 0] <- 0.001
     p[p >= 1] <- 1
   }
   

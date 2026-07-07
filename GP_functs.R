@@ -287,7 +287,7 @@ run_genomic_prediction_simulation <- function (gt_datafile, input_phenodatafile,
     prediction_gt <- left_join(prediction, Y)
     #prediction_gt$Prediction[prediction_gt$Prediction < 0] <- 0
     
-    write.csv(prediction_gt, file = paste0(wd,filename))
+    write.csv(prediction_gt, file = paste0(getwd(),filename))
   } else {
     cat("Run cancelled.\n")
     return(NULL)

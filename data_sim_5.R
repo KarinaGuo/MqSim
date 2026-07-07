@@ -1,6 +1,11 @@
 set.seed(12345)
 rm(list = ls())
+<<<<<<< HEAD
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/")
+=======
+setwd("/home/karina/Simulation/MqSim/")
+Sys.setenv("OMP_NUM_THREADS" = 52)
+>>>>>>> 7fe774cbf008de7f65d13bd8f5baf800044d50ee
 
 ## Load in libraries
 library(tidyverse)
@@ -20,7 +25,6 @@ init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR
 init_age <- as.integer(runif(n=population_size, min=1, max=100))
 indiv_ID <- seq(from=1, to=population_size)
 init_err <- runif(n=population_size, min = -0.05, max=0.05)
-hist(init_err)
 
 pop_df <- list(
   indiv_ID = indiv_ID,
@@ -64,8 +68,13 @@ baseline_pheno = target - AF_res
 ########## For Pheno Geno via GAPIT
 log_file="Data_SimGAPITS/pred_GAPIT_log.txt"
 out_dir="Data_SimGAPITS"
+<<<<<<< HEAD
 gt_datafile = "Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt")
 input_phenodatafile="Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/mq_phenotypes.csv"
+=======
+gt_datafile = "Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt"
+input_phenodatafile="Data_SimGAPITS/mq_phenotypes.csv"
+>>>>>>> 7fe774cbf008de7f65d13bd8f5baf800044d50ee
 
 ## Snp metadata
 df_base <- read.csv(gt_datafile, sep = "\t", header = T) %>% 
@@ -86,7 +95,7 @@ snp_refalt_identity <- df_base %>%
 
 ## check order
 SNPs_tested_ord <- match(SNPs_tested, snp_refalt_identity$rs.) # match ref alt into order in GT
-snp_refalt_identity$rs.[SNPs_tested_ord] == SNPs_tested
+unique(snp_refalt_identity$rs.[SNPs_tested_ord] == SNPs_tested)
 snp_refalt_identity_reord <- snp_refalt_identity[SNPs_tested_ord,]
 ref_alleles <- snp_refalt_identity_reord$REF
 alt_alleles <- snp_refalt_identity_reord$ALT
@@ -162,9 +171,9 @@ for (time_point in 1:time_max){
   # curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
   
   if (time_point < Phase_1_end){
-    curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
+       curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
   } else {
-    if (time_point == Phase_1_end) {cat("Running GAPIT as pheno prediction \n")}
+  if (time_point == Phase_1_end) {cat("Running GAPIT as pheno prediction \n")}
     invisible(capture.output(
       curr_pop_start$MR <- Phenotype_from_genotype_GAPIT(individuals_GT = curr_AF_start, SNPs_tested = SNPs_tested)
     ))
@@ -308,11 +317,10 @@ for (time_point in 1:time_max){
         "#################\n")
     
     # Plots
-    #print(ggplot() + geom_point(data=data.frame(curr_pop_end), aes(x=age, y=MR)) + theme_bw() + labs(title=paste("MR by age at", time_point)))
-    
   }
 }
 
+save.image()
 # 
 
 

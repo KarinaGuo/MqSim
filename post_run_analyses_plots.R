@@ -1,8 +1,7 @@
-library(tidyverse)
-
 #source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/data_sim_5.R")
-load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/30062026_GAPIT.RData")
+load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/07072026_GAPIT_failed.RData")
 
+library(tidyverse)
 theme_set(theme_bw())
 
 ################### Analyses for post-run plots
@@ -97,7 +96,7 @@ TP_after_curr <- pop_timepoints[[19]]
 unique(TP_after_curr$time) # should be 1016
 
 ## Empirical
-dartgl_1row <- gl.read.dart(filename="~/Uni/Doctorate/Ch HistSeeds/Extra_data/DMela2510229_merge_DMela2611752_1row.csv", nas = "-", lastmetric = "RatioAvgCountRefAvgCountSnp", ind.metafile="~/Uni/Doctorate/Ch HistSeeds/Extra_data/ind_meta.csv")
+dartgl_1row <- gl.read.dart(filename="~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/DMela2510229_merge_DMela2611752_1row.csv", nas = "-", lastmetric = "RatioAvgCountRefAvgCountSnp", ind.metafile="~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/ind_meta.csv")
 
 empirical_postMR_AF <- gl.keep.ind(dartgl_1row, dartgl_1row@ind.names[grepl("Contemporary", dartgl_1row@pop)])
 empirical_postMR_AF <- gl.keep.loc(empirical_postMR_AF, loc.list = SNPs_tested)
