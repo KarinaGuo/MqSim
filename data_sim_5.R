@@ -1,11 +1,7 @@
 set.seed(12345)
 rm(list = ls())
-<<<<<<< HEAD
+
 setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/")
-=======
-setwd("/home/karina/Simulation/MqSim/")
-Sys.setenv("OMP_NUM_THREADS" = 52)
->>>>>>> 7fe774cbf008de7f65d13bd8f5baf800044d50ee
 
 ## Load in libraries
 library(tidyverse)
