@@ -44,10 +44,15 @@ plot_livesize / plot_liveage + plot_layout(heights = c(3,1))
 ################## Sanity check - Calculate AF for empirical year
 library(dartR)
 
-TP_before_AF <- AF_timepoints[[2]]
+TP_before_AF <- AF_timepoints[[2]] 
 TP_before_curr <- pop_timepoints[[2]] 
+young_indvs <- TP_before_curr$age < 5
+
 # check time
-unique(TP_before_curr$time)
+unique(TP_before_curr$time) # should be 1016
+
+TP_before_AF_young <- TP_before_AF[young_indvs]
+TP_before_AF_downsampled <- TP_before_AF_young[sample(length(TP_before_AF_young), 124)] # Number of seedlings sampled in HS experiment for Historical dataset
 
 ## Empirical current AF
 
@@ -60,40 +65,43 @@ SNP_AF_empirical <- SNP_AF_empirical%>%
 
 
 ## Simulation AF
-# 1. Sum the alternate alleles across all individuals for every SNP
-total_alt_alleles <- Reduce(`+`, TP_before_AF)
-
-# 2. Calculate the total number of alleles in the population (2 alleles per individual)
-total_alleles <- 2 * length(TP_before_AF)
-
-# 3. Calculate the frequencies
-allele_frequencies_sim <- total_alt_alleles / total_alleles
+total_alt_alleles <- Reduce(`+`, TP_before_AF_downsampled) # Sum the alternate alleles across all individuals for every SNP
+total_alleles <- 2 * length(TP_before_AF_downsampled) # Calculate the total number of alleles in the population (2 alleles per individual)
+allele_frequencies_sim <- total_alt_alleles / total_alleles # Calculate the frequencies
 
 ## check order
 SNPs_tested_ord <- match(SNP_AF_empirical$locus, SNPs_tested)
-identical(SNPs_tested[SNPs_tested_ord], SNP_AF_empirical$locus)
+identical(SNPs_tested[SNPs_tested_ord], as.character(SNP_AF_empirical$locus))
 
-allele_frequencies_sim_reord <- allele_frequencies_sim[SNPs_tested_ord]
 SNPs_effsize_reord <- SNPs_effsize[SNPs_tested_ord]
 
-AF_comparison <- data.frame(empirical_AF = SNP_AF_empirical$frequency, sim_AF = allele_frequencies_sim_reord, eff_size = SNPs_effsize_reord) 
+AF_comparison <- data.frame(locID = SNP_AF_empirical$locus, empirical_AF = SNP_AF_empirical$frequency, sim_AF = allele_frequencies_sim, eff_size = SNPs_effsize_reord) 
 AF_comparison <- AF_comparison %>% 
-  mutate(AF_diff = empirical_AF - sim_AF)
+  mutate(AF_diff = empirical_AF - sim_AF,
+         SNP_Type = str_extract(AF_comparison$locID, "[^_]+$"))
+
 
 ggplot(AF_comparison, aes(x=empirical_AF, y=sim_AF, colour = eff_size)) +
   geom_point() +
-  geom_abline(intercept = 0, slope =1, linetype="dashed") +
-  ggtitle(paste("AF comparisons at time", unique(TP_before_curr$time)))
+  geom_abline(intercept = 0, slope = 1, linetype="dashed") +
+  ggtitle(paste("AF comparisons at time", unique(TP_before_curr$time))) +
+  facet_wrap(~SNP_Type)
 
 summary(lm (sim_AF ~ empirical_AF, data = AF_comparison))
 
+################################################################################################################
 ################## Calculate AF for +15 years after MR introduction
 library(dartR)
 
 TP_after_AF <- AF_timepoints[[19]]
 TP_after_curr <- pop_timepoints[[19]] 
+young_indvs <- TP_after_curr$age < 5
+
   # check time
 unique(TP_after_curr$time) # should be 1016
+
+TP_after_AF_young <- TP_after_AF[young_indvs]
+TP_after_AF_downsampled <- TP_after_AF_young[sample(length(TP_after_AF_young), 130)] # Number of seedlings sampled in HS experiment for Contemporary dataset
 
 ## Empirical
 dartgl_1row <- gl.read.dart(filename="~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/DMela2510229_merge_DMela2611752_1row.csv", nas = "-", lastmetric = "RatioAvgCountRefAvgCountSnp", ind.metafile="~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/ind_meta.csv")
@@ -102,155 +110,139 @@ empirical_postMR_AF <- gl.keep.ind(dartgl_1row, dartgl_1row@ind.names[grepl("Con
 empirical_postMR_AF <- gl.keep.loc(empirical_postMR_AF, loc.list = SNPs_tested)
 SNP_AF_empirical <- gl.allele.freq(empirical_postMR_AF, by="loc", verbose = 5)
 
-## Simulation AF
-total_alt_alleles <- Reduce(`+`, TP_after_AF)
-total_alleles <- 2 * length(TP_after_AF)
-allele_frequencies_sim <- total_alt_alleles / total_alleles
+
+total_alt_alleles <- Reduce(`+`, TP_after_AF_downsampled) # Sum the alternate alleles across all individuals for every SNP
+total_alleles <- 2 * length(TP_after_AF_downsampled) # Calculate the total number of alleles in the population (2 alleles per individual)
+allele_frequencies_sim <- total_alt_alleles / total_alleles # Calculate the frequencies
 
 ## check order
 SNPs_tested_ord <- match(SNP_AF_empirical$locus, SNPs_tested)
-SNPs_tested[SNPs_tested_ord] == SNP_AF_empirical$locus
+identical(SNPs_tested[SNPs_tested_ord], as.character(SNP_AF_empirical$locus))
 
-allele_frequencies_sim_reord <- allele_frequencies_sim[SNPs_tested_ord]
+SNPs_effsize_reord <- SNPs_effsize[SNPs_tested_ord]
 
-AF_comparison <- data.frame(empirical_AF = SNP_AF_empirical$frequency, sim_AF = allele_frequencies_sim_reord, eff_size = SNPs_effsize_reord) %>% 
-  mutate(AF_diff = empirical_AF - sim_AF)
+
+#### Pull out outlier SNPs
+filter_sig <- function(data){
+  data_sig <- data %>% 
+    filter(is.na(filt), holm_Lifestage < 0.05, !(snp_type=="climate")) 
+  return(data_sig)
+}
+
+pop_glm_HS_sig <- filter_sig(read.csv("~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/GLM_res_pop_HS_halfsib.csv")) %>% mutate(Test = "HS", Set = "Pop_HS")
+HS_glm_FB_sig <- filter_sig(read.csv("~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/GLM_res_FernBay_HS_halfsib.csv")) %>% mutate(Test = "HS", Set = "FernBay_HS")
+HS_glm_HN_sig <- filter_sig(read.csv("~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/GLM_res_HawksNest_HS_halfsib.csv")) %>% mutate(Test = "HS", Set = "HawksNest_HS")
+HS_glm_WC_sig <- filter_sig(read.csv("~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/GLM_res_WarrellCreek_HS_halfsib.csv")) %>% mutate(Test = "HS", Set = "WarrellCreek_HS")
+HS_glm_LJ_sig <- filter_sig(read.csv("~/Uni/Doctorate/Ch Hist_Nat/Ch HistSeeds/Extra_data/GLM_res_LongJetty_HS_halfsib.csv")) %>% mutate(Test = "HS", Set = "LongJetty_HS")
+
+all_results <- bind_rows(pop_glm_HS_sig, HS_glm_FB_sig, HS_glm_HN_sig, HS_glm_WC_sig, HS_glm_LJ_sig)
+union_results <- all_results %>% group_by(Set) %>% distinct(locID, .keep_all = TRUE) %>% ungroup()
+
+
+####
+
+AF_comparison <- data.frame(locID = SNP_AF_empirical$locus, empirical_AF = SNP_AF_empirical$frequency, sim_AF = allele_frequencies_sim, eff_size = SNPs_effsize_reord) 
+AF_comparison <- AF_comparison %>% 
+  mutate(AF_diff = empirical_AF - sim_AF,
+         SNP_Type = str_extract(AF_comparison$locID, "[^_]+$"),
+         outlier_SNP = case_when(
+           locID %in% union_results$locID ~ TRUE, 
+           TRUE ~ FALSE
+         ))
+
 
 ggplot(AF_comparison, aes(x=empirical_AF, y=sim_AF, colour = eff_size)) +
   geom_point() +
-  geom_abline(intercept = 0, slope =1, linetype="dashed") +
-  ggtitle(paste("AF comparisons at time", unique(TP_after_curr$time)))
-
-summary(lm (sim_AF ~ empirical_AF, data = AF_comparison))
-
-############################################################################################################
-################### Comparing MR results modelled using GAPIT vs genotype_phenotype_v1.R ###################
-############################################################################################################
-
-################# PRE MR introduction
+  geom_point(data=(AF_comparison |> dplyr::filter(outlier_SNP == TRUE)), colour="red") +
+  geom_abline(intercept = 0, slope = 1, linetype="dashed") +
+  ggtitle(paste("AF comparisons at time", unique(TP_after_curr$time))) +
+  facet_wrap(~SNP_Type)
 
 
-################# POST MR introduction
+################################################################################################################
+#### Run FsT outlier test on the two allele matrices
 
-####### Check GAPIT vs function
+TP_before_AF_matrix <- as.data.frame(lapply(TP_before_AF_downsampled, I)) # Convert AF list of lists to df
+TP_after_AF_matrix <- as.data.frame(lapply(TP_after_AF_downsampled, I))
+ 
+TP_AF_matrix <- as.matrix(cbind(TP_after_AF_matrix, TP_before_AF_matrix))
+popID <- c(rep("post", ncol(TP_after_AF_matrix)), rep("pre", ncol(TP_before_AF_matrix)))
 
-  # Simulated
-simulated_TP_MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = TP_after_AF, error=TP_after_curr$error, phenotype_baseline = baseline_pheno)
+allele_counts_matrix <- (2 * (TP_AF_matrix == 0)) + (1 * (TP_AF_matrix == 1))
+allele_counts_matrix[is.na(allele_counts_matrix)] <- 0
 
-  # GAPIT modelled? Convert the numeric data to hapmap data. Need to encode with known ref/alt identities
+total_counts_matrix <- matrix(2, nrow = nrow(TP_AF_matrix), ncol = ncol(TP_AF_matrix))
+total_counts_matrix[is.na(TP_AF_matrix)] <- 0
 
-## reading in snp_meta data
-base_dir_gt = "~/Uni/Doctorate/Samples/Genotyping"; base_dir=paste(base_dir_gt, "Merged_datasets/", sep="/")
-log_file="~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/pred_GAPIT_log.txt"
-out_dir="~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency"
-gt_datafile = paste(base_dir_gt, "Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping", sep="/", "Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt")
-input_phenodatafile="~/RBGSyd_Technical Officer/MQuin/Processing Meta/mq_phenotypes.csv"
-
-df_base <- read.csv(paste(base_dir_gt, "Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping", sep="/", "Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt"), sep = "\t", header = T) %>% 
-  filter(rs. %in% SNPs_tested)
-
-snp_refalt_identity <- df_base %>%
-  separate(
-    col = alleles, 
-    into = c("REF", "ALT"), 
-    sep = "/", 
-    fill = "right", 
-    remove = FALSE # Set to TRUE if you want to drop the original 'alleles' column
-  ) %>% 
-  dplyr::select(rs., REF, ALT) 
-
-  ## check order
-SNPs_tested_ord <- match(SNPs_tested, snp_refalt_identity$rs.) # match ref alt into order in GT
-snp_refalt_identity$rs.[SNPs_tested_ord] == SNPs_tested
-snp_refalt_identity_reord <- snp_refalt_identity[SNPs_tested_ord,]
-
-## Convert simulated data to hapmap
-gt_matrix <- do.call(cbind, TP_after_AF)
-colnames(gt_matrix) <- paste0("Sample_", 1:ncol(gt_matrix))
-
-ref_alleles <- snp_refalt_identity_reord$REF
-alt_alleles <- snp_refalt_identity_reord$ALT
-
-  ## IUPAC encoding
-iupac_dict <- c(
-  "AG" = "R", "GA" = "R",
-  "CT" = "Y", "TC" = "Y",
-  "GC" = "S", "CG" = "S",
-  "AT" = "W", "TA" = "W",
-  "GT" = "K", "TG" = "K",
-  "AC" = "M", "CA" = "M"
-)
-het_codes <- iupac_dict[paste0(ref_alleles, alt_alleles)]
-
-iupac_matrix <- matrix("N", nrow = nrow(gt_matrix), ncol = ncol(gt_matrix))
-colnames(iupac_matrix) <- colnames(gt_matrix)
-
-iupac_matrix[gt_matrix == 0] <- ref_alleles[row(gt_matrix)[gt_matrix == 0]]
-iupac_matrix[gt_matrix == 1] <- het_codes[row(gt_matrix)[gt_matrix == 1]]
-iupac_matrix[gt_matrix == 2] <- alt_alleles[row(gt_matrix)[gt_matrix == 2]]
-
-iupac_matrix[is.na(iupac_matrix)] <- "N"
-
-iupac_df <- data.frame(
-  rs. = SNPs_tested,
-  iupac_matrix,
-  stringsAsFactors = FALSE
-)
-
-  ## Add in hapmap headers/meta 
-
-hapmap_meta <- df_base[,1:11]
-
-simulated_hapmap <- left_join(iupac_df, hapmap_meta)
-
-  ### Append training individuals to simulated hapmap
-training_hapmapfull <- read.csv(paste(base_dir_gt, "Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping", sep="/", "Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt"), sep = "\t")
-training_hapmap <- training_hapmapfull[, append(1, grep("S_", colnames(training_hapmapfull)))]
-
-simualted_hapmap_trainingconcat <- left_join(simulated_hapmap, training_hapmap)
-
-write.table(simualted_hapmap_trainingconcat, file = "~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/tmp_simulated.hapmap.hmp.txt", row.names = F, sep = "\t")
-gt_datafile = "~/Uni/Doctorate/Ch Natural selection/Simulation/Data_AlleleFrequency/tmp_simulated.hapmap.hmp.txt"
-
-
-  ### Run GAPIT
-filename = "/prediction_gt_simulated_run.csv"
-
-source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Samples/Genotyping/Code/GP_functs.R")
-run_genomic_prediction(gt_datafile = gt_datafile, input_phenodatafile = input_phenodatafile, trans_COI=TRUE, rm_clim_snp=TRUE, homo_site_filt=1, miss_site_filt=1, homo_samp_filt=1, miss_samp_filt=1, log_file = log_file, out_dir = out_dir, filename=filename)
-
-
-GAPIT_pred_sim_AF <- read.csv("prediction_gt_simulated_run.csv")
-GAPIT_pred_sim_AF_onlySample <- GAPIT_pred_sim_AF[grepl("Sample_", GAPIT_pred_sim_AF$Taxa),]
-GAPIT_pred_sim_AF_onlySample_rescale <- scales::rescale(GAPIT_pred_sim_AF_onlySample$Prediction, from = c(0,3), to = c(0,1))
-
-  ## Find which failed prediction
-miss_samples_idx <- !(colnames(iupac_df)[-c(1)] %in% GAPIT_pred_sim_AF_onlySample$Taxa)
-original_sample_id <- colnames(iupac_df)[-c(1)]
-miss_samples <- original_sample_id[miss_samples_idx]
-
-simulated_TP_MR_samplenames <- colnames(iupac_df)[!(colnames(iupac_df)[-c(1)] %in% miss_samples)]
-simulated_TP_MR_filt <- simulated_TP_MR[!(colnames(iupac_df)[-c(1)] %in% miss_samples)]
-
-  ## plot results
-comp_MR <- data.frame(cbind(GAPIT_simulated = GAPIT_pred_sim_AF_onlySample_rescale, funct_simulated = simulated_TP_MR_filt))
-
-ggplot(comp_MR, aes(x = as.numeric(GAPIT_simulated), y=as.numeric(funct_simulated))) +
-  geom_point(alpha=0.1) +
-  stat_smooth(method = "lm") +
-  geom_abline(intercept = 0, slope =1, linetype="dashed") +
-  labs(x = "GAPIT predicted from AF SNP of timepoint x", y="Genotype-to-phenotype function in timepoint x")
-
-
-#### Compare against contemporary HS
-source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch HistSeeds/Code/HistSeedAF_Analysis.R")
-
-HS_scores_contemporary <- Scores_meta_LJ %>% 
-  filter(Collection_group == "Contemporary")
-HS_scores_contemporary <- scales::rescale(Scores_meta_LJ$COI, from = c(0,100), to = c(0,1))
-
-ggplot() +
-  geom_boxplot(aes(x="Function simulation", y=comp_MR$funct_simulated)) +
-  geom_boxplot(aes(x="GAPIT AF simulation", y=comp_MR$GAPIT_simulated)) +
-  geom_boxplot(aes(x="HS empirical contemporary", y=HS_scores_contemporary)) 
+  ### Run QB GLM
+run_quasibinom_glm <- function(snp_index, allele_count, total_count, popID) {
+  ac <- allele_count[snp_index,]
+  tc <- total_count[snp_index,]
   
+  # initiate for NA
+  pval_Population  <- NA
+  
+  # Check for zero variance
+  if(var(ac) == 0) return(c(pval_TP=pval_TP))
+  
+  # Fit the model
+  model <- glm(cbind(ac, tc - ac) ~ popID, family = "quasibinomial")
+  
+  if(!is.null(model)) {
+    model_anova <- tryCatch({
+      car::Anova(model, type = 3, test.statistic = "F")
+    }, error = function(e) {
+      return(NULL)
+    })
+    
+    if(!is.null(model_anova)) {
+      # Extract the respective p-values
+      pval_TP   <- model_anova["popID", "Pr(>F)"]
+    }
+  }
+  return(c(pval_TP=pval_TP))
+}
+
+
+pval_TP = NA; final_results_df = NULL
+results_list <- lapply(1:nrow(allele_counts_matrix), function(i) {
+  if (i%%100==0){cat("Running, ",i,"\n")}
+  run_quasibinom_glm(snp_index = i, allele_count = allele_counts_matrix, total_count = total_counts_matrix, popID = popID )
+})
+
+final_results_df <- as.data.frame(do.call(rbind, results_list))
+colnames(final_results_df) <- c("Timepoint")
+final_results_df$holm_Timepoint <- p.adjust(final_results_df$Timepoint, method = "holm")
+
+final_results_df <- cbind(locID = AF_comparison$locID, final_results_df) 
+final_results_df <- final_results_df %>% 
+  tidyr::extract(
+    col = locID, 
+    into = c("chr", "start_pos", "end_pos", "snp_type"),
+    regex = "^(.+):(\\d+)-(\\d+)_(.+)$",
+    remove = FALSE
+  )
+
+
+final_results_df_sim <- final_results_df %>% 
+    filter(holm_Timepoint < 0.05, !(snp_type=="climate")) 
+
+AF_comparison <- AF_comparison %>% 
+  mutate(outlier_SNP_sim = case_when(
+           locID %in% final_results_df_sim$locID ~ TRUE, 
+           TRUE ~ FALSE
+         ))
+
+## Plot onto plot
+ggplot(AF_comparison, aes(x=empirical_AF, y=sim_AF, colour = eff_size)) +
+  geom_point(alpha = 0.5) +
+  geom_point(data=(AF_comparison |> dplyr::filter(outlier_SNP_sim == TRUE)), colour="blue", shape=1, fill = "white" ) +
+  geom_point(data=(AF_comparison |> dplyr::filter(outlier_SNP == TRUE)), colour="red", shape=1, fill = "white") +
+  geom_point(data=(AF_comparison |> dplyr::filter(outlier_SNP == TRUE & outlier_SNP_sim == TRUE)), colour="green") +
+  geom_abline(intercept = 0, slope = 1, linetype="dashed") +
+  ggtitle(paste("AF comparisons at time", unique(TP_after_curr$time))) +
+  labs(caption = "Red = HS outlier SNPs\nBlue = simulated outlier SNPs") +
+  facet_wrap(~SNP_Type)  
+
+## Any overlapping snps?
+AF_comparison |> dplyr::filter(outlier_SNP == TRUE & outlier_SNP_sim == TRUE)

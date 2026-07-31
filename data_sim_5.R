@@ -64,13 +64,8 @@ baseline_pheno = target - AF_res
 ########## For Pheno Geno via GAPIT
 log_file="Data_SimGAPITS/pred_GAPIT_log.txt"
 out_dir="Data_SimGAPITS"
-<<<<<<< HEAD
-gt_datafile = "Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt")
-input_phenodatafile="Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/mq_phenotypes.csv"
-=======
 gt_datafile = "Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt"
 input_phenodatafile="Data_SimGAPITS/mq_phenotypes.csv"
->>>>>>> 7fe774cbf008de7f65d13bd8f5baf800044d50ee
 
 ## Snp metadata
 df_base <- read.csv(gt_datafile, sep = "\t", header = T) %>% 
