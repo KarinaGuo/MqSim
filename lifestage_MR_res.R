@@ -1,3 +1,5 @@
+library(tidyverse)
+
 ### Exported time point analyses
 pop_timepoints_orig <- pop_timepoints
 pop_timepoints <- pop_timepoints[-c(1)]
@@ -43,6 +45,13 @@ plot_liveage <- ggplot() +
 plot_liveage
 
 
+LS_MR_pre <- ggplot() + 
+  geom_boxplot(data = final_df %>% dplyr::filter(time < 1000), aes(x=Lifestage, y=MR)) +  
+  #geom_point(data = final_df %>% dplyr::filter(time > 2010 & time < 2020), aes(x=age, y=MR), size = 0.05) + 
+  theme_bw() +
+  labs(title=paste0("Impact ",MR_death_impact,"; time pre"),  y= "Myrtle rust", x="Life stage")
+LS_MR_pre
+
 LS_MR <- ggplot() + 
   geom_boxplot(data = final_df %>% dplyr::filter(time > 1010 & time < 1020), aes(x=Lifestage, y=MR)) +  
   #geom_point(data = final_df %>% dplyr::filter(time > 2010 & time < 2020), aes(x=age, y=MR), size = 0.05) + 
@@ -60,6 +69,6 @@ LS_MR_2
 
 filename_1 <- paste0("~/Uni/Doctorate/Ch Natural selection/Simulation/MainPlot_Plots/Empirical_MR_",MR_death_impact, ".jpg")
 filename_2 <- paste0("~/Uni/Doctorate/Ch Natural selection/Simulation/MainPlot_Plots/Empirical_MR_",MR_death_impact, "_2.jpg")
-ggsave(LS_MR, filename=filename_1, units='px', width=1500, height=1500, limitsize=F)
-ggsave(LS_MR_2, filename=filename_2, units='px', width=1500, height=1500, limitsize=F)
+#ggsave(LS_MR, filename=filename_1, units='px', width=1500, height=1500, limitsize=F)
+#ggsave(LS_MR_2, filename=filename_2, units='px', width=1500, height=1500, limitsize=F)
 
