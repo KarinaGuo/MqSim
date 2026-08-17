@@ -60,14 +60,6 @@ for (time_point in Phase_1_end:time_max){
     })
   } 
   
-  if (time_point < Phase_1_end){
-       curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
-  } else {
-    invisible(capture.output(
-      curr_pop_start$MR <- Phenotype_from_genotype_GAPIT(individuals_GT = curr_AF_start, SNPs_tested = SNPs_tested)
-    ))
-  }
-  
   if((length(curr_pop_start$indiv_ID)==0)) {
     stop("All dead at time ", time_point, "\n")
   } else{
@@ -85,7 +77,7 @@ for (time_point in Phase_1_end:time_max){
       MR_recruit_impact_tp = 0
     }
     
-    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point)
+    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point, Phase_1_end=Phase_1_end, effect_size=effect_size, baseline_pheno=baseline_pheno, SNPs_tested=SNPs_tested)
     curr_pop_recruited <- recruit_res$curr_pop
     curr_AF_recruited <- recruit_res$curr_AF
     

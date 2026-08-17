@@ -12,7 +12,7 @@
 # Note: MR is recruited based on parent pheno using beta distribution. To visualise parent MR pheno of 1-4: for (i in 0:4){hist(rbeta(n=4000, shape1=i+1, shape2 = 3)) }
 
 ##############################################
-recruit_rate <- function(pop, population_min_size, population_max_size, recruitment_age, recruitment_size_mean, density_recruit_togg, recruitment_size_sd, recruitment_constant, age_togg, age_recruit_impact_val, MR_togg, MR_recruit_impact_val, MR_rec_adjusted, rec_age_shiftch, MR_parents, population_genotypes, indiv_count_start, time_point){
+recruit_rate <- function(pop, population_min_size, population_max_size, recruitment_age, recruitment_size_mean, density_recruit_togg, recruitment_size_sd, recruitment_constant, age_togg, age_recruit_impact_val, MR_togg, MR_recruit_impact_val, MR_rec_adjusted, rec_age_shiftch, MR_parents, population_genotypes, indiv_count_start, time_point, Phase_1_end, effect_size, baseline_pheno, SNPs_tested){
   
   # Current pop_size
   if (length(pop$indiv_ID) < population_min_size){
@@ -101,13 +101,24 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
     }
     
     new_recruit_MR <- rep(0, sum(new_recruit)) # will be overwritten later using AF calc
+    new_recruit_error <- runif(n=sum(new_recruit), min = -0.3, max=0.3)
+    
+    if (time_point < Phase_1_end){
+      new_recruit_MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = new_recruit_genotypes, error=new_recruit_error, phenotype_baseline = baseline_pheno)
+    } else {
+      if (time_point == Phase_1_end) {cat("Running GAPIT as pheno prediction \n")}
+      invisible(capture.output(
+        new_recruit_MR <- Phenotype_from_genotype_GAPIT(individuals_GT = new_recruit_genotypes, SNPs_tested = SNPs_tested)
+      ))
+    }
+    
     
     new_recruit_pop <- list(indiv_ID=seq(from=indiv_count_start+1, to=indiv_count_start+sum(new_recruit)), 
                             time=rep(time_point, sum(new_recruit)), 
                             MR=new_recruit_MR, 
                             mortality=rep(0, sum(new_recruit)), 
-                            age=rep(1, sum(new_recruit)),
-                            error = runif(n=sum(new_recruit), min = -0.3, max=0.3))
+                            age=rep(0, sum(new_recruit)),
+                            error = new_recruit_error)
     
     curr_AF <- append(population_genotypes, new_recruit_genotypes)
     

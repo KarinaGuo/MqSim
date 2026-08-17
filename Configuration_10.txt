@@ -1,8 +1,8 @@
 ## Input parameters for high MR pressure sites
 
 n_snps = 1000
-run_from_phase1save = FALSE # loads saved image to save start up time
-save_phase1 = TRUE # save the R image of the timepoint at the start of Phase_1_end
+run_from_phase1save = TRUE # loads saved image to save start up time
+save_phase1 = FALSE # save the R image of the timepoint at the start of Phase_1_end
 
 
   ## Population parameters

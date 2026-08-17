@@ -61,7 +61,11 @@ test_that("recruit_rate behaves across a wide parameter space", {
                 MR_parents = 2, 
                 population_genotypes = gt, 
                 indiv_count_start = s, 
-                time_point = 1
+                time_point = 1,
+                Phase_1_end = 100,
+                effect_size = data.frame(V2=1, V3=1),
+                baseline_pheno = 0,
+                SNPs_tested = c("rs1")
               )
               
               # Should return a list with curr_pop and curr_AF

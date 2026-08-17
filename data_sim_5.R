@@ -1,8 +1,8 @@
 set.seed(12345)
 rm(list = ls())
 
-#setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/")
-options(repos = c(CRAN = "https://cran.csiro.au/"))
+setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/")
+#options(repos = c(CRAN = "https://cran.csiro.au/"))
 
 
 ## Load in libraries
@@ -39,110 +39,110 @@ if (exists("run_from_phase1save") && run_from_phase1save) {
   start_time <- 1
   
   ##
-
-
-init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR<0]=0; init_MR[init_MR>1]=1
-init_age <- as.integer(runif(n=population_size, min=1, max=100))
-indiv_ID <- seq(from=1, to=population_size)
-init_err <- runif(n=population_size, min = -0.05, max=0.05)
-
-pop_df <- list(
-  indiv_ID = indiv_ID,
-  time = rep(1, length(indiv_ID)),
-  MR = init_MR,
-  mortality = rep(0, length(indiv_ID)),
-  age = init_age,
-  error = init_err
-)
-
-
-########### For Pheno Geno via function
-## tracking n_snps SNPs of top eff size
-effect_size <- read.csv("Data_AlleleFrequency/SNP_eff_dom_size.csv", header = F) 
-effect_size <- effect_size[!grepl("climate", effect_size$V1), ]%>% 
-  arrange(V5, desc = T) %>% 
-  slice_head(n=n_snps)
-
-SNPs_tested <- effect_size$V1
-
-SNP_AF_Histset <- read.csv("Data_AlleleFrequency/SNP_AF.csv", header = T)  %>%
-  filter(locus %in% effect_size$V1)
-
-# Dynamically adjust baseline_pheno to midpoint
-AF_list <- replicate(
-  n = population_size,
-  expr = rbinom(n = length(SNP_AF_Histset$frequency), size = 2, prob = SNP_AF_Histset$frequency),
-  simplify = FALSE
-)
-
-#effect_size$V2 <- scales::rescale (effect_size$V2, from = c(0,3), to = c(0,1))
-effect_size$V2 <- effect_size$V2 * 2
-
-target = 0.5
-AF_res = mean(Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = AF_list, error=init_err, phenotype_baseline = 0, set_floor = FALSE))
-
-baseline_pheno = target - AF_res
-#baseline_pheno = scales::rescale(unique(effect_size$V4), from = c(0,3), to = c(0,1)) # Original pheno, COI, is of 0-3 
-
-
-########## For Pheno Geno via GAPIT
-log_file="Data_SimGAPITS/pred_GAPIT_log.txt"
-out_dir="Data_SimGAPITS"
-gt_datafile = "Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt"
-input_phenodatafile="Data_SimGAPITS/mq_phenotypes.csv"
-
-## Snp metadata
-df_base <- read.csv(gt_datafile, sep = "\t", header = T) %>% 
-  filter(rs. %in% SNPs_tested)
-hapmap_meta <- df_base[,1:11]
-
-training_hapmap <- df_base[, append(1, grep("S_", colnames(df_base)))]
-
-snp_refalt_identity <- df_base %>%
-  separate(
-    col = alleles, 
-    into = c("REF", "ALT"), 
-    sep = "/", 
-    fill = "right", 
-    remove = FALSE # Set to TRUE if you want to drop the original 'alleles' column
-  ) %>% 
-  dplyr::select(rs., REF, ALT) 
-
-## check order
-SNPs_tested_ord <- match(SNPs_tested, snp_refalt_identity$rs.) # match ref alt into order in GT
-unique(snp_refalt_identity$rs.[SNPs_tested_ord] == SNPs_tested)
-snp_refalt_identity_reord <- snp_refalt_identity[SNPs_tested_ord,]
-ref_alleles <- snp_refalt_identity_reord$REF
-alt_alleles <- snp_refalt_identity_reord$ALT
-
-iupac_dict <- c(
-  "AG" = "R", "GA" = "R",
-  "CT" = "Y", "TC" = "Y",
-  "GC" = "S", "CG" = "S",
-  "AT" = "W", "TA" = "W",
-  "GT" = "K", "TG" = "K",
-  "AC" = "M", "CA" = "M"
-)
-het_codes <- iupac_dict[paste0(ref_alleles, alt_alleles)]
-
-####################3
-## Initialise objects
-indiv_pop=NULL 
-MR_pop=NULL 
-curr_pop=NULL 
-new_recruit_pop=NULL 
-indiv_count_end=0
-death_df=NULL 
-age_df=NULL
-MR_df=NULL 
-live_size_df=NULL
-pop_timepoints=NULL
-AF_timepoints=NULL
-dist_event=FALSE
-curr_AF=NULL
-time_point=1
-intercept_indiv_original = intercept_indiv
-
+  
+  
+  init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR<0]=0; init_MR[init_MR>1]=1
+  init_age <- as.integer(runif(n=population_size, min=1, max=100))
+  indiv_ID <- seq(from=1, to=population_size)
+  init_err <- runif(n=population_size, min = -0.05, max=0.05)
+  
+  pop_df <- list(
+    indiv_ID = indiv_ID,
+    time = rep(1, length(indiv_ID)),
+    MR = init_MR,
+    mortality = rep(0, length(indiv_ID)),
+    age = init_age,
+    error = init_err
+  )
+  
+  
+  ########### For Pheno Geno via function
+  ## tracking n_snps SNPs of top eff size
+  effect_size <- read.csv("Data_AlleleFrequency/SNP_eff_dom_size.csv", header = F) 
+  effect_size <- effect_size[!grepl("climate", effect_size$V1), ]%>% 
+    arrange(V5, desc = T) %>% 
+    slice_head(n=n_snps)
+  
+  SNPs_tested <- effect_size$V1
+  
+  SNP_AF_Histset <- read.csv("Data_AlleleFrequency/SNP_AF.csv", header = T)  %>%
+    filter(locus %in% effect_size$V1)
+  
+  # Dynamically adjust baseline_pheno to midpoint
+  AF_list <- replicate(
+    n = population_size,
+    expr = rbinom(n = length(SNP_AF_Histset$frequency), size = 2, prob = SNP_AF_Histset$frequency),
+    simplify = FALSE
+  )
+  
+  #effect_size$V2 <- scales::rescale (effect_size$V2, from = c(0,3), to = c(0,1))
+  effect_size$V2 <- effect_size$V2 * 2
+  
+  target = 0.5
+  AF_res = mean(Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = AF_list, error=init_err, phenotype_baseline = 0, set_floor = FALSE))
+  
+  baseline_pheno = target - AF_res
+  #baseline_pheno = scales::rescale(unique(effect_size$V4), from = c(0,3), to = c(0,1)) # Original pheno, COI, is of 0-3 
+  
+  
+  ########## For Pheno Geno via GAPIT
+  log_file="Data_SimGAPITS/pred_GAPIT_log.txt"
+  out_dir="Data_SimGAPITS"
+  gt_datafile = "Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt"
+  input_phenodatafile="Data_SimGAPITS/mq_phenotypes.csv"
+  
+  ## Snp metadata
+  df_base <- read.csv(gt_datafile, sep = "\t", header = T) %>% 
+    filter(rs. %in% SNPs_tested)
+  hapmap_meta <- df_base[,1:11]
+  
+  training_hapmap <- df_base[, append(1, grep("S_", colnames(df_base)))]
+  
+  snp_refalt_identity <- df_base %>%
+    separate(
+      col = alleles, 
+      into = c("REF", "ALT"), 
+      sep = "/", 
+      fill = "right", 
+      remove = FALSE # Set to TRUE if you want to drop the original 'alleles' column
+    ) %>% 
+    dplyr::select(rs., REF, ALT) 
+  
+  ## check order
+  SNPs_tested_ord <- match(SNPs_tested, snp_refalt_identity$rs.) # match ref alt into order in GT
+  unique(snp_refalt_identity$rs.[SNPs_tested_ord] == SNPs_tested)
+  snp_refalt_identity_reord <- snp_refalt_identity[SNPs_tested_ord,]
+  ref_alleles <- snp_refalt_identity_reord$REF
+  alt_alleles <- snp_refalt_identity_reord$ALT
+  
+  iupac_dict <- c(
+    "AG" = "R", "GA" = "R",
+    "CT" = "Y", "TC" = "Y",
+    "GC" = "S", "CG" = "S",
+    "AT" = "W", "TA" = "W",
+    "GT" = "K", "TG" = "K",
+    "AC" = "M", "CA" = "M"
+  )
+  het_codes <- iupac_dict[paste0(ref_alleles, alt_alleles)]
+  
+  ####################3
+  ## Initialise objects
+  indiv_pop=NULL 
+  MR_pop=NULL 
+  curr_pop=NULL 
+  new_recruit_pop=NULL 
+  indiv_count_end=0
+  death_df=NULL 
+  age_df=NULL
+  MR_df=NULL 
+  live_size_df=NULL
+  pop_timepoints=NULL
+  AF_timepoints=NULL
+  dist_event=FALSE
+  curr_AF=NULL
+  time_point=1
+  intercept_indiv_original = intercept_indiv
+  
 }
 
 
@@ -190,17 +190,18 @@ for (time_point in start_time:time_max){
       
     })
   } 
+
+  # Moved into recruit_rate  
+#   #  if (time_point < Phase_1_end){
+#   curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
+# } else {
+#   if (time_point == Phase_1_end) {cat("Running GAPIT as pheno prediction \n")}
+#   invisible(capture.output(
+#     curr_pop_start$MR <- Phenotype_from_genotype_GAPIT(individuals_GT = curr_AF_start, SNPs_tested = SNPs_tested)
+#   ))
+# }
   
-  # curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
-  
-  if (time_point < Phase_1_end){
-       curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
-  } else {
-  if (time_point == Phase_1_end) {cat("Running GAPIT as pheno prediction \n")}
-    invisible(capture.output(
-      curr_pop_start$MR <- Phenotype_from_genotype_GAPIT(individuals_GT = curr_AF_start, SNPs_tested = SNPs_tested)
-    ))
-  }
+
   
   if((length(curr_pop_start$indiv_ID)==0)) {
     stop("All dead at time ", time_point, "\n")
@@ -225,7 +226,7 @@ for (time_point in start_time:time_max){
       MR_recruit_impact_tp = 0
     }
     
-    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point)
+    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point, Phase_1_end=Phase_1_end, effect_size=effect_size, baseline_pheno=baseline_pheno, SNPs_tested=SNPs_tested)
     curr_pop_recruited <- recruit_res$curr_pop
     curr_AF_recruited <- recruit_res$curr_AF
     
@@ -332,6 +333,10 @@ for (time_point in start_time:time_max){
     }
   }
   
+  ##
+  # print(plot(curr_pop_end$age, curr_pop_end$MR); title(paste0("time_point=", time_point)))
+  ##
+  
   if(time_point%%output_timept == 0 | time_point == Phase_1_end){ 
     
     cat("Time at:", time_point,"\n",
@@ -342,8 +347,11 @@ for (time_point in start_time:time_max){
     # Plots
   }
 }
+# 
+# all_objs_final <- ls()
+# all_non_functions <- all_objs_final[sapply(all_objs_final, function(x) !is.function(get(x)))]
+# save(list = all_non_functions, file = "Run_results/17082026_GAPIT_testparam.Rdata")
 
-save.image("Run_results/17082026_GAPIT_testparam.Rdata")
 # 
 
 
