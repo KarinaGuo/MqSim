@@ -1,10 +1,13 @@
 set.seed(12345)
 rm(list = ls())
 
-setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/")
+#setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/")
+options(repos = c(CRAN = "https://cran.csiro.au/"))
+
 
 ## Load in libraries
 library(tidyverse)
+library(scales)
 
 ## Load in parameters
 source("Configuration_10.txt")
@@ -15,6 +18,27 @@ source("Functions/disturbance_functions.R")
 source("Functions/genotype_phenotype_v1.R")
 source("gapit_functions_080425.txt")
 source("GP_functs.R")
+
+## Load from savefile?
+if (exists("run_from_phase1save") && run_from_phase1save) {
+  cat("Loading state from Phase_1_end_save.Rdata...\n")
+  load("Phase_1_end_save.Rdata")
+  
+  # Re-source in case parameters were updated
+  source("Configuration_10.txt")
+  source("Functions/mortality_functions_MRintro_hill.R")
+  source("Functions/mortality_functions_hill.R")
+  source("Functions/recruitment_functions_4.R")
+  source("Functions/disturbance_functions.R")
+  source("Functions/genotype_phenotype_v1.R")
+  source("gapit_functions_080425.txt")
+  source("GP_functs.R")
+  
+  start_time <- Phase_1_end
+} else {
+  start_time <- 1
+  
+  ##
 
 
 init_MR <- rnorm(n=population_size, mean = MR_mean, sd = MR_sd); init_MR[init_MR<0]=0; init_MR[init_MR>1]=1
@@ -36,7 +60,7 @@ pop_df <- list(
 ## tracking n_snps SNPs of top eff size
 effect_size <- read.csv("Data_AlleleFrequency/SNP_eff_dom_size.csv", header = F) 
 effect_size <- effect_size[!grepl("climate", effect_size$V1), ]%>% 
-  arrange(V2, desc = T) %>% 
+  arrange(V5, desc = T) %>% 
   slice_head(n=n_snps)
 
 SNPs_tested <- effect_size$V1
@@ -119,7 +143,7 @@ curr_AF=NULL
 time_point=1
 intercept_indiv_original = intercept_indiv
 
-
+}
 
 
 # Workflow: 2 phases, each goes through 4 steps
@@ -131,7 +155,15 @@ intercept_indiv_original = intercept_indiv
 ## 2B) Population mortality calculated
 ## 3) New population generated: Population initial -> Recruitment + intervention
 
-for (time_point in 1:time_max){
+for (time_point in start_time:time_max){
+  
+  if (time_point == Phase_1_end && exists("save_phase1") && save_phase1) {
+    cat("Saving state at start of Phase_1_end to Phase_1_end_save.Rdata...\n")
+    # Exclude functions (like GAPIT) from the save to prevent embedded NUL corruption errors
+    all_objs <- ls()
+    non_functions <- all_objs[sapply(all_objs, function(x) !is.function(get(x)))]
+    save(list = non_functions, file = "Phase_1_end_save.Rdata")
+  }
   
   ##### Apply disturbance results
   if (dist_imp){
@@ -193,7 +225,7 @@ for (time_point in 1:time_max){
       MR_recruit_impact_tp = 0
     }
     
-    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start)
+    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point)
     curr_pop_recruited <- recruit_res$curr_pop
     curr_AF_recruited <- recruit_res$curr_AF
     
@@ -311,7 +343,7 @@ for (time_point in 1:time_max){
   }
 }
 
-save.image()
+save.image("Run_results/17082026_GAPIT_testparam.Rdata")
 # 
 
 

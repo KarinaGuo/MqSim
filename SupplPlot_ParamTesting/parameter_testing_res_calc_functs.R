@@ -76,7 +76,7 @@ calculate_timepoint_vals <- function(pop_timepoints){
   
   # Timepoint soon MR intro
   
-  timepoints_soon <- which(timepoint_pop_grab > MR_timepoint & timepoint_pop_grab < MR_timepoint*1.5)
+  timepoints_soon <- which(timepoint_pop_grab > MR_timepoint & timepoint_pop_grab < MR_timepoint+50)
   
   pop_soon <- pop_timepoints[timepoints_soon]
   pop_soon_df <- bind_rows(lapply(pop_soon, as.data.frame))
@@ -90,7 +90,7 @@ calculate_timepoint_vals <- function(pop_timepoints){
   soon_res <- data.frame(cbind(timeperiod="Soon", pop_struct=pop_struct, pop_size=pop_size, MR_res, pop_growth))
   
   # Timepoint after MR intro
-  timepoints_after <- which(timepoint_pop_grab > MR_timepoint*1.5)
+  timepoints_after <- which(timepoint_pop_grab >= MR_timepoint+50)
   
   pop_after <- pop_timepoints[timepoints_after]
   pop_after_df <- bind_rows(lapply(pop_after, as.data.frame))
@@ -113,7 +113,7 @@ calculate_timepoint_LSvals <- function(pop_timepoints){
   
   # Timepoint soon MR intro
   
-  timepoints_soon <- which(timepoint_pop_grab > MR_timepoint & timepoint_pop_grab < MR_timepoint*1.5)
+  timepoints_soon <- which(timepoint_pop_grab > MR_timepoint & timepoint_pop_grab < MR_timepoint+50)
   
   pop_soon <- pop_timepoints[timepoints_soon]
   pop_soon_df <- bind_rows(lapply(pop_soon, as.data.frame))
@@ -122,7 +122,7 @@ calculate_timepoint_LSvals <- function(pop_timepoints){
   soon_res <- data.frame(cbind(timeperiod="Soon", MR_soon_LS_res))
   
   # Timepoint after MR intro
-  timepoints_after <- which(timepoint_pop_grab > MR_timepoint*1.5)
+  timepoints_after <- which(timepoint_pop_grab > MR_timepoint+50)
   
   pop_after <- pop_timepoints[timepoints_after]
   pop_after_df <- bind_rows(lapply(pop_after, as.data.frame))

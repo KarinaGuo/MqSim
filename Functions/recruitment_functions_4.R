@@ -12,7 +12,7 @@
 # Note: MR is recruited based on parent pheno using beta distribution. To visualise parent MR pheno of 1-4: for (i in 0:4){hist(rbeta(n=4000, shape1=i+1, shape2 = 3)) }
 
 ##############################################
-recruit_rate <- function(pop, population_min_size, population_max_size, recruitment_age, recruitment_size_mean, density_recruit_togg, recruitment_size_sd, recruitment_constant, age_togg, age_recruit_impact_val, MR_togg, MR_recruit_impact_val, MR_rec_adjusted, rec_age_shiftch, MR_parents, population_genotypes){
+recruit_rate <- function(pop, population_min_size, population_max_size, recruitment_age, recruitment_size_mean, density_recruit_togg, recruitment_size_sd, recruitment_constant, age_togg, age_recruit_impact_val, MR_togg, MR_recruit_impact_val, MR_rec_adjusted, rec_age_shiftch, MR_parents, population_genotypes, indiv_count_start, time_point){
   
   # Current pop_size
   if (length(pop$indiv_ID) < population_min_size){
@@ -99,8 +99,6 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
       offspring_list <- split(offspring_gts_matrix, seq_len(nrow(offspring_gts_matrix)))
       new_recruit_genotypes <- c(new_recruit_genotypes, unname(offspring_list))
     }
-    
-    for (i in 1:length(recruitment_indiv_MR))
     
     new_recruit_MR <- rep(0, sum(new_recruit)) # will be overwritten later using AF calc
     
