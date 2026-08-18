@@ -1,8 +1,8 @@
 set.seed(12345)
 rm(list = ls())
 
-setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/")
-#options(repos = c(CRAN = "https://cran.csiro.au/"))
+#setwd("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/")
+options(repos = c(CRAN = "https://cran.csiro.au/"))
 
 
 ## Load in libraries
@@ -66,7 +66,7 @@ if (exists("run_from_phase1save") && run_from_phase1save) {
   SNPs_tested <- effect_size$V1
   
   SNP_AF_Histset <- read.csv("Data_AlleleFrequency/SNP_AF.csv", header = T)  %>%
-    filter(locus %in% effect_size$V1)
+    dplyr::filter(locus %in% effect_size$V1)
   
   # Dynamically adjust baseline_pheno to midpoint
   AF_list <- replicate(
@@ -190,18 +190,17 @@ for (time_point in start_time:time_max){
       
     })
   } 
-
-  # Moved into recruit_rate  
-#   #  if (time_point < Phase_1_end){
-#   curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
-# } else {
-#   if (time_point == Phase_1_end) {cat("Running GAPIT as pheno prediction \n")}
-#   invisible(capture.output(
-#     curr_pop_start$MR <- Phenotype_from_genotype_GAPIT(individuals_GT = curr_AF_start, SNPs_tested = SNPs_tested)
-#   ))
-# }
   
-
+  # curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
+  
+  if (time_point < Phase_1_end){
+    curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
+  } else {
+    if (time_point == Phase_1_end) {cat("Running GAPIT as pheno prediction \n")}
+    invisible(capture.output(
+      curr_pop_start$MR <- Phenotype_from_genotype_GAPIT(individuals_GT = curr_AF_start, SNPs_tested = SNPs_tested)
+    ))
+  }
   
   if((length(curr_pop_start$indiv_ID)==0)) {
     stop("All dead at time ", time_point, "\n")
@@ -226,7 +225,7 @@ for (time_point in start_time:time_max){
       MR_recruit_impact_tp = 0
     }
     
-    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point, Phase_1_end=Phase_1_end, effect_size=effect_size, baseline_pheno=baseline_pheno, SNPs_tested=SNPs_tested)
+    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point)
     curr_pop_recruited <- recruit_res$curr_pop
     curr_AF_recruited <- recruit_res$curr_AF
     
@@ -333,10 +332,6 @@ for (time_point in start_time:time_max){
     }
   }
   
-  ##
-  # print(plot(curr_pop_end$age, curr_pop_end$MR); title(paste0("time_point=", time_point)))
-  ##
-  
   if(time_point%%output_timept == 0 | time_point == Phase_1_end){ 
     
     cat("Time at:", time_point,"\n",
@@ -347,11 +342,6 @@ for (time_point in start_time:time_max){
     # Plots
   }
 }
+
+#save.image("Run_results/17082026_GAPIT_testparam.Rdata")
 # 
-# all_objs_final <- ls()
-# all_non_functions <- all_objs_final[sapply(all_objs_final, function(x) !is.function(get(x)))]
-# save(list = all_non_functions, file = "Run_results/17082026_GAPIT_testparam.Rdata")
-
-# 
-
-
