@@ -1,5 +1,5 @@
 #source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/data_sim_5.R")
-load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/07072026_GAPIT_failed.RData")
+load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/20082026_2_GAPIT_testparam.Rdata")
 
 library(tidyverse)
 theme_set(theme_bw())
@@ -25,7 +25,9 @@ plot_liveage  <- ggplot() +
   geom_errorbar(data=age_df, aes(x=time, ymax = age_mean_summ + age_sd_summ, ymin = age_mean_summ - age_sd_summ)) + 
   labs(title="Live age") 
 
-plot_deadMR   <- ggplot(mean_MR_time_death, aes(x=time, y=mean_MR)) + geom_point() + labs(title="Death MR")
+plot_deadMR   <- ggplot(mean_MR_time_death |> filter (time >990), aes(x=time, y=mean_MR)) + geom_point() + 
+  labs(title="Death MR") +
+  stat_smooth(linewidth = 0.75, linetype="dashed", colour="grey40", span=10) 
 plot_liveMR   <- ggplot() +
   geom_point(data=MR_df, aes(x=time, y = MR_mean_summ)) +
   geom_errorbar(data=MR_df, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ)) + 

@@ -28,6 +28,7 @@ final_df_summ <- final_df %>%
   group_by(time) %>% 
   summarise(MR_mean_summ=mean(MR, na.rm=TRUE), MR_sd_summ=sd(MR, na.rm=TRUE), pop_size=n())
 
+unique(final_df_summ$time)
 
 plot_liveMR <- ggplot() +
   geom_point(data=final_df_summ, aes(x=time, y = MR_mean_summ)) +
@@ -46,17 +47,19 @@ plot_liveage
 
 
 LS_MR_pre <- ggplot() + 
-  geom_boxplot(data = final_df %>% dplyr::filter(time < 1000), aes(x=Lifestage, y=MR)) +  
+  geom_boxplot(data = final_df %>% dplyr::filter(time > 990, time < 1000), aes(x=Lifestage, y=MR)) +  
   #geom_point(data = final_df %>% dplyr::filter(time > 2010 & time < 2020), aes(x=age, y=MR), size = 0.05) + 
   theme_bw() +
-  labs(title=paste0("Impact ",MR_death_impact,"; time pre"),  y= "Myrtle rust", x="Life stage")
+  labs(title=paste0("Impact ",MR_death_impact,"; time pre"),  y= "Myrtle rust", x="Life stage")+
+  scale_x_discrete(limits = c("Adult", "Subadult", "Seedling"))
 LS_MR_pre
 
 LS_MR <- ggplot() + 
   geom_boxplot(data = final_df %>% dplyr::filter(time > 1010 & time < 1020), aes(x=Lifestage, y=MR)) +  
   #geom_point(data = final_df %>% dplyr::filter(time > 2010 & time < 2020), aes(x=age, y=MR), size = 0.05) + 
   theme_bw() +
-  labs(title=paste0("Impact ",MR_death_impact,"; time +10-20"),  y= "Myrtle rust", x="Life stage")
+  labs(title=paste0("Impact ",MR_death_impact,"; time +10-20"),  y= "Myrtle rust", x="Life stage") +
+  scale_x_discrete(limits = c("Adult", "Subadult", "Seedling"))
 LS_MR
 
 
@@ -64,8 +67,11 @@ LS_MR_2 <- ggplot() +
   geom_boxplot(data = final_df %>% dplyr::filter(time > 1030 & time < 1050), aes(x=Lifestage, y=MR)) +  
   #geom_point(data = final_df %>% dplyr::filter(time > 2010 & time < 2020), aes(x=age, y=MR), size = 0.05) + 
   theme_bw() +
-  labs(title=paste0("Impact ",MR_death_impact,"; time +30-50"),  y= "Myrtle rust", x="Life stage")
+  labs(title=paste0("Impact ",MR_death_impact,"; time +30-50"),  y= "Myrtle rust", x="Life stage")+
+  scale_x_discrete(limits = c("Adult", "Subadult", "Seedling"))
 LS_MR_2
+
+LS_MR_pre + LS_MR + LS_MR_2
 
 filename_1 <- paste0("~/Uni/Doctorate/Ch Natural selection/Simulation/MainPlot_Plots/Empirical_MR_",MR_death_impact, ".jpg")
 filename_2 <- paste0("~/Uni/Doctorate/Ch Natural selection/Simulation/MainPlot_Plots/Empirical_MR_",MR_death_impact, "_2.jpg")

@@ -39,6 +39,10 @@ Phenotype_from_Genotype <- function(phenotype_baseline, snp_effects, dominance_e
 
 Phenotype_from_genotype_GAPIT <- function(individuals_GT, SNPs_tested){
   gt_matrix <- do.call(cbind, individuals_GT)
+  
+  sim_names <- paste0("Sim_", seq_len(ncol(gt_matrix)))
+  colnames(gt_matrix) <- sim_names
+  
   iupac_matrix <- matrix("N", nrow = nrow(gt_matrix), ncol = ncol(gt_matrix))
   colnames(iupac_matrix) <- colnames(gt_matrix)
   
@@ -70,8 +74,12 @@ Phenotype_from_genotype_GAPIT <- function(individuals_GT, SNPs_tested){
   
   run_genomic_prediction_simulation(gt_datafile = gt_datafile, input_phenodatafile = input_phenodatafile, trans_COI=TRUE, rm_clim_snp=TRUE, homo_site_filt=1, miss_site_filt=1, homo_samp_filt=1, miss_samp_filt=1, out_dir = out_dir, filename=filename)
   
-  pred <- read.csv(paste0(out_dir,"/prediction_gt_simulated_run.csv")); pred <- pred[grepl("X", pred$Taxa), "Prediction"]
-  MR <- scales::rescale(pred, from=c(0,3), to=c(0.001,1))
+  pred <- read.csv(paste0(out_dir,"/prediction_gt_simulated_run.csv"))
+  pred_sim <- pred[pred$Taxa %in% sim_names, ]
+  pred_sim$Taxa <- factor(pred_sim$Taxa, levels = sim_names)
+  pred_sim <- pred_sim[order(pred_sim$Taxa), ]
+  
+  MR <- scales::rescale(pred_sim$Prediction, from=c(0,3), to=c(0.001,1))
   
   return(MR)
 }

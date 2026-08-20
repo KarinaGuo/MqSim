@@ -67,7 +67,9 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
   
   if (sum(indiv_recruitment)>0){
     recruitment_indiv_MR <- recruitment_indivs_MR[as.logical(indiv_recruitment)]
-    recruitment_indiv_gt <- population_genotypes[as.logical(indiv_recruitment)]
+    
+    fecund_genotypes <- population_genotypes[fecund_indivs]
+    recruitment_indiv_gt <- fecund_genotypes[as.logical(indiv_recruitment)]
     
     new_recruit <- as.integer(rnorm(n=sum(indiv_recruitment), mean = recruitment_size_mean, sd = recruitment_size_sd)); new_recruit[new_recruit<1]=1
     new_recruit_genotypes <- list()
