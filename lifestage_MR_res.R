@@ -71,7 +71,8 @@ LS_MR_2 <- ggplot() +
   scale_x_discrete(limits = c("Adult", "Subadult", "Seedling"))
 LS_MR_2
 
-LS_MR_pre + LS_MR + LS_MR_2
+LS_MR_pre + LS_MR + LS_MR_2 + plot_layout(axes = "collect") & 
+  scale_y_continuous(limits = c(min((final_df |> dplyr::filter(time > 990 & time < 1050))$MR), max((final_df |> dplyr::filter(time > 990 & time < 1050))$MR)))
 
 filename_1 <- paste0("~/Uni/Doctorate/Ch Natural selection/Simulation/MainPlot_Plots/Empirical_MR_",MR_death_impact, ".jpg")
 filename_2 <- paste0("~/Uni/Doctorate/Ch Natural selection/Simulation/MainPlot_Plots/Empirical_MR_",MR_death_impact, "_2.jpg")
