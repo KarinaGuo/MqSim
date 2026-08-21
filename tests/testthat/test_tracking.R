@@ -2,8 +2,13 @@ library(testthat)
 
 source("Functions/recruitment_functions_4.R")
 source("Functions/mortality_functions_MRintro_hill.R")
+source("Functions/genotype_phenotype_v1.R")
 
 test_that("Individual state is tracked correctly across time points", {
+  Phase_1_end <<- 100
+  effect_size <<- data.frame(V2=1, V3=1)
+  baseline_pheno <<- 0
+  SNPs_tested <<- c("rs1")
   
   # 1. Setup initial population with 1 individual
   initial_pop <- list(
@@ -41,11 +46,7 @@ test_that("Individual state is tracked correctly across time points", {
     MR_parents = 2, 
     population_genotypes = curr_AF_start, 
     indiv_count_start = 1, 
-    time_point = 1,
-    Phase_1_end = 100,
-    effect_size = data.frame(V2=1, V3=1),
-    baseline_pheno = 0,
-    SNPs_tested = c("rs1")
+    time_point = 1
   )
   
   curr_pop_recruited <- recruit_res$curr_pop

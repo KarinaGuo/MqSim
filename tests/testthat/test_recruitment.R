@@ -2,8 +2,13 @@ library(testthat)
 
 # Note: assuming working directory is project root
 source("Functions/recruitment_functions_4.R")
+source("Functions/genotype_phenotype_v1.R")
 
 test_that("recruit_rate behaves across a wide parameter space", {
+  Phase_1_end <<- 100
+  effect_size <<- data.frame(V2=1, V3=1)
+  baseline_pheno <<- 0
+  SNPs_tested <<- c("rs1")
   
   # Basic mock population 
   create_mock_pop <- function(size) {
@@ -61,11 +66,7 @@ test_that("recruit_rate behaves across a wide parameter space", {
                 MR_parents = 2, 
                 population_genotypes = gt, 
                 indiv_count_start = s, 
-                time_point = 1,
-                Phase_1_end = 100,
-                effect_size = data.frame(V2=1, V3=1),
-                baseline_pheno = 0,
-                SNPs_tested = c("rs1")
+                time_point = 1
               )
               
               # Should return a list with curr_pop and curr_AF
