@@ -340,6 +340,6 @@ for (time_point in start_time:time_max){
 
 all_objs <- ls()
 non_functions <- all_objs[sapply(all_objs, function(x) !is.function(get(x)))]
-save(list = non_functions, file = "Run_results/21082026_3_GAPIT_testparam.Rdata")
+save(list = non_functions, file = "Run_results/21082026_4_GAPIT_testparam.Rdata")
 
 # 

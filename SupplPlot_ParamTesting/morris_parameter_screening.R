@@ -113,10 +113,18 @@ results <- foreach(i = 1:nrow(param_matrix), .packages = c("tidyverse", "scales"
 }
 stopCluster(cl)
 
+# Save the raw simulation output metrics to a dataframe
+results_df <- cbind(as.data.frame(param_matrix), as.data.frame(results))
+colnames(results_df)[1:length(factors)] <- factors
+write.csv(results_df, "SupplPlot_ParamTesting/morris_simulation_results.csv", row.names = FALSE)
+cat("Simulation metrics written to SupplPlot_ParamTesting/morris_simulation_results.csv\n")
+
 cat("Simulations complete. Analyzing sensitivity...\n")
 
 # 3. Analyze Results
 metrics_to_plot <- c("pop_struct_after", "pop_size_after", "pop_growth_trend_after", "mean_MR_seedling_soon", "mean_MR_subadult_soon")
+
+morris_sensitivity_list <- list()
 
 for (metric in metrics_to_plot) {
   
@@ -130,9 +138,26 @@ for (metric in metrics_to_plot) {
   cat(sprintf("Sensitivity for %s:\n", metric))
   print(x_metric)
   
+  # Extract Morris sensitivity metrics (mu, mu*, sigma) to a dataframe
+  mu <- apply(x_metric$ee, 2, mean)
+  mu.star <- apply(abs(x_metric$ee), 2, mean)
+  sigma <- apply(x_metric$ee, 2, sd)
+  
+  morris_sensitivity_list[[metric]] <- data.frame(
+    Output_Metric = metric,
+    Parameter = factors,
+    mu = mu,
+    mu.star = mu.star,
+    sigma = sigma
+  )
+  
   #png(sprintf("SupplPlot_ParamTesting/Morris_Sensitivity_%s.png", metric), width=800, height=600)
   plot(x_metric, main=sprintf("Morris Method: Sensitivity of %s", metric))
   #dev.off()
 }
 
-cat("\nMorris Method screening complete. Plots saved to SupplPlot_ParamTesting/ \n")
+# Write sensitivity metrics to a dataframe
+morris_sensitivity_df <- do.call(rbind, morris_sensitivity_list)
+write.csv(morris_sensitivity_df, "SupplPlot_ParamTesting/morris_sensitivity_metrics.csv", row.names = FALSE)
+
+cat("\nMorris Method screening complete. Plots and metrics saved to SupplPlot_ParamTesting/ \n")
