@@ -42,7 +42,7 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
   
   # Both MR and age impacts
   if (MR_togg & age_togg) {
-    total_impact <- MR_impact + age_impact - (MR_impact * age_impact) 
+    total_impact <- MR_impact * age_impact 
   } else if (MR_togg & !age_togg) {
     total_impact <- MR_impact
   } else if (age_togg & !MR_togg) {
