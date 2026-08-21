@@ -1,9 +1,8 @@
 ## Input parameters for high MR pressure sites
 
 n_snps = 2529
-run_from_phase1save = TRUE #loads saved image to save start up time
 save_phase1 = FALSE # save the R image of the timepoint at the start of Phase_1_end
-
+run_from_phase1save = TRUE # loads saved image to save start up time
 
   ## Population parameters
 population_size = 1000
@@ -36,7 +35,7 @@ age_recruit_impact_value = 0.8 # Range from 0.01-1. Takes the exponential of thi
   #age_impact <- age_scaled ^ age_recruit_impact_val
 rec_age_shift = 100 # age shift, lower than this age recruitment for the individual is penalised
 MR_rec_toggle = T # toggle on/off of MR affect on recruitment
-MR_recruit_impact = 0.1 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance, closer to 1 = lower impact (higher val = higher recruitment under the same variables); MR_impact <- 1 - recruitment_indivs_MR ^ MR_recruit_impact_val
+MR_recruit_impact = 0.1 # impact of MR on recruitment, a multiplier of the individual MR to reduce recruitment chance, closer to 1 = lower impact; MR_impact <- 1 - recruitment_indivs_MR ^ MR_recruit_impact_val
 density_recruit_toggle = F # Reduces density recruitment by the proportion of individuals in pop vs maximum carrying capacity
 MR_inherit_par_num = 2 # Number of parents to inherit MR from (takes mean of two fecund individuals to skew inheritance)
 MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
@@ -59,6 +58,6 @@ dist_age_impact = 10 # Impact of age on disturbance 1/(1 + exp((age-val) / 10))
 
   ## Simulation parameters
 time_max = 1051 # how long to run sim for
-output_timept = time_max/5 # How often to report visual statistics
+output_timept = floor(time_max/5) # How often to report visual statistics
 Phase_1_end = MR_timepoint-10
 timepoint_pop_grab = c(seq(from=Phase_1_end-1, to=MR_timepoint+50)) # Saves population at the end of the timepoints (post-recruitment + mortality events) - note time will be +1 than indicated as it is past incident events - saved in object pop_timepoints (list of lists)

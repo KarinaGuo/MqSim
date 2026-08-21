@@ -193,15 +193,6 @@ for (time_point in start_time:time_max){
   
   # curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
   
-  if (time_point < Phase_1_end){
-    curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
-  } else {
-    if (time_point == Phase_1_end) {cat("Running GAPIT as pheno prediction \n")}
-    invisible(capture.output(
-      curr_pop_start$MR <- Phenotype_from_genotype_GAPIT(individuals_GT = curr_AF_start, SNPs_tested = SNPs_tested)
-    ))
-  }
-  
   if((length(curr_pop_start$indiv_ID)==0)) {
     stop("All dead at time ", time_point, "\n")
   } else{
