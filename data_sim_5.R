@@ -189,6 +189,10 @@ for (time_point in start_time:time_max){
       rbinom(n = length(SNP_AF_Histset$frequency), size = 2, prob = SNP_AF_Histset$frequency)
       
     })
+    
+    invisible(capture.output(
+      curr_pop_start$MR <- Phenotype_from_genotype_GAPIT(individuals_GT = curr_AF_start, SNPs_tested = SNPs_tested)
+    ))
   } 
   
   # curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
@@ -334,5 +338,8 @@ for (time_point in start_time:time_max){
   }
 }
 
-#save.image("Run_results/17082026_GAPIT_testparam.Rdata")
+all_objs <- ls()
+non_functions <- all_objs[sapply(all_objs, function(x) !is.function(get(x)))]
+save(list = non_functions, file = "Run_results/21082026_3_GAPIT_testparam.Rdata")
+
 # 

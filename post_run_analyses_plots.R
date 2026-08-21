@@ -1,5 +1,5 @@
 #source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/data_sim_5.R")
-load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/20082026_3_GAPIT_testparam.Rdata")
+load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/21082026_GAPIT_testparam.Rdata")
 
 library(tidyverse)
 theme_set(theme_bw())
