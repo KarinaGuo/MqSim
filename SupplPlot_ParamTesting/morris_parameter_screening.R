@@ -1,4 +1,6 @@
 # Install necessary packages if missing
+#docker run -it --rm -v /data/karina/Simulation/MqSim:/data -w /data mqsim R
+
 library(sensitivity)
 library(tidyverse)
 library(doParallel)
@@ -7,32 +9,32 @@ library(foreach)
 set.seed(123)
 
 ## Load in parameters
-source("/data/Configuration_10.txt")
-source("/data/Functions/mortality_functions_MRintro_hill.R")
-source("/data/Functions/mortality_functions_hill.R")
-source("/data/Functions/recruitment_functions_4.R")
-source("/data/Functions/disturbance_functions.R")
-source("/data/Functions/genotype_phenotype_v1.R")
-source("/data/gapit_functions_080425.txt")
-source("/data/GP_functs.R")
-source("/data/SupplPlot_ParamTesting/parameter_testing_res_calc_functs.R")
+source("Configuration_10.txt")
+source("Functions/mortality_functions_MRintro_hill.R")
+source("Functions/mortality_functions_hill.R")
+source("Functions/recruitment_functions_4.R")
+source("Functions/disturbance_functions.R")
+source("Functions/genotype_phenotype_v1.R")
+source("gapit_functions_080425.txt")
+source("GP_functs.R")
+source("SupplPlot_ParamTesting/parameter_testing_res_calc_functs.R")
 
 ## GAPIT pre-processing (run once outside the loop to save time)
-effect_size <- read.csv("/data/Data_AlleleFrequency/SNP_eff_dom_size.csv", header = F) 
+effect_size <- read.csv("Data_AlleleFrequency/SNP_eff_dom_size.csv", header = F) 
 effect_size <- effect_size[!grepl("climate", effect_size$V1), ] %>% 
   arrange(V2, desc = T) %>% 
   slice_head(n=n_snps)
 SNPs_tested <- effect_size$V1
 
-SNP_AF_Histset <- read.csv("/data/Data_AlleleFrequency/SNP_AF.csv", header = T) %>%
+SNP_AF_Histset <- read.csv("Data_AlleleFrequency/SNP_AF.csv", header = T) %>%
   filter(locus %in% effect_size$V1)
 
 effect_size$V2 <- effect_size$V2 * 2
 
-log_file="/data/Data_SimGAPITS/pred_GAPIT_log.txt"
-out_dir="/data/Data_SimGAPITS"
-gt_datafile = "/data/Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt"
-input_phenodatafile="/data/Data_SimGAPITS/mq_phenotypes.csv"
+log_file="Data_SimGAPITS/pred_GAPIT_log.txt"
+out_dir="Data_SimGAPITS"
+gt_datafile = "Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt"
+input_phenodatafile="Data_SimGAPITS/mq_phenotypes.csv"
 
 df_base <- read.csv(gt_datafile, sep = "\t", header = T) %>% filter(rs. %in% SNPs_tested)
 hapmap_meta <- df_base[,1:11]
@@ -67,15 +69,15 @@ cat(sprintf("Running simulations in parallel across %d cores...\n", cores))
 results <- foreach(i = 1:nrow(param_matrix), .packages = c("tidyverse", "scales"), .export = c("effect_size", "SNP_AF_Histset", "SNPs_tested"), .combine = rbind) %dopar% {
   
   # Source functions and config inside worker
-  source("/data/Configuration_10.txt")
-  source("/data/Functions/mortality_functions_MRintro_hill.R")
-  source("/data/Functions/mortality_functions_hill.R")
-  source("/data/Functions/recruitment_functions_4.R")
-  source("/data/Functions/disturbance_functions.R")
-  source("/data/Functions/genotype_phenotype_v1.R")
-  source("/data/gapit_functions_080425.txt")
-  source("/data/GP_functs.R")
-  source("/data/SupplPlot_ParamTesting/parameter_testing_res_calc_functs.R")
+  source("Configuration_10.txt")
+  source("Functions/mortality_functions_MRintro_hill.R")
+  source("Functions/mortality_functions_hill.R")
+  source("Functions/recruitment_functions_4.R")
+  source("Functions/disturbance_functions.R")
+  source("Functions/genotype_phenotype_v1.R")
+  source("gapit_functions_080425.txt")
+  source("GP_functs.R")
+  source("SupplPlot_ParamTesting/parameter_testing_res_calc_functs.R")
   
   # Map parameters
   p <- param_matrix[i, ]
@@ -91,7 +93,7 @@ results <- foreach(i = 1:nrow(param_matrix), .packages = c("tidyverse", "scales"
   
   # Run sim
   tryCatch({
-    source("/data/SupplPlot_ParamTesting/data_sim_5_versParamTest.R", local = TRUE)
+    source("SupplPlot_ParamTesting/data_sim_5_versParamTest.R", local = TRUE)
     
     # Calculate metrics
     res <- calculate_timepoint_vals(pop_timepoints)
@@ -116,7 +118,7 @@ stopCluster(cl)
 # Save the raw simulation output metrics to a dataframe
 results_df <- cbind(as.data.frame(param_matrix), as.data.frame(results))
 colnames(results_df)[1:length(factors)] <- factors
-write.csv(results_df, "/data/SupplPlot_ParamTesting/morris_simulation_results.csv", row.names = FALSE)
+write.csv(results_df, "SupplPlot_ParamTesting/morris_simulation_results.csv", row.names = FALSE)
 cat("Simulation metrics written to SupplPlot_ParamTesting/morris_simulation_results.csv\n")
 
 cat("Simulations complete. Analyzing sensitivity...\n")
@@ -158,6 +160,6 @@ for (metric in metrics_to_plot) {
 
 # Write sensitivity metrics to a dataframe
 morris_sensitivity_df <- do.call(rbind, morris_sensitivity_list)
-write.csv(morris_sensitivity_df, "/data/SupplPlot_ParamTesting/morris_sensitivity_metrics.csv", row.names = FALSE)
+write.csv(morris_sensitivity_df, "SupplPlot_ParamTesting/morris_sensitivity_metrics.csv", row.names = FALSE)
 
 cat("\nMorris Method screening complete. Plots and metrics saved to SupplPlot_ParamTesting/ \n")
