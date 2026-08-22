@@ -49,7 +49,9 @@ RUN install2.r --error --skipinstalled \
     gplots
 
 # dartR is installed separately in case of complex spatial dependencies.
-RUN install2.r --error --skipinstalled dartR
+RUN install2.r --error --skipinstalled BiocManager \
+    && R -e "BiocManager::install('SNPRelate', ask = FALSE, update = FALSE)" \
+    && install2.r --error --skipinstalled dartR
 
 # Set the working directory inside the container
 WORKDIR /project
