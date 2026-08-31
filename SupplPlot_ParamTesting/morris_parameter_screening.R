@@ -3,8 +3,7 @@
 
 library(sensitivity)
 library(tidyverse)
-library(doParallel)
-library(foreach)
+library(scales)
 
 set.seed(123)
 
@@ -59,28 +58,23 @@ r <- 20 # trajectories (20 * (9+1) = 200 runs)
 x <- morris(model = NULL, factors = factors, r = r, design = list(type = "oat", levels = 5, grid.jump = 3), binf = binfs, bsup = bsups)
 param_matrix <- x$X
 
-# 2. Parallel Evaluation
-cores <- max(1, parallel::detectCores() - 1)
-cl <- makeCluster(cores)
-registerDoParallel(cl)
+checkpoint_file <- "SupplPlot_ParamTesting/morris_checkpoint.RData"
+start_iter <- 1
 
-cat(sprintf("Running simulations in parallel across %d cores...\n", cores))
+if (file.exists(checkpoint_file)) {
+  load(checkpoint_file)
+  start_iter <- length(results_list) + 1
+  cat(sprintf("Resuming from checkpoint at iteration %d...\n", start_iter))
+} else {
+  results_list <- list()
+}
 
-results <- foreach(i = 1:nrow(param_matrix), .packages = c("tidyverse", "scales"), .export = c("effect_size", "SNP_AF_Histset", "SNPs_tested"), .combine = rbind) %dopar% {
+cat("Running simulations sequentially...\n")
+
+for (i in start_iter:nrow(param_matrix)) {
   
-  # Source functions and config inside worker
-  source("Configuration_10.txt")
-  source("Functions/mortality_functions_MRintro_hill.R")
-  source("Functions/mortality_functions_hill.R")
-  source("Functions/recruitment_functions_4.R")
-  source("Functions/disturbance_functions.R")
-  source("Functions/genotype_phenotype_v1.R")
-  source("gapit_functions_080425.txt")
-  source("GP_functs.R")
-  source("SupplPlot_ParamTesting/parameter_testing_res_calc_functs.R")
-  
-  # Map parameters
   p <- param_matrix[i, ]
+  
   MR_mean <- p[1]
   MR_sd <- p[2]
   age_impact <- p[3]
@@ -93,7 +87,7 @@ results <- foreach(i = 1:nrow(param_matrix), .packages = c("tidyverse", "scales"
   
   # Run sim
   tryCatch({
-    source("SupplPlot_ParamTesting/data_sim_5_versParamTest.R", local = TRUE)
+    suppressWarnings(suppressMessages(source("SupplPlot_ParamTesting/data_sim_5_versParamTest.R", local = TRUE)))
     
     # Calculate metrics
     res <- calculate_timepoint_vals(pop_timepoints)
@@ -103,17 +97,32 @@ results <- foreach(i = 1:nrow(param_matrix), .packages = c("tidyverse", "scales"
     seedling_soon <- LS_res %>% filter(timeperiod == "Soon", Lifestage == "Seedling")
     subadult_soon <- LS_res %>% filter(timeperiod == "Soon", Lifestage == "Subadult")
     
-    c(pop_struct_after = as.numeric(after_res$pop_struct), 
+    results_list[[i]] <- c(pop_struct_after = as.numeric(after_res$pop_struct), 
       pop_size_after = as.numeric(after_res$pop_size),
       pop_growth_trend_after = as.numeric(after_res$pop_growth_trend),
       mean_MR_seedling_soon = as.numeric(seedling_soon$mean_MR),
       mean_MR_subadult_soon = as.numeric(subadult_soon$mean_MR))
+      
   }, error = function(e) {
-    # If population died
-    c(pop_struct_after = 0, pop_size_after = 0, pop_growth_trend_after = 0, mean_MR_seedling_soon = NA, mean_MR_subadult_soon = NA)
+    # Print error to console during sequential runs for easy debugging
+    message(sprintf("Error in iteration %d: %s", i, e$message))
+  
+    results_list[[i]] <- c(pop_struct_after = 0, pop_size_after = 0, pop_growth_trend_after = 0, mean_MR_seedling_soon = NA, mean_MR_subadult_soon = NA)
   })
+  
+  # Checkpoint every 10 runs
+  if (i %% 10 == 0) {
+    cat(sprintf("Checkpointing at iteration %d...\n", i))
+    save(results_list, file = checkpoint_file)
+    
+    temp_results <- do.call(rbind, results_list)
+    temp_df <- cbind(as.data.frame(param_matrix[1:i, , drop=FALSE]), as.data.frame(temp_results))
+    colnames(temp_df)[1:length(factors)] <- factors
+    write.csv(temp_df, sprintf("SupplPlot_ParamTesting/morris_checkpoint_iter_%d.csv", i), row.names = FALSE)
+  }
 }
-stopCluster(cl)
+
+results <- do.call(rbind, results_list)
 
 # Save the raw simulation output metrics to a dataframe
 results_df <- cbind(as.data.frame(param_matrix), as.data.frame(results))
