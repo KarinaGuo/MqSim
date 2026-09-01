@@ -56,11 +56,11 @@ het_codes <- iupac_dict[paste0(ref_alleles, alt_alleles)]
 
 
 # Define Morris design
-factors <- c("MR_mean", "MR_sd", "age_impact", "MR_death_impact", "MR_age_impact", "age_recruit_impact_value", "MR_recruit_impact", "recruitment_const", "dist_imp")
-binfs <- c(0, 0, 0.1, 0, 5, 0.01, 0.01, 0.002, 0)
-bsups <- c(1, 1, 1.0, 1, 20, 1.0, 1.0, 0.007, 1) # dist_imp is boolean, we'll treat >0.5 as TRUE
+factors <- c("age_impact", "MR_death_impact", "MR_age_impact", "age_recruit_impact_value", "MR_recruit_impact", "recruitment_const")
+binfs <- c(0.1, 0.05, 5, 0.01, 0.01, 0.002)
+bsups <- c(1.0, 1, 20, 1.0, 1.0, 0.007) 
 
-r <- 20 # trajectories (20 * (9+1) = 200 runs)
+r <- 10 # trajectories (10 * (6+1) = 70 runs)
 x <- morris(model = NULL, factors = factors, r = r, design = list(type = "oat", levels = 5, grid.jump = 3), binf = binfs, bsup = bsups)
 param_matrix <- x$X
 
@@ -83,21 +83,17 @@ for (iter in start_iter:nrow(param_matrix)) {
   
   p <- param_matrix[iter, ]
   
-  MR_mean <- p[1]
-  MR_sd <- p[2]
-  age_impact <- p[3]
-  MR_death_impact <- p[4]
-  MR_age_impact <- p[5]
-  age_recruit_impact_value <- p[6]
-  MR_recruit_impact <- p[7]
-  recruitment_const <- p[8]
-  dist_imp <- p[9] > 0.5
+  age_impact <- p[1]
+  MR_death_impact <- p[2]
+  MR_age_impact <- p[3]
+  age_recruit_impact_value <- p[4]
+  MR_recruit_impact <- p[5]
+  recruitment_const <- p[6]
   
   # Run sim
   tryCatch({
     # env <- environment()
-    suppressWarnings(suppressMessages(source("SupplPlot_ParamTesting/data_sim_5_versParamTest.R", local = TRUE)))
-    
+    suppressWarnings(suppressMessages(source("SupplPlot_ParamTesting/data_sim_5_versParamTest.R", local = TRUE)))    
     # Calculate metrics
     res <- calculate_timepoint_vals(pop_timepoints)
     LS_res <- calculate_timepoint_LSvals(pop_timepoints)
