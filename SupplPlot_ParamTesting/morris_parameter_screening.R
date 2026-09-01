@@ -95,8 +95,8 @@ for (iter in start_iter:nrow(param_matrix)) {
   
   # Run sim
   tryCatch({
-    env <- environment()
-    suppressWarnings(suppressMessages(source("SupplPlot_ParamTesting/data_sim_5_versParamTest.R", local = env)))
+    # env <- environment()
+    suppressWarnings(suppressMessages(source("SupplPlot_ParamTesting/data_sim_5_versParamTest.R", local = TRUE)))
     
     # Calculate metrics
     res <- calculate_timepoint_vals(pop_timepoints)
