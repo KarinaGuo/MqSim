@@ -1,0 +1,914 @@
+Running simulations sequentially...
+Rewriting AF start with SNP_AF_Histset 
+Error in iteration 1: could not find function "run_genomic_prediction_simulation"
+Rewriting AF start with SNP_AF_Histset 
+Error in iteration 1: could not find function "run_genomic_prediction_simulation"
+Rewriting AF start with SNP_AF_Histset 
+Error in iteration 1: could not find function "run_genomic_prediction_simulation"
+Rewriting AF start with SNP_AF_Histset 
+Error in iteration 1: could not find function "run_genomic_prediction_simulation"
+
+Error: object 'run_genomic_prediction_simulation' not found
+Warning message:
+Expected 2 pieces. Additional pieces discarded in 5 rows [637, 774, 1833, 1844, 1866]. 
+Running simulations sequentially...
+Running GAPIT as pheno prediction 
+Error in iteration 34: Must group by variables found in `.data`.
+Running GAPIT as pheno prediction 
+Error in iteration 34: Must group by variables found in `.data`.
+Running GAPIT as pheno prediction 
+
+Error in list.files(D) : invalid 'path' argument
+[1] "GAPIT.Genotype.map.txt"          "GAPIT.Genotype.Numerical.txt"   
+[3] "mq_phenotypes.csv"               "pred_GAPIT_log.txt"             
+[5] "prediction_gt_simulated_run.csv" "Report-DMela25-10229"           
+character(0)
+character(0)
+character(0)
+[1] "GAPIT.Genotype.map.txt"          "GAPIT.Genotype.Numerical.txt"   
+[3] "mq_phenotypes.csv"               "pred_GAPIT_log.txt"             
+[5] "prediction_gt_simulated_run.csv" "Report-DMela25-10229"           
+Error in list.dir() : could not find function "list.dir"
+ [1] "Age imp val.docx"                                   
+ [2] "Archiv"                                             
+ [3] "Configuration_10.txt"                               
+ [4] "Data_AlleleFrequency"                               
+ [5] "Data_AlleleFrequencyprediction_gt_simulated_run.csv"
+ [6] "Data_AlleleFrequencyprediction_gt.csv"              
+ [7] "Data_climate"                                       
+ [8] "data_sim_3_ensemblerun.R"                           
+ [9] "data_sim_3_maladaptation.R"                         
+[10] "data_sim_3_singlerun.R"                             
+[11] "data_sim_4.R"                                       
+[12] "data_sim_5.R"                                       
+[13] "data_sim_6.R"                                       
+[14] "Data_SimGAPITS"                                     
+[15] "Dockerfile"                                         
+[16] "Downsampling_SNP_effect"                            
+[17] "empirical_recruitment.R"                            
+[18] "ExtRuns_GeneticDrift"                               
+[19] "ExtRuns_ShinyAppRuns"                               
+[20] "Final_Configs_for_Publ"                             
+[21] "Functions"                                          
+[22] "Functions_PostRunAnalyses"                          
+[23] "gapit_functions_080425.txt"                         
+[24] "GP_functs.R"                                        
+[25] "lifestage_MR_res.R"                                 
+[26] "MainPlot_Intervention"                              
+[27] "MainPlot_Maladaptation"                             
+[28] "MainPlot_MR_tests"                                  
+[29] "MainPlot_Plots"                                     
+[30] "Mquin_samples_pheno.csv"                            
+[31] "Phase_1_end_save.Rdata"                             
+[32] "post_run_analyses_plots.R"                          
+[33] "post_run_critical_juncture.R"                       
+[34] "post_run_SNPlineplots.R"                            
+[35] "README.md"                                          
+[36] "Run_results"                                        
+[37] "SupplPlot_ParamTesting"                             
+[38] "SupplPlot_SupplementaryRuns"                        
+[39] "tests"                                              
+ [1] "bin_counts.csv"                               
+ [2] "Checkpoints"                                  
+ [3] "data_sim_3_versParamTest.R"                   
+ [4] "data_sim_5_versParamTest.R"                   
+ [5] "iterate_through_sets.R"                       
+ [6] "iteration_res_visualisation.R"                
+ [7] "morris_parameter_screening.R"                 
+ [8] "morris_screening_log.txt"                     
+ [9] "Morris_Sensitivity_mean_MR_seedling_soon.png" 
+[10] "Morris_Sensitivity_mean_MR_subadult_soon.png" 
+[11] "Morris_Sensitivity_pop_growth_trend_after.png"
+[12] "Morris_Sensitivity_pop_size_after.png"        
+[13] "Morris_Sensitivity_pop_struct_after.png"      
+[14] "MR_int_MR_1.csv"                              
+[15] "MR_int_MR_2.csv"                              
+[16] "MR_int_MR_3.csv"                              
+[17] "MR_int_MR_4.csv"                              
+[18] "MR_int_MR_5.csv"                              
+[19] "MR_int_MR_6.csv"                              
+[20] "MR_int_MR_7_Base.csv"                         
+[21] "MR_int_MR_7.csv"                              
+[22] "MR_int_MR_8_Base.csv"                         
+[23] "MR_int_MR_8.csv"                              
+[24] "param_sets_2026-01-03.csv"                    
+[25] "parameter_testing_res_calc_functs.R"          
+[26] "run_log_2026-01-02.txt"                       
+[27] "run_res_2026-01-03.csv"                       
+[28] "run_res_LS_2026-01-03.csv"                    
+[29] "run_status_2026-01-03.csv"                    
+[30] "SIZE_int_MR_1.csv"                            
+[31] "SIZE_int_MR_2.csv"                            
+[32] "SIZE_int_MR_3.csv"                            
+[33] "SIZE_int_MR_4.csv"                            
+[34] "SIZE_int_MR_5.csv"                            
+[35] "SIZE_int_MR_6.csv"                            
+[36] "SIZE_int_MR_7_Base.csv"                       
+[37] "SIZE_int_MR_7.csv"                            
+[38] "SIZE_int_MR_8_Base.csv"                       
+[39] "SIZE_int_MR_8.csv"                            
+
+Error: unexpected ')' in "setwd*()"
+Error: object '..' not found
+[1] "GAPIT.Genotype.map.txt"          "GAPIT.Genotype.Numerical.txt"   
+[3] "mq_phenotypes.csv"               "pred_GAPIT_log.txt"             
+[5] "prediction_gt_simulated_run.csv" "Report-DMela25-10229"           
+Error: unexpected ')' in "setwd(../)"
+[1] "GAPIT.Genotype.map.txt"          "GAPIT.Genotype.Numerical.txt"   
+[3] "mq_phenotypes.csv"               "pred_GAPIT_log.txt"             
+[5] "prediction_gt_simulated_run.csv" "Report-DMela25-10229"           
+ [1] "Age imp val.docx"                                   
+ [2] "Archiv"                                             
+ [3] "Configuration_10.txt"                               
+ [4] "Data_AlleleFrequency"                               
+ [5] "Data_AlleleFrequencyprediction_gt_simulated_run.csv"
+ [6] "Data_AlleleFrequencyprediction_gt.csv"              
+ [7] "Data_climate"                                       
+ [8] "data_sim_3_ensemblerun.R"                           
+ [9] "data_sim_3_maladaptation.R"                         
+[10] "data_sim_3_singlerun.R"                             
+[11] "data_sim_4.R"                                       
+[12] "data_sim_5.R"                                       
+[13] "data_sim_6.R"                                       
+[14] "Data_SimGAPITS"                                     
+[15] "Dockerfile"                                         
+[16] "Downsampling_SNP_effect"                            
+[17] "empirical_recruitment.R"                            
+[18] "ExtRuns_GeneticDrift"                               
+[19] "ExtRuns_ShinyAppRuns"                               
+[20] "Final_Configs_for_Publ"                             
+[21] "Functions"                                          
+[22] "Functions_PostRunAnalyses"                          
+[23] "gapit_functions_080425.txt"                         
+[24] "GP_functs.R"                                        
+[25] "lifestage_MR_res.R"                                 
+[26] "MainPlot_Intervention"                              
+[27] "MainPlot_Maladaptation"                             
+[28] "MainPlot_MR_tests"                                  
+[29] "MainPlot_Plots"                                     
+[30] "Mquin_samples_pheno.csv"                            
+[31] "Phase_1_end_save.Rdata"                             
+[32] "post_run_analyses_plots.R"                          
+[33] "post_run_critical_juncture.R"                       
+[34] "post_run_SNPlineplots.R"                            
+[35] "README.md"                                          
+[36] "Run_results"                                        
+[37] "SupplPlot_ParamTesting"                             
+[38] "SupplPlot_SupplementaryRuns"                        
+[39] "tests"                                              
+[1] "/data"
+Running simulations sequentially...
+Running iteration 1...
+Running GAPIT as pheno prediction 
+Error in iteration 1: Must group by variables found in `.data`.
+Running iteration 2...
+Running GAPIT as pheno prediction 
+Error in iteration 2: Must group by variables found in `.data`.
+Running iteration 3...
+Running GAPIT as pheno prediction 
+Error in iteration 3: All dead at time 1376
+
+Running iteration 4...
+Running GAPIT as pheno prediction 
+Error in iteration 4: All dead at time 1332
+
+Running iteration 5...
+Running GAPIT as pheno prediction 
+Error in iteration 5: All dead at time 1191
+
+Running iteration 6...
+Running GAPIT as pheno prediction 
+Error in iteration 6: All dead at time 1191
+
+Running iteration 7...
+Running GAPIT as pheno prediction 
+Error in iteration 7: All dead at time 1191
+
+Running iteration 8...
+Running GAPIT as pheno prediction 
+Error in iteration 8: Must group by variables found in `.data`.
+Running iteration 9...
+Running GAPIT as pheno prediction 
+Error in iteration 9: missing value where TRUE/FALSE needed
+Running iteration 10...
+Running GAPIT as pheno prediction 
+Error in iteration 10: Must group by variables found in `.data`.
+Checkpointing at iteration 10...
+Error in data.frame(..., check.names = FALSE) : 
+  arguments imply differing number of rows: 10, 0
+Error in data.frame(..., check.names = FALSE) : 
+  arguments imply differing number of rows: 200, 0
+Error: object 'results_df' not found
+Error in eval(expr, p) : object 'results_df' not found
+Simulation metrics written to SupplPlot_ParamTesting/morris_simulation_results.csv
+[1] 200
+NULL
+NULL
+list()
+[1] 10
+[1] 1
+Resuming from checkpoint at iteration 1...
+Running simulations sequentially...
+Running iteration 1...
+Running GAPIT as pheno prediction 
+Running iteration 2...
+Running GAPIT as pheno prediction 
+Running iteration 3...
+Running GAPIT as pheno prediction 
+Error in iteration 3: All dead at time 1376
+
+Running iteration 4...
+Running GAPIT as pheno prediction 
+Error in iteration 4: All dead at time 1332
+
+Running iteration 5...
+Running GAPIT as pheno prediction 
+Error in iteration 5: All dead at time 1191
+
+Running iteration 6...
+Running GAPIT as pheno prediction 
+Error in iteration 6: All dead at time 1191
+
+Running iteration 7...
+Running GAPIT as pheno prediction 
+Error in iteration 7: All dead at time 1191
+
+Running iteration 8...
+Running GAPIT as pheno prediction 
+Running iteration 9...
+Running GAPIT as pheno prediction 
+Error in iteration 9: missing value where TRUE/FALSE needed
+Running iteration 10...
+Running GAPIT as pheno prediction 
+Checkpointing at iteration 10...
+Running iteration 11...
+Running GAPIT as pheno prediction 
+
+
+Rerunning 02092026 0749AMError in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'Data_AlleleFrequency/SNP_eff_dom_size.csv': No such file or directory
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'Data_AlleleFrequency/SNP_AF.csv': No such file or directory
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'Data_SimGAPITS/Report-DMela25-10229/Report_DMela25-10229_RegularGenotyping/Report_DMela25-10229_GenotypingSamples_trainingconcat_sort.hapmap.hmp.txt': No such file or directory
+Warning message:
+Expected 2 pieces. Additional pieces discarded in 5 rows [637, 774, 1833, 1844, 1866]. 
+Running simulations sequentially...
+Running iteration 1...
+Error in iteration 1: cannot open the connection
+Running iteration 2...
+Error in iteration 2: cannot open the connection
+Running iteration 3...
+Error in iteration 3: cannot open the connection
+Running iteration 4...
+Error in iteration 4: cannot open the connection
+Running iteration 5...
+Error in iteration 5: cannot open the connection
+Running iteration 6...
+Error in iteration 6: cannot open the connection
+Running iteration 7...
+Error in iteration 7: cannot open the connection
+Running iteration 8...
+Error in iteration 8: cannot open the connection
+Running iteration 9...
+Error in iteration 9: cannot open the connection
+Running iteration 10...
+Error in iteration 10: cannot open the connection
+Checkpointing at iteration 10...
+Error in fix.by(by.y, y) : 'by' must specify a uniquely valid column
+Error in fix.by(by.y, y) : 'by' must specify a uniquely valid column
+Error in fix.by(by.y, y) : 'by' must specify a uniquely valid column
+Error in eval(expr, p) : object 'results_df' not found
+Error in eval(expr, p) : object 'LS_results_df' not found
+Simulation metrics written to SupplPlot_ParamTesting/
+
+
+Running iteration 1...
+Error in iteration 1: cannot open the connection
+Running iteration 2...
+Error in iteration 2: cannot open the connection
+Running iteration 3...
+Error in iteration 3: cannot open the connection
+Running iteration 4...
+Error in iteration 4: cannot open the connection
+Running iteration 5...
+Error in iteration 5: cannot open the connection
+Running iteration 6...
+Error in iteration 6: cannot open the connection
+Running iteration 7...
+Error in iteration 7: cannot open the connection
+Running iteration 8...
+Error in iteration 8: cannot open the connection
+Running iteration 9...
+Error in iteration 9: cannot open the connection
+Running iteration 10...
+Error in iteration 10: cannot open the connection
+Checkpointing at iteration 10...
+Error in fix.by(by.y, y) : 'by' must specify a uniquely valid column
+[1] 70
+recruitment_const 
+          0.00325 
+Running iteration 1...
+Error in iteration 1: cannot open the connection
+Running iteration 2...
+Error in iteration 2: cannot open the connection
+Running iteration 3...
+Error in iteration 3: cannot open the connection
+Running iteration 4...
+Error in iteration 4: cannot open the connection
+Running iteration 5...
+Error in iteration 5: cannot open the connection
+Running iteration 6...
+Error in iteration 6: cannot open the connection
+Running iteration 7...
+Error in iteration 7: cannot open the connection
+Running iteration 8...
+Error in iteration 8: cannot open the connection
+Running iteration 9...
+Error in iteration 9: cannot open the connection
+Running iteration 10...
+Error in iteration 10: cannot open the connection
+Checkpointing at iteration 10...
+Error in fix.by(by.y, y) : 'by' must specify a uniquely valid column
+Error in file(filename, "r", encoding = encoding) : 
+  cannot open the connection
+In addition: Warning message:
+In file(filename, "r", encoding = encoding) :
+  cannot open file 'SupplPlot_ParamTesting/data_sim_5_versParamTest.R': No such file or directory
+Error: object 'SupplPlot_ParamTesting' not found
+
+Restarting 
+Warning message:
+Expected 2 pieces. Additional pieces discarded in 5 rows [637, 774, 1833, 1844, 1866]. 
+Resuming from checkpoint at iteration 1...
+Running simulations sequentially...
+Running iteration 1...
+Running GAPIT as pheno prediction 
+Running iteration 2...
+Running GAPIT as pheno prediction 
+Running iteration 3...
+Running GAPIT as pheno prediction 
+Error in iteration 3: All dead at time 1098
+
+Running iteration 4...
+Running GAPIT as pheno prediction 
+Error in iteration 4: All dead at time 1062
+
+Running iteration 5...
+Running GAPIT as pheno prediction 
+Error in iteration 5: All dead at time 1098
+
+Running iteration 6...
+Running GAPIT as pheno prediction 
+Error in iteration 6: All dead at time 1106
+
+Running iteration 7...
+Running GAPIT as pheno prediction 
+Error in iteration 7: All dead at time 1096
+
+Running iteration 8...
+Running GAPIT as pheno prediction 
+Running iteration 9...
+Running GAPIT as pheno prediction 
+Running iteration 10...
+Running GAPIT as pheno prediction 
+Error in iteration 10: All dead at time 1180
+
+Checkpointing at iteration 10...
+Running iteration 11...
+Running GAPIT as pheno prediction 
+Error in iteration 11: All dead at time 1244
+
+Running iteration 12...
+Running GAPIT as pheno prediction 
+Running iteration 13...
+Running GAPIT as pheno prediction 
+Running iteration 14...
+Running GAPIT as pheno prediction 
+Error in iteration 14: Can't compute indices.
+Running iteration 15...
+Running GAPIT as pheno prediction 
+Running iteration 16...
+Running GAPIT as pheno prediction 
+Error in iteration 16: Can't compute indices.
+Running iteration 17...
+Running GAPIT as pheno prediction 
+Error in iteration 17: All dead at time 1110
+
+Running iteration 18...
+Running GAPIT as pheno prediction 
+Running iteration 19...
+Running GAPIT as pheno prediction 
+Running iteration 20...
+Running GAPIT as pheno prediction 
+Error in iteration 20: Can't compute indices.
+Checkpointing at iteration 20...
+Running iteration 21...
+Running GAPIT as pheno prediction 
+Error in iteration 21: Can't compute indices.
+Running iteration 22...
+Running GAPIT as pheno prediction 
+Running iteration 23...
+Running GAPIT as pheno prediction 
+Error in iteration 23: number of iterations exceeded maximum of 50
+Running iteration 24...
+Running GAPIT as pheno prediction 
+Error in iteration 24: All dead at time 1433
+
+Running iteration 25...
+Running GAPIT as pheno prediction 
+Error in iteration 25: All dead at time 1112
+
+Running iteration 26...
+Running GAPIT as pheno prediction 
+Error in iteration 26: All dead at time 1467
+
+Running iteration 27...
+Running GAPIT as pheno prediction 
+Running iteration 28...
+Running GAPIT as pheno prediction 
+Running iteration 29...
+Running GAPIT as pheno prediction 
+Running iteration 30...
+Running GAPIT as pheno prediction 
+Checkpointing at iteration 30...
+Running iteration 31...
+Running GAPIT as pheno prediction 
+Error in iteration 31: All dead at time 1179
+
+Running iteration 32...
+Running GAPIT as pheno prediction 
+Error in iteration 32: All dead at time 1244
+
+Running iteration 33...
+Running GAPIT as pheno prediction 
+Error in iteration 33: All dead at time 1126
+
+Running iteration 34...
+Running GAPIT as pheno prediction 
+Error in iteration 34: All dead at time 1414
+
+Running iteration 35...
+Running GAPIT as pheno prediction 
+Running iteration 36...
+Running GAPIT as pheno prediction 
+Running iteration 37...
+Running GAPIT as pheno prediction 
+Running iteration 38...
+Running GAPIT as pheno prediction 
+Error in iteration 38: number of iterations exceeded maximum of 50
+Running iteration 39...
+Running GAPIT as pheno prediction 
+Running iteration 40...
+Running GAPIT as pheno prediction 
+Checkpointing at iteration 40...
+Running iteration 41...
+Running GAPIT as pheno prediction 
+Error in iteration 41: All dead at time 1139
+
+Running iteration 42...
+Running GAPIT as pheno prediction 
+Error in iteration 42: All dead at time 1254
+
+Running iteration 43...
+Running GAPIT as pheno prediction 
+Running iteration 44...
+Running GAPIT as pheno prediction 
+Running iteration 45...
+Running GAPIT as pheno prediction 
+Running iteration 46...
+Running GAPIT as pheno prediction 
+Running iteration 47...
+Running GAPIT as pheno prediction 
+Running iteration 48...
+Running GAPIT as pheno prediction 
+Running iteration 49...
+Running GAPIT as pheno prediction 
+Running iteration 50...
+Running GAPIT as pheno prediction 
+Checkpointing at iteration 50...
+Running iteration 51...
+Running GAPIT as pheno prediction 
+Error in iteration 51: All dead at time 1091
+
+Running iteration 52...
+Running GAPIT as pheno prediction 
+Error  991Error in iteration 52: missing value where TRUE/FALSE needed
+Running iteration 53...
+Running GAPIT as pheno prediction 
+Error  991Error in iteration 53: missing value where TRUE/FALSE needed
+Running iteration 54...
+Running GAPIT as pheno prediction 
+Error  991Error in iteration 54: missing value where TRUE/FALSE needed
+Running iteration 55...
+Running GAPIT as pheno prediction 
+Error  991Error in iteration 55: missing value where TRUE/FALSE needed
+Running iteration 56...
+Running GAPIT as pheno prediction 
+Running iteration 57...
+Running GAPIT as pheno prediction 
+Error in iteration 57: All dead at time 1204
+
+Running iteration 58...
+Running GAPIT as pheno prediction 
+Error in iteration 58: All dead at time 1180
+
+Running iteration 59...
+Running GAPIT as pheno prediction 
+Error in iteration 59: All dead at time 1109
+
+Running iteration 60...
+Running GAPIT as pheno prediction 
+Error in iteration 60: All dead at time 1102
+
+Checkpointing at iteration 60...
+Running iteration 61...
+Running GAPIT as pheno prediction 
+Error in iteration 61: All dead at time 1114
+
+Running iteration 62...
+Running GAPIT as pheno prediction 
+Error in iteration 62: All dead at time 1306
+
+Running iteration 63...
+Running GAPIT as pheno prediction 
+Running iteration 64...
+Running GAPIT as pheno prediction 
+Running iteration 65...
+Running GAPIT as pheno prediction 
+Running iteration 66...
+Running GAPIT as pheno prediction 
+Running iteration 67...
+Running GAPIT as pheno prediction 
+Running iteration 68...
+Running GAPIT as pheno prediction 
+Running iteration 69...
+Running GAPIT as pheno prediction 
+Error in iteration 69: number of iterations exceeded maximum of 50
+Running iteration 70...
+Running GAPIT as pheno prediction 
+Error in iteration 70: All dead at time 1111
+
+Checkpointing at iteration 70...
+Simulation metrics written to SupplPlot_ParamTesting/
+Warning message:
+Expected 2 pieces. Additional pieces discarded in 5 rows [637, 774, 1833, 1844, 1866]. 
+Joining with `by = join_by(iteration, age_impact, MR_death_impact, MR_age_impact, age_recruit_impact_value, MR_recruit_impact, recruitment_const,
+timeperiod, mean_MR, sd_MR)`
+Joining with `by = join_by(iteration)`
+# A tibble: 34 × 2
+   iteration valid_pop_struct
+       <int> <lgl>           
+ 1         1 FALSE           
+ 2         2 FALSE           
+ 3         8 FALSE           
+ 4         9 FALSE           
+ 5        12 FALSE           
+ 6        13 FALSE           
+ 7        15 FALSE           
+ 8        18 FALSE           
+ 9        19 FALSE           
+10        22 FALSE           
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration valid_pop_size
+       <int> <lgl>         
+ 1         1 TRUE          
+ 2         2 TRUE          
+ 3         8 FALSE         
+ 4         9 TRUE          
+ 5        12 TRUE          
+ 6        13 FALSE         
+ 7        15 TRUE          
+ 8        18 TRUE          
+ 9        19 TRUE          
+10        22 TRUE          
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration valid_pop_trend
+       <int> <lgl>          
+ 1         1 TRUE           
+ 2         2 FALSE          
+ 3         8 FALSE          
+ 4         9 FALSE          
+ 5        12 FALSE          
+ 6        13 FALSE          
+ 7        15 TRUE           
+ 8        18 FALSE          
+ 9        19 FALSE          
+10        22 TRUE           
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration After_lower
+       <int> <lgl>      
+ 1         1 TRUE       
+ 2         2 TRUE       
+ 3         8 FALSE      
+ 4         9 TRUE       
+ 5        12 TRUE       
+ 6        13 FALSE      
+ 7        15 FALSE      
+ 8        18 TRUE       
+ 9        19 TRUE       
+10        22 FALSE      
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 3
+   iteration seedling_grt_subadult adult_grt_subadult
+       <int> <lgl>                 <lgl>             
+ 1         1 FALSE                 TRUE              
+ 2         2 TRUE                  TRUE              
+ 3         8 FALSE                 TRUE              
+ 4         9 TRUE                  TRUE              
+ 5        12 FALSE                 TRUE              
+ 6        13 TRUE                  TRUE              
+ 7        15 TRUE                  TRUE              
+ 8        18 TRUE                  TRUE              
+ 9        19 TRUE                  FALSE             
+10        22 FALSE                 TRUE              
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+Joining with `by = join_by(iteration)`
+# A tibble: 34 × 2
+   iteration valid_pop_struct
+       <int> <lgl>           
+ 1         1 FALSE           
+ 2         2 FALSE           
+ 3         8 FALSE           
+ 4         9 FALSE           
+ 5        12 FALSE           
+ 6        13 FALSE           
+ 7        15 FALSE           
+ 8        18 FALSE           
+ 9        19 FALSE           
+10        22 FALSE           
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration valid_pop_size
+       <int> <lgl>         
+ 1         1 TRUE          
+ 2         2 TRUE          
+ 3         8 FALSE         
+ 4         9 TRUE          
+ 5        12 TRUE          
+ 6        13 FALSE         
+ 7        15 TRUE          
+ 8        18 TRUE          
+ 9        19 TRUE          
+10        22 TRUE          
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration valid_pop_trend
+       <int> <lgl>          
+ 1         1 TRUE           
+ 2         2 FALSE          
+ 3         8 FALSE          
+ 4         9 FALSE          
+ 5        12 FALSE          
+ 6        13 FALSE          
+ 7        15 TRUE           
+ 8        18 FALSE          
+ 9        19 FALSE          
+10        22 TRUE           
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration After_lower
+       <int> <lgl>      
+ 1         1 TRUE       
+ 2         2 TRUE       
+ 3         8 FALSE      
+ 4         9 TRUE       
+ 5        12 TRUE       
+ 6        13 FALSE      
+ 7        15 FALSE      
+ 8        18 TRUE       
+ 9        19 TRUE       
+10        22 FALSE      
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 4
+   iteration seedling_grt_subadult adult_grt_subadult adult_grt_seedling
+       <int> <lgl>                 <lgl>              <lgl>             
+ 1         1 FALSE                 TRUE               TRUE              
+ 2         2 TRUE                  TRUE               TRUE              
+ 3         8 FALSE                 TRUE               TRUE              
+ 4         9 TRUE                  TRUE               TRUE              
+ 5        12 FALSE                 TRUE               TRUE              
+ 6        13 TRUE                  TRUE               FALSE             
+ 7        15 TRUE                  TRUE               TRUE              
+ 8        18 TRUE                  TRUE               TRUE              
+ 9        19 TRUE                  FALSE              FALSE             
+10        22 FALSE                 TRUE               TRUE              
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+Joining with `by = join_by(iteration)`
+
+
+Error in `geom_point()`:
+! Problem while computing aesthetics.
+ℹ Error occurred in the 1st layer.
+Caused by error:
+! object 'run_id' not found
+Run `rlang::last_trace()` to see where the error occurred.
+`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
+`geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by time and run_id.
+ℹ Output is grouped by time.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(time, run_id))` for per-operation grouping (`?dplyr::dplyr_by`) instead.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by time and run_id.
+ℹ Output is grouped by time.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(time, run_id))` for per-operation grouping (`?dplyr::dplyr_by`) instead.
+`geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+Warning message:
+Expected 2 pieces. Additional pieces discarded in 5 rows [637, 774, 1833, 1844, 1866]. 
+Joining with `by = join_by(iteration, age_impact, MR_death_impact, MR_age_impact, age_recruit_impact_value, MR_recruit_impact, recruitment_const,
+timeperiod, mean_MR, sd_MR, Lifestage)`
+Joining with `by = join_by(iteration)`
+Error in `dplyr::select()`:
+! Can't select columns that don't exist.
+✖ Column `seedling_grt_subadult` doesn't exist.
+Run `rlang::last_trace()` to see where the error occurred.
+# A tibble: 34 × 2
+   iteration valid_pop_struct
+       <int> <lgl>           
+ 1         1 FALSE           
+ 2         2 FALSE           
+ 3         8 FALSE           
+ 4         9 FALSE           
+ 5        12 FALSE           
+ 6        13 FALSE           
+ 7        15 FALSE           
+ 8        18 FALSE           
+ 9        19 FALSE           
+10        22 FALSE           
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration valid_pop_size
+       <int> <lgl>         
+ 1         1 TRUE          
+ 2         2 TRUE          
+ 3         8 FALSE         
+ 4         9 TRUE          
+ 5        12 TRUE          
+ 6        13 FALSE         
+ 7        15 TRUE          
+ 8        18 TRUE          
+ 9        19 TRUE          
+10        22 TRUE          
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration valid_pop_trend
+       <int> <lgl>          
+ 1         1 TRUE           
+ 2         2 FALSE          
+ 3         8 FALSE          
+ 4         9 FALSE          
+ 5        12 FALSE          
+ 6        13 FALSE          
+ 7        15 TRUE           
+ 8        18 FALSE          
+ 9        19 FALSE          
+10        22 TRUE           
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration After_lower
+       <int> <lgl>      
+ 1         1 TRUE       
+ 2         2 TRUE       
+ 3         8 FALSE      
+ 4         9 TRUE       
+ 5        12 TRUE       
+ 6        13 FALSE      
+ 7        15 FALSE      
+ 8        18 TRUE       
+ 9        19 TRUE       
+10        22 FALSE      
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 4
+   iteration seedling_grt_subadult adult_grt_subadult adult_grt_seedling
+       <int> <lgl>                 <lgl>              <lgl>             
+ 1         1 FALSE                 TRUE               TRUE              
+ 2         2 TRUE                  TRUE               TRUE              
+ 3         8 FALSE                 TRUE               TRUE              
+ 4         9 TRUE                  TRUE               TRUE              
+ 5        12 FALSE                 TRUE               TRUE              
+ 6        13 TRUE                  TRUE               FALSE             
+ 7        15 TRUE                  TRUE               TRUE              
+ 8        18 TRUE                  TRUE               TRUE              
+ 9        19 TRUE                  FALSE              FALSE             
+10        22 FALSE                 TRUE               TRUE              
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+Joining with `by = join_by(iteration)`
+# A tibble: 34 × 2
+   iteration valid_pop_struct
+       <int> <lgl>           
+ 1         1 FALSE           
+ 2         2 FALSE           
+ 3         8 FALSE           
+ 4         9 FALSE           
+ 5        12 FALSE           
+ 6        13 FALSE           
+ 7        15 FALSE           
+ 8        18 FALSE           
+ 9        19 FALSE           
+10        22 FALSE           
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration valid_pop_size
+       <int> <lgl>         
+ 1         1 TRUE          
+ 2         2 TRUE          
+ 3         8 FALSE         
+ 4         9 TRUE          
+ 5        12 TRUE          
+ 6        13 FALSE         
+ 7        15 TRUE          
+ 8        18 TRUE          
+ 9        19 TRUE          
+10        22 TRUE          
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration valid_pop_trend
+       <int> <lgl>          
+ 1         1 TRUE           
+ 2         2 FALSE          
+ 3         8 FALSE          
+ 4         9 FALSE          
+ 5        12 FALSE          
+ 6        13 FALSE          
+ 7        15 TRUE           
+ 8        18 FALSE          
+ 9        19 FALSE          
+10        22 TRUE           
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 2
+   iteration After_lower
+       <int> <lgl>      
+ 1         1 TRUE       
+ 2         2 TRUE       
+ 3         8 FALSE      
+ 4         9 TRUE       
+ 5        12 TRUE       
+ 6        13 FALSE      
+ 7        15 FALSE      
+ 8        18 TRUE       
+ 9        19 TRUE       
+10        22 FALSE      
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+# A tibble: 34 × 4
+   iteration subadult_grt_seedling adult_grt_subadult adult_grt_seedling
+       <int> <lgl>                 <lgl>              <lgl>             
+ 1         1 TRUE                  TRUE               TRUE              
+ 2         2 FALSE                 TRUE               TRUE              
+ 3         8 TRUE                  TRUE               TRUE              
+ 4         9 FALSE                 TRUE               TRUE              
+ 5        12 TRUE                  TRUE               TRUE              
+ 6        13 FALSE                 TRUE               FALSE             
+ 7        15 FALSE                 TRUE               TRUE              
+ 8        18 FALSE                 TRUE               TRUE              
+ 9        19 FALSE                 FALSE              FALSE             
+10        22 TRUE                  TRUE               TRUE              
+# ℹ 24 more rows
+# ℹ Use `print(n = ...)` to see more rows
+Joining with `by = join_by(iteration)`
+Error in h(simpleError(msg, call)) : 
+  error in evaluating the argument 'x' in selecting a method for function 'head': argument 1 is not a vector
+Error in (function (..., na.last = TRUE, decreasing = FALSE, method = c("auto",  : 
+  argument 1 is not a vector
+Error in close.connection(log_con) : 
+  cannot close 'message' sink connection
+Error in h(simpleError(msg, call)) : 
+  error in evaluating the argument 'x' in selecting a method for function 'head': argument 1 is not a vector
+Error in close.connection(log_con) : 
+  cannot close 'message' sink connection
+Error in close.connection(log_con) : 
+  cannot close 'message' sink connection
+Error in h(simpleError(msg, call)) : 
+  error in evaluating the argument 'x' in selecting a method for function 'head': argument 1 is not a vector
+Error in close.connection(log_con) : 
+  cannot close 'message' sink connection

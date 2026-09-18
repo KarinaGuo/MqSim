@@ -36,13 +36,13 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
   MR_impact  <- 1
   age_impact <- 1
   
-  MR_impact <- 1 - recruitment_indivs_MR ^ MR_recruit_impact_val
+  MR_impact <- (1 - recruitment_indivs_MR) ^ MR_recruit_impact_val
   age_scaled <- recruitment_indivs_ages / rec_age_shiftch; age_scaled[age_scaled>1]=1
   age_impact <- age_scaled ^ age_recruit_impact_val
   
   # Both MR and age impacts
   if (MR_togg & age_togg) {
-    total_impact <- MR_impact + age_impact - (MR_impact * age_impact) 
+    total_impact <- MR_impact * age_impact 
   } else if (MR_togg & !age_togg) {
     total_impact <- MR_impact
   } else if (age_togg & !MR_togg) {
@@ -79,7 +79,6 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
       
       num_offspring <- new_recruit[i]
       # New allele genotypes
-      
       parent_1_gt <- recruitment_indiv_gt[[parent_1_idx]]
       if(MR_parents == 2 & sum(indiv_recruitment) > 1) {
         parent_2_idx <- sample(1:length(recruitment_indiv_MR), size = 1)

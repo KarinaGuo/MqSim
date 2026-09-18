@@ -212,7 +212,256 @@ write.csv(morris_sensitivity_df, "/data/SupplPlot_ParamTesting/morris_sensitivit
 
 cat("\nMorris Method screening complete. Plots and metrics saved to SupplPlot_ParamTesting/ \n")
 
+
 # Close log file connections
 sink(type = "message")
 sink()
 close(log_con)
+
+###################################################################################E
+cat("\n--- Rerunning analysis from saved data ---\n")
+
+# Read in the saved dataframes
+saved_results_df <- read.csv("SupplPlot_ParamTesting/morris_simulation_results.csv")
+saved_LS_results_df <- read.csv("SupplPlot_ParamTesting/morris_simulation_LS_results.csv")
+
+morris_sensitivity_list_rerun <- list()
+
+# Reconstruct the flat results format for sensitivity analysis from saved dataframes
+flat_results_list_rerun <- lapply(1:nrow(param_matrix), function(i) {
+  r <- saved_results_df[saved_results_df$iteration == i, ]
+  ls <- saved_LS_results_df[saved_LS_results_df$iteration == i, ]
+  
+  after_r <- r[r$timeperiod == "After", ]
+  seedling_ls <- ls[ls$timeperiod == "Soon" & ls$Lifestage == "Seedling", ]
+  subadult_ls <- ls[ls$timeperiod == "Soon" & ls$Lifestage == "Subadult", ]
+  
+  c(
+    pop_struct_after = if(nrow(after_r) > 0) as.numeric(after_r$pop_struct)[1] else 0,
+    pop_size_after = if(nrow(after_r) > 0) as.numeric(after_r$pop_size)[1] else 0,
+    pop_growth_trend_after = if(nrow(after_r) > 0) as.numeric(after_r$pop_growth_trend)[1] else 0,
+    mean_MR_seedling_soon = if(nrow(seedling_ls) > 0) as.numeric(seedling_ls$mean_MR)[1] else NA,
+    mean_MR_subadult_soon = if(nrow(subadult_ls) > 0) as.numeric(subadult_ls$mean_MR)[1] else NA
+  )
+})
+flat_results_rerun <- do.call(rbind, flat_results_list_rerun)
+
+for (metric in metrics_to_plot) {
+  
+  metric_res <- flat_results_rerun[, metric]
+  metric_res[is.na(metric_res)] <- 0 # Treat NAs as 0 for analysis stability
+  
+  x_metric <- x
+  tell(x_metric, metric_res)
+  
+  cat("\n==========================================\n")
+  cat(sprintf("Rerun Sensitivity for %s:\n", metric))
+  print(x_metric)
+  
+  # Extract Morris sensitivity metrics (mu, mu*, sigma) to a dataframe
+  mu <- apply(x_metric$ee, 2, mean)
+  mu.star <- apply(abs(x_metric$ee), 2, mean)
+  sigma <- apply(x_metric$ee, 2, sd)
+  
+  morris_sensitivity_list_rerun[[metric]] <- data.frame(
+    Output_Metric = metric,
+    Parameter = factors,
+    mu = mu,
+    mu.star = mu.star,
+    sigma = sigma
+  )
+  
+  png(sprintf("Morris_Sensitivity_%s.png", metric), width=800, height=600)
+  plot(x_metric, main=sprintf("Morris Method: Sensitivity of %s", metric))
+  dev.off()
+}
+
+# Write sensitivity metrics to a dataframe
+morris_sensitivity_df_rerun <- do.call(rbind, morris_sensitivity_list_rerun)
+write.csv(morris_sensitivity_df_rerun, "morris_sensitivity_metrics.csv", row.names = FALSE)
+
+###################################################################################################33
+
+#### Plot usual methods
+setwd("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation")
+run_res_LS <- read.csv("SupplPlot_ParamTesting/morris_simulation_LS_results.csv")
+run_res <- read.csv("SupplPlot_ParamTesting/morris_simulation_results.csv")
+param_sets <- data.frame(param_matrix); param_sets$iteration <- as.numeric(rownames(param_sets))
+run_res <- left_join(run_res, run_res_LS)
+
+dead_iteration <- data.frame(iteration = 1:70, dead = !(1:70 %in% run_res$iteration)) %>% 
+  left_join(param_sets)
+
+run_res$timeperiod <- factor(run_res$timeperiod, levels = c("Before", "Soon", "After"))
+run_res <- run_res %>% mutate(timeperiod_num = case_when(
+  timeperiod == "Before" ~ 1,
+  timeperiod == "Soon" ~ 2,
+  timeperiod == "After" ~ 3
+)) 
+
+# Filtering parameters to use
+## Filtering we want the population structure to re/establish before and after MR - pop_size + pop_growth_trend + pop_growth_R2 
+pop_struct_comped <- run_res %>% 
+  filter(timeperiod %in% c("Before", "After")) %>% 
+  group_by(iteration) %>% 
+  summarise(valid_pop_struct = all(between(pop_struct, 75000*5, 150000*5))) %>% 
+  ungroup()
+
+pop_size_comped <- run_res %>% 
+  filter(timeperiod %in% c("After")) %>% 
+  group_by(iteration) %>% 
+  summarise(valid_pop_size = all((pop_size > 25000))) %>% 
+  ungroup()
+
+pop_trend_comped <- run_res %>% 
+  group_by(iteration) %>% 
+  summarise(
+    valid_pop_trend = 
+      all(
+        (pop_growth_trend[timeperiod %in% c("After")] > 0)  
+           #  pop_growth_trend[timeperiod %in% c("Before", "After")] <= 8) |
+           # (pop_growth_trend[timeperiod %in% c("Before", "After")] <= -4 & 
+           #pop_growth_trend[timeperiod %in% c("Before", "After")] >= -8)
+      ) #&
+    #all(pop_growth_trend[timeperiod == "Soon"] > 0),
+    #.groups = "drop"
+  )
+
+#####
+## We want the soon and after to match empirical data
+## Compare mean_MR - whether the seedlings in "After" is lower than in "Soon".
+run_res_LS_comped_LS <- run_res_LS %>%
+  filter(Lifestage == "Seedling") %>%    
+  dplyr::select(iteration, timeperiod, mean_MR) %>%
+  pivot_wider(names_from = timeperiod, values_from = mean_MR) %>% 
+  group_by(iteration) %>% 
+  summarise(After_lower = After < Soon)
+
+## whether seedlings mean_MR is > subadult mean_MR
+
+run_res_LS_comped_LS2 <- run_res_LS %>%
+  ungroup() %>%
+  filter(timeperiod == "Soon") %>%
+  dplyr::select(iteration, timeperiod, Lifestage, mean_MR) %>%
+  pivot_wider(names_from = Lifestage, values_from = mean_MR) %>%
+  mutate(
+    subadult_grt_seedling = Subadult > Seedling,
+    adult_grt_subadult   = Adult > Subadult,
+    adult_grt_seedling = Adult > Seedling 
+  ) %>%
+  dplyr::select (iteration, subadult_grt_seedling, adult_grt_subadult, adult_grt_seedling)
+
+
+## Final parameter scores
+pop_struct_comped # population age structure between valid values
+pop_size_comped # population size between valid values
+pop_trend_comped # population trend between valid values
+run_res_LS_comped_LS ## Compare mean_MR - whether the seedlings in "After" is lower than in "Soon.
+run_res_LS_comped_LS2 ## whether seedlings mean_MR is > subadult mean_MR & whether adult mean_MR is > subadult mean_MR - for 'soon'
+
+
+final_list <- pop_struct_comped %>%
+  left_join(pop_size_comped, by = "iteration") %>%
+  left_join(pop_trend_comped, by = "iteration") %>%
+  left_join(run_res_LS_comped_LS, by = "iteration") %>%
+  left_join(run_res_LS_comped_LS2, by = "iteration")
+
+final_list <- final_list %>% 
+  mutate(score = rowSums(across(-iteration, as.numeric)))
+
+param_sets_scored <- left_join(param_sets, final_list)
+
+############ Visualisation
+########################## Against each other
+ggplot(run_res, aes(y=pop_struct, x=age_impact)) +
+  geom_point() +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)-1))), 
+             aes(y=pop_struct, x=age_impact), 
+             colour="magenta", size=2, shape=1) +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)))), 
+             aes(y=pop_struct, x=age_impact), 
+             colour="green", size=2, shape=1) +
+  facet_wrap (~timeperiod) +
+  theme_bw() +
+  labs(title="Population structure (age)")
+
+ggplot(run_res, aes(y=pop_size, x=age_impact)) +
+  geom_point() +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)-1))), 
+             aes(y=pop_size, x=age_impact), 
+             colour="magenta", size=3, shape=1) +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)))), 
+             aes(y=pop_size, x=age_impact), 
+             colour="green", size=3, shape=1) +
+  facet_wrap (~timeperiod) +
+  theme_bw() +
+  labs(title="Population structure (size absolute)")
+
+ggplot(run_res, aes(y=pop_growth_trend, x=MR_death_impact, colour=age_impact)) +
+  geom_point() +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)-1))), 
+             aes(y=pop_growth_trend, x=MR_death_impact, colour=age_impact), 
+             colour="magenta", size=2, shape=1) +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)))), 
+             aes(y=pop_growth_trend, x=MR_death_impact, colour=age_impact), 
+             colour="green", size=2, shape=1) +
+  facet_wrap (~timeperiod) +
+  theme_bw() +
+  labs(title="Population structure (size trend)")
+
+ggplot(run_res, aes(y=pop_growth_R2, x=dist_imp)) +
+  geom_point() +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)-1))), 
+             aes(y=pop_growth_R2, x=dist_imp), 
+             colour="magenta", size=2, shape=1) +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)))), 
+             aes(y=pop_growth_R2, x=dist_imp), 
+             colour="green", size=2, shape=1) +
+  facet_wrap (~timeperiod) +
+  geom_hline(yintercept=0.2, colour="brown", linetype="dashed") +
+  theme_bw() +
+  labs(title="Population structure (size stability)")
+
+ggplot() +
+  geom_point(data=run_res, aes(y=mean_MR, x=MR_death_impact, colour=age_impact)) +
+  #geom_errorbar(data=run_res, aes(ymin=mean_MR-sd_MR, ymax=mean_MR+sd_MR, x=MR_death_impact, colour=age_impact)) +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)-1))), 
+             aes(y=mean_MR, x=MR_death_impact, colour=age_impact), 
+             colour="magenta", size=2, shape=1) +
+  geom_point(data = (run_res %>% filter(iteration==(nrow(param_sets)))), 
+             aes(y=mean_MR, x=MR_death_impact, colour=age_impact), 
+             colour="green", size=2, shape=1) +
+  facet_wrap (~timeperiod) +
+  theme_bw() +
+  labs(title="MR (mean +/- sd)")
+
+########################## Dead
+ggplot(dead_iteration, aes(x=MR_death_impact*age_impact, y=MR_recruit_impact , colour = MR_recruit_impact )) +
+  geom_point() +
+  theme_bw() 
+
+########################## Against scores
+
+bin_cont_meanscore_plot <- function(dataframe, variable, n_bins = 10) {
+  dataframe_binned <- dataframe %>% 
+    mutate(variable_bin = cut(.data[[variable]], breaks = n_bins)) %>%
+    group_by(variable_bin) %>%
+    summarise(
+      mean_score = mean(score, na.rm = TRUE),
+      n = n(),
+      .groups = "drop"
+    )
+  
+  print(
+    ggplot(dataframe_binned, aes(x = variable_bin, y = mean_score)) +
+      geom_col() +
+      theme_bw() +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+      labs(x = variable)
+  )
+}
+variables <- c("MR_death_impact", "age_impact", "recruitment_const", "MR_age_impact", "age_recruit_impact_value", "MR_recruit_impact")
+
+plots <- lapply(variables, function(v) bin_cont_meanscore_plot(param_sets_scored, v))
+combined_plot <- patchwork::wrap_plots(plots, ncol =3 )  # 2 columns grid
+combined_plot

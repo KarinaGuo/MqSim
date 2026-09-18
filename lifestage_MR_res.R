@@ -13,6 +13,8 @@ df_list <- lapply(seq_along(pop_timepoints), function(i) {
   )
 })
 
+# For ens run pop_timepoints$time <- pop_timepoints$time-1; final_df <- pop_timepoints
+
 final_df <- do.call(rbind, df_list)
 
 final_df <- final_df %>% 

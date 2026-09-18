@@ -1,0 +1,1991 @@
+2026-01-02 14:45:12.840005 
+1 ran till end (survived) ðŸµ 
+2026-01-02 14:46:43.274893 
+2 ran till end (survived) ðŸµ 
+2026-01-02 14:48:12.332215 
+3 ran till end (survived) ðŸµ 
+2026-01-02 14:49:42.830485 
+4 ran till end (survived) ðŸµ 
+2026-01-02 14:51:11.274408 
+5 ran till end (survived) ðŸµ 
+2026-01-02 14:52:41.917378 
+6 ran till end (survived) ðŸµ 
+2026-01-02 14:54:10.73184 
+7 ran till end (survived) ðŸµ 
+2026-01-02 14:55:41.4938 
+8 ran till end (survived) ðŸµ 
+2026-01-02 14:57:12.58593 
+9 ran till end (survived) ðŸµ 
+2026-01-02 14:58:44.322954 
+10 ran till end (survived) ðŸµ 
+2026-01-02 15:00:05.670012 
+11 ran till end (survived) ðŸµ 
+2026-01-02 15:01:36.286901 
+12 ran till end (survived) ðŸµ 
+2026-01-02 15:03:05.730095 
+13 ran till end (survived) ðŸµ 
+2026-01-02 15:04:36.484879 
+14 ran till end (survived) ðŸµ 
+2026-01-02 15:05:49.494695 
+15 ran till end (survived) ðŸµ 
+2026-01-02 15:07:19.630028 
+16 ran till end (survived) ðŸµ 
+2026-01-02 15:08:42.264064 
+17 ran till end (survived) ðŸµ 
+2026-01-02 15:10:14.477247 
+18 ran till end (survived) ðŸµ 
+2026-01-02 15:11:46.132229 
+19 ran till end (survived) ðŸµ 
+2026-01-02 15:13:18.705522 
+20 ran till end (survived) ðŸµ 
+2026-01-02 15:13:59.935661 
+21 ran till end (survived) ðŸµ 
+2026-01-02 15:15:29.934326 
+22 ran till end (survived) ðŸµ 
+2026-01-02 15:16:41.733077 
+23 ran till end (survived) ðŸµ 
+2026-01-02 15:18:11.366981 
+24 ran till end (survived) ðŸµ 
+2026-01-02 15:19:41.858516 
+25 ran till end (survived) ðŸµ 
+2026-01-02 15:21:14.070373 
+26 ran till end (survived) ðŸµ 
+2026-01-02 15:22:40.799442 
+27 ran till end (survived) ðŸµ 
+2026-01-02 15:24:10.112055 
+28 ran till end (survived) ðŸµ 
+2026-01-02 15:25:37.498406 
+29 ran till end (survived) ðŸµ 
+2026-01-02 15:27:03.903811 
+30 ran till end (survived) ðŸµ 
+2026-01-02 15:28:33.311243 
+31 ran till end (survived) ðŸµ 
+2026-01-02 15:30:02.614629 
+32 ran till end (survived) ðŸµ 
+2026-01-02 15:31:32.370299 
+33 ran till end (survived) ðŸµ 
+2026-01-02 15:33:03.606709 
+34 ran till end (survived) ðŸµ 
+2026-01-02 15:34:35.9282 
+35 ran till end (survived) ðŸµ 
+2026-01-02 15:36:03.83004 
+36 ran till end (survived) ðŸµ 
+2026-01-02 15:37:31.523761 
+37 ran till end (survived) ðŸµ 
+2026-01-02 15:39:00.330121 
+38 ran till end (survived) ðŸµ 
+2026-01-02 15:40:22.963113 
+39 ran till end (survived) ðŸµ 
+2026-01-02 15:41:51.948956 
+40 ran till end (survived) ðŸµ 
+2026-01-02 15:43:19.684333 
+41 ran till end (survived) ðŸµ 
+2026-01-02 15:44:52.093535 
+42 ran till end (survived) ðŸµ 
+2026-01-02 15:46:22.859471 
+43 ran till end (survived) ðŸµ 
+2026-01-02 15:47:42.9857 
+44 ran till end (survived) ðŸµ 
+2026-01-02 15:49:04.149339 
+45 ran till end (survived) ðŸµ 
+2026-01-02 15:50:29.994024 
+46 ran till end (survived) ðŸµ 
+2026-01-02 15:51:58.954518 
+47 ran till end (survived) ðŸµ 
+2026-01-02 15:53:30.543079 
+48 ran till end (survived) ðŸµ 
+2026-01-02 15:55:02.543627 
+49 ran till end (survived) ðŸµ 
+2026-01-02 15:56:32.017927 
+50 ran till end (survived) ðŸµ 
+2026-01-02 15:57:58.760392 
+51 ran till end (survived) ðŸµ 
+2026-01-02 15:59:31.405142 
+52 ran till end (survived) ðŸµ 
+2026-01-02 16:00:47.442821 
+53 ran till end (survived) ðŸµ 
+2026-01-02 16:02:17.449383 
+54 ran till end (survived) ðŸµ 
+2026-01-02 16:03:09.454508 
+55 ran till end (survived) ðŸµ 
+2026-01-02 16:04:39.898248 
+56 ran till end (survived) ðŸµ 
+2026-01-02 16:06:06.536571 
+57 ran till end (survived) ðŸµ 
+2026-01-02 16:07:26.211563 
+58 ran till end (survived) ðŸµ 
+2026-01-02 16:08:53.611499 
+59 ran till end (survived) ðŸµ 
+2026-01-02 16:10:17.491894 
+60 ran till end (survived) ðŸµ 
+2026-01-02 16:11:50.130483 
+61 ran till end (survived) ðŸµ 
+2026-01-02 16:13:16.735417 
+62 ran till end (survived) ðŸµ 
+2026-01-02 16:14:44.366572 
+63 ran till end (survived) ðŸµ 
+2026-01-02 16:16:12.396832 
+64 ran till end (survived) ðŸµ 
+2026-01-02 16:17:44.691021 
+65 ran till end (survived) ðŸµ 
+2026-01-02 16:19:14.235427 
+66 ran till end (survived) ðŸµ 
+2026-01-02 16:20:41.828511 
+67 ran till end (survived) ðŸµ 
+2026-01-02 16:22:13.069197 
+68 ran till end (survived) ðŸµ 
+2026-01-02 16:23:41.323465 
+69 ran till end (survived) ðŸµ 
+2026-01-02 16:25:01.306347 
+70 ran till end (survived) ðŸµ 
+2026-01-02 16:26:32.841717 
+71 ran till end (survived) ðŸµ 
+2026-01-02 16:27:49.624291 
+72 ran till end (survived) ðŸµ 
+2026-01-02 16:29:15.298889 
+73 ran till end (survived) ðŸµ 
+2026-01-02 16:30:46.117499 
+74 ran till end (survived) ðŸµ 
+2026-01-02 16:32:14.745482 
+75 ran till end (survived) ðŸµ 
+2026-01-02 16:33:41.28408 
+76 ran till end (survived) ðŸµ 
+2026-01-02 16:35:09.130678 
+77 ran till end (survived) ðŸµ 
+2026-01-02 16:36:38.833893 
+78 ran till end (survived) ðŸµ 
+2026-01-02 16:37:58.406251 
+79 ran till end (survived) ðŸµ 
+2026-01-02 16:39:29.262611 
+80 ran till end (survived) ðŸµ 
+2026-01-02 16:41:01.748907 
+81 ran till end (survived) ðŸµ 
+2026-01-02 16:42:29.336842 
+82 ran till end (survived) ðŸµ 
+2026-01-02 16:43:57.796497 
+83 ran till end (survived) ðŸµ 
+2026-01-02 16:45:30.855917 
+84 ran till end (survived) ðŸµ 
+2026-01-02 16:47:00.166153 
+85 ran till end (survived) ðŸµ 
+2026-01-02 16:48:28.107627 
+86 ran till end (survived) ðŸµ 
+2026-01-02 16:49:58.059146 
+87 ran till end (survived) ðŸµ 
+2026-01-02 16:51:05.677858 
+88 ran till end (survived) ðŸµ 
+2026-01-02 16:52:33.954387 
+89 ran till end (survived) ðŸµ 
+2026-01-02 16:54:04.762381 
+90 ran till end (survived) ðŸµ 
+2026-01-02 16:55:37.033831 
+91 ran till end (survived) ðŸµ 
+2026-01-02 16:57:05.639285 
+92 ran till end (survived) ðŸµ 
+2026-01-02 16:58:37.081654 
+93 ran till end (survived) ðŸµ 
+2026-01-02 17:00:08.776999 
+94 ran till end (survived) ðŸµ 
+2026-01-02 17:01:40.594798 
+95 ran till end (survived) ðŸµ 
+2026-01-02 17:03:07.798744 
+96 ran till end (survived) ðŸµ 
+2026-01-02 17:04:34.978353 
+97 ran till end (survived) ðŸµ 
+2026-01-02 17:06:05.867311 
+98 ran till end (survived) ðŸµ 
+2026-01-02 17:07:33.330085 
+99 ran till end (survived) ðŸµ 
+2026-01-02 17:09:05.065202 
+100 ran till end (survived) ðŸµ 
+2026-01-02 17:10:33.516184 
+101 ran till end (survived) ðŸµ 
+2026-01-02 17:12:03.621027 
+102 ran till end (survived) ðŸµ 
+2026-01-02 17:13:34.18613 
+103 ran till end (survived) ðŸµ 
+2026-01-02 17:14:56.954432 
+104 ran till end (survived) ðŸµ 
+2026-01-02 17:16:23.7796 
+105 ran till end (survived) ðŸµ 
+2026-01-02 17:17:48.503893 
+106 ran till end (survived) ðŸµ 
+2026-01-02 17:19:19.565033 
+107 ran till end (survived) ðŸµ 
+2026-01-02 17:20:49.511827 
+108 ran till end (survived) ðŸµ 
+2026-01-02 17:21:26.777368 
+109 ran till end (survived) ðŸµ 
+2026-01-02 17:22:53.460326 
+110 ran till end (survived) ðŸµ 
+2026-01-02 17:24:22.918336 
+111 ran till end (survived) ðŸµ 
+2026-01-02 17:25:53.362342 
+112 ran till end (survived) ðŸµ 
+2026-01-02 17:27:23.875451 
+113 ran till end (survived) ðŸµ 
+2026-01-02 17:28:53.148199 
+114 ran till end (survived) ðŸµ 
+2026-01-02 17:30:20.874424 
+115 ran till end (survived) ðŸµ 
+2026-01-02 17:31:50.783509 
+116 ran till end (survived) ðŸµ 
+2026-01-02 17:33:09.774672 
+117 ran till end (survived) ðŸµ 
+2026-01-02 17:34:40.618128 
+118 ran till end (survived) ðŸµ 
+2026-01-02 17:36:07.155254 
+119 ran till end (survived) ðŸµ 
+2026-01-02 17:37:24.075273 
+120 ran till end (survived) ðŸµ 
+2026-01-02 17:38:34.453601 
+121 ran till end (survived) ðŸµ 
+2026-01-02 17:40:01.702887 
+122 ran till end (survived) ðŸµ 
+2026-01-02 17:41:30.934463 
+123 ran till end (survived) ðŸµ 
+2026-01-02 17:42:59.983178 
+124 ran till end (survived) ðŸµ 
+2026-01-02 17:44:27.536999 
+125 ran till end (survived) ðŸµ 
+2026-01-02 17:45:58.203399 
+126 ran till end (survived) ðŸµ 
+2026-01-02 17:47:21.511681 
+127 ran till end (survived) ðŸµ 
+2026-01-02 17:48:50.838872 
+128 ran till end (survived) ðŸµ 
+2026-01-02 17:50:20.7363 
+129 ran till end (survived) ðŸµ 
+130 died ðŸ‘µ 
+2026-01-02 17:51:58.755293 
+131 ran till end (survived) ðŸµ 
+2026-01-02 17:53:29.00593 
+132 ran till end (survived) ðŸµ 
+2026-01-02 17:54:59.049067 
+133 ran till end (survived) ðŸµ 
+2026-01-02 17:56:31.810452 
+134 ran till end (survived) ðŸµ 
+2026-01-02 17:58:00.318299 
+135 ran till end (survived) ðŸµ 
+2026-01-02 17:59:31.021632 
+136 ran till end (survived) ðŸµ 
+2026-01-02 18:01:01.540778 
+137 ran till end (survived) ðŸµ 
+2026-01-02 18:02:27.352663 
+138 ran till end (survived) ðŸµ 
+2026-01-02 18:03:50.367558 
+139 ran till end (survived) ðŸµ 
+2026-01-02 18:05:18.782427 
+140 ran till end (survived) ðŸµ 
+2026-01-02 18:06:43.341602 
+141 ran till end (survived) ðŸµ 
+2026-01-02 18:08:16.051049 
+142 ran till end (survived) ðŸµ 
+2026-01-02 18:09:43.924973 
+143 ran till end (survived) ðŸµ 
+2026-01-02 18:11:15.570483 
+144 ran till end (survived) ðŸµ 
+2026-01-02 18:12:47.668086 
+145 ran till end (survived) ðŸµ 
+2026-01-02 18:14:20.858759 
+146 ran till end (survived) ðŸµ 
+2026-01-02 18:15:51.54275 
+147 ran till end (survived) ðŸµ 
+2026-01-02 18:17:24.483828 
+148 ran till end (survived) ðŸµ 
+2026-01-02 18:18:55.260425 
+149 ran till end (survived) ðŸµ 
+2026-01-02 18:20:22.521233 
+150 ran till end (survived) ðŸµ 
+2026-01-02 18:21:53.585179 
+151 ran till end (survived) ðŸµ 
+2026-01-02 18:23:15.556349 
+152 ran till end (survived) ðŸµ 
+2026-01-02 18:24:41.190819 
+153 ran till end (survived) ðŸµ 
+2026-01-02 18:26:10.786352 
+154 ran till end (survived) ðŸµ 
+2026-01-02 18:27:39.346653 
+155 ran till end (survived) ðŸµ 
+2026-01-02 18:29:08.763489 
+156 ran till end (survived) ðŸµ 
+2026-01-02 18:30:39.626988 
+157 ran till end (survived) ðŸµ 
+2026-01-02 18:32:06.771065 
+158 ran till end (survived) ðŸµ 
+2026-01-02 18:33:39.16065 
+159 ran till end (survived) ðŸµ 
+2026-01-02 18:35:08.752156 
+160 ran till end (survived) ðŸµ 
+161 died ðŸ‘µ 
+2026-01-02 18:36:42.251706 
+162 ran till end (survived) ðŸµ 
+2026-01-02 18:38:08.660143 
+163 ran till end (survived) ðŸµ 
+2026-01-02 18:39:38.465257 
+164 ran till end (survived) ðŸµ 
+2026-01-02 18:41:08.163216 
+165 ran till end (survived) ðŸµ 
+2026-01-02 18:41:50.534106 
+166 ran till end (survived) ðŸµ 
+2026-01-02 18:43:22.200184 
+167 ran till end (survived) ðŸµ 
+2026-01-02 18:43:39.880619 
+168 ran till end (survived) ðŸµ 
+2026-01-02 18:45:08.2807 
+169 ran till end (survived) ðŸµ 
+2026-01-02 18:46:36.278977 
+170 ran till end (survived) ðŸµ 
+2026-01-02 18:48:05.406082 
+171 ran till end (survived) ðŸµ 
+2026-01-02 18:49:35.441071 
+172 ran till end (survived) ðŸµ 
+2026-01-02 18:51:06.579342 
+173 ran till end (survived) ðŸµ 
+2026-01-02 18:52:36.406089 
+174 ran till end (survived) ðŸµ 
+2026-01-02 18:54:05.666235 
+175 ran till end (survived) ðŸµ 
+2026-01-02 18:55:38.625863 
+176 ran till end (survived) ðŸµ 
+2026-01-02 18:57:10.917574 
+177 ran till end (survived) ðŸµ 
+2026-01-02 18:58:33.244442 
+178 ran till end (survived) ðŸµ 
+2026-01-02 19:00:04.566344 
+179 ran till end (survived) ðŸµ 
+2026-01-02 19:01:30.554709 
+180 ran till end (survived) ðŸµ 
+2026-01-02 19:02:51.061359 
+181 ran till end (survived) ðŸµ 
+2026-01-02 19:04:17.148566 
+182 ran till end (survived) ðŸµ 
+2026-01-02 19:05:50.757515 
+183 ran till end (survived) ðŸµ 
+2026-01-02 19:07:21.812343 
+184 ran till end (survived) ðŸµ 
+2026-01-02 19:08:49.487959 
+185 ran till end (survived) ðŸµ 
+2026-01-02 19:10:20.247566 
+186 ran till end (survived) ðŸµ 
+2026-01-02 19:11:44.063483 
+187 ran till end (survived) ðŸµ 
+2026-01-02 19:13:11.584415 
+188 ran till end (survived) ðŸµ 
+2026-01-02 19:14:41.896262 
+189 ran till end (survived) ðŸµ 
+2026-01-02 19:16:09.379321 
+190 ran till end (survived) ðŸµ 
+2026-01-02 19:17:38.435155 
+191 ran till end (survived) ðŸµ 
+2026-01-02 19:19:09.300603 
+192 ran till end (survived) ðŸµ 
+2026-01-02 19:20:38.172078 
+193 ran till end (survived) ðŸµ 
+2026-01-02 19:22:02.238456 
+194 ran till end (survived) ðŸµ 
+2026-01-02 19:23:25.30509 
+195 ran till end (survived) ðŸµ 
+2026-01-02 19:24:51.831779 
+196 ran till end (survived) ðŸµ 
+2026-01-02 19:26:21.716158 
+197 ran till end (survived) ðŸµ 
+2026-01-02 19:27:52.22923 
+198 ran till end (survived) ðŸµ 
+2026-01-02 19:29:22.734742 
+199 ran till end (survived) ðŸµ 
+2026-01-02 19:30:53.159108 
+200 ran till end (survived) ðŸµ 
+2026-01-02 19:32:18.972449 
+201 ran till end (survived) ðŸµ 
+2026-01-02 19:33:42.345605 
+202 ran till end (survived) ðŸµ 
+2026-01-02 19:35:09.372847 
+203 ran till end (survived) ðŸµ 
+2026-01-02 19:36:43.870441 
+204 ran till end (survived) ðŸµ 
+2026-01-02 19:38:15.716219 
+205 ran till end (survived) ðŸµ 
+2026-01-02 19:39:45.044744 
+206 ran till end (survived) ðŸµ 
+2026-01-02 19:41:16.242227 
+207 ran till end (survived) ðŸµ 
+2026-01-02 19:42:44.289304 
+208 ran till end (survived) ðŸµ 
+2026-01-02 19:44:15.531503 
+209 ran till end (survived) ðŸµ 
+2026-01-02 19:45:46.360786 
+210 ran till end (survived) ðŸµ 
+2026-01-02 19:47:16.814486 
+211 ran till end (survived) ðŸµ 
+2026-01-02 19:48:46.231112 
+212 ran till end (survived) ðŸµ 
+2026-01-02 19:50:17.647851 
+213 ran till end (survived) ðŸµ 
+2026-01-02 19:51:47.277359 
+214 ran till end (survived) ðŸµ 
+2026-01-02 19:53:13.662701 
+215 ran till end (survived) ðŸµ 
+2026-01-02 19:54:46.868584 
+216 ran till end (survived) ðŸµ 
+2026-01-02 19:56:18.874298 
+217 ran till end (survived) ðŸµ 
+2026-01-02 19:57:47.153333 
+218 ran till end (survived) ðŸµ 
+2026-01-02 19:59:13.050819 
+219 ran till end (survived) ðŸµ 
+2026-01-02 20:00:44.202489 
+220 ran till end (survived) ðŸµ 
+2026-01-02 20:02:14.803092 
+221 ran till end (survived) ðŸµ 
+2026-01-02 20:03:43.134894 
+222 ran till end (survived) ðŸµ 
+2026-01-02 20:05:09.591769 
+223 ran till end (survived) ðŸµ 
+2026-01-02 20:06:40.723635 
+224 ran till end (survived) ðŸµ 
+225 died ðŸ‘µ 
+2026-01-02 20:08:17.35021 
+226 ran till end (survived) ðŸµ 
+2026-01-02 20:09:47.135013 
+227 ran till end (survived) ðŸµ 
+2026-01-02 20:11:16.925569 
+228 ran till end (survived) ðŸµ 
+2026-01-02 20:12:36.079482 
+229 ran till end (survived) ðŸµ 
+2026-01-02 20:14:06.658612 
+230 ran till end (survived) ðŸµ 
+2026-01-02 20:15:30.152056 
+231 ran till end (survived) ðŸµ 
+2026-01-02 20:16:57.236157 
+232 ran till end (survived) ðŸµ 
+2026-01-02 20:18:27.131998 
+233 ran till end (survived) ðŸµ 
+2026-01-02 20:19:51.96835 
+234 ran till end (survived) ðŸµ 
+2026-01-02 20:21:24.578862 
+235 ran till end (survived) ðŸµ 
+2026-01-02 20:22:56.025077 
+236 ran till end (survived) ðŸµ 
+2026-01-02 20:24:20.586076 
+237 ran till end (survived) ðŸµ 
+2026-01-02 20:25:52.116014 
+238 ran till end (survived) ðŸµ 
+2026-01-02 20:27:23.739245 
+239 ran till end (survived) ðŸµ 
+2026-01-02 20:28:07.779896 
+240 ran till end (survived) ðŸµ 
+2026-01-02 20:29:37.514066 
+241 ran till end (survived) ðŸµ 
+2026-01-02 20:31:05.38873 
+242 ran till end (survived) ðŸµ 
+2026-01-02 20:32:35.300174 
+243 ran till end (survived) ðŸµ 
+2026-01-02 20:33:50.207164 
+244 ran till end (survived) ðŸµ 
+2026-01-02 20:35:04.243721 
+245 ran till end (survived) ðŸµ 
+2026-01-02 20:36:25.731562 
+246 ran till end (survived) ðŸµ 
+2026-01-02 20:37:57.015772 
+247 ran till end (survived) ðŸµ 
+2026-01-02 20:39:05.71191 
+248 ran till end (survived) ðŸµ 
+2026-01-02 20:40:37.284911 
+249 ran till end (survived) ðŸµ 
+2026-01-02 20:42:05.187709 
+250 ran till end (survived) ðŸµ 
+2026-01-02 20:42:54.220475 
+251 ran till end (survived) ðŸµ 
+2026-01-02 20:44:20.323141 
+252 ran till end (survived) ðŸµ 
+2026-01-02 20:45:49.525178 
+253 ran till end (survived) ðŸµ 
+2026-01-02 20:47:19.421575 
+254 ran till end (survived) ðŸµ 
+2026-01-02 20:48:47.203144 
+255 ran till end (survived) ðŸµ 
+2026-01-02 20:50:18.954134 
+256 ran till end (survived) ðŸµ 
+2026-01-02 20:51:47.645015 
+257 ran till end (survived) ðŸµ 
+2026-01-02 20:53:16.895818 
+258 ran till end (survived) ðŸµ 
+2026-01-02 20:54:47.575048 
+259 ran till end (survived) ðŸµ 
+2026-01-02 20:56:06.040348 
+260 ran till end (survived) ðŸµ 
+2026-01-02 20:57:35.671641 
+261 ran till end (survived) ðŸµ 
+2026-01-02 20:59:02.719532 
+262 ran till end (survived) ðŸµ 
+2026-01-02 21:00:33.959486 
+263 ran till end (survived) ðŸµ 
+2026-01-02 21:02:03.611032 
+264 ran till end (survived) ðŸµ 
+2026-01-02 21:03:29.787508 
+265 ran till end (survived) ðŸµ 
+2026-01-02 21:05:00.554085 
+266 ran till end (survived) ðŸµ 
+2026-01-02 21:06:32.187794 
+267 ran till end (survived) ðŸµ 
+2026-01-02 21:07:54.467229 
+268 ran till end (survived) ðŸµ 
+2026-01-02 21:09:25.081522 
+269 ran till end (survived) ðŸµ 
+2026-01-02 21:10:55.150905 
+270 ran till end (survived) ðŸµ 
+2026-01-02 21:12:24.621739 
+271 ran till end (survived) ðŸµ 
+2026-01-02 21:13:56.45664 
+272 ran till end (survived) ðŸµ 
+2026-01-02 21:15:27.754593 
+273 ran till end (survived) ðŸµ 
+2026-01-02 21:17:00.481519 
+274 ran till end (survived) ðŸµ 
+2026-01-02 21:18:26.15794 
+275 ran till end (survived) ðŸµ 
+2026-01-02 21:19:51.519197 
+276 ran till end (survived) ðŸµ 
+2026-01-02 21:20:49.124589 
+277 ran till end (survived) ðŸµ 
+2026-01-02 21:22:19.242793 
+278 ran till end (survived) ðŸµ 
+2026-01-02 21:23:49.761211 
+279 ran till end (survived) ðŸµ 
+2026-01-02 21:25:21.312096 
+280 ran till end (survived) ðŸµ 
+2026-01-02 21:26:51.695386 
+281 ran till end (survived) ðŸµ 
+2026-01-02 21:28:13.994882 
+282 ran till end (survived) ðŸµ 
+2026-01-02 21:29:45.926672 
+283 ran till end (survived) ðŸµ 
+2026-01-02 21:31:15.592807 
+284 ran till end (survived) ðŸµ 
+2026-01-02 21:32:42.675571 
+285 ran till end (survived) ðŸµ 
+2026-01-02 21:34:14.977426 
+286 ran till end (survived) ðŸµ 
+2026-01-02 21:35:45.759428 
+287 ran till end (survived) ðŸµ 
+2026-01-02 21:37:18.253927 
+288 ran till end (survived) ðŸµ 
+2026-01-02 21:38:47.518085 
+289 ran till end (survived) ðŸµ 
+2026-01-02 21:40:16.721473 
+290 ran till end (survived) ðŸµ 
+2026-01-02 21:41:46.008075 
+291 ran till end (survived) ðŸµ 
+2026-01-02 21:43:12.371878 
+292 ran till end (survived) ðŸµ 
+2026-01-02 21:44:45.180005 
+293 ran till end (survived) ðŸµ 
+2026-01-02 21:46:15.776258 
+294 ran till end (survived) ðŸµ 
+2026-01-02 21:47:42.008605 
+295 ran till end (survived) ðŸµ 
+2026-01-02 21:49:11.189826 
+296 ran till end (survived) ðŸµ 
+2026-01-02 21:50:41.499619 
+297 ran till end (survived) ðŸµ 
+2026-01-02 21:52:06.503219 
+298 ran till end (survived) ðŸµ 
+2026-01-02 21:53:35.467105 
+299 ran till end (survived) ðŸµ 
+300 died ðŸ‘µ 
+2026-01-02 21:56:22.835849 
+301 ran till end (survived) ðŸµ 
+2026-01-02 21:56:32.859108 
+302 ran till end (survived) ðŸµ 
+2026-01-02 21:58:06.377976 
+303 ran till end (survived) ðŸµ 
+2026-01-02 21:59:36.176418 
+304 ran till end (survived) ðŸµ 
+2026-01-02 22:01:02.47487 
+305 ran till end (survived) ðŸµ 
+2026-01-02 22:02:32.120885 
+306 ran till end (survived) ðŸµ 
+2026-01-02 22:04:00.668765 
+307 ran till end (survived) ðŸµ 
+2026-01-02 22:05:28.964149 
+308 ran till end (survived) ðŸµ 
+2026-01-02 22:06:49.74101 
+309 ran till end (survived) ðŸµ 
+2026-01-02 22:08:18.915963 
+310 ran till end (survived) ðŸµ 
+2026-01-02 22:09:48.343626 
+311 ran till end (survived) ðŸµ 
+2026-01-02 22:11:20.897943 
+312 ran till end (survived) ðŸµ 
+2026-01-02 22:12:50.719528 
+313 ran till end (survived) ðŸµ 
+2026-01-02 22:14:19.71051 
+314 ran till end (survived) ðŸµ 
+2026-01-02 22:15:49.016015 
+315 ran till end (survived) ðŸµ 
+2026-01-02 22:17:16.269259 
+316 ran till end (survived) ðŸµ 
+2026-01-02 22:18:45.678954 
+317 ran till end (survived) ðŸµ 
+2026-01-02 22:20:15.412327 
+318 ran till end (survived) ðŸµ 
+2026-01-02 22:21:47.468051 
+319 ran till end (survived) ðŸµ 
+2026-01-02 22:23:13.798967 
+320 ran till end (survived) ðŸµ 
+2026-01-02 22:24:35.253264 
+321 ran till end (survived) ðŸµ 
+2026-01-02 22:26:04.757875 
+322 ran till end (survived) ðŸµ 
+2026-01-02 22:27:34.045539 
+323 ran till end (survived) ðŸµ 
+2026-01-02 22:29:01.635924 
+324 ran till end (survived) ðŸµ 
+2026-01-02 22:30:31.966325 
+325 ran till end (survived) ðŸµ 
+2026-01-02 22:32:01.727552 
+326 ran till end (survived) ðŸµ 
+2026-01-02 22:33:32.255219 
+327 ran till end (survived) ðŸµ 
+2026-01-02 22:35:03.16909 
+328 ran till end (survived) ðŸµ 
+2026-01-02 22:36:35.952147 
+329 ran till end (survived) ðŸµ 
+2026-01-02 22:38:03.573782 
+330 ran till end (survived) ðŸµ 
+2026-01-02 22:39:36.690689 
+331 ran till end (survived) ðŸµ 
+2026-01-02 22:41:08.809275 
+332 ran till end (survived) ðŸµ 
+2026-01-02 22:42:36.305417 
+333 ran till end (survived) ðŸµ 
+2026-01-02 22:44:04.422051 
+334 ran till end (survived) ðŸµ 
+2026-01-02 22:45:32.748846 
+335 ran till end (survived) ðŸµ 
+2026-01-02 22:47:05.626577 
+336 ran till end (survived) ðŸµ 
+2026-01-02 22:48:35.857651 
+337 ran till end (survived) ðŸµ 
+2026-01-02 22:50:00.426866 
+338 ran till end (survived) ðŸµ 
+2026-01-02 22:50:51.262776 
+339 ran till end (survived) ðŸµ 
+2026-01-02 22:52:05.282259 
+340 ran till end (survived) ðŸµ 
+2026-01-02 22:53:32.119404 
+341 ran till end (survived) ðŸµ 
+2026-01-02 22:55:03.276456 
+342 ran till end (survived) ðŸµ 
+2026-01-02 22:56:26.461066 
+343 ran till end (survived) ðŸµ 
+2026-01-02 22:57:54.398033 
+344 ran till end (survived) ðŸµ 
+2026-01-02 22:59:27.48228 
+345 ran till end (survived) ðŸµ 
+2026-01-02 23:01:00.267127 
+346 ran till end (survived) ðŸµ 
+2026-01-02 23:02:32.060615 
+347 ran till end (survived) ðŸµ 
+2026-01-02 23:04:02.675379 
+348 ran till end (survived) ðŸµ 
+2026-01-02 23:05:33.969142 
+349 ran till end (survived) ðŸµ 
+2026-01-02 23:07:05.249542 
+350 ran till end (survived) ðŸµ 
+2026-01-02 23:08:31.909943 
+351 ran till end (survived) ðŸµ 
+2026-01-02 23:09:58.301802 
+352 ran till end (survived) ðŸµ 
+2026-01-02 23:11:28.889834 
+353 ran till end (survived) ðŸµ 
+2026-01-02 23:12:58.169224 
+354 ran till end (survived) ðŸµ 
+2026-01-02 23:14:27.341516 
+355 ran till end (survived) ðŸµ 
+2026-01-02 23:15:59.979058 
+356 ran till end (survived) ðŸµ 
+2026-01-02 23:17:31.741637 
+357 ran till end (survived) ðŸµ 
+2026-01-02 23:19:01.609912 
+358 ran till end (survived) ðŸµ 
+2026-01-02 23:20:31.609347 
+359 ran till end (survived) ðŸµ 
+2026-01-02 23:22:01.628435 
+360 ran till end (survived) ðŸµ 
+2026-01-02 23:23:30.171389 
+361 ran till end (survived) ðŸµ 
+2026-01-02 23:24:56.629456 
+362 ran till end (survived) ðŸµ 
+2026-01-02 23:26:26.916135 
+363 ran till end (survived) ðŸµ 
+2026-01-02 23:27:46.538661 
+364 ran till end (survived) ðŸµ 
+2026-01-02 23:29:15.179758 
+365 ran till end (survived) ðŸµ 
+2026-01-02 23:30:45.786812 
+366 ran till end (survived) ðŸµ 
+2026-01-02 23:32:14.310495 
+367 ran till end (survived) ðŸµ 
+2026-01-02 23:33:44.469851 
+368 ran till end (survived) ðŸµ 
+2026-01-02 23:35:14.184008 
+369 ran till end (survived) ðŸµ 
+2026-01-02 23:36:41.129399 
+370 ran till end (survived) ðŸµ 
+2026-01-02 23:38:07.320684 
+371 ran till end (survived) ðŸµ 
+2026-01-02 23:39:37.875109 
+372 ran till end (survived) ðŸµ 
+2026-01-02 23:41:08.446831 
+373 ran till end (survived) ðŸµ 
+2026-01-02 23:42:38.800759 
+374 ran till end (survived) ðŸµ 
+2026-01-02 23:44:08.005444 
+375 ran till end (survived) ðŸµ 
+2026-01-02 23:45:35.204054 
+376 ran till end (survived) ðŸµ 
+2026-01-02 23:47:02.878648 
+377 ran till end (survived) ðŸµ 
+2026-01-02 23:48:30.930799 
+378 ran till end (survived) ðŸµ 
+2026-01-02 23:50:02.32352 
+379 ran till end (survived) ðŸµ 
+380 died ðŸ‘µ 
+2026-01-02 23:51:34.804568 
+381 ran till end (survived) ðŸµ 
+2026-01-02 23:53:07.615283 
+382 ran till end (survived) ðŸµ 
+2026-01-02 23:54:20.540612 
+383 ran till end (survived) ðŸµ 
+2026-01-02 23:55:51.923071 
+384 ran till end (survived) ðŸµ 
+2026-01-02 23:57:18.981656 
+385 ran till end (survived) ðŸµ 
+2026-01-02 23:58:50.651049 
+386 ran till end (survived) ðŸµ 
+2026-01-03 00:00:19.706337 
+387 ran till end (survived) ðŸµ 
+2026-01-03 00:01:48.113221 
+388 ran till end (survived) ðŸµ 
+2026-01-03 00:03:19.597374 
+389 ran till end (survived) ðŸµ 
+2026-01-03 00:04:47.883474 
+390 ran till end (survived) ðŸµ 
+2026-01-03 00:06:17.701423 
+391 ran till end (survived) ðŸµ 
+2026-01-03 00:07:49.752461 
+392 ran till end (survived) ðŸµ 
+2026-01-03 00:09:23.324091 
+393 ran till end (survived) ðŸµ 
+2026-01-03 00:10:53.486204 
+394 ran till end (survived) ðŸµ 
+2026-01-03 00:12:19.089051 
+395 ran till end (survived) ðŸµ 
+2026-01-03 00:13:39.948653 
+396 ran till end (survived) ðŸµ 
+2026-01-03 00:15:10.201337 
+397 ran till end (survived) ðŸµ 
+2026-01-03 00:16:39.236909 
+398 ran till end (survived) ðŸµ 
+2026-01-03 00:18:09.571122 
+399 ran till end (survived) ðŸµ 
+2026-01-03 00:19:28.865107 
+400 ran till end (survived) ðŸµ 
+2026-01-03 00:20:52.400665 
+401 ran till end (survived) ðŸµ 
+2026-01-03 00:22:20.117815 
+402 ran till end (survived) ðŸµ 
+2026-01-03 00:23:51.398875 
+403 ran till end (survived) ðŸµ 
+2026-01-03 00:25:09.396721 
+404 ran till end (survived) ðŸµ 
+2026-01-03 00:26:39.952005 
+405 ran till end (survived) ðŸµ 
+2026-01-03 00:28:09.108839 
+406 ran till end (survived) ðŸµ 
+2026-01-03 00:29:39.514046 
+407 ran till end (survived) ðŸµ 
+2026-01-03 00:31:08.365036 
+408 ran till end (survived) ðŸµ 
+2026-01-03 00:32:33.931773 
+409 ran till end (survived) ðŸµ 
+2026-01-03 00:34:04.345654 
+410 ran till end (survived) ðŸµ 
+2026-01-03 00:35:32.258353 
+411 ran till end (survived) ðŸµ 
+2026-01-03 00:36:56.481315 
+412 ran till end (survived) ðŸµ 
+2026-01-03 00:38:28.304083 
+413 ran till end (survived) ðŸµ 
+2026-01-03 00:39:58.809309 
+414 ran till end (survived) ðŸµ 
+2026-01-03 00:41:23.801492 
+415 ran till end (survived) ðŸµ 
+2026-01-03 00:42:55.203684 
+416 ran till end (survived) ðŸµ 
+2026-01-03 00:44:26.13343 
+417 ran till end (survived) ðŸµ 
+2026-01-03 00:45:54.575372 
+418 ran till end (survived) ðŸµ 
+2026-01-03 00:47:23.661008 
+419 ran till end (survived) ðŸµ 
+2026-01-03 00:48:52.823365 
+420 ran till end (survived) ðŸµ 
+2026-01-03 00:50:23.394337 
+421 ran till end (survived) ðŸµ 
+2026-01-03 00:51:45.888598 
+422 ran till end (survived) ðŸµ 
+2026-01-03 00:53:18.753876 
+423 ran till end (survived) ðŸµ 
+2026-01-03 00:54:49.569152 
+424 ran till end (survived) ðŸµ 
+2026-01-03 00:56:18.325021 
+425 ran till end (survived) ðŸµ 
+2026-01-03 00:57:48.611559 
+426 ran till end (survived) ðŸµ 
+2026-01-03 00:59:20.925684 
+427 ran till end (survived) ðŸµ 
+2026-01-03 01:00:33.504465 
+428 ran till end (survived) ðŸµ 
+2026-01-03 01:02:01.56268 
+429 ran till end (survived) ðŸµ 
+2026-01-03 01:03:28.867182 
+430 ran till end (survived) ðŸµ 
+2026-01-03 01:04:52.302547 
+431 ran till end (survived) ðŸµ 
+2026-01-03 01:06:21.777429 
+432 ran till end (survived) ðŸµ 
+2026-01-03 01:07:51.769918 
+433 ran till end (survived) ðŸµ 
+2026-01-03 01:09:19.886796 
+434 ran till end (survived) ðŸµ 
+2026-01-03 01:10:51.790939 
+435 ran till end (survived) ðŸµ 
+2026-01-03 01:12:20.356571 
+436 ran till end (survived) ðŸµ 
+2026-01-03 01:13:51.25418 
+437 ran till end (survived) ðŸµ 
+2026-01-03 01:15:19.751029 
+438 ran till end (survived) ðŸµ 
+2026-01-03 01:16:49.797566 
+439 ran till end (survived) ðŸµ 
+2026-01-03 01:18:16.442614 
+440 ran till end (survived) ðŸµ 
+2026-01-03 01:19:44.972408 
+441 ran till end (survived) ðŸµ 
+2026-01-03 01:21:16.640855 
+442 ran till end (survived) ðŸµ 
+2026-01-03 01:22:46.379779 
+443 ran till end (survived) ðŸµ 
+2026-01-03 01:24:17.509513 
+444 ran till end (survived) ðŸµ 
+2026-01-03 01:25:51.390127 
+445 ran till end (survived) ðŸµ 
+2026-01-03 01:26:34.183257 
+446 ran till end (survived) ðŸµ 
+2026-01-03 01:28:03.760902 
+447 ran till end (survived) ðŸµ 
+2026-01-03 01:29:37.600902 
+448 ran till end (survived) ðŸµ 
+2026-01-03 01:31:10.577624 
+449 ran till end (survived) ðŸµ 
+2026-01-03 01:32:41.123117 
+450 ran till end (survived) ðŸµ 
+2026-01-03 01:34:08.36404 
+451 ran till end (survived) ðŸµ 
+2026-01-03 01:35:41.33258 
+452 ran till end (survived) ðŸµ 
+2026-01-03 01:37:12.008475 
+453 ran till end (survived) ðŸµ 
+2026-01-03 01:38:40.55203 
+454 ran till end (survived) ðŸµ 
+2026-01-03 01:40:06.99597 
+455 ran till end (survived) ðŸµ 
+456 died ðŸ‘µ 
+2026-01-03 01:41:42.194803 
+457 ran till end (survived) ðŸµ 
+2026-01-03 01:43:14.303515 
+458 ran till end (survived) ðŸµ 
+2026-01-03 01:44:43.273946 
+459 ran till end (survived) ðŸµ 
+2026-01-03 01:46:14.992613 
+460 ran till end (survived) ðŸµ 
+2026-01-03 01:47:43.281183 
+461 ran till end (survived) ðŸµ 
+2026-01-03 01:49:11.793697 
+462 ran till end (survived) ðŸµ 
+2026-01-03 01:50:01.935902 
+463 ran till end (survived) ðŸµ 
+2026-01-03 01:51:33.5537 
+464 ran till end (survived) ðŸµ 
+2026-01-03 01:53:01.926778 
+465 ran till end (survived) ðŸµ 
+2026-01-03 01:54:33.060608 
+466 ran till end (survived) ðŸµ 
+2026-01-03 01:56:02.927674 
+467 ran till end (survived) ðŸµ 
+2026-01-03 01:57:36.47593 
+468 ran till end (survived) ðŸµ 
+2026-01-03 01:59:06.018374 
+469 ran till end (survived) ðŸµ 
+2026-01-03 02:00:36.613539 
+470 ran till end (survived) ðŸµ 
+2026-01-03 02:02:08.631481 
+471 ran till end (survived) ðŸµ 
+2026-01-03 02:03:40.977373 
+472 ran till end (survived) ðŸµ 
+2026-01-03 02:05:11.072018 
+473 ran till end (survived) ðŸµ 
+2026-01-03 02:06:36.506369 
+474 ran till end (survived) ðŸµ 
+2026-01-03 02:08:05.689921 
+475 ran till end (survived) ðŸµ 
+2026-01-03 02:09:35.422643 
+476 ran till end (survived) ðŸµ 
+2026-01-03 02:11:00.707208 
+477 ran till end (survived) ðŸµ 
+2026-01-03 02:12:32.637673 
+478 ran till end (survived) ðŸµ 
+2026-01-03 02:13:56.664594 
+479 ran till end (survived) ðŸµ 
+2026-01-03 02:15:27.603501 
+480 ran till end (survived) ðŸµ 
+2026-01-03 02:16:59.02082 
+481 ran till end (survived) ðŸµ 
+2026-01-03 02:18:28.779969 
+482 ran till end (survived) ðŸµ 
+2026-01-03 02:19:56.326652 
+483 ran till end (survived) ðŸµ 
+2026-01-03 02:21:23.99839 
+484 ran till end (survived) ðŸµ 
+2026-01-03 02:22:22.80897 
+485 ran till end (survived) ðŸµ 
+2026-01-03 02:23:54.738605 
+486 ran till end (survived) ðŸµ 
+2026-01-03 02:25:24.021847 
+487 ran till end (survived) ðŸµ 
+2026-01-03 02:26:53.042893 
+488 ran till end (survived) ðŸµ 
+2026-01-03 02:28:25.658408 
+489 ran till end (survived) ðŸµ 
+2026-01-03 02:29:52.268247 
+490 ran till end (survived) ðŸµ 
+2026-01-03 02:31:19.843564 
+491 ran till end (survived) ðŸµ 
+2026-01-03 02:32:50.115476 
+492 ran till end (survived) ðŸµ 
+2026-01-03 02:34:19.873977 
+493 ran till end (survived) ðŸµ 
+2026-01-03 02:35:40.253203 
+494 ran till end (survived) ðŸµ 
+2026-01-03 02:37:10.286767 
+495 ran till end (survived) ðŸµ 
+2026-01-03 02:38:31.728178 
+496 ran till end (survived) ðŸµ 
+2026-01-03 02:39:54.991869 
+497 ran till end (survived) ðŸµ 
+2026-01-03 02:41:24.760299 
+498 ran till end (survived) ðŸµ 
+2026-01-03 02:42:55.215596 
+499 ran till end (survived) ðŸµ 
+2026-01-03 02:44:26.83337 
+500 ran till end (survived) ðŸµ 
+2026-01-03 02:45:50.396825 
+501 ran till end (survived) ðŸµ 
+2026-01-03 02:47:19.257571 
+502 ran till end (survived) ðŸµ 
+2026-01-03 02:48:47.430737 
+503 ran till end (survived) ðŸµ 
+2026-01-03 02:50:18.611226 
+504 ran till end (survived) ðŸµ 
+2026-01-03 02:51:47.363695 
+505 ran till end (survived) ðŸµ 
+2026-01-03 02:53:17.491652 
+506 ran till end (survived) ðŸµ 
+2026-01-03 02:54:46.05553 
+507 ran till end (survived) ðŸµ 
+2026-01-03 02:56:14.259619 
+508 ran till end (survived) ðŸµ 
+2026-01-03 02:57:35.316491 
+509 ran till end (survived) ðŸµ 
+2026-01-03 02:59:02.04576 
+510 ran till end (survived) ðŸµ 
+2026-01-03 03:00:33.129216 
+511 ran till end (survived) ðŸµ 
+2026-01-03 03:02:04.824808 
+512 ran till end (survived) ðŸµ 
+2026-01-03 03:03:37.610585 
+513 ran till end (survived) ðŸµ 
+2026-01-03 03:05:07.377857 
+514 ran till end (survived) ðŸµ 
+2026-01-03 03:06:25.457799 
+515 ran till end (survived) ðŸµ 
+2026-01-03 03:07:55.185519 
+516 ran till end (survived) ðŸµ 
+2026-01-03 03:09:25.556569 
+517 ran till end (survived) ðŸµ 
+2026-01-03 03:10:55.311011 
+518 ran till end (survived) ðŸµ 
+2026-01-03 03:12:21.603196 
+519 ran till end (survived) ðŸµ 
+2026-01-03 03:13:51.886842 
+520 ran till end (survived) ðŸµ 
+2026-01-03 03:15:16.168548 
+521 ran till end (survived) ðŸµ 
+2026-01-03 03:16:46.046555 
+522 ran till end (survived) ðŸµ 
+2026-01-03 03:18:16.202973 
+523 ran till end (survived) ðŸµ 
+2026-01-03 03:19:44.304846 
+524 ran till end (survived) ðŸµ 
+2026-01-03 03:21:13.205054 
+525 ran till end (survived) ðŸµ 
+2026-01-03 03:22:30.09784 
+526 ran till end (survived) ðŸµ 
+2026-01-03 03:24:00.947029 
+527 ran till end (survived) ðŸµ 
+2026-01-03 03:25:33.22346 
+528 ran till end (survived) ðŸµ 
+2026-01-03 03:26:56.698986 
+529 ran till end (survived) ðŸµ 
+2026-01-03 03:28:20.774226 
+530 ran till end (survived) ðŸµ 
+2026-01-03 03:29:08.253701 
+531 ran till end (survived) ðŸµ 
+2026-01-03 03:30:37.418037 
+532 ran till end (survived) ðŸµ 
+2026-01-03 03:32:04.303558 
+533 ran till end (survived) ðŸµ 
+2026-01-03 03:33:32.956718 
+534 ran till end (survived) ðŸµ 
+2026-01-03 03:34:58.985058 
+535 ran till end (survived) ðŸµ 
+2026-01-03 03:36:30.984727 
+536 ran till end (survived) ðŸµ 
+2026-01-03 03:38:00.260643 
+537 ran till end (survived) ðŸµ 
+2026-01-03 03:39:28.005586 
+538 ran till end (survived) ðŸµ 
+2026-01-03 03:40:43.86645 
+539 ran till end (survived) ðŸµ 
+540 died ðŸ‘µ 
+2026-01-03 03:42:17.96048 
+541 ran till end (survived) ðŸµ 
+2026-01-03 03:43:50.393785 
+542 ran till end (survived) ðŸµ 
+2026-01-03 03:45:18.338537 
+543 ran till end (survived) ðŸµ 
+2026-01-03 03:46:46.672074 
+544 ran till end (survived) ðŸµ 
+2026-01-03 03:48:12.937983 
+545 ran till end (survived) ðŸµ 
+2026-01-03 03:49:31.04879 
+546 ran till end (survived) ðŸµ 
+2026-01-03 03:51:00.617893 
+547 ran till end (survived) ðŸµ 
+548 died ðŸ‘µ 
+2026-01-03 03:52:43.560045 
+549 ran till end (survived) ðŸµ 
+2026-01-03 03:54:14.992925 
+550 ran till end (survived) ðŸµ 
+2026-01-03 03:55:40.77793 
+551 ran till end (survived) ðŸµ 
+2026-01-03 03:57:11.205068 
+552 ran till end (survived) ðŸµ 
+2026-01-03 03:58:40.724446 
+553 ran till end (survived) ðŸµ 
+2026-01-03 04:00:11.265244 
+554 ran till end (survived) ðŸµ 
+2026-01-03 04:01:33.54015 
+555 ran till end (survived) ðŸµ 
+2026-01-03 04:03:01.941849 
+556 ran till end (survived) ðŸµ 
+2026-01-03 04:04:29.680337 
+557 ran till end (survived) ðŸµ 
+2026-01-03 04:06:01.669174 
+558 ran till end (survived) ðŸµ 
+2026-01-03 04:07:31.711311 
+559 ran till end (survived) ðŸµ 
+2026-01-03 04:09:01.386774 
+560 ran till end (survived) ðŸµ 
+2026-01-03 04:10:31.895815 
+561 ran till end (survived) ðŸµ 
+2026-01-03 04:11:44.527499 
+562 ran till end (survived) ðŸµ 
+2026-01-03 04:13:12.364197 
+563 ran till end (survived) ðŸµ 
+2026-01-03 04:14:43.889433 
+564 ran till end (survived) ðŸµ 
+2026-01-03 04:16:11.517497 
+565 ran till end (survived) ðŸµ 
+2026-01-03 04:17:16.222489 
+566 ran till end (survived) ðŸµ 
+2026-01-03 04:18:48.841542 
+567 ran till end (survived) ðŸµ 
+2026-01-03 04:20:17.632456 
+568 ran till end (survived) ðŸµ 
+2026-01-03 04:21:47.088907 
+569 ran till end (survived) ðŸµ 
+2026-01-03 04:23:13.43053 
+570 ran till end (survived) ðŸµ 
+2026-01-03 04:24:41.361464 
+571 ran till end (survived) ðŸµ 
+2026-01-03 04:26:08.6813 
+572 ran till end (survived) ðŸµ 
+2026-01-03 04:27:38.251917 
+573 ran till end (survived) ðŸµ 
+2026-01-03 04:29:05.620362 
+574 ran till end (survived) ðŸµ 
+2026-01-03 04:30:35.156478 
+575 ran till end (survived) ðŸµ 
+2026-01-03 04:32:06.190351 
+576 ran till end (survived) ðŸµ 
+2026-01-03 04:33:37.440168 
+577 ran till end (survived) ðŸµ 
+2026-01-03 04:35:09.064795 
+578 ran till end (survived) ðŸµ 
+2026-01-03 04:36:39.692003 
+579 ran till end (survived) ðŸµ 
+2026-01-03 04:38:05.099785 
+580 ran till end (survived) ðŸµ 
+2026-01-03 04:39:19.145426 
+581 ran till end (survived) ðŸµ 
+2026-01-03 04:40:50.310264 
+582 ran till end (survived) ðŸµ 
+2026-01-03 04:41:33.660445 
+583 ran till end (survived) ðŸµ 
+2026-01-03 04:43:03.429219 
+584 ran till end (survived) ðŸµ 
+2026-01-03 04:44:32.789324 
+585 ran till end (survived) ðŸµ 
+2026-01-03 04:46:01.629146 
+586 ran till end (survived) ðŸµ 
+2026-01-03 04:47:23.452316 
+587 ran till end (survived) ðŸµ 
+2026-01-03 04:48:48.264974 
+588 ran till end (survived) ðŸµ 
+2026-01-03 04:50:13.908499 
+589 ran till end (survived) ðŸµ 
+2026-01-03 04:51:44.123624 
+590 ran till end (survived) ðŸµ 
+2026-01-03 04:53:11.384284 
+591 ran till end (survived) ðŸµ 
+2026-01-03 04:54:39.22659 
+592 ran till end (survived) ðŸµ 
+2026-01-03 04:56:06.098704 
+593 ran till end (survived) ðŸµ 
+2026-01-03 04:57:37.595543 
+594 ran till end (survived) ðŸµ 
+2026-01-03 04:59:08.367908 
+595 ran till end (survived) ðŸµ 
+2026-01-03 05:00:27.068663 
+596 ran till end (survived) ðŸµ 
+2026-01-03 05:01:55.34534 
+597 ran till end (survived) ðŸµ 
+2026-01-03 05:03:24.539638 
+598 ran till end (survived) ðŸµ 
+2026-01-03 05:04:52.884099 
+599 ran till end (survived) ðŸµ 
+2026-01-03 05:06:24.160168 
+600 ran till end (survived) ðŸµ 
+2026-01-03 05:07:56.307274 
+601 ran till end (survived) ðŸµ 
+2026-01-03 05:09:20.610915 
+602 ran till end (survived) ðŸµ 
+2026-01-03 05:10:52.350578 
+603 ran till end (survived) ðŸµ 
+2026-01-03 05:12:19.306322 
+604 ran till end (survived) ðŸµ 
+2026-01-03 05:13:53.281662 
+605 ran till end (survived) ðŸµ 
+2026-01-03 05:15:23.404052 
+606 ran till end (survived) ðŸµ 
+2026-01-03 05:16:49.742086 
+607 ran till end (survived) ðŸµ 
+2026-01-03 05:18:21.056807 
+608 ran till end (survived) ðŸµ 
+2026-01-03 05:19:48.069116 
+609 ran till end (survived) ðŸµ 
+2026-01-03 05:21:18.254776 
+610 ran till end (survived) ðŸµ 
+2026-01-03 05:22:45.786579 
+611 ran till end (survived) ðŸµ 
+2026-01-03 05:24:15.126055 
+612 ran till end (survived) ðŸµ 
+2026-01-03 05:25:46.976444 
+613 ran till end (survived) ðŸµ 
+2026-01-03 05:27:16.481666 
+614 ran till end (survived) ðŸµ 
+2026-01-03 05:28:45.708168 
+615 ran till end (survived) ðŸµ 
+2026-01-03 05:30:11.160642 
+616 ran till end (survived) ðŸµ 
+2026-01-03 05:31:43.437562 
+617 ran till end (survived) ðŸµ 
+2026-01-03 05:33:13.439553 
+618 ran till end (survived) ðŸµ 
+2026-01-03 05:34:43.871734 
+619 ran till end (survived) ðŸµ 
+2026-01-03 05:36:09.471537 
+620 ran till end (survived) ðŸµ 
+2026-01-03 05:37:29.332577 
+621 ran till end (survived) ðŸµ 
+2026-01-03 05:39:02.836363 
+622 ran till end (survived) ðŸµ 
+2026-01-03 05:40:32.568066 
+623 ran till end (survived) ðŸµ 
+2026-01-03 05:42:01.07636 
+624 ran till end (survived) ðŸµ 
+2026-01-03 05:43:28.552221 
+625 ran till end (survived) ðŸµ 
+2026-01-03 05:44:57.073496 
+626 ran till end (survived) ðŸµ 
+2026-01-03 05:46:27.185454 
+627 ran till end (survived) ðŸµ 
+2026-01-03 05:48:00.276252 
+628 ran till end (survived) ðŸµ 
+2026-01-03 05:49:32.146957 
+629 ran till end (survived) ðŸµ 
+2026-01-03 05:51:04.49824 
+630 ran till end (survived) ðŸµ 
+2026-01-03 05:52:31.822165 
+631 ran till end (survived) ðŸµ 
+2026-01-03 05:53:58.530509 
+632 ran till end (survived) ðŸµ 
+2026-01-03 05:55:30.066762 
+633 ran till end (survived) ðŸµ 
+2026-01-03 05:57:00.146372 
+634 ran till end (survived) ðŸµ 
+2026-01-03 05:58:29.074292 
+635 ran till end (survived) ðŸµ 
+2026-01-03 06:00:01.267977 
+636 ran till end (survived) ðŸµ 
+2026-01-03 06:01:15.744781 
+637 ran till end (survived) ðŸµ 
+2026-01-03 06:02:45.198143 
+638 ran till end (survived) ðŸµ 
+2026-01-03 06:04:09.338878 
+639 ran till end (survived) ðŸµ 
+2026-01-03 06:05:37.28859 
+640 ran till end (survived) ðŸµ 
+2026-01-03 06:07:09.025522 
+641 ran till end (survived) ðŸµ 
+2026-01-03 06:08:36.183433 
+642 ran till end (survived) ðŸµ 
+2026-01-03 06:10:08.981664 
+643 ran till end (survived) ðŸµ 
+2026-01-03 06:11:39.64748 
+644 ran till end (survived) ðŸµ 
+2026-01-03 06:13:03.222975 
+645 ran till end (survived) ðŸµ 
+2026-01-03 06:14:28.315108 
+646 ran till end (survived) ðŸµ 
+2026-01-03 06:15:53.271722 
+647 ran till end (survived) ðŸµ 
+2026-01-03 06:17:23.389006 
+648 ran till end (survived) ðŸµ 
+2026-01-03 06:18:50.451741 
+649 ran till end (survived) ðŸµ 
+2026-01-03 06:20:24.26731 
+650 ran till end (survived) ðŸµ 
+2026-01-03 06:21:48.61195 
+651 ran till end (survived) ðŸµ 
+2026-01-03 06:23:15.906111 
+652 ran till end (survived) ðŸµ 
+2026-01-03 06:24:44.538227 
+653 ran till end (survived) ðŸµ 
+2026-01-03 06:26:16.744662 
+654 ran till end (survived) ðŸµ 
+2026-01-03 06:27:48.299648 
+655 ran till end (survived) ðŸµ 
+2026-01-03 06:29:14.304928 
+656 ran till end (survived) ðŸµ 
+2026-01-03 06:30:46.213997 
+657 ran till end (survived) ðŸµ 
+2026-01-03 06:32:15.735237 
+658 ran till end (survived) ðŸµ 
+2026-01-03 06:33:46.346459 
+659 ran till end (survived) ðŸµ 
+2026-01-03 06:35:14.179336 
+660 ran till end (survived) ðŸµ 
+2026-01-03 06:36:46.478217 
+661 ran till end (survived) ðŸµ 
+2026-01-03 06:38:17.427055 
+662 ran till end (survived) ðŸµ 
+2026-01-03 06:39:45.771311 
+663 ran till end (survived) ðŸµ 
+2026-01-03 06:41:16.242162 
+664 ran till end (survived) ðŸµ 
+2026-01-03 06:42:45.95736 
+665 ran till end (survived) ðŸµ 
+2026-01-03 06:44:15.329122 
+666 ran till end (survived) ðŸµ 
+2026-01-03 06:45:46.188036 
+667 ran till end (survived) ðŸµ 
+2026-01-03 06:47:13.928246 
+668 ran till end (survived) ðŸµ 
+2026-01-03 06:48:45.652005 
+669 ran till end (survived) ðŸµ 
+2026-01-03 06:50:15.879954 
+670 ran till end (survived) ðŸµ 
+2026-01-03 06:51:46.110137 
+671 ran till end (survived) ðŸµ 
+2026-01-03 06:53:17.700293 
+672 ran till end (survived) ðŸµ 
+2026-01-03 06:54:45.004475 
+673 ran till end (survived) ðŸµ 
+2026-01-03 06:56:15.2033 
+674 ran till end (survived) ðŸµ 
+2026-01-03 06:57:45.336434 
+675 ran till end (survived) ðŸµ 
+2026-01-03 06:59:16.415278 
+676 ran till end (survived) ðŸµ 
+2026-01-03 07:00:46.607833 
+677 ran till end (survived) ðŸµ 
+2026-01-03 07:01:39.661453 
+678 ran till end (survived) ðŸµ 
+2026-01-03 07:03:08.782876 
+679 ran till end (survived) ðŸµ 
+2026-01-03 07:04:39.311251 
+680 ran till end (survived) ðŸµ 
+2026-01-03 07:06:10.694265 
+681 ran till end (survived) ðŸµ 
+2026-01-03 07:07:40.911967 
+682 ran till end (survived) ðŸµ 
+2026-01-03 07:08:53.765878 
+683 ran till end (survived) ðŸµ 
+2026-01-03 07:10:05.1591 
+684 ran till end (survived) ðŸµ 
+2026-01-03 07:11:35.616295 
+685 ran till end (survived) ðŸµ 
+2026-01-03 07:13:04.000914 
+686 ran till end (survived) ðŸµ 
+2026-01-03 07:14:35.884254 
+687 ran till end (survived) ðŸµ 
+2026-01-03 07:15:40.623067 
+688 ran till end (survived) ðŸµ 
+2026-01-03 07:17:12.165482 
+689 ran till end (survived) ðŸµ 
+2026-01-03 07:18:20.553216 
+690 ran till end (survived) ðŸµ 
+2026-01-03 07:19:51.408691 
+691 ran till end (survived) ðŸµ 
+2026-01-03 07:21:20.200784 
+692 ran till end (survived) ðŸµ 
+2026-01-03 07:22:52.012357 
+693 ran till end (survived) ðŸµ 
+2026-01-03 07:24:22.571952 
+694 ran till end (survived) ðŸµ 
+2026-01-03 07:25:53.086346 
+695 ran till end (survived) ðŸµ 
+2026-01-03 07:27:21.49901 
+696 ran till end (survived) ðŸµ 
+2026-01-03 07:28:55.16692 
+697 ran till end (survived) ðŸµ 
+2026-01-03 07:30:19.79597 
+698 ran till end (survived) ðŸµ 
+2026-01-03 07:31:48.961307 
+699 ran till end (survived) ðŸµ 
+2026-01-03 07:33:16.329571 
+700 ran till end (survived) ðŸµ 
+2026-01-03 07:34:45.720683 
+701 ran till end (survived) ðŸµ 
+2026-01-03 07:36:14.73075 
+702 ran till end (survived) ðŸµ 
+2026-01-03 07:37:47.229457 
+703 ran till end (survived) ðŸµ 
+2026-01-03 07:39:14.281489 
+704 ran till end (survived) ðŸµ 
+2026-01-03 07:40:45.131059 
+705 ran till end (survived) ðŸµ 
+2026-01-03 07:42:04.242948 
+706 ran till end (survived) ðŸµ 
+2026-01-03 07:43:32.415289 
+707 ran till end (survived) ðŸµ 
+2026-01-03 07:44:56.277938 
+708 ran till end (survived) ðŸµ 
+2026-01-03 07:46:20.63383 
+709 ran till end (survived) ðŸµ 
+2026-01-03 07:47:49.051212 
+710 ran till end (survived) ðŸµ 
+2026-01-03 07:49:03.455033 
+711 ran till end (survived) ðŸµ 
+2026-01-03 07:50:33.560127 
+712 ran till end (survived) ðŸµ 
+2026-01-03 07:52:04.627807 
+713 ran till end (survived) ðŸµ 
+2026-01-03 07:53:35.530811 
+714 ran till end (survived) ðŸµ 
+2026-01-03 07:55:07.416804 
+715 ran till end (survived) ðŸµ 
+2026-01-03 07:56:25.906855 
+716 ran till end (survived) ðŸµ 
+2026-01-03 07:57:58.793391 
+717 ran till end (survived) ðŸµ 
+2026-01-03 07:59:29.10902 
+718 ran till end (survived) ðŸµ 
+2026-01-03 08:00:58.201121 
+719 ran till end (survived) ðŸµ 
+2026-01-03 08:02:25.586415 
+720 ran till end (survived) ðŸµ 
+2026-01-03 08:03:41.293492 
+721 ran till end (survived) ðŸµ 
+2026-01-03 08:05:11.211037 
+722 ran till end (survived) ðŸµ 
+2026-01-03 08:06:39.132424 
+723 ran till end (survived) ðŸµ 
+2026-01-03 08:07:20.332731 
+724 ran till end (survived) ðŸµ 
+2026-01-03 08:08:47.657655 
+725 ran till end (survived) ðŸµ 
+2026-01-03 08:10:10.019346 
+726 ran till end (survived) ðŸµ 
+2026-01-03 08:11:17.452194 
+727 ran till end (survived) ðŸµ 
+2026-01-03 08:12:49.515078 
+728 ran till end (survived) ðŸµ 
+2026-01-03 08:14:22.19465 
+729 ran till end (survived) ðŸµ 
+2026-01-03 08:15:52.233582 
+730 ran till end (survived) ðŸµ 
+2026-01-03 08:17:19.20869 
+731 ran till end (survived) ðŸµ 
+2026-01-03 08:18:40.120022 
+732 ran till end (survived) ðŸµ 
+2026-01-03 08:20:00.196162 
+733 ran till end (survived) ðŸµ 
+2026-01-03 08:21:29.191633 
+734 ran till end (survived) ðŸµ 
+2026-01-03 08:22:55.281999 
+735 ran till end (survived) ðŸµ 
+2026-01-03 08:24:24.447228 
+736 ran till end (survived) ðŸµ 
+2026-01-03 08:25:51.816947 
+737 ran till end (survived) ðŸµ 
+2026-01-03 08:27:19.159094 
+738 ran till end (survived) ðŸµ 
+2026-01-03 08:28:46.578735 
+739 ran till end (survived) ðŸµ 
+2026-01-03 08:30:13.42885 
+740 ran till end (survived) ðŸµ 
+2026-01-03 08:31:44.768003 
+741 ran till end (survived) ðŸµ 
+2026-01-03 08:33:15.056786 
+742 ran till end (survived) ðŸµ 
+2026-01-03 08:34:46.07797 
+743 ran till end (survived) ðŸµ 
+2026-01-03 08:36:18.310215 
+744 ran till end (survived) ðŸµ 
+2026-01-03 08:37:46.649616 
+745 ran till end (survived) ðŸµ 
+2026-01-03 08:39:09.62251 
+746 ran till end (survived) ðŸµ 
+2026-01-03 08:40:42.707947 
+747 ran till end (survived) ðŸµ 
+2026-01-03 08:42:12.970901 
+748 ran till end (survived) ðŸµ 
+2026-01-03 08:43:44.548001 
+749 ran till end (survived) ðŸµ 
+2026-01-03 08:45:17.119313 
+750 ran till end (survived) ðŸµ 
+2026-01-03 08:46:44.919181 
+751 ran till end (survived) ðŸµ 
+2026-01-03 08:48:14.553224 
+752 ran till end (survived) ðŸµ 
+2026-01-03 08:49:44.347777 
+753 ran till end (survived) ðŸµ 
+2026-01-03 08:51:14.875857 
+754 ran till end (survived) ðŸµ 
+2026-01-03 08:52:45.46992 
+755 ran till end (survived) ðŸµ 
+2026-01-03 08:54:15.157204 
+756 ran till end (survived) ðŸµ 
+2026-01-03 08:55:47.061742 
+757 ran till end (survived) ðŸµ 
+2026-01-03 08:57:13.793174 
+758 ran till end (survived) ðŸµ 
+2026-01-03 08:58:41.415481 
+759 ran till end (survived) ðŸµ 
+2026-01-03 09:00:11.000734 
+760 ran till end (survived) ðŸµ 
+2026-01-03 09:01:40.230252 
+761 ran till end (survived) ðŸµ 
+2026-01-03 09:03:11.942091 
+762 ran till end (survived) ðŸµ 
+2026-01-03 09:04:39.140095 
+763 ran till end (survived) ðŸµ 
+2026-01-03 09:06:06.644457 
+764 ran till end (survived) ðŸµ 
+2026-01-03 09:07:35.502571 
+765 ran till end (survived) ðŸµ 
+2026-01-03 09:09:02.73157 
+766 ran till end (survived) ðŸµ 
+2026-01-03 09:10:26.645453 
+767 ran till end (survived) ðŸµ 
+2026-01-03 09:11:57.430686 
+768 ran till end (survived) ðŸµ 
+2026-01-03 09:13:25.088963 
+769 ran till end (survived) ðŸµ 
+2026-01-03 09:14:55.411299 
+770 ran till end (survived) ðŸµ 
+2026-01-03 09:16:26.73305 
+771 ran till end (survived) ðŸµ 
+2026-01-03 09:17:57.104368 
+772 ran till end (survived) ðŸµ 
+2026-01-03 09:19:27.789396 
+773 ran till end (survived) ðŸµ 
+2026-01-03 09:20:56.096745 
+774 ran till end (survived) ðŸµ 
+2026-01-03 09:22:23.790262 
+775 ran till end (survived) ðŸµ 
+2026-01-03 09:23:46.298168 
+776 ran till end (survived) ðŸµ 
+2026-01-03 09:25:13.150025 
+777 ran till end (survived) ðŸµ 
+2026-01-03 09:26:44.849372 
+778 ran till end (survived) ðŸµ 
+2026-01-03 09:28:16.041241 
+779 ran till end (survived) ðŸµ 
+2026-01-03 09:29:45.194156 
+780 ran till end (survived) ðŸµ 
+2026-01-03 09:31:16.221405 
+781 ran till end (survived) ðŸµ 
+2026-01-03 09:32:46.158756 
+782 ran till end (survived) ðŸµ 
+2026-01-03 09:34:15.247687 
+783 ran till end (survived) ðŸµ 
+2026-01-03 09:35:33.929367 
+784 ran till end (survived) ðŸµ 
+2026-01-03 09:36:51.794361 
+785 ran till end (survived) ðŸµ 
+2026-01-03 09:38:20.421345 
+786 ran till end (survived) ðŸµ 
+2026-01-03 09:39:48.522902 
+787 ran till end (survived) ðŸµ 
+2026-01-03 09:41:18.377727 
+788 ran till end (survived) ðŸµ 
+2026-01-03 09:42:45.914847 
+789 ran till end (survived) ðŸµ 
+2026-01-03 09:43:51.755213 
+790 ran till end (survived) ðŸµ 
+2026-01-03 09:45:23.393782 
+791 ran till end (survived) ðŸµ 
+2026-01-03 09:46:50.256324 
+792 ran till end (survived) ðŸµ 
+2026-01-03 09:48:18.070282 
+793 ran till end (survived) ðŸµ 
+2026-01-03 09:49:46.323638 
+794 ran till end (survived) ðŸµ 
+2026-01-03 09:50:37.616568 
+795 ran till end (survived) ðŸµ 
+2026-01-03 09:52:08.289749 
+796 ran till end (survived) ðŸµ 
+2026-01-03 09:53:37.651892 
+797 ran till end (survived) ðŸµ 
+2026-01-03 09:55:07.497456 
+798 ran till end (survived) ðŸµ 
+2026-01-03 09:56:38.286428 
+799 ran till end (survived) ðŸµ 
+2026-01-03 09:58:04.159914 
+800 ran till end (survived) ðŸµ 
+2026-01-03 09:59:33.486012 
+801 ran till end (survived) ðŸµ 
+2026-01-03 10:01:00.906291 
+802 ran till end (survived) ðŸµ 
+2026-01-03 10:02:32.223195 
+803 ran till end (survived) ðŸµ 
+2026-01-03 10:04:03.669975 
+804 ran till end (survived) ðŸµ 
+2026-01-03 10:05:31.961898 
+805 ran till end (survived) ðŸµ 
+2026-01-03 10:06:55.544862 
+806 ran till end (survived) ðŸµ 
+2026-01-03 10:08:26.601005 
+807 ran till end (survived) ðŸµ 
+2026-01-03 10:09:48.655584 
+808 ran till end (survived) ðŸµ 
+2026-01-03 10:11:16.248766 
+809 ran till end (survived) ðŸµ 
+2026-01-03 10:12:35.198208 
+810 ran till end (survived) ðŸµ 
+2026-01-03 10:14:03.224264 
+811 ran till end (survived) ðŸµ 
+2026-01-03 10:15:34.948108 
+812 ran till end (survived) ðŸµ 
+2026-01-03 10:17:01.16087 
+813 ran till end (survived) ðŸµ 
+2026-01-03 10:18:30.015206 
+814 ran till end (survived) ðŸµ 
+2026-01-03 10:19:56.237829 
+815 ran till end (survived) ðŸµ 
+2026-01-03 10:21:26.081135 
+816 ran till end (survived) ðŸµ 
+2026-01-03 10:22:59.724958 
+817 ran till end (survived) ðŸµ 
+2026-01-03 10:24:25.976815 
+818 ran till end (survived) ðŸµ 
+2026-01-03 10:25:56.148312 
+819 ran till end (survived) ðŸµ 
+2026-01-03 10:27:22.996319 
+820 ran till end (survived) ðŸµ 
+2026-01-03 10:28:51.467441 
+821 ran till end (survived) ðŸµ 
+2026-01-03 10:30:20.618974 
+822 ran till end (survived) ðŸµ 
+2026-01-03 10:31:49.339609 
+823 ran till end (survived) ðŸµ 
+2026-01-03 10:33:12.896062 
+824 ran till end (survived) ðŸµ 
+2026-01-03 10:34:46.506615 
+825 ran till end (survived) ðŸµ 
+2026-01-03 10:36:13.410176 
+826 ran till end (survived) ðŸµ 
+2026-01-03 10:37:34.530253 
+827 ran till end (survived) ðŸµ 
+2026-01-03 10:39:07.162086 
+828 ran till end (survived) ðŸµ 
+2026-01-03 10:40:36.539187 
+829 ran till end (survived) ðŸµ 
+2026-01-03 10:42:06.556195 
+830 ran till end (survived) ðŸµ 
+2026-01-03 10:43:36.801504 
+831 ran till end (survived) ðŸµ 
+2026-01-03 10:45:06.070391 
+832 ran till end (survived) ðŸµ 
+2026-01-03 10:46:31.890821 
+833 ran till end (survived) ðŸµ 
+2026-01-03 10:47:43.581254 
+834 ran till end (survived) ðŸµ 
+2026-01-03 10:49:11.278733 
+835 ran till end (survived) ðŸµ 
+2026-01-03 10:50:41.444373 
+836 ran till end (survived) ðŸµ 
+2026-01-03 10:52:06.890249 
+837 ran till end (survived) ðŸµ 
+2026-01-03 10:53:36.494044 
+838 ran till end (survived) ðŸµ 
+2026-01-03 10:55:04.469402 
+839 ran till end (survived) ðŸµ 
+2026-01-03 10:56:32.920687 
+840 ran till end (survived) ðŸµ 
+2026-01-03 10:58:01.73736 
+841 ran till end (survived) ðŸµ 
+2026-01-03 10:59:31.937035 
+842 ran till end (survived) ðŸµ 
+2026-01-03 11:00:55.267211 
+843 ran till end (survived) ðŸµ 
+2026-01-03 11:02:21.87966 
+844 ran till end (survived) ðŸµ 
+2026-01-03 11:03:52.257869 
+845 ran till end (survived) ðŸµ 
+2026-01-03 11:05:20.774124 
+846 ran till end (survived) ðŸµ 
+2026-01-03 11:06:46.476128 
+847 ran till end (survived) ðŸµ 
+2026-01-03 11:08:17.443623 
+848 ran till end (survived) ðŸµ 
+2026-01-03 11:09:48.010362 
+849 ran till end (survived) ðŸµ 
+2026-01-03 11:11:20.191459 
+850 ran till end (survived) ðŸµ 
+2026-01-03 11:12:46.904379 
+851 ran till end (survived) ðŸµ 
+2026-01-03 11:14:20.78462 
+852 ran till end (survived) ðŸµ 
+2026-01-03 11:15:51.37848 
+853 ran till end (survived) ðŸµ 
+2026-01-03 11:17:22.488497 
+854 ran till end (survived) ðŸµ 
+2026-01-03 11:18:49.755894 
+855 ran till end (survived) ðŸµ 
+2026-01-03 11:20:19.996338 
+856 ran till end (survived) ðŸµ 
+2026-01-03 11:21:52.297432 
+857 ran till end (survived) ðŸµ 
+2026-01-03 11:23:16.164332 
+858 ran till end (survived) ðŸµ 
+2026-01-03 11:24:45.380244 
+859 ran till end (survived) ðŸµ 
+2026-01-03 11:26:10.838338 
+860 ran till end (survived) ðŸµ 
+2026-01-03 11:27:39.062182 
+861 ran till end (survived) ðŸµ 
+2026-01-03 11:29:10.663965 
+862 ran till end (survived) ðŸµ 
+2026-01-03 11:30:43.391736 
+863 ran till end (survived) ðŸµ 
+2026-01-03 11:32:15.416336 
+864 ran till end (survived) ðŸµ 
+2026-01-03 11:33:44.090059 
+865 ran till end (survived) ðŸµ 
+2026-01-03 11:35:06.363505 
+866 ran till end (survived) ðŸµ 
+2026-01-03 11:36:35.181809 
+867 ran till end (survived) ðŸµ 
+2026-01-03 11:37:43.943944 
+868 ran till end (survived) ðŸµ 
+2026-01-03 11:39:13.658432 
+869 ran till end (survived) ðŸµ 
+2026-01-03 11:40:40.961639 
+870 ran till end (survived) ðŸµ 
+2026-01-03 11:42:11.217303 
+871 ran till end (survived) ðŸµ 
+2026-01-03 11:43:43.832893 
+872 ran till end (survived) ðŸµ 
+2026-01-03 11:45:15.892624 
+873 ran till end (survived) ðŸµ 
+2026-01-03 11:46:47.596832 
+874 ran till end (survived) ðŸµ 
+2026-01-03 11:48:11.874118 
+875 ran till end (survived) ðŸµ 
+2026-01-03 11:49:40.255748 
+876 ran till end (survived) ðŸµ 
+2026-01-03 11:51:09.518505 
+877 ran till end (survived) ðŸµ 
+2026-01-03 11:52:40.961614 
+878 ran till end (survived) ðŸµ 
+2026-01-03 11:54:13.033235 
+879 ran till end (survived) ðŸµ 
+2026-01-03 11:55:33.297555 
+880 ran till end (survived) ðŸµ 
+2026-01-03 11:57:01.641232 
+881 ran till end (survived) ðŸµ 
+2026-01-03 11:58:29.465437 
+882 ran till end (survived) ðŸµ 
+2026-01-03 11:59:55.847673 
+883 ran till end (survived) ðŸµ 
+2026-01-03 12:01:22.754115 
+884 ran till end (survived) ðŸµ 
+2026-01-03 12:02:54.091169 
+885 ran till end (survived) ðŸµ 
+2026-01-03 12:04:12.026578 
+886 ran till end (survived) ðŸµ 
+2026-01-03 12:05:42.21336 
+887 ran till end (survived) ðŸµ 
+2026-01-03 12:07:14.549377 
+888 ran till end (survived) ðŸµ 
+2026-01-03 12:08:43.358169 
+889 ran till end (survived) ðŸµ 
+2026-01-03 12:10:09.950615 
+890 ran till end (survived) ðŸµ 
+2026-01-03 12:11:40.034643 
+891 ran till end (survived) ðŸµ 
+2026-01-03 12:12:47.658598 
+892 ran till end (survived) ðŸµ 
+2026-01-03 12:14:19.432036 
+893 ran till end (survived) ðŸµ 
+2026-01-03 12:15:51.098276 
+894 ran till end (survived) ðŸµ 
+2026-01-03 12:17:23.355775 
+895 ran till end (survived) ðŸµ 
+2026-01-03 12:18:52.322663 
+896 ran till end (survived) ðŸµ 
+2026-01-03 12:20:20.244695 
+897 ran till end (survived) ðŸµ 
+2026-01-03 12:21:49.725299 
+898 ran till end (survived) ðŸµ 
+2026-01-03 12:23:18.953428 
+899 ran till end (survived) ðŸµ 
+2026-01-03 12:24:51.460532 
+900 ran till end (survived) ðŸµ 
+2026-01-03 12:26:12.188036 
+901 ran till end (survived) ðŸµ 
+2026-01-03 12:27:38.824258 
+902 ran till end (survived) ðŸµ 
+2026-01-03 12:29:00.412866 
+903 ran till end (survived) ðŸµ 
+2026-01-03 12:30:30.884726 
+904 ran till end (survived) ðŸµ 
+2026-01-03 12:31:58.666395 
+905 ran till end (survived) ðŸµ 
+2026-01-03 12:33:22.524598 
+906 ran till end (survived) ðŸµ 
+2026-01-03 12:33:57.609379 
+907 ran till end (survived) ðŸµ 
+2026-01-03 12:35:26.754559 
+908 ran till end (survived) ðŸµ 
+2026-01-03 12:36:57.023808 
+909 ran till end (survived) ðŸµ 
+2026-01-03 12:38:24.042631 
+910 ran till end (survived) ðŸµ 
+2026-01-03 12:39:53.390321 
+911 ran till end (survived) ðŸµ 
+2026-01-03 12:41:23.462364 
+912 ran till end (survived) ðŸµ 
+2026-01-03 12:42:42.997274 
+913 ran till end (survived) ðŸµ 
+2026-01-03 12:44:12.776167 
+914 ran till end (survived) ðŸµ 
+2026-01-03 12:45:40.012217 
+915 ran till end (survived) ðŸµ 
+2026-01-03 12:47:02.753085 
+916 ran till end (survived) ðŸµ 
+2026-01-03 12:48:30.791624 
+917 ran till end (survived) ðŸµ 
+2026-01-03 12:49:59.939798 
+918 ran till end (survived) ðŸµ 
+2026-01-03 12:51:29.766017 
+919 ran till end (survived) ðŸµ 
+2026-01-03 12:52:53.340816 
+920 ran till end (survived) ðŸµ 
+2026-01-03 12:54:25.136202 
+921 ran till end (survived) ðŸµ 
+2026-01-03 12:55:54.297946 
+922 ran till end (survived) ðŸµ 
+2026-01-03 12:57:17.528955 
+923 ran till end (survived) ðŸµ 
+2026-01-03 12:58:48.31031 
+924 ran till end (survived) ðŸµ 
+2026-01-03 13:00:16.582543 
+925 ran till end (survived) ðŸµ 
+2026-01-03 13:01:45.673296 
+926 ran till end (survived) ðŸµ 
+2026-01-03 13:03:14.37799 
+927 ran till end (survived) ðŸµ 
+2026-01-03 13:04:29.568514 
+928 ran till end (survived) ðŸµ 
+2026-01-03 13:05:59.873458 
+929 ran till end (survived) ðŸµ 
+2026-01-03 13:07:29.050231 
+930 ran till end (survived) ðŸµ 
+2026-01-03 13:08:57.580788 
+931 ran till end (survived) ðŸµ 
+2026-01-03 13:10:30.424044 
+932 ran till end (survived) ðŸµ 
+2026-01-03 13:11:58.160051 
+933 ran till end (survived) ðŸµ 
+2026-01-03 13:13:31.345087 
+934 ran till end (survived) ðŸµ 
+2026-01-03 13:15:00.452984 
+935 ran till end (survived) ðŸµ 
+2026-01-03 13:16:31.123856 
+936 ran till end (survived) ðŸµ 
+2026-01-03 13:18:02.087197 
+937 ran till end (survived) ðŸµ 
+2026-01-03 13:19:33.084514 
+938 ran till end (survived) ðŸµ 
+2026-01-03 13:21:02.733814 
+939 ran till end (survived) ðŸµ 
+2026-01-03 13:22:32.725518 
+940 ran till end (survived) ðŸµ 
+2026-01-03 13:24:01.919625 
+941 ran till end (survived) ðŸµ 
+2026-01-03 13:25:29.965948 
+942 ran till end (survived) ðŸµ 
+2026-01-03 13:26:59.767283 
+943 ran till end (survived) ðŸµ 
+2026-01-03 13:28:29.790157 
+944 ran till end (survived) ðŸµ 
+2026-01-03 13:30:00.740894 
+945 ran till end (survived) ðŸµ 
+2026-01-03 13:31:24.162596 
+946 ran till end (survived) ðŸµ 
+2026-01-03 13:32:54.174744 
+947 ran till end (survived) ðŸµ 
+2026-01-03 13:34:20.829687 
+948 ran till end (survived) ðŸµ 
+2026-01-03 13:35:52.300932 
+949 ran till end (survived) ðŸµ 
+2026-01-03 13:37:22.411902 
+950 ran till end (survived) ðŸµ 
+2026-01-03 13:38:55.06006 
+951 ran till end (survived) ðŸµ 
+2026-01-03 13:40:24.594616 
+952 ran till end (survived) ðŸµ 
+2026-01-03 13:41:24.305686 
+953 ran till end (survived) ðŸµ 
+2026-01-03 13:42:53.497838 
+954 ran till end (survived) ðŸµ 
+2026-01-03 13:44:25.322272 
+955 ran till end (survived) ðŸµ 
+2026-01-03 13:44:43.522562 
+956 ran till end (survived) ðŸµ 
+2026-01-03 13:46:16.161317 
+957 ran till end (survived) ðŸµ 
+2026-01-03 13:47:42.05459 
+958 ran till end (survived) ðŸµ 
+2026-01-03 13:49:10.385835 
+959 ran till end (survived) ðŸµ 
+2026-01-03 13:50:42.141806 
+960 ran till end (survived) ðŸµ 
+2026-01-03 13:51:58.2574 
+961 ran till end (survived) ðŸµ 
+2026-01-03 13:53:28.057053 
+962 ran till end (survived) ðŸµ 
+2026-01-03 13:54:53.293586 
+963 ran till end (survived) ðŸµ 
+2026-01-03 13:56:22.809013 
+964 ran till end (survived) ðŸµ 
+2026-01-03 13:57:51.502897 
+965 ran till end (survived) ðŸµ 
+2026-01-03 13:59:21.486214 
+966 ran till end (survived) ðŸµ 
+2026-01-03 14:00:48.565635 
+967 ran till end (survived) ðŸµ 
+2026-01-03 14:02:21.496532 
+968 ran till end (survived) ðŸµ 
+2026-01-03 14:03:50.433877 
+969 ran till end (survived) ðŸµ 
+2026-01-03 14:05:20.009193 
+970 ran till end (survived) ðŸµ 
+2026-01-03 14:06:47.405488 
+971 ran till end (survived) ðŸµ 
+2026-01-03 14:08:16.495336 
+972 ran till end (survived) ðŸµ 
+2026-01-03 14:09:44.094173 
+973 ran till end (survived) ðŸµ 
+2026-01-03 14:11:16.157925 
+974 ran till end (survived) ðŸµ 
+2026-01-03 14:12:42.742226 
+975 ran till end (survived) ðŸµ 
+2026-01-03 14:14:15.138004 
+976 ran till end (survived) ðŸµ 
+2026-01-03 14:15:37.50366 
+977 ran till end (survived) ðŸµ 
+2026-01-03 14:17:07.386999 
+978 ran till end (survived) ðŸµ 
+2026-01-03 14:18:33.5136 
+979 ran till end (survived) ðŸµ 
+2026-01-03 14:20:03.514626 
+980 ran till end (survived) ðŸµ 
+2026-01-03 14:21:15.541466 
+981 ran till end (survived) ðŸµ 
+2026-01-03 14:22:48.120404 
+982 ran till end (survived) ðŸµ 
+2026-01-03 14:24:21.890099 
+983 ran till end (survived) ðŸµ 
+2026-01-03 14:25:54.539357 
+984 ran till end (survived) ðŸµ 
+2026-01-03 14:27:22.552817 
+985 ran till end (survived) ðŸµ 
+986 died ðŸ‘µ 
+2026-01-03 14:28:40.043641 
+987 ran till end (survived) ðŸµ 
+2026-01-03 14:30:10.694309 
+988 ran till end (survived) ðŸµ 
+2026-01-03 14:31:43.215777 
+989 ran till end (survived) ðŸµ 
+2026-01-03 14:33:12.070671 
+990 ran till end (survived) ðŸµ 
+2026-01-03 14:34:38.37607 
+991 ran till end (survived) ðŸµ 
+2026-01-03 14:36:09.390629 
+992 ran till end (survived) ðŸµ 
+2026-01-03 14:37:37.353103 
+993 ran till end (survived) ðŸµ 
+2026-01-03 14:39:07.199047 
+994 ran till end (survived) ðŸµ 
+2026-01-03 14:40:33.432606 
+995 ran till end (survived) ðŸµ 
+2026-01-03 14:42:03.657053 
+996 ran till end (survived) ðŸµ 
+2026-01-03 14:43:18.092912 
+997 ran till end (survived) ðŸµ 
+2026-01-03 14:44:50.348829 
+998 ran till end (survived) ðŸµ 
+2026-01-03 14:46:20.935012 
+999 ran till end (survived) ðŸµ 
+2026-01-03 14:47:48.005378 
+1000 ran till end (survived) ðŸµ 

@@ -64,9 +64,9 @@ Phenotype_from_genotype_GAPIT <- function(individuals_GT, SNPs_tested){
   simulated_hapmap <- left_join(iupac_df, hapmap_meta)
   
   ### Append training individuals to simulated hapmap
-  simualted_hapmap_trainingconcat <- left_join(training_hapmap, simulated_hapmap)
+  simulated_hapmap_trainingconcat <- left_join(training_hapmap, simulated_hapmap)
   
-  write.table(simualted_hapmap_trainingconcat, file = "Data_AlleleFrequency/tmp_simulated.hapmap.hmp.txt", row.names = F, sep = "\t")
+  write.table(simulated_hapmap_trainingconcat, file = "Data_AlleleFrequency/tmp_simulated.hapmap.hmp.txt", row.names = F, sep = "\t")
   gt_datafile = paste0(getwd(), "/Data_AlleleFrequency/tmp_simulated.hapmap.hmp.txt")
   
   ### Run GAPIT

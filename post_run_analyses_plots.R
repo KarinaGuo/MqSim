@@ -1,5 +1,5 @@
 #source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/data_sim_5.R")
-load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/21082026_4_GAPIT_testparam.Rdata")
+load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/19082026_GAPIT_testparam.Rdata")
 
 library(tidyverse)
 theme_set(theme_bw())
@@ -95,3 +95,4 @@ summary(lm (sim_AF ~ empirical_AF, data = AF_comparison))
 ################## Calculate AF for +15 years after MR introduction
 
 # C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Functions_PostRunAnalyses/Bootstrapped_AF_SNPplot.R
+
