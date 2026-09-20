@@ -1,5 +1,5 @@
 #source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/data_sim_5.R")
-load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/19082026_GAPIT_testparam.Rdata")
+load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/18092026_GAPIT_alt_rec.Rdata")
 
 library(tidyverse)
 theme_set(theme_bw())
@@ -30,11 +30,11 @@ plot_deadMR   <- ggplot(mean_MR_time_death |> filter (time >990), aes(x=time, y=
   stat_smooth(linewidth = 0.75, linetype="dashed", colour="grey40", span=10) 
 plot_liveMR   <- ggplot() +
   geom_point(data=MR_df, aes(x=time, y = MR_mean_summ)) +
-  geom_errorbar(data=MR_df, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ)) + 
+  #geom_errorbar(data=MR_df, aes(x=time, ymax = MR_mean_summ + MR_sd_summ, ymin = MR_mean_summ - MR_sd_summ)) + 
   stat_smooth(data=MR_df, aes(x=time, y = MR_mean_summ), linewidth = 0.75, linetype="dashed", colour="grey40", span=10) +
   geom_vline(xintercept=MR_timepoint, linewidth = 0.75, linetype="dashed", colour="chocolate") +
   geom_vline(xintercept=915, linewidth = 0.75, linetype="dashed", colour="red") +
-  #ggforce::facet_zoom(xlim=c(900,920)) +
+  ggforce::facet_zoom(xlim=c(990,1200)) +
   labs(title="Live MR")
 if(intercept_togg){plot_liveMR <- plot_liveMR + geom_vline(xintercept=intercept_timepoint, linewidth = 0.75, linetype="dashed", colour="forestgreen")}
 

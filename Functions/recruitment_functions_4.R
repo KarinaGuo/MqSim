@@ -102,7 +102,7 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
     }
     
     new_recruit_MR <- rep(0, sum(new_recruit)) # will be overwritten later using AF calc
-    new_recruit_error <- runif(n=sum(new_recruit), min = -0.3, max=0.3)
+    new_recruit_error <- rep(0, sum(new_recruit))
     # curr_pop_start$MR <- Phenotype_from_Genotype(snp_effects = effect_size$V2, dominance_effect = effect_size$V3, individuals_GT = curr_AF_start, error=curr_pop_start$error, phenotype_baseline = baseline_pheno)
     
     if (time_point < Phase_1_end){
@@ -112,6 +112,11 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
       invisible(capture.output(
         new_recruit_MR <- Phenotype_from_genotype_GAPIT(individuals_GT = new_recruit_genotypes, SNPs_tested = SNPs_tested)
       ))
+    }
+    
+    if(MR_error){
+      new_recruit_error <- runif(n=sum(new_recruit), min = -(MR_err_range), max=MR_err_range)
+      new_recruit_MR <- new_recruit_MR + new_recruit_error
     }
     
     new_recruit_pop <- list(indiv_ID=seq(from=indiv_count_start+1, to=indiv_count_start+sum(new_recruit)), 

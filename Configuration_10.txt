@@ -39,7 +39,8 @@ MR_recruit_impact = 3 # impact of MR on recruitment (steepness of exponential de
 density_recruit_toggle = F # Reduces density recruitment by the proportion of individuals in pop vs maximum carrying capacity
 MR_inherit_par_num = 2 # Number of parents to inherit MR from (takes mean of two fecund individuals to skew inheritance)
 MR_rec_adj = 0 # Shift mean of MR status of recruited individuals
-
+MR_error = F # Add in error to predictions?
+MR_err_range = 0.1 # min/max range of uniform errors
 
   ## Intervention parameters
 intercept_togg = F
