@@ -1,5 +1,5 @@
 library(dartR); library(tidyverse); library(qqman)
-load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/07072026_GAPIT_failed.RData")
+load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/21092026_GAPIT_alt_rec.Rdata")
 theme_set(theme_bw())
 
 SNPs_tested <- effect_size$V1
@@ -111,6 +111,14 @@ SNPs_tested_ord <- match(SNP_AF_empirical$locus, SNPs_tested)
 SNPs_effsize_reord <- SNPs_effsize[SNPs_tested_ord]
 
 final_prediction_gt_sim_mut_sigSNP$locID <- gsub("[_:-]", ".", final_prediction_gt_sim_mut_sigSNP$locID)
+final_prediction_gt_sim_mut$locID <- gsub("[_:-]", ".", final_prediction_gt_sim_mut$locID)  
+final_prediction_gt_sim_mut <- final_prediction_gt_sim_mut %>%   
+  group_by(Position) %>% 
+  mutate(Direction = ifelse(
+    Prediction[match("1/1", SNP_identity)] > Prediction[match("0/0", SNP_identity)], FALSE, # FALSE => alt homo = 2  
+    TRUE
+  )) %>% 
+  ungroup()
 
 ################################################################################################
 #### Bootstrap
@@ -182,9 +190,11 @@ for (iter in 1:iterations) {
   locID <- AF_comparison_set$locID
   unique_sigSNP_locID <- unique(union_results$locID)
   
-  gt_rel_loc <- data.frame(t(TP_AF_matrix)[,(locID %in% unique_sigSNP_locID)])
+  #gt_rel_loc <- data.frame(t(TP_AF_matrix)[,(locID %in% unique_sigSNP_locID)]) # Outlier SNPs
+  gt_rel_loc <- data.frame(t(TP_AF_matrix)[,]) # All SNPs
   
-  colnames(gt_rel_loc) <- locID[locID %in% unique_sigSNP_locID]
+  #colnames(gt_rel_loc) <- locID[locID %in% unique_sigSNP_locID] # Outlier SNPs
+  colnames(gt_rel_loc) <- locID # All SNPs
   gt_rel_loc$group <- popID
   
   gt_rel_loc_long <- data.frame(gt_rel_loc) %>%
@@ -196,7 +206,8 @@ for (iter in 1:iterations) {
   
   gt_rel_loc_long$locID <- gsub("_", ".", gt_rel_loc_long$locID)
   
-  gt_rel_loc_long_dir <- left_join(gt_rel_loc_long, unique(final_prediction_gt_sim_mut_sigSNP %>% dplyr::select(locID, Direction, Pred_Diff)))
+  #gt_rel_loc_long_dir <- left_join(gt_rel_loc_long, unique(final_prediction_gt_sim_mut_sigSNP %>% dplyr::select(locID, Direction, Pred_Diff))) # outlier SNPs
+  gt_rel_loc_long_dir <- left_join(gt_rel_loc_long, unique(final_prediction_gt_sim_mut %>% dplyr::select(locID, Direction, Pred_Diff))) # all snps
   
   total_counts_summary <- gt_rel_loc_long_dir %>%
     filter(!is.na(genotype)) %>% 
@@ -223,10 +234,8 @@ for (iter in 1:iterations) {
   
   Counts_summary_set <- left_join(allele_counts_summary, total_counts_summary) %>% 
     mutate(Prop_Sum_Alleles = Sum_Alleles/(3*n_indv_gt))
-  Counts_summary_set <- left_join(Counts_summary_set, unique(final_prediction_gt_sim_mut_sigSNP %>%
-                                                       dplyr::select(locID, Pred_Diff))) %>%
-    mutate(iteration = iter)
-  
+  #Counts_summary_set <- left_join(Counts_summary_set, unique(final_prediction_gt_sim_mut_sigSNP %>% dplyr::select(locID, Pred_Diff))) %>% mutate(iteration = iter) # outlier snps
+  Counts_summary_set <- left_join(Counts_summary_set, unique(final_prediction_gt_sim_mut %>% dplyr::select(locID, Pred_Diff))) %>% mutate(iteration = iter) # all snps
   Counts_summary <- data.frame(rbind(Counts_summary, Counts_summary_set))
 }
 
@@ -273,7 +282,7 @@ AF_comparison_join <- AF_comparison %>%
   ) 
 
 ggplot(AF_comparison_join, aes(x=empirical_AF, y=sim_AF, colour = eff_size)) +
-  geom_point(alpha = 0.5) +
+  geom_point(alpha = 0.1) +
   geom_point(data=(AF_comparison_join |> dplyr::filter(outlier_SNP_sim == TRUE)), colour="blue", shape=1, fill = "white" ) +
   geom_point(data=(AF_comparison_join |> dplyr::filter(outlier_SNP == TRUE)), colour="red", shape=1, fill = "white") +
   geom_point(data=(AF_comparison_join |> dplyr::filter(outlier_SNP == TRUE & outlier_SNP_sim == TRUE)), colour="green") +
@@ -368,8 +377,23 @@ Counts_summary_itersum <- Counts_summary |>
   group_by(locID, group) |> 
   summarise(mean_Prop_sum = mean(Prop_Sum_Alleles),
             sd = sd(Prop_Sum_Alleles))
+Counts_summary_itersum$SNP_type <- ifelse(grepl("MR", Counts_summary_itersum$locID), "MR", "BG")
 
 ggplot(Counts_summary_itersum, aes(x = group, y = mean_Prop_sum, group = locID, color = locID)) +
   geom_errorbar(aes(ymin = mean_Prop_sum - sd, ymax = mean_Prop_sum + sd),  width = 0.05, linewidth = 0.6,  alpha = 0.7) +
   geom_point(size = 1.5) +
-  geom_line(alpha = 0.5)
+  geom_line(alpha = 0.5) +
+  facet_wrap(~SNP_type)
+
+# All snps
+ggplot(Counts_summary_itersum, aes(x = group, y = mean_Prop_sum, group = locID)) +
+  geom_line(alpha = 0.15, color = "grey40") +
+  geom_point(size = 1.5, alpha = 0.15) +
+  stat_summary(aes(group = 1), fun = mean, geom = "line",
+               color = "red", linewidth = 1) +
+  stat_summary(aes(group = 1), fun = mean, geom = "point",
+               color = "red", size = 2.5) +
+  facet_wrap(~SNP_type) +
+  theme(legend.position = "none")
+
+Counts_summary_itersum %>% group_by(group, SNP_type) %>% summarise (mean=mean(mean_Prop_sum))

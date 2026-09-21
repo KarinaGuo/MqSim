@@ -81,3 +81,15 @@ filename_2 <- paste0("~/Uni/Doctorate/Ch Natural selection/Simulation/MainPlot_P
 #ggsave(LS_MR, filename=filename_1, units='px', width=1500, height=1500, limitsize=F)
 #ggsave(LS_MR_2, filename=filename_2, units='px', width=1500, height=1500, limitsize=F)
 
+####
+
+tmp <- read.csv("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/prediction_gt_simulated_run.csv")
+hist(scales::rescale(tmp$Prediction, from=c(0,3), to=c(0,1)))
+LS_MR_end <- ggplot() + 
+  geom_boxplot(data = final_df %>% dplyr::filter(time > 1150), aes(x=Lifestage, y=MR)) +  
+  #geom_point(data = final_df %>% dplyr::filter(time > 2010 & time < 2020), aes(x=age, y=MR), size = 0.05) + 
+  theme_bw() +
+  labs(title=paste0("Impact ",MR_death_impact,"; time end"),  y= "Myrtle rust", x="Life stage")+
+  scale_x_discrete(limits = c("Adult", "Subadult", "Seedling"))
+LS_MR_end
+  
