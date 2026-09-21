@@ -136,6 +136,7 @@ if (exists("run_from_phase1save") && run_from_phase1save) {
   age_df=NULL
   MR_df=NULL 
   live_size_df=NULL
+  recruit_track_full_df=NULL
   pop_timepoints=NULL
   AF_timepoints=NULL
   dist_event=FALSE
@@ -220,9 +221,17 @@ for (time_point in start_time:time_max){
       MR_recruit_impact_tp = 0
     }
     
-    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point)
+    recruit_res <- recruit_rate(pop=curr_pop_start, recruitment_age=recruitment_age, population_min_size=population_minimum_size, population_max_size=population_carrying_capacity, density_recruit_togg=density_recruit_toggle, recruitment_size_mean=recruitment_mean, recruitment_size_sd=recruitment_sd, recruitment_constant=recruitment_const, MR_togg=MR_rec_toggle, MR_recruit_impact_val=MR_recruit_impact_tp, MR_rec_adjusted=MR_rec_adj, age_togg=age_rec_toggle, age_recruit_impact_val=age_recruit_impact_value, rec_age_shiftch=rec_age_shift, MR_parents=MR_inherit_par_num, population_genotypes=curr_AF_start, indiv_count_start=indiv_count_start, time_point=time_point, MR_error=MR_error, MR_err_range=MR_err_range)
     curr_pop_recruited <- recruit_res$curr_pop
     curr_AF_recruited <- recruit_res$curr_AF
+    
+    if (!is.null(recruit_res$recruit_track_df) && nrow(recruit_res$recruit_track_df) > 0 && time_point >= MR_timepoint) {
+      if (is.null(recruit_track_full_df)) {
+        recruit_track_full_df <- recruit_res$recruit_track_df
+      } else {
+        recruit_track_full_df <- rbind(recruit_track_full_df, recruit_res$recruit_track_df)
+      }
+    }
     
     recruited_indivs = length(curr_pop_recruited$indiv_ID) - indiv_alive_count
     indiv_count_end = recruited_indivs + indiv_count_end
@@ -295,7 +304,7 @@ for (time_point in start_time:time_max){
     indiv_death = c(indiv_death, rep(0, recruited_indivs + intercept_indiv)) 
     
     #### Final time point pop
-    curr_pop_end <- list(indiv_ID=curr_pop_recruited$indiv_ID[!as.logical(indiv_death)], age=curr_pop_recruited$age[!as.logical(indiv_death)]+1, MR=curr_pop_recruited$MR[!as.logical(indiv_death)], time=curr_pop_recruited$time[!as.logical(indiv_death)]+1, error = curr_pop_recruited$error[!as.logical(indiv_death)])
+    curr_pop_end <- list(indiv_ID=curr_pop_recruited$indiv_ID[!as.logical(indiv_death)], age=curr_pop_recruited$age[!as.logical(indiv_death)]+1, MR=curr_pop_recruited$MR[!as.logical(indiv_death)], time=curr_pop_recruited$time[!as.logical(indiv_death)]+1, mortality = curr_pop_recruited$mortality[!as.logical(indiv_death)], error = curr_pop_recruited$error[!as.logical(indiv_death)])
     curr_AF_end <- curr_AF_recruited[!as.logical(indiv_death)] # check lengths
     
     if (any(sapply(curr_AF_end, is.null))){cat("Error ", time_point)}
