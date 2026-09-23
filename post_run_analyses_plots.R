@@ -1,5 +1,5 @@
 #source("C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Natural selection/Simulation/data_sim_5.R")
-load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/21092026_2_GAPIT_alt_rec.Rdata")
+load("~/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Run_results/22092026_3_GAPIT_alt_rec.Rdata")
 
 library(tidyverse)
 theme_set(theme_bw())
@@ -96,3 +96,25 @@ summary(lm (sim_AF ~ empirical_AF, data = AF_comparison))
 
 # C:/Users/swirl/OneDrive/Documents/Uni/Doctorate/Ch Hist_Nat/Ch Natural selection/Simulation/Functions_PostRunAnalyses/Bootstrapped_AF_SNPplot.R
 
+################################################################################################################
+################## Comp parent MR
+
+recruit_track_full_df$off_diffpar1 = recruit_track_full_df$offspring_MR-recruit_track_full_df$parent_1_MR
+recruit_track_full_df$off_diffpar2 = recruit_track_full_df$offspring_MR-recruit_track_full_df$parent_2_MR
+recruit_track_full_df$off_diffmean <- recruit_track_full_df$offspring_MR - 
+  ((recruit_track_full_df$parent_1_MR + recruit_track_full_df$parent_2_MR) / 2)
+
+ggplot(recruit_track_full_df, aes(off_diffpar1, off_diffpar2)) +
+  geom_point(alpha=0.05)
+
+ggplot(recruit_track_full_df, aes(off_diffpar1)) +
+  geom_histogram() +
+  geom_vline(xintercept =mean(recruit_track_full_df$off_diffpar1))
+
+ggplot(recruit_track_full_df, aes(off_diffpar2)) +
+  geom_histogram() +
+  geom_vline(xintercept =mean(recruit_track_full_df$off_diffpar2))
+
+ggplot(recruit_track_full_df, aes(off_diffmean)) +
+  geom_histogram() +
+  geom_vline(xintercept =mean(recruit_track_full_df$off_diffmean))

@@ -347,9 +347,13 @@ run_res_LS_comped_LS2 <- run_res_LS %>%
   mutate(
     subadult_grt_seedling = Subadult > Seedling,
     adult_grt_subadult   = Adult > Subadult,
-    adult_grt_seedling = Adult > Seedling 
+    adult_grt_seedling = Adult > Seedling, 
+    
+    subadult_grt_seedling_difemp = ((Subadult - Seedling) > 0.04),
+    adult_grt_subadult_difemp   = ((Adult - Subadult)  > 0.04),
+    adult_grt_seedling_difemp = ((Adult - Seedling )  > 0.04)
   ) %>%
-  dplyr::select (iteration, subadult_grt_seedling, adult_grt_subadult, adult_grt_seedling)
+  dplyr::select (iteration, subadult_grt_seedling, adult_grt_subadult, adult_grt_seedling,  subadult_grt_seedling_difemp, adult_grt_subadult_difemp, adult_grt_seedling_difemp)
 
 
 ## Final parameter scores
