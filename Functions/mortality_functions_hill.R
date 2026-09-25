@@ -56,7 +56,7 @@ mortality_death_rate  <- function(pop, population_capacity, population_min_size,
   #MR <- scales::rescale(pop$MR, c(0,1))
   
   if(!(MR_age_impact_val==0)){
-    MR_chance <- (1 / (1 + (ages / MR_age_impact_val))) * MR * MR_death_impact_val
+    MR_chance <- (1 / (1 + (ages / MR_age_impact_val))) * (MR^3) * MR_death_impact_val
   } else {
     MR_chance <- MR * MR_death_impact_val
   }

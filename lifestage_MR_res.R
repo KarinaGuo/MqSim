@@ -19,8 +19,8 @@ final_df <- do.call(rbind, df_list)
 
 final_df <- final_df %>% 
   mutate(Lifestage = case_when(
-    age <= 2 ~ "Seedling",
-    age > 2 & age <= 7 ~ "Subadult",
+    age > 2 & age <= 3 ~ "Seedling",
+    age > 3 & age <= 7 ~ "Subadult",
     age > 7 ~ "Adult"
   ))
 

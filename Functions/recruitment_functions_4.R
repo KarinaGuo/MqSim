@@ -120,8 +120,10 @@ recruit_rate <- function(pop, population_min_size, population_max_size, recruitm
     }
     
     if(MR_error){
-      new_recruit_error <- runif(n=sum(new_recruit), min = -(MR_err_range), max=MR_err_range)
+      new_recruit_error <- rnorm(n=sum(new_recruit), mean=0, sd=MR_err_range)
       new_recruit_MR <- new_recruit_MR + new_recruit_error
+      new_recruit_MR[new_recruit_MR > 1] = 1 # Set floor and ceiling
+      new_recruit_MR[new_recruit_MR < 0] = 0.001
     }
     
     new_recruit_pop <- list(indiv_ID=seq(from=indiv_count_start+1, to=indiv_count_start+sum(new_recruit)), 
